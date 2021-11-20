@@ -1,0 +1,18 @@
+<div class="page-container">
+  <div class="flex-container">
+    <div class="data-container">
+      <fieldset>
+        <legend>Datos de Entrada</legend>
+        <textarea [(ngModel)]="inputData"> </textarea>
+        <button type="button" (click)="processInputData()">Procesar Datos</button>
+      </fieldset>
+    </div>
+    <div class="data-container">
+      <fieldset>
+        <legend>Datos de Salida</legend>
+        <textarea [(ngModel)]="outputData"> </textarea>
+        <button type="button" (click)="copyToClipboard(this.outputData)">Copiar al Portapapeles</button>
+      </fieldset>
+    </div>
+  </div>
+</div>
