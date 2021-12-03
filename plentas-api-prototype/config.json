@@ -1,9 +1,9 @@
 {
-    "ruta_fichero_entrada": "/Users/javier.sanz/OneDrive - UNIR/Desktop/PLeNTas_V3/biConNotaAnon.json",
-    "ruta_fichero_salida": "/Users/javier.sanz/OneDrive - UNIR/Desktop/PLeNTas_V3/biConNotaAnon_out.json",
+    "ruta_fichero_entrada": "biConNotaAnon.json",
+    "ruta_fichero_salida": "biConNotaAnon_out.json",
     "ruta_hunspell": {
-        "aff": "/Users/javier.sanz/OneDrive - UNIR/Desktop/PLeNTas_V3/es_ES/es_ES",
-        "dic": "/Users/javier.sanz/OneDrive - UNIR/Desktop/PLeNTas_V3/es_ES/es_ES.dic"
+        "aff": "C:/Users/javier.sanz/OneDrive - UNIR/Desktop/PLeNTas_V3/es_ES/es_ES",
+        "dic": "C:/Users/javier.sanz/OneDrive - UNIR/Desktop/PLeNTas_V3/es_ES/es_ES.dic"
     },
     "Parametros_Analisis": {
         "estudiantes":{
@@ -70,7 +70,7 @@
                 "Peso": 0.2
             },
             "Similitud":{
-                "MinSpacySimilar": 0,
+                "MinSpacySimilar": 0.8,
                 "Peso": 0.2
             }
         }   

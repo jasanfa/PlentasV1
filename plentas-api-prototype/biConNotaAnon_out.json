@@ -1,0 +1,637 @@
+[
+           {
+                      "ID": "087ca39b4fe3242f23074d5f32ba2a66",
+                      "Ortografia": {
+                                 "Errores ortograficos": [
+                                            1,
+                                            "bi "
+                                 ],
+                                 "Nota en Ortografía": 0.2
+                      },
+                      "Sintaxis": {
+                                 "Frases utilizadas para responder a la pregunta": 7,
+                                 "Palabras utilizadas para responder a la pregunta": 200,
+                                 "Index Fernandez Huerta": 70.97,
+                                 "Legibilidad F-H": "ligeramente fácil",
+                                 "mu index": 50.396,
+                                 "Legibilidad Mu": "ligeramente difícil",
+                                 "Nota en Sintaxis": 0.242732
+                      },
+                      "Semantica": {
+                                 "Keywords alumno (auto)": {
+                                            "minipregunta0": [],
+                                            "minipregunta1": [],
+                                            "minipregunta2": [
+                                                       [
+                                                                  "Lines 1 - 2",
+                                                                  [
+                                                                             "esfuerzo conjunto",
+                                                                             "actividad que corresponda",
+                                                                             "corresponda al departamento",
+                                                                             "gobierno del dato",
+                                                                             "estrategia de gobierno"
+                                                                  ],
+                                                                  0.803
+                                                       ]
+                                            ],
+                                            "minipregunta3": [],
+                                            "respuesta_completa": [
+                                                       [
+                                                                  "Line 2",
+                                                                  [
+                                                                             "aumento de ventas",
+                                                                             "productos o servicios",
+                                                                             "relevancia del gobierno",
+                                                                             "gobierno del dato",
+                                                                             "empresa radica"
+                                                                  ],
+                                                                  0.831
+                                                       ],
+                                                       [
+                                                                  "Lines 1 - 2",
+                                                                  [
+                                                                             "esfuerzo conjunto",
+                                                                             "actividad que corresponda",
+                                                                             "corresponda al departamento",
+                                                                             "gobierno del dato",
+                                                                             "estrategia de gobierno"
+                                                                  ],
+                                                                  0.813
+                                                       ],
+                                                       [
+                                                                  "Lines 2 - 3",
+                                                                  [
+                                                                             "aumento de ventas",
+                                                                             "empresa radica",
+                                                                             "acciones para maximizar",
+                                                                             "maximizar sus ganancias",
+                                                                             "ganancias en aspectos"
+                                                                  ],
+                                                                  0.855
+                                                       ],
+                                                       [
+                                                                  "Lines 1 - 3",
+                                                                  [
+                                                                             "esfuerzo conjunto",
+                                                                             "actividad que corresponda",
+                                                                             "corresponda al departamento",
+                                                                             "gobierno del dato",
+                                                                             "productos o servicios"
+                                                                  ],
+                                                                  0.844
+                                                       ]
+                                            ]
+                                 },
+                                 "Keywords alumno": [
+                                            [
+                                                       "gobierno del dato"
+                                            ],
+                                            "Nota: 0.2"
+                                 ],
+                                 "Keyword profesor": [
+                                            "gobierno del dato",
+                                            "lidera la empresa",
+                                            "protección del dato",
+                                            "borrado del dato",
+                                            "toma de decisiones"
+                                 ],
+                                 "Justificación de esos keywords": [
+                                            "La expresión clave gobierno del dato aparece correctamente empleada en el texto"
+                                 ],
+                                 "Nota en Semantica": 0.14,
+                                 "Nota profesor": 1.0
+                      }
+           },
+           {
+                      "ID": "545e3767423163f672118cf11f1fee31",
+                      "Ortografia": {
+                                 "Errores ortograficos": [
+                                            2,
+                                            "datalake encriptación "
+                                 ],
+                                 "Nota en Ortografía": 0.16
+                      },
+                      "Sintaxis": {
+                                 "Frases utilizadas para responder a la pregunta": 1,
+                                 "Palabras utilizadas para responder a la pregunta": 125,
+                                 "Index Fernandez Huerta": 85.064,
+                                 "Legibilidad F-H": "fácil",
+                                 "mu index": 41.4,
+                                 "Legibilidad Mu": "difícil",
+                                 "Nota en Sintaxis": 0.252928
+                      },
+                      "Semantica": {
+                                 "Keywords alumno (auto)": {
+                                            "minipregunta0": [],
+                                            "minipregunta1": [],
+                                            "minipregunta2": [],
+                                            "minipregunta3": [
+                                                       [
+                                                                  "Line 1",
+                                                                  [
+                                                                             "gobernó de datos",
+                                                                             "lago de datos",
+                                                                             "gobierno de datos",
+                                                                             "almacenar la información",
+                                                                             "tratamiento y seguridad"
+                                                                  ],
+                                                                  0.814
+                                                       ]
+                                            ],
+                                            "respuesta_completa": []
+                                 },
+                                 "Keywords alumno": [
+                                            [],
+                                            "Nota: 0.0"
+                                 ],
+                                 "Keyword profesor": [
+                                            "gobierno del dato",
+                                            "lidera la empresa",
+                                            "protección del dato",
+                                            "borrado del dato",
+                                            "toma de decisiones"
+                                 ],
+                                 "Justificación de esos keywords": [],
+                                 "Nota en Semantica": 0.05,
+                                 "Nota profesor": 0.5
+                      }
+           },
+           {
+                      "ID": "c6336121d5c95466c981ebf7f3178ba2",
+                      "Ortografia": {
+                                 "Errores ortograficos": [
+                                            5,
+                                            "reporting cdo chief office rgpd "
+                                 ],
+                                 "Nota en Ortografía": 0.04000000000000001
+                      },
+                      "Sintaxis": {
+                                 "Frases utilizadas para responder a la pregunta": 7,
+                                 "Palabras utilizadas para responder a la pregunta": 193,
+                                 "Index Fernandez Huerta": 80.032,
+                                 "Legibilidad F-H": "fácil",
+                                 "mu index": 48.917,
+                                 "Legibilidad Mu": "difícil",
+                                 "Nota en Sintaxis": 0.25789799999999996
+                      },
+                      "Semantica": {
+                                 "Keywords alumno (auto)": {
+                                            "minipregunta0": [],
+                                            "minipregunta1": [],
+                                            "minipregunta2": [],
+                                            "minipregunta3": [],
+                                            "respuesta_completa": [
+                                                       [
+                                                                  "Lines 2 - 3",
+                                                                  [
+                                                                             "chief data office",
+                                                                             "chief data",
+                                                                             "data office",
+                                                                             "estrategias de control",
+                                                                             "control de calidad"
+                                                                  ],
+                                                                  0.807
+                                                       ],
+                                                       [
+                                                                  "Lines 1 - 3",
+                                                                  [
+                                                                             "garantiza la veracidad",
+                                                                             "mantenerlos actualizados",
+                                                                             "forma garantiza",
+                                                                             "chief data office",
+                                                                             "datos"
+                                                                  ],
+                                                                  0.83
+                                                       ]
+                                            ]
+                                 },
+                                 "Keywords alumno": [
+                                            [
+                                                       "gobierno del dato"
+                                            ],
+                                            "Nota: 0.2"
+                                 ],
+                                 "Keyword profesor": [
+                                            "gobierno del dato",
+                                            "lidera la empresa",
+                                            "protección del dato",
+                                            "borrado del dato",
+                                            "toma de decisiones"
+                                 ],
+                                 "Justificación de esos keywords": [
+                                            "La expresión clave gobierno del dato aparece correctamente empleada en el texto"
+                                 ],
+                                 "Nota en Semantica": 0.09000000000000001,
+                                 "Nota profesor": 0.75
+                      }
+           },
+           {
+                      "ID": "03f7a62eb20aa906917c828892d4f0e8",
+                      "Ortografia": {
+                                 "Errores ortograficos": [
+                                            1,
+                                            "feedback "
+                                 ],
+                                 "Nota en Ortografía": 0.2
+                      },
+                      "Sintaxis": {
+                                 "Frases utilizadas para responder a la pregunta": 5,
+                                 "Palabras utilizadas para responder a la pregunta": 182,
+                                 "Index Fernandez Huerta": 88.983,
+                                 "Legibilidad F-H": "fácil",
+                                 "mu index": 48.565,
+                                 "Legibilidad Mu": "difícil",
+                                 "Nota en Sintaxis": 0.275096
+                      },
+                      "Semantica": {
+                                 "Keywords alumno (auto)": {
+                                            "minipregunta0": [],
+                                            "minipregunta1": [],
+                                            "minipregunta2": [],
+                                            "minipregunta3": [],
+                                            "respuesta_completa": []
+                                 },
+                                 "Keywords alumno": [
+                                            [
+                                                       "tomar de decisión"
+                                            ],
+                                            "Nota: 0.2"
+                                 ],
+                                 "Keyword profesor": [
+                                            "gobierno del dato",
+                                            "lidera la empresa",
+                                            "protección del dato",
+                                            "borrado del dato",
+                                            "toma de decisiones"
+                                 ],
+                                 "Justificación de esos keywords": [
+                                            "La expresión clave tomar de decisión aparece correctamente empleada en el texto"
+                                 ],
+                                 "Nota en Semantica": 0.04000000000000001,
+                                 "Nota profesor": 1.0
+                      }
+           },
+           {
+                      "ID": "23d86812bc39d469ad86aba5e3304145",
+                      "Ortografia": {
+                                 "Errores ortograficos": [
+                                            4,
+                                            "gerencial estragia empodera implementación "
+                                 ],
+                                 "Nota en Ortografía": 0.08000000000000002
+                      },
+                      "Sintaxis": {
+                                 "Frases utilizadas para responder a la pregunta": 5,
+                                 "Palabras utilizadas para responder a la pregunta": 137,
+                                 "Index Fernandez Huerta": 75.234,
+                                 "Legibilidad F-H": "ligeramente fácil",
+                                 "mu index": 46.063,
+                                 "Legibilidad Mu": "difícil",
+                                 "Nota en Sintaxis": 0.24259399999999998
+                      },
+                      "Semantica": {
+                                 "Keywords alumno (auto)": {
+                                            "minipregunta0": [
+                                                       [
+                                                                  "Line 1",
+                                                                  [
+                                                                             "manejar información consolidada",
+                                                                             "operacional y comercial",
+                                                                             "información consolidada",
+                                                                             "veras y eficiente",
+                                                                             "nivel gerencial"
+                                                                  ],
+                                                                  0.804
+                                                       ]
+                                            ],
+                                            "minipregunta1": [],
+                                            "minipregunta2": [],
+                                            "minipregunta3": [],
+                                            "respuesta_completa": []
+                                 },
+                                 "Keywords alumno": [
+                                            [
+                                                       "tomar de decisión",
+                                                       "gobierno del dato"
+                                            ],
+                                            "Nota: 0.4"
+                                 ],
+                                 "Keyword profesor": [
+                                            "gobierno del dato",
+                                            "lidera la empresa",
+                                            "protección del dato",
+                                            "borrado del dato",
+                                            "toma de decisiones"
+                                 ],
+                                 "Justificación de esos keywords": [
+                                            "La expresión clave gobierno del dato aparece correctamente empleada en el texto",
+                                            "La expresión clave tomar de decisión aparece correctamente empleada en el texto"
+                                 ],
+                                 "Nota en Semantica": 0.13,
+                                 "Nota profesor": 1.0
+                      }
+           },
+           {
+                      "ID": "6d19d7b1c6d40a912d92ab947f6c46f4",
+                      "Ortografia": {
+                                 "Errores ortograficos": [
+                                            1,
+                                            "recuperarlos "
+                                 ],
+                                 "Nota en Ortografía": 0.2
+                      },
+                      "Sintaxis": {
+                                 "Frases utilizadas para responder a la pregunta": 8,
+                                 "Palabras utilizadas para responder a la pregunta": 155,
+                                 "Index Fernandez Huerta": 73.059,
+                                 "Legibilidad F-H": "ligeramente fácil",
+                                 "mu index": 48.543,
+                                 "Legibilidad Mu": "difícil",
+                                 "Nota en Sintaxis": 0.243204
+                      },
+                      "Semantica": {
+                                 "Keywords alumno (auto)": {
+                                            "minipregunta0": [
+                                                       [
+                                                                  "Lines 4 - 5",
+                                                                  [
+                                                                             "evaluar un plan",
+                                                                             "plan para respaldar",
+                                                                             "desastre natural",
+                                                                             "respaldar los datos",
+                                                                             "creación y captura"
+                                                                  ],
+                                                                  0.802
+                                                       ]
+                                            ],
+                                            "minipregunta1": [],
+                                            "minipregunta2": [],
+                                            "minipregunta3": [],
+                                            "respuesta_completa": []
+                                 },
+                                 "Keywords alumno": [
+                                            [],
+                                            "Nota: 0.0"
+                                 ],
+                                 "Keyword profesor": [
+                                            "gobierno del dato",
+                                            "lidera la empresa",
+                                            "protección del dato",
+                                            "borrado del dato",
+                                            "toma de decisiones"
+                                 ],
+                                 "Justificación de esos keywords": [],
+                                 "Nota en Semantica": 0.05,
+                                 "Nota profesor": 0.75
+                      }
+           },
+           {
+                      "ID": "3bfce1b727a78202f6e27fba6e51176f",
+                      "Ortografia": {
+                                 "Errores ortograficos": [
+                                            0,
+                                            ""
+                                 ],
+                                 "Nota en Ortografía": 0.2
+                      },
+                      "Sintaxis": {
+                                 "Frases utilizadas para responder a la pregunta": 1,
+                                 "Palabras utilizadas para responder a la pregunta": 85,
+                                 "Index Fernandez Huerta": 72.228,
+                                 "Legibilidad F-H": "ligeramente fácil",
+                                 "mu index": 45.254,
+                                 "Legibilidad Mu": "difícil",
+                                 "Nota en Sintaxis": 0.234964
+                      },
+                      "Semantica": {
+                                 "Keywords alumno (auto)": {
+                                            "minipregunta0": [],
+                                            "minipregunta1": [],
+                                            "minipregunta2": [],
+                                            "minipregunta3": [],
+                                            "respuesta_completa": [
+                                                       [
+                                                                  "Line 1",
+                                                                  [
+                                                                             "seguros de calidad",
+                                                                             "servicios de calidad",
+                                                                             "tomando en consideración",
+                                                                             "validados por propietario",
+                                                                             "transformación y modelado"
+                                                                  ],
+                                                                  0.807
+                                                       ]
+                                            ]
+                                 },
+                                 "Keywords alumno": [
+                                            [
+                                                       "gobierno del dato"
+                                            ],
+                                            "Nota: 0.2"
+                                 ],
+                                 "Keyword profesor": [
+                                            "gobierno del dato",
+                                            "lidera la empresa",
+                                            "protección del dato",
+                                            "borrado del dato",
+                                            "toma de decisiones"
+                                 ],
+                                 "Justificación de esos keywords": [
+                                            "La expresión clave gobierno del dato aparece correctamente empleada en el texto"
+                                 ],
+                                 "Nota en Semantica": 0.09000000000000001,
+                                 "Nota profesor": 0.75
+                      }
+           },
+           {
+                      "ID": "692c71cab0bdaf6b02b0a713bd477da5",
+                      "Ortografia": {
+                                 "Errores ortograficos": [
+                                            4,
+                                            "estratégias ceo ó indiscutiblemente "
+                                 ],
+                                 "Nota en Ortografía": 0.08000000000000002
+                      },
+                      "Sintaxis": {
+                                 "Frases utilizadas para responder a la pregunta": 6,
+                                 "Palabras utilizadas para responder a la pregunta": 169,
+                                 "Index Fernandez Huerta": 76.473,
+                                 "Legibilidad F-H": "ligeramente fácil",
+                                 "mu index": 52.207,
+                                 "Legibilidad Mu": "ligeramente difícil",
+                                 "Nota en Sintaxis": 0.25736000000000003
+                      },
+                      "Semantica": {
+                                 "Keywords alumno (auto)": {
+                                            "minipregunta0": [],
+                                            "minipregunta1": [],
+                                            "minipregunta2": [],
+                                            "minipregunta3": [],
+                                            "respuesta_completa": []
+                                 },
+                                 "Keywords alumno": [
+                                            [],
+                                            "Nota: 0.0"
+                                 ],
+                                 "Keyword profesor": [
+                                            "gobierno del dato",
+                                            "lidera la empresa",
+                                            "protección del dato",
+                                            "borrado del dato",
+                                            "toma de decisiones"
+                                 ],
+                                 "Justificación de esos keywords": [],
+                                 "Nota en Semantica": 0.0,
+                                 "Nota profesor": 0.75
+                      }
+           },
+           {
+                      "ID": "9290a03611ab74a53fc28415b25ba740",
+                      "Ortografia": {
+                                 "Errores ortograficos": [
+                                            0,
+                                            ""
+                                 ],
+                                 "Nota en Ortografía": 0.2
+                      },
+                      "Sintaxis": {
+                                 "Frases utilizadas para responder a la pregunta": 6,
+                                 "Palabras utilizadas para responder a la pregunta": 185,
+                                 "Index Fernandez Huerta": 75.099,
+                                 "Legibilidad F-H": "ligeramente fácil",
+                                 "mu index": 45.986,
+                                 "Legibilidad Mu": "difícil",
+                                 "Nota en Sintaxis": 0.24217000000000002
+                      },
+                      "Semantica": {
+                                 "Keywords alumno (auto)": {
+                                            "minipregunta0": [],
+                                            "minipregunta1": [],
+                                            "minipregunta2": [],
+                                            "minipregunta3": [],
+                                            "respuesta_completa": []
+                                 },
+                                 "Keywords alumno": [
+                                            [
+                                                       "gobierno del dato"
+                                            ],
+                                            "Nota: 0.2"
+                                 ],
+                                 "Keyword profesor": [
+                                            "gobierno del dato",
+                                            "lidera la empresa",
+                                            "protección del dato",
+                                            "borrado del dato",
+                                            "toma de decisiones"
+                                 ],
+                                 "Justificación de esos keywords": [
+                                            "La expresión clave gobierno del dato aparece correctamente empleada en el texto"
+                                 ],
+                                 "Nota en Semantica": 0.04000000000000001,
+                                 "Nota profesor": 1.0
+                      }
+           },
+           {
+                      "ID": "92489213fa6c17c7fc675aedef274059",
+                      "Ortografia": {
+                                 "Errores ortograficos": [
+                                            3,
+                                            "optimización fidelización implementación "
+                                 ],
+                                 "Nota en Ortografía": 0.12000000000000001
+                      },
+                      "Sintaxis": {
+                                 "Frases utilizadas para responder a la pregunta": 5,
+                                 "Palabras utilizadas para responder a la pregunta": 198,
+                                 "Index Fernandez Huerta": 72.749,
+                                 "Legibilidad F-H": "ligeramente fácil",
+                                 "mu index": 46.367,
+                                 "Legibilidad Mu": "difícil",
+                                 "Nota en Sintaxis": 0.238232
+                      },
+                      "Semantica": {
+                                 "Keywords alumno (auto)": {
+                                            "minipregunta0": [
+                                                       [
+                                                                  "Lines 4 - 5",
+                                                                  [
+                                                                             "creación o captación",
+                                                                             "lograr esto requiere",
+                                                                             "duda el dueño",
+                                                                             "presidente o gerente",
+                                                                             "requiere de personal"
+                                                                  ],
+                                                                  0.801
+                                                       ]
+                                            ],
+                                            "minipregunta1": [],
+                                            "minipregunta2": [],
+                                            "minipregunta3": [],
+                                            "respuesta_completa": [
+                                                       [
+                                                                  "Line 2",
+                                                                  [
+                                                                             "creación o captación",
+                                                                             "lograr esto requiere",
+                                                                             "duda el dueño",
+                                                                             "presidente o gerente",
+                                                                             "requiere de personal"
+                                                                  ],
+                                                                  0.831
+                                                       ],
+                                                       [
+                                                                  "Lines 1 - 2",
+                                                                  [
+                                                                             "cumplir estas funciones",
+                                                                             "desarrollar procedimientos",
+                                                                             "procedimientos y políticas",
+                                                                             "políticas necesarias",
+                                                                             "necesarias que lleven"
+                                                                  ],
+                                                                  0.835
+                                                       ],
+                                                       [
+                                                                  "Lines 2 - 3",
+                                                                  [
+                                                                             "creación o captación",
+                                                                             "lograr esto requiere",
+                                                                             "duda el dueño",
+                                                                             "presidente o gerente",
+                                                                             "requiere de personal"
+                                                                  ],
+                                                                  0.887
+                                                       ],
+                                                       [
+                                                                  "Lines 1 - 3",
+                                                                  [
+                                                                             "cumplir estas funciones",
+                                                                             "desarrollar procedimientos",
+                                                                             "procedimientos y políticas",
+                                                                             "políticas necesarias",
+                                                                             "necesarias que lleven"
+                                                                  ],
+                                                                  0.866
+                                                       ]
+                                            ]
+                                 },
+                                 "Keywords alumno": [
+                                            [
+                                                       "gobierno del dato"
+                                            ],
+                                            "Nota: 0.2"
+                                 ],
+                                 "Keyword profesor": [
+                                            "gobierno del dato",
+                                            "lidera la empresa",
+                                            "protección del dato",
+                                            "borrado del dato",
+                                            "toma de decisiones"
+                                 ],
+                                 "Justificación de esos keywords": [
+                                            "La expresión clave gobierno del dato aparece correctamente empleada en el texto"
+                                 ],
+                                 "Nota en Semantica": 0.14,
+                                 "Nota profesor": 1.0
+                      }
+           }
+]

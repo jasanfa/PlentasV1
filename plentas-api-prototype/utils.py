@@ -255,6 +255,11 @@ def clean_words(string):
     if string != "":
         words_sentence.append(string)
     return words_sentence
+
+def getNameFile(string):
+    directories = string.split("/")
+
+    return re.sub(".json","", directories[len(directories)-1])
         
         
         
