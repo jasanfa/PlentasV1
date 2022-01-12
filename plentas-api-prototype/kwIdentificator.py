@@ -30,6 +30,47 @@ def loadHMMInfo():
 
     return Pobs, Ptrans, LemmaDictionary
 
+def saveKWInfo(file_name, showFdbck, showMarks,showFdbckDis, showMarksDis):
+
+    print(f'{file_name}')
+    tf = open("__appcache__/" + file_name + "_Feedback.json", "w")
+    json.dump(showFdbck,tf)
+    tf.close()
+
+    tf = open("__appcache__/" + file_name + "_Marks.json", "w")
+    json.dump(showMarks,tf)
+    tf.close()
+
+    tf = open("__appcache__/" + file_name + "_FeedbackDistribution.json", "w")
+    json.dump(showFdbckDis,tf)
+    tf.close()
+
+    tf = open("__appcache__/" + file_name + "_MarksDistribution.json", "w")
+    json.dump(showMarksDis,tf)
+    tf.close()
+
+def loadKWInfo(file_name):
+        print(f'{"Archivo ya existe"}')
+
+        tf = open("__appcache__/" + file_name + "_Marks.json", "r")
+        file_marks = json.load(tf)
+        tf.close()
+
+        tf = open("__appcache__/" + file_name + "_Feedback.json", "r")
+        file_feedback = json.load(tf)
+        tf.close()
+
+        tf = open("__appcache__/" + file_name + "_MarksDistribution.json", "r")
+        file_marksDistrib = json.load(tf)
+        tf.close()
+
+        tf = open("__appcache__/" + file_name + "_FeedbackDistribution.json", "r")
+        file_feedbackDistrib = json.load(tf)
+        tf.close()
+
+        return file_marks, file_feedback, file_marksDistrib, file_feedbackDistrib 
+
+
 
 #LemmaDictionary = np.load('DiccionarioLemas.npy', allow_pickle='TRUE')
 #LemmaDictionary = LemmaDictionary.item()

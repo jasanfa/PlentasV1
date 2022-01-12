@@ -1,77 +1,53 @@
 import pandas as pd
 import re
 import json
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, mean_squared_log_error
 import numpy as np
 import os
 import statistics
+import matplotlib.pyplot as plt
+
+import copy
 
 import spacy
 nlp = spacy.load('es_core_news_sm')
 
 from utils import silabizer, spelling_corrector, clean_words, sent_tokenize, word_categorization, mu_index, FHuertas_index, check_senteces_words, keyword_extractor,getNameFile
-from kwIdentificator import NLP_Answers, NLP_Questions, loadHMMInfo
+from kwIdentificator import NLP_Answers, NLP_Questions, loadHMMInfo, saveKWInfo, loadKWInfo
+
+from tools import plotExperimento2, plotExperimento, plotExperimento3
 
 
 class Plentas():
     
     def __init__(self, settings_file):
 
+        #lectura del fichero de configuracion
         self.__getConfigSettings(settings_file)
+        #lectura del fichero de preguntas/respuestas
         self.__getData(self.__json_file_in)
 
-        try:
-            os.mkdir('__appcache__')
-            self.Pobs, self.Ptrans, self.LemmaDictionary = loadHMMInfo()
+        if self.BusquedaKW:
+            print(f'\n\n Buscando KW ..... \n\n')
+            #Cargar/generar información de la búsqueda aumentada de palabras clave
+            try:
+                os.mkdir('__appcache__')
+                Pobs, Ptrans, LemmaDictionary = loadHMMInfo()
 
-            self.KWfile_info = NLP_Questions(self.answersDF,{},{}, self.LemmaDictionary)
+                KWfile_info = NLP_Questions(self.answersDF,{},{}, self.LemmaDictionary)
+                IdentifiedKW = NLP_Answers(self.answersDF,KWfile_info.Synonyms(), KWfile_info.Antonyms(), KWfile_info.LemmatizedKeywords(), LemmaDictionary, Ptrans, Pobs, KWfile_info.Windows())
 
-            self.IdentifiedKW = NLP_Answers(self.answersDF,self.KWfile_info.Synonyms(), self.KWfile_info.Antonyms(), self.KWfile_info.LemmatizedKeywords(), self.LemmaDictionary, self.Ptrans, self.Pobs, self.KWfile_info.Windows())
-            print(f'{getNameFile(self.__json_file_in)}')
-            tf = open("__appcache__/" + getNameFile(self.__json_file_in) + "_Feedback.json", "w")
-            json.dump(self.IdentifiedKW.showFeedback(),tf)
-            tf.close()
+                self.file_feedback = IdentifiedKW.showFeedback()
+                self.file_marks = IdentifiedKW.showMarks()
+                self.file_feedbackDistrib = IdentifiedKW.showFeedbackDistribution()
+                self.file_marksDistrib = IdentifiedKW.showKeywordsDistribution()
 
-            self.file_feedback = self.IdentifiedKW.showFeedback()
-
-            tf = open("__appcache__/" + getNameFile(self.__json_file_in) + "_Marks.json", "w")
-            json.dump(self.IdentifiedKW.showMarks(),tf)
-            tf.close()
-
-            self.file_marks = self.IdentifiedKW.showMarks()
-
-            tf = open("__appcache__/" + getNameFile(self.__json_file_in) + "_FeedbackDistribution.json", "w")
-            json.dump(self.IdentifiedKW.showFeedbackDistribution(),tf)
-            tf.close()
-
-            self.file_feedbackDistrib = self.IdentifiedKW.showFeedbackDistribution()
-
-            tf = open("__appcache__/" + getNameFile(self.__json_file_in) + "_MarksDistribution.json", "w")
-            json.dump(self.IdentifiedKW.showKeywordsDistribution(),tf)
-            tf.close()
-
-            self.file_marksDistrib = self.IdentifiedKW.showKeywordsDistribution()
-            
-        except:
-           
-            print(f'{"Archivo ya existe"}')
-
-            tf = open("__appcache__/" + getNameFile(self.__json_file_in) + "_Marks.json", "r")
-            self.file_marks = json.load(tf)
-            tf.close()
-
-            tf = open("__appcache__/" + getNameFile(self.__json_file_in) + "_Feedback.json", "r")
-            self.file_feedback = json.load(tf)
-            tf.close()
-
-            tf = open("__appcache__/" + getNameFile(self.__json_file_in) + "_MarksDistribution.json", "r")
-            self.file_marksDistrib = json.load(tf)
-            tf.close()
-
-            tf = open("__appcache__/" + getNameFile(self.__json_file_in) + "_FeedbackDistribution.json", "r")
-            self.file_feedbackDistrib = json.load(tf)
-            tf.close()            
-        
+                saveKWInfo(getNameFile(self.__json_file_in), self.file_feedback, self.file_marks,self.file_feedbackDistrib, self.file_marksDistrib)
+                
+            except:
+                self.file_marks, self.file_feedback, self.file_marksDistrib, self.file_feedbackDistrib = loadKWInfo(getNameFile(self.__json_file_in))
+        else:
+            print(f'\n\n Omitiendo busqueda de KW ..... \n\n')          
 
 
    
@@ -112,10 +88,12 @@ class Plentas():
 
         #print(f'+++++++++ Estoy poniendo setfrases con valor de {self.setFrases} +++++++++')
 
-        self.NMaxKeywords= df["Parametros_Analisis"]["Semantica"]["Keywords"]["NMaxKeywords"]
-        self.TVentana= df["Parametros_Analisis"]["Semantica"]["Keywords"]["TVentana"]
-        self.Deduplication_threshold = df["Parametros_Analisis"]["Semantica"]["Keywords"]["Deduplication_threshold"]
-        self.Features = df["Parametros_Analisis"]["Semantica"]["Keywords"]["Features"]
+        self.NMaxKeywords= df["Parametros_Analisis"]["Semantica"]["Keywords"]["Generacion"]["NMaxKeywords"]
+        self.TVentana= df["Parametros_Analisis"]["Semantica"]["Keywords"]["Generacion"]["TVentana"]
+        self.Deduplication_threshold = df["Parametros_Analisis"]["Semantica"]["Keywords"]["Generacion"]["Deduplication_threshold"]
+        self.Features = df["Parametros_Analisis"]["Semantica"]["Keywords"]["Generacion"]["Features"]
+        self.BusquedaKW = df["Parametros_Analisis"]["Semantica"]["Keywords"]["Busqueda"]["Activado"]
+
         self.MinSpacySimilar= df["Parametros_Rubrica"]["Semantica"]["Similitud"]["MinSpacySimilar"]
 
         self.FaltasSalvaguarda= df["Parametros_Rubrica"]["Ortografia"]["FaltasSalvaguarda"]
@@ -128,6 +106,26 @@ class Plentas():
         self.PesoSmntca_KW = df["Parametros_Rubrica"]["Semantica"]["Keywords"]["Peso"]
         self.PesoSmntca_Similitud = df["Parametros_Rubrica"]["Semantica"]["Similitud"]["Peso"]
 
+        self.notas_calculadas = dict()
+        self.min_umbral = []
+        self.max_umbral = []
+        r= self.MinSpacySimilar.split(",")
+
+        #self.notas_calculadas["ID"] = []
+        for i in r:
+            c_w= clean_words(i)
+            self.min_umbral.append(float(c_w[0]+'.'+c_w[1]))
+            self.max_umbral.append(float(c_w[2]+'.'+c_w[3]))
+            self.notas_calculadas['Umbral ' + c_w[0]+'.'+c_w[1] + ' - ' + c_w[2]+'.'+c_w[3]] = []
+
+        
+        
+        self.plot_mse = copy.deepcopy(self.notas_calculadas)
+        self.plot_loge = copy.deepcopy(self.notas_calculadas)
+        self.plot_resta = copy.deepcopy(self.notas_calculadas)
+
+        print(f'\n\n Umbrales spacy: {self.min_umbral}{self.max_umbral}\n\n')  
+        
 
 
 
@@ -141,23 +139,31 @@ class Plentas():
         df = pd.DataFrame(data)
         self.minipreguntas = []
         self.minirespuestas = []
+        self.indice_minipreguntas = []
         self.respuesta_prof = ""
 
         self.enunciado = df['metadata'][0]['enunciado']
         self.prof_keywords = df['metadata'][0]['keywords']
 
-        for i in range(4):
-            self.minirespuestas.append(df['metadata'][0]['minipreguntas'][i]['minirespuesta'])
-            self.minipreguntas.append(df['metadata'][0]['minipreguntas'][i]['minipregunta'])
+        try:
+            i=0
+            while True:
+            #for i in range(4):
+                self.minirespuestas.append(df['metadata'][0]['minipreguntas'][i]['minirespuesta'])
+                self.minipreguntas.append(df['metadata'][0]['minipreguntas'][i]['minipregunta'])
 
-            if i == 3:        
-                self.respuesta_prof = self.respuesta_prof + self.minirespuestas[i] 
-            else:
-                self.respuesta_prof = self.respuesta_prof + self.minirespuestas[i] + ' '
+                self.indice_minipreguntas.append("minipregunta" + str(i))              
 
+                if i == 0:        
+                    self.respuesta_prof = self.respuesta_prof + self.minirespuestas[i] 
+                else:
+                    self.respuesta_prof = self.respuesta_prof + ' ' + self.minirespuestas[i] 
+                
+                i+=1
+        except:
+            self.indice_minipreguntas.append("respuesta_completa")
 
-        self.minirespuestas.append(self.respuesta_prof)
-            
+        self.minirespuestas.append(self.respuesta_prof)           
 
 
 
@@ -178,8 +184,15 @@ class Plentas():
         output_json=[]
         nota_spacy= dict()
         nota_spacy_reducido = dict()
+
+        nota_spacy_experimento = dict()
+        mse = []
+        loge = []
             
         notas=[]
+
+        leg_FH =[]
+        leg_mu = []
         df = self.answersDF
         df = pd.DataFrame(df)
         #rango = list(range(0,4)) + list(range(6,9))
@@ -205,16 +218,42 @@ class Plentas():
             nota_prof = df['nota'][id]
             notas.append(nota_prof)
 
+            #self.notas_calculadas["ID"].append(ID)
+            
+
             nota_spacy[ID] = dict()
             nota_spacy_reducido[ID] = dict()
 
+            nota_spacy_experimento[ID] = dict()
+
             if respuesta_alumno_raw == '':
+                
+                for minipregunta in self.indice_minipreguntas:
+                    nota_spacy[ID][minipregunta]= [0]
+                    nota_spacy_reducido[ID][minipregunta]= [0]
+                    nota_spacy_experimento[ID][minipregunta] = dict()
+                    nota_spacy_experimento[ID][minipregunta]["Nota"] = dict()
+
+                    for umbralL, umbralH in zip(self.min_umbral, self.max_umbral):
+                        nota_spacy_experimento[ID][minipregunta]["Nota"]['Umbral ' + str(umbralL) + ' - ' + str(umbralH)] = 0
+
+                for umbralL, umbralH in zip(self.min_umbral, self.max_umbral):
+                    self.notas_calculadas['Umbral ' + str(umbralL) + ' - ' + str(umbralH)].append(0)
+                    self.plot_loge['Umbral ' + str(umbralL) + ' - ' + str(umbralH)].append(0)
+                    self.plot_mse['Umbral ' + str(umbralL) + ' - ' + str(umbralH)].append(0)
+                    self.plot_resta['Umbral ' + str(umbralL) + ' - ' + str(umbralH)].append(0)
+                        
+
+                
                 #print('El alumno no ha contestado a la pregunta')                
-                for a in range(5):
-                    if a == 4:
-                        nota_spacy[ID]["respuesta_completa"]= [0]
-                    else:
-                        nota_spacy[ID]["minipregunta" + str(a)] = [0]
+ 
+                leg_FH.append(0)
+                leg_mu.append(0)
+
+
+                
+                #err = round(mean_squared_error([nota_prof], [0]), 4)
+                #mse.append(err)
 
 
                         
@@ -254,24 +293,22 @@ class Plentas():
                     FH, legibilidad_fh = FHuertas_index(sentencesLenght, wordsLenght, syll)
                     mu, legibilidad_mu = mu_index(sentencesLenght, wordsLenght, letter_per_word)
 
+                    leg_FH.append(FH)
+                    leg_mu.append(mu)
+
                 if self.Semantica:
 
-                    for minirespuesta, indx in zip(self.minirespuestas, range(5)):
+                    for minirespuesta, minipregunta in zip(self.minirespuestas, self.indice_minipreguntas):
 
-                        if indx == 4:
-                            nota_spacy[ID]["respuesta_completa"]= []
-                            nota_spacy_reducido["respuesta_completa"]= []
-                        else:
-                            nota_spacy[ID]["minipregunta" + str(indx)] = [] 
-                            nota_spacy_reducido[ID]["minipregunta" + str(indx)] = []                       
+                        nota_spacy[ID][minipregunta]= []
+                        nota_spacy_reducido[ID][minipregunta]= []
+                        #nota_spacy_experimento[ID][minipregunta]= []
+             
  
                         if self.setFrases == 0:
                             student_keywords, similar = self.__ApplySemanticFunctions(respuesta_alumno_raw, minirespuesta)
 
-                            if indx == 4:
-                                nota_spacy[ID]["respuesta_completa"].append(["All lines", student_keywords, similar])
-                            else:
-                                nota_spacy[ID]["minipregunta" + str(indx)].append(["All lines", student_keywords, similar])
+                            nota_spacy[ID][minipregunta].append(["All lines", student_keywords, similar])
 
                         else:           
                         
@@ -283,11 +320,19 @@ class Plentas():
                                 sentences.append(token)
 
                             if self.setFrases == 1:
-
+                                nota_spacy_experimento[ID][minipregunta] = dict()
+                                
                                 for number in list(range(int(self.configDf["Parametros_Analisis"]["Semantica"]["frases"]["Agrupacion"]["Minimo"]),int(self.configDf["Parametros_Analisis"]["Semantica"]["frases"]["Agrupacion"]["Maximo"] + 1))):
-                                    print(f'\n\n\n\n{sentences}\n\n')                            
+                                    
+                                    #print(f'\n\n\n\n{sentences}\n\n')
+                                    nota_spacy_experimento[ID][minipregunta][number] = dict()
+                                    nota_spacy_experimento[ID][minipregunta][number]["MaxSimilitud"] = 0
+                                    nota_spacy_experimento[ID][minipregunta][number]["Frase"] = ""
+                                    nota_spacy_experimento[ID][minipregunta][number]["Lineas"] = ""
+
+
                                     for s in range(len(sentences)):
-                                        print(f'{s} {number} {len(sentences)}')
+                                        #print(f'{s} {number} {len(sentences)}')
                                         new_respuesta = ""
 
                                         try:                                       
@@ -296,8 +341,8 @@ class Plentas():
                                                 new_respuesta= new_respuesta + line + '. '
                                                 
                                             respuesta_alumno = new_respuesta.lower()
-                                            print(f'+++++++++++++++++++++++++++++++++++++++++++++++')
-                                            print(f'Esto es lo que quiero\n {respuesta_alumno}')
+                                            #print(f'+++++++++++++++++++++++++++++++++++++++++++++++')
+                                            #print(f'Esto es lo que quiero\n {respuesta_alumno}')
                                             respuesta_alumno = respuesta_alumno.lower()
                                             student_keywords, similar = self.__ApplySemanticFunctions(respuesta_alumno, minirespuesta)
 
@@ -307,10 +352,12 @@ class Plentas():
                                             else:                                                
                                                 r_name = "Lines " + str(s+1) + " - " + str(s+number)
 
-                                            if indx == 4:
-                                                nota_spacy[ID]["respuesta_completa"].append([r_name, student_keywords, similar])
-                                            else:
-                                                nota_spacy[ID]["minipregunta" + str(indx)].append([r_name, student_keywords, similar])
+                                            nota_spacy[ID][minipregunta].append([r_name, student_keywords, similar])
+
+                                            if similar > nota_spacy_experimento[ID][minipregunta][number]["MaxSimilitud"]:
+                                                nota_spacy_experimento[ID][minipregunta][number]["MaxSimilitud"] = similar
+                                                nota_spacy_experimento[ID][minipregunta][number]["Frase"] = respuesta_alumno
+                                                nota_spacy_experimento[ID][minipregunta][number]["Lineas"] = r_name
 
                                         except:
                                             break
@@ -349,14 +396,11 @@ class Plentas():
                                     r_name = r_name + str(int(line)) + " "
 
                                 respuesta_alumno = new_respuesta.lower()
-                                print(f'{sentences}\n\n')
-                                print(f'{respuesta_alumno}')
+                                #print(f'{sentences}\n\n')
+                                #print(f'{respuesta_alumno}')
                                 student_keywords, similar = self.__ApplySemanticFunctions(respuesta_alumno, minirespuesta)
 
-                                if indx == 4:
-                                    nota_spacy[ID]["respuesta_completa"].append([r_name, student_keywords, similar])
-                                else:
-                                    nota_spacy[ID]["minipregunta" + str(indx)].append([r_name, student_keywords, similar])
+                                nota_spacy[ID][minipregunta].append([r_name, student_keywords, similar])
 
 
                 #print(f'{semantica_output}')
@@ -366,27 +410,68 @@ class Plentas():
                 
                 notaSpacy = 0
                 esSuperior = 0
+                esIntermedio = 0
+
+
+
                 
+                nota_spacy_experimento[ID][minipregunta]["Nota"] = dict()
 
-                for pregunta in nota_spacy[ID]:
-                    nota_spacy_reducido[ID][pregunta] = []
-                    for info in nota_spacy[ID][pregunta]:
-                        print(f'{info[2]}\n\n')
-                        try:
-                            if info[2] > self.MinSpacySimilar:
-                                esSuperior = 1
-                                nota_spacy_reducido[ID][pregunta].append(info)                           
-                                
-                        except:
-                            continue 
-                    if esSuperior: 
-                        notaSpacy +=1
-                    esSuperior = 0   
+                for umbralL, umbralH in zip(self.min_umbral, self.max_umbral):
+                    nota_spacy_experimento[ID][minipregunta]["Nota"]['Umbral ' + str(umbralL) + ' - ' + str(umbralH)] = 0
+                    
+
+                    for pregunta in nota_spacy[ID]:
+                        if pregunta != "respuesta_completa":
+                            nota_spacy_reducido[ID][pregunta] = []
+
+                            #nota_spacy_experimento[ID][minipregunta]["Nota"][] = ""
+                            
+                            for info in nota_spacy[ID][pregunta]:
+                                #print(f'{info[2]}\n\n')
+                                try:
+                                    if info[2] >= umbralL:
+                                        if info[2] <= umbralH:
+                                            nota_spacy_reducido[ID][pregunta].append(info)
+                                            if not esSuperior:
+                                                esIntermedio = 1
+                                        else:
+                                            esIntermedio = 0
+                                            esSuperior = 1
+                                                                    
+                                except:
+                                    continue
+
+                        if esSuperior: 
+                            notaSpacy +=1
+                        elif esIntermedio:
+                            notaSpacy += 0.5
+
+                        esSuperior = 0
+                        esIntermedio = 0
+
+                    nota_spacy_experimento[ID][minipregunta]["Nota"]['Umbral ' + str(umbralL) + ' - ' + str(umbralH)] = notaSpacy/4
+
+                    self.notas_calculadas['Umbral ' + str(umbralL) + ' - ' + str(umbralH)].append(notaSpacy/4)
+
+                    self.plot_loge['Umbral ' + str(umbralL) + ' - ' + str(umbralH)].append(round(mean_squared_log_error([nota_prof], [notaSpacy/4]), 4))
+
+                    self.plot_mse['Umbral ' + str(umbralL) + ' - ' + str(umbralH)].append(round(mean_squared_error([nota_prof], [notaSpacy/4]), 4))
+
+                    self.plot_resta['Umbral ' + str(umbralL) + ' - ' + str(umbralH)].append(round(nota_prof - (notaSpacy/4), 4))
 
 
-                err = round(mean_squared_error(notas, [notaSpacy/4]), 4) 
-                print(f'error {err} nota {notas} notaspacy{notaSpacy/4} \n') 
+                    notaSpacy = 0
+
+                
+                """
+                self.notas_calculadas.append(notaSpacy/4)
+                err = round(mean_squared_error([nota_prof], [notaSpacy/4]), 4)
+                #print(f'error {err} nota {nota_prof} notaspacy{notaSpacy/4} \n') 
                 #print(f'Error cuadrático medio entre la nota del profesor y la obtenida con spacy: {err*100}%')
+                mse.append(err)
+
+                """
 
 
                 """""
@@ -412,14 +497,14 @@ class Plentas():
                 nota_Sintaxis = self.PesoSntxis_FH * FH/100 + self.PesoSntxis_Mu * mu/100
                 
                 #print(f'AAAAAAAAAAA\n\n{self.IdentifiedKW.showMarks()}\n\n')
-                
+                """
                 student_dict = { 'ID': ID, 'Errores ortograficos': [errores, mistakes], 'Nota en Ortografía': nota_Ortografia,
                                 'Frases utilizadas para responder a la pregunta': sentencesLenght,
                                 'Palabras utilizadas para responder a la pregunta': wordsLenght,
                                 'Index Fernandez Huerta': FH, 'Legibilidad F-H': legibilidad_fh,
                                 'mu index': mu, 'Legibilidad Mu': legibilidad_mu,'Nota en Sintaxis': nota_Sintaxis,
                                 'Análisis por frase': nota_spacy_reducido[ID],'Keywords alumno': self.file_marks[ID], 'Keyword profesor': self.prof_keywords, 'Justificación de esos keywords': self.file_feedback[ID], 'Nota en Semantica': nota_Semantica, 'Nota profesor': nota_prof}
-
+                """
                 student_dict = { 'ID': ID,
                 'Ortografia': {              
                         'Errores ortograficos': [errores, mistakes], 'Nota en Ortografía': nota_Ortografia},
@@ -429,13 +514,114 @@ class Plentas():
                     'Index Fernandez Huerta': FH, 'Legibilidad F-H': legibilidad_fh,
                     'mu index': mu, 'Legibilidad Mu': legibilidad_mu,'Nota en Sintaxis': nota_Sintaxis},
                 'Semantica':{
-                    'Keywords alumno (auto)': nota_spacy_reducido[ID],'Keywords alumno': self.file_marks[ID], 'Keyword profesor': self.prof_keywords, 'Justificación de esos keywords': self.file_feedback[ID], 'Nota en Semantica': nota_Semantica, 'Nota profesor': nota_prof}}
+                    'Keywords alumno (auto)': None,'Keywords alumno': self.file_marks[ID], 'Keyword profesor': self.prof_keywords, 'Justificación de esos keywords': self.file_feedback[ID], 'Nota en Semantica': nota_Semantica, 'Nota profesor': nota_prof}}
 
+                #nota_spacy_reducido[ID]
                 output_json.append(student_dict)
                 #nota_spacy = []
-                notas = []            
+                #notas = []
+                # notas
+
+                
+
+        print(f'\n\n{self.notas_calculadas}\n\n') 
+        for el in self.notas_calculadas:
+            print(f'\n\n Notas calculadas: {len(self.notas_calculadas[el])}')
+
+        print(f'Notas spacy reducido:{len(nota_spacy_reducido)} Notas spacy experimento: {len(nota_spacy_experimento)} Notas spacy: {len(nota_spacy)} Notas reales: {len(notas)} \n\n')
+
+        #import pandas as pd
+
+        df2 = pd.DataFrame()
+
+        df2["Nota Real"] = notas
+        loge.append(0)
+        mse.append(0)
+
+        
+        for intervalo_umbral in self.notas_calculadas:
+            print(f'{intervalo_umbral}')
+            if intervalo_umbral == "ID":
+                continue
+            else:
+                plotExperimento(self.notas_calculadas[intervalo_umbral], notas, str(intervalo_umbral)+'.png')
+                df2[str(intervalo_umbral)] = self.notas_calculadas[intervalo_umbral]
+                loge.append(round(mean_squared_log_error(notas, self.notas_calculadas[intervalo_umbral]), 4))
+                mse.append(round(mean_squared_error(notas, self.notas_calculadas[intervalo_umbral]), 4))
+
+                plotExperimento3(str(intervalo_umbral) + 'MSE.png', self.plot_mse[intervalo_umbral])
+                plotExperimento3(str(intervalo_umbral) + 'LOGE.png', self.plot_loge[intervalo_umbral])
+
+                plotExperimento3(str(intervalo_umbral) + 'Diferencia.png', self.plot_resta[intervalo_umbral])
+
+                plotExperimento(self.plot_mse[intervalo_umbral], [], str(intervalo_umbral) + 'plotMSE.png')
+                plotExperimento(self.plot_loge[intervalo_umbral], [], str(intervalo_umbral) + 'plotLOGE.png')
+    
+        
+        
+        plotExperimento2("Ejemplo.png", df2)
+
+        df2.loc[len(notas) + 1]= mse
+        df2.loc[len(notas) + 2]= loge
+
+
+
+
+        if self.Sintaxis:
+            x = []
+            for i in range(len(notas)):
+                x.append(i)
+
+            plt.figure(figsize=(15,7))
+            plt.plot(x, leg_FH, label = "FH", color = (0.1,0.1,0.1))
+            plt.plot(x, leg_mu, label = "mu", color = (0.5,0.5,0.5))
+            plt.plot(x, np.multiply(notas, 100), '--', label = "Real marks", color = (1,0,0))
+            plt.xlabel("Student ID")
+            plt.ylabel("Valor (0-100)")
+            plt.legend(loc=1)
+            plt.title("FH vs mu")
+            plt.xticks(rotation=-45)
+            plt.grid()
+            plt.savefig("Img_FHvsMu.png")           
 
         if self.Semantica:
+            """
+            loge = round(mean_squared_log_error(notas, self.notas_calculadas), 4)
+            print(f'\n\n\n\nEl log error entre las notas reales y las calculadas es de: {loge}\n')
+            mse_error = round(mean_squared_error(notas, self.notas_calculadas), 4)
+            print(f'El log error entre las notas reales y las calculadas es de: {mse_error}\n\n\n\n')
+            x = []
+            for i in range(len(notas)):
+                x.append(i)
+
+            plt.figure(figsize=(15,7))
+            plt.plot(x, self.notas_calculadas, label = "Calculated Marks", color = (0.1,0.1,0.1))
+            plt.plot(x, notas, '--', label = "Real marks", color = (0.5,0.5,0.5))
+            plt.xlabel("Student ID")
+            plt.ylabel("Calification (0-1)")
+            plt.legend(loc=1)
+            plt.title("Real vs Calculated Marks")
+            plt.xticks(rotation=-45)
+            plt.grid()
+            plt.savefig("Img_RealvsCalculatedMarks.png")
+
+
+            x = []
+            for i in range(len(notas)):
+                x.append(i)
+
+            plt.figure(figsize=(15,7))
+            plt.plot(x, mse, label = "Mean Squared Error", color = (0.1,0.1,0.1))
+            plt.xlabel("Student ID")
+            plt.ylabel("MSE")
+            plt.legend(loc=1)
+            plt.title("MSE Real vs Calculated Marks")
+            plt.xticks(rotation=-45)
+            plt.grid()
+            plt.savefig("Img_MSERealvsCalculatedMarks.png")
+
+            """  
+
             # Serializing json 
             json_object = json.dumps(nota_spacy, indent = 11, ensure_ascii= False) 
             # Writing output to a json file
@@ -446,6 +632,15 @@ class Plentas():
             # Writing output to a json file
             with open("AnalisisSemanticoReducido.json", "w") as outfile:
                 outfile.write(json_object)
+
+            json_object = json.dumps(nota_spacy_experimento, indent = 11, ensure_ascii= False) 
+            # Writing output to a json file
+            with open("ExperimentoSemantica.json", "w") as outfile:
+                outfile.write(json_object)
+
+ 
+            df2.to_excel('NotasExperiment.xlsx', sheet_name='notas')
+            
 
         # Serializing json 
         json_object = json.dumps(output_json, indent = 11, ensure_ascii= False) 
