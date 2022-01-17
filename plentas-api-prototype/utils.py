@@ -258,8 +258,27 @@ def clean_words(string):
 
 def getNameFile(string):
     directories = string.split("/")
-
     return re.sub(".json","", directories[len(directories)-1])
+
+
+def getIDrange(rango_ID, df):
+    if rango_ID == "All":
+        IDs = list(range(len(df['hashed_id'])))
+    else:
+        rango = []
+        r= rango_ID.split(",")
+        for i in r:
+            c_w= clean_words(i)
+            if len(c_w) == 2:
+                rango= rango + list(range(int(c_w[0]),int(c_w[1]) + 1))
+            elif len(c_w) == 1:
+                rango= rango + list(range(int(c_w[0]),int(c_w[0]) +1))
+        IDs = rango
+
+    return IDs
+
+
+
         
         
         
