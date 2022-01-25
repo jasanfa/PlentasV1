@@ -82,6 +82,16 @@ class GetSettings():
         self.similarity_type = 0
         self.notas = []
         self.nota_prof = 0
+        self.student_dict = { 'ID': None,
+                'Ortografia': {              
+                        'Errores ortograficos': None, 'Nota en Ortografía': None},
+                'Sintaxis': {
+                    'Frases utilizadas para responder a la pregunta': None,
+                    'Palabras utilizadas para responder a la pregunta': None,
+                    'Index Fernandez Huerta': None, 'Legibilidad F-H': None,
+                    'mu index': None, 'Legibilidad Mu': None,'Nota en Sintaxis': None},
+                'Semantica':{
+                    'Keywords alumno (auto)': None,'Keywords alumno': None, 'Keyword profesor': None, 'Justificación de esos keywords': None, 'Nota en Semantica': None, 'Nota profesor': None}}
                
         
 
@@ -123,11 +133,11 @@ class GetSettings():
 
 class Semantica():
     def __init__(self, KwSearch, settings):
-        print(f'Aqui las funciones de semantica')
+        #print(f'Aqui las funciones de semantica')
         self.KwSearch = KwSearch
 
         if self.KwSearch:
-            print(f'\n\n Buscando KW ..... \n\n')
+            #print(f'\n\n Buscando KW ..... \n\n')
             #Cargar/generar información de la búsqueda aumentada de palabras clave
             try:
                 os.mkdir('__appcache__')
@@ -154,6 +164,8 @@ class Semantica():
         return self.file_feedback, self.file_marks,self.file_feedbackDistrib, self.file_marksDistrib
 
     def Analysis(self,settings, studentID, respuesta_alumno_raw):
+
+        settings.student_dict["Semantica"]["Keyword profesor"] = settings.prof_keywords
 
         if respuesta_alumno_raw == '':                
             for minipregunta in settings.indice_minipreguntas:
@@ -184,6 +196,10 @@ class Semantica():
             for minirespuesta, minipregunta in zip(settings.minirespuestas, settings.indice_minipreguntas):
                 if settings.kwExtractor:
                     student_keywords = self.__KeywordExtractor__(settings, respuesta_alumno_raw)
+                    settings.student_dict["Semantica"]["Keywords alumno"] = self.file_marks[studentID]
+                    settings.student_dict["Semantica"]["Justificación de esos keywords"] = self.file_feedback[studentID]
+                    
+
                 if settings.similarity_type == 0:
                     self.output.nota_spacy = self.__createDict__(self.output.nota_spacy, studentID,minipregunta)
                     self.output.nota_spacy_reducido = self.__createDict__(self.output.nota_spacy_reducido, studentID,minipregunta)
@@ -215,6 +231,7 @@ class Semantica():
                                     respuesta_alumno, r_name = self.__Line2LineAnalysis__(sentences, s, number)
                                     if settings.kwExtractor:
                                         student_keywords = self.__KeywordExtractor__(settings, respuesta_alumno)
+                                        settings.student_dict["Semantica"]["Keywords alumno"] = self.file_marks[studentID]
                                     if settings.similarity_type == 0:
                                         similar = self.__SpacySimilarity__(respuesta_alumno, minirespuesta)
                                         self.output.nota_spacy[studentID][minipregunta].append([r_name, student_keywords, similar])
@@ -230,11 +247,12 @@ class Semantica():
                         respuesta_alumno, r_name = self.__Set2LineAnalysis__(settings,sentences)
                         if settings.kwExtractor:
                             student_keywords = self.__KeywordExtractor__(settings, respuesta_alumno)
+                            settings.student_dict["Semantica"]["Keywords alumno"] = self.file_marks[studentID]
                         if settings.similarity_type == 0:
                             similar = self.__SpacySimilarity__(respuesta_alumno, minirespuesta)
                             self.output.nota_spacy[studentID][minipregunta].append([r_name, student_keywords, similar])
                 
-                print(f'\n\n{self.output.nota_spacy}{self.output.nota_spacy_reducido}{self.output.nota_spacy_experimento}')   
+                #print(f'\n\n{self.output.nota_spacy}{self.output.nota_spacy_reducido}{self.output.nota_spacy_experimento}')   
             self.EvaluationMethod(settings,studentID)
     def saveResults(self, settings):
         self.output.saveSimilarityResults(settings)
@@ -310,11 +328,16 @@ class Semantica():
         else:
             stdnt_kw = keyword_extractor(respuesta_alumno, int(settings.NMaxKeywords), 'es', int(settings.TVentana), float(settings.Deduplication_threshold), settings.Features)
 
+        settings.student_dict["Semantica"]["Keywords alumno (auto)"] = stdnt_kw
+
         return stdnt_kw
  
     def __SpacySimilarity__(self, respuesta_alumno, respuesta_profesor):
         doc1 = nlp(respuesta_alumno)
         doc2 = nlp(respuesta_profesor)
+
+        print(f'\nRespuesta del alumno: \n{doc1.text}\n{doc1.vector}')
+        print(f'\n\n Respuesta del profesor: \n{doc2.text}\n{doc2.vector}')
         similar = round(doc1.similarity(doc2), 3)
         return similar
     
@@ -332,7 +355,7 @@ class Semantica():
 
             for umbralL, umbralH in zip(self.output.min_umbral, self.output.max_umbral):
                 self.output.nota_spacy_experimento[studentID]["Nota"]['Umbral ' + str(umbralL) + ' - ' + str(umbralH)] = 0
-                print(f'\n\n{self.output.nota_spacy}')
+                #print(f'\n\n{self.output.nota_spacy}')
                 for pregunta in self.output.nota_spacy[studentID]:
                     if pregunta != "respuesta_completa":
                         self.output.nota_spacy_reducido[studentID][pregunta] = []
@@ -370,15 +393,22 @@ class Semantica():
 
                 self.output.plot_resta['Umbral ' + str(umbralL) + ' - ' + str(umbralH)].append(round(settings.nota_prof - (notaSpacy/4), 4))
 
-                notaSpacy = 0 
+                nota_Semantica = settings.PesoSmntca_Similitud * notaSpacy/4 + settings.PesoSmntca_KW * float(re.sub("Nota: ","",self.file_marks[studentID][1]))
+
+                settings.student_dict["Semantica"]["Nota en Semantica"] = nota_Semantica
+
+                notaSpacy = 0
+
+
 
 
 class Ortografia ():
     def __init__(self):
-        print(f'Aqui lo de ortografia')
+        #print(f'Aqui lo de ortografia')
         self.output = OrtographicOutput()
     
     def Analysis(self,settings, respuesta_alumno):
+        nota_Orto = 0
         if respuesta_alumno == '':
             self.output.notaOrtografia.append(0)
         else:
@@ -396,14 +426,16 @@ class Ortografia ():
                 if nota_Orto < 0:
                     nota_Orto = 0
 
-                self.output.notaOrtografia.append(nota_Orto) 
+                self.output.notaOrtografia.append(nota_Orto)
+            settings.student_dict["Ortografia"]["Errores ortograficos"] = [errores, mistakes]
+        settings.student_dict["Ortografia"]["Nota en Ortografía"] = nota_Orto
 
 class Sintaxis ():
     def __init__(self):
-        print(f'Aqui lo de sintaxis')
+        #print(f'Aqui lo de sintaxis')
         self.output = SintacticOutput()
 
-    def Analysis(self, respuesta_alumno):
+    def Analysis(self, settings, respuesta_alumno):
         if respuesta_alumno == '':
             self.output.leg_FH.append(0)
             self.output.leg_mu.append(0)
@@ -415,6 +447,17 @@ class Sintaxis ():
 
             self.output.leg_FH.append(FH)
             self.output.leg_mu.append(mu)
+
+            nota_Sintaxis = settings.PesoSntxis_FH * FH/100 + settings.PesoSntxis_Mu * mu/100        
+        
+            settings.student_dict["Sintaxis"]["Frases utilizadas para responder a la pregunta"] = sentencesLenght
+            settings.student_dict["Sintaxis"]["Palabras utilizadas para responder a la pregunta"] = wordsLenght
+            settings.student_dict["Sintaxis"]["Index Fernandez Huerta"] = FH
+            settings.student_dict["Sintaxis"]["Legibilidad F-H"] = legibilidad_fh
+            settings.student_dict["Sintaxis"]["mu index"] = mu
+            settings.student_dict["Sintaxis"]["Legibilidad Mu"] = legibilidad_mu
+            settings.student_dict["Sintaxis"]["Nota en Sintaxis"] = nota_Sintaxis
+
 
     def saveResults(self, settings):
         self.output.saveLegibilityResults(settings)
@@ -446,21 +489,24 @@ class SemanticOutput():
         self.plot_resta = copy.deepcopy(self.notas_calculadas)
 
 
-        print(f'\n\n Umbrales spacy: {self.min_umbral}{self.max_umbral}\n\n')
+        #print(f'\n\n Umbrales spacy: {self.min_umbral}{self.max_umbral}\n\n')
 
     def plotExperimento(self,notas, y, save_file = "Img_MSERealvsCalculatedMarks.png", labelx = "Student studentID", labely = "MSE", title = "MSE Real vs Calculated Marks"):
         
         try:
-            os.mkdir('__ImagenesExperimento2')
+            os.mkdir('Images')
         except:
-            pass
+            try:
+                os.mkdir('Images/ImagenesExperimento2')
+            except:    
+                pass
         
-        print(f'AAAAAAAAAAAAAAAA{y}')
+        #print(f'AAAAAAAAAAAAAAAA{y}')
         x = []
         for i in range(len(notas)):
             x.append(i)
-        print(f'AAAAAdddAAAAAAAAAAA{x}')
-        print(f'AATengo esto{notas}')
+        #print(f'AAAAAdddAAAAAAAAAAA{x}')
+        #print(f'AATengo esto{notas}')
         plt.figure(figsize=(15,7))
         plt.plot(x, notas, label = "Calculated Marks", color = (0.1,0.1,0.1))
         if len(y) >1:
@@ -472,15 +518,18 @@ class SemanticOutput():
         plt.title(title)
         plt.xticks(rotation=-45)
         plt.grid()
-        plt.savefig("__ImagenesExperimento2/"+save_file)
+        plt.savefig("Images/ImagenesExperimento2/"+save_file)
         plt.cla()
 
     def plotExperimento2(self, save_file, df):
 
         try:
-            os.mkdir('__ImagenesExperimento')
+            os.mkdir('Images')
         except:
-            pass
+            try:
+                os.mkdir('Images/ImagenesExperimento')
+            except:    
+                pass
 
         real_marks_category = list(set(df["Nota Real"]))
         real_marks_category.sort()
@@ -495,24 +544,27 @@ class SemanticOutput():
                             cmpMarks_list.append([df[col_name][i],df["Nota Real"][i]])
 
             cmpMarks_list = np.array(cmpMarks_list)
-            print(f'{cmpMarks_list}\n\n')
-            print(f'aa{cmpMarks_list[:, 0].astype(np.float32)}')
+            #print(f'{cmpMarks_list}\n\n')
+            #print(f'aa{cmpMarks_list[:, 0].astype(np.float32)}')
             plt.scatter(cmpMarks_list[:, 1].astype(np.float32), cmpMarks_list[:, 0].astype(np.float32), edgecolors=(0, 0, 0), alpha = 0.4)
             plt.plot([0.0, 1.0], [0.0, 1.0],
             'k--', color = 'black', lw=2)
             plt.title('Valor predicho vs valor real' + str(col_name), fontsize = 10, fontweight = "bold")
             plt.xlabel("Real")
             plt.ylabel("Predicción")
-            plt.savefig("__ImagenesExperimento/"+ str(col_name)+save_file)
+            plt.savefig("Images/ImagenesExperimento/"+ str(col_name)+save_file)
             plt.cla()
             #plt.show()
             del cmpMarks_list
 
     def plotExperimento3(self, save_file, x):
         try:
-            os.mkdir('__ImagenesExperimento3')
+            os.mkdir('Images')
         except:
-            pass
+            try:
+                os.mkdir('Images/ImagenesExperimento3')
+            except:    
+                pass
 
         ax= sns.histplot(
                 data    = x,
@@ -523,7 +575,7 @@ class SemanticOutput():
         ax.set(xlabel='Deviation', ylabel='Count')
 
         figure = ax.get_figure()    
-        figure.savefig("__ImagenesExperimento3/"+save_file)
+        figure.savefig("Images/ImagenesExperimento3/"+save_file)
         del figure
         ax.cla()
 
@@ -534,14 +586,13 @@ class SemanticOutput():
         self.loge.append(0)
         self.mse.append(0)
 
-
         
         for intervalo_umbral in self.notas_calculadas:
-            print(f'{intervalo_umbral}')
+            #print(f'{intervalo_umbral}')
             if intervalo_umbral == "ID":
                 continue
             else:
-                print(f'BBBBBBBBBBBB{self.notas_calculadas[intervalo_umbral]}')
+                #print(f'BBBBBBBBBBBB{self.notas_calculadas[intervalo_umbral]}')
                 self.plotExperimento(self.notas_calculadas[intervalo_umbral],settings.notas, str(intervalo_umbral)+'.png')
                 df2[str(intervalo_umbral)] = self.notas_calculadas[intervalo_umbral]
                 self.loge.append(round(mean_squared_log_error(settings.notas, self.notas_calculadas[intervalo_umbral]), 4))
@@ -561,23 +612,29 @@ class SemanticOutput():
         df2.loc[len(settings.notas) + 1]= self.mse
         df2.loc[len(settings.notas) + 2]= self.loge
 
+
+        try:
+            os.mkdir('OutputFiles')
+        except:
+            pass
+
         # Serializing json 
         json_object = json.dumps(self.nota_spacy, indent = 11, ensure_ascii= False) 
         # Writing output to a json file
-        with open("AnalisisSemantico.json", "w") as outfile:
+        with open("OutputFiles/AnalisisSemantico.json", "w") as outfile:
             outfile.write(json_object)
 
         json_object = json.dumps(self.nota_spacy_reducido, indent = 11, ensure_ascii= False) 
         # Writing output to a json file
-        with open("AnalisisSemanticoReducido.json", "w") as outfile:
+        with open("OutputFiles/AnalisisSemanticoReducido.json", "w") as outfile:
             outfile.write(json_object)
 
         json_object = json.dumps(self.nota_spacy_experimento, indent = 11, ensure_ascii= False) 
         # Writing output to a json file
-        with open("ExperimentoSemantica.json", "w") as outfile:
+        with open("OutputFiles/ExperimentoSemantica.json", "w") as outfile:
             outfile.write(json_object)
 
-        df2.to_excel('NotasExperiment.xlsx', sheet_name='notas')
+        df2.to_excel('OutputFiles/NotasExperiment.xlsx', sheet_name='notas')
 
 class SintacticOutput():
     def __init__(self):
@@ -585,6 +642,15 @@ class SintacticOutput():
         self.leg_mu = []
 
     def saveLegibilityResults(self, settings):
+
+        try:
+            os.mkdir('Images')
+        except:
+            try:
+                os.mkdir('Images/Sintaxis')
+            except:    
+                pass
+
             x = []
             for i in range(len(settings.notas)):
                 x.append(i)
@@ -599,7 +665,7 @@ class SintacticOutput():
             plt.title("FH vs mu")
             plt.xticks(rotation=-45)
             plt.grid()
-            plt.savefig("Img_FHvsMu.png")   
+            plt.savefig("Images/Sintaxis/Img_FHvsMu.png")   
  
 class OrtographicOutput():
     def __init__(self):

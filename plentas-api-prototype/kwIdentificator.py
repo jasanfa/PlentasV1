@@ -15,8 +15,8 @@ import re
 
 def loadHMMInfo():
     #Loading HMM probability tables
-    Pobs_aux= pd.read_excel(open('Total_Emission.xlsx', 'rb'))
-    Ptrans_aux= pd.read_excel(open('Total_Transmision.xlsx', 'rb'))
+    Pobs_aux= pd.read_excel(open('__appcache__/Total_Emission.xlsx', 'rb'))
+    Ptrans_aux= pd.read_excel(open('__appcache__/Total_Transmision.xlsx', 'rb'))
     Pobs=Pobs_aux
     Pobs = Pobs.set_index('Unnamed: 0')
     Pobs.index.names = [None]
@@ -25,7 +25,7 @@ def loadHMMInfo():
     Ptrans.index.names = [None]
 
     #Loading the dictionary of lemmas
-    LemmaDictionary = np.load('DiccionarioLemas.npy', allow_pickle='TRUE')
+    LemmaDictionary = np.load('__appcache__/DiccionarioLemas.npy', allow_pickle='TRUE')
     LemmaDictionary = LemmaDictionary.item()
 
     return Pobs, Ptrans, LemmaDictionary
