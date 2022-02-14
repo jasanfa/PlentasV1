@@ -111,6 +111,7 @@ class GetSettings():
         self.enunciado = df['metadata'][0]['enunciado']
         self.prof_keywords = df['metadata'][0]['keywords']
 
+        
         try:
             i=0
             while True:
@@ -129,7 +130,16 @@ class GetSettings():
         except:
             self.indice_minipreguntas.append("respuesta_completa")
 
-        self.minirespuestas.append(self.respuesta_prof)           
+        self.minirespuestas.append(self.respuesta_prof) 
+
+        info_profesor = []
+        for minipregunta, minirespuesta in zip(self.minipreguntas, self.minirespuestas):
+            info_profesor.append([minipregunta,minirespuesta])
+
+        json_object = json.dumps(info_profesor, indent = 11, ensure_ascii= False) 
+        # Writing output to a json file
+        with open("OutputFiles/MinirespuestasProfesor.json", "w") as outfile:
+            outfile.write(json_object)         
 
 class Semantica():
     def __init__(self, KwSearch, settings):
@@ -203,11 +213,16 @@ class Semantica():
                 if settings.similarity_type == 0:
                     self.output.nota_spacy = self.__createDict__(self.output.nota_spacy, studentID,minipregunta)
                     self.output.nota_spacy_reducido = self.__createDict__(self.output.nota_spacy_reducido, studentID,minipregunta)
+                    self.output.nota_spacy_experimento = self.__createDict__(self.output.nota_spacy_experimento, studentID, minipregunta, 1)
 
                 if settings.grpSntncsMde == 0:
                     if settings.similarity_type == 0:                        
                         similar = self.__SpacySimilarity__(respuesta_alumno_raw, minirespuesta)
                         self.output.nota_spacy[studentID][minipregunta].append(["All lines", student_keywords, similar])
+
+                        self.output.nota_spacy_experimento[studentID][minipregunta]["MaxSimilitud"] = similar
+                        self.output.nota_spacy_experimento[studentID][minipregunta]["Frase"] = respuesta_alumno
+                        self.output.nota_spacy_experimento[studentID][minipregunta]["Lineas"] = "All lines"
                 else:           
                 
                     sentences=[]                        
@@ -218,7 +233,7 @@ class Semantica():
                         sentences.append(token)
 
                     if settings.grpSntncsMde == 1:
-                        self.output.nota_spacy_experimento = self.__createDict__(self.output.nota_spacy_experimento, studentID, minipregunta, 1)
+                        #self.output.nota_spacy_experimento = self.__createDict__(self.output.nota_spacy_experimento, studentID, minipregunta, 1)
                         for number in list(range(int(settings.configDf["Parametros_Analisis"]["Semantica"]["frases"]["Agrupacion"]["Minimo"]),int(settings.configDf["Parametros_Analisis"]["Semantica"]["frases"]["Agrupacion"]["Maximo"] + 1))): 
                             #print(f'\n\n\n\n{sentences}\n\n')
                             self.output.nota_spacy_experimento[studentID][minipregunta][number] = dict()
@@ -228,29 +243,33 @@ class Semantica():
 
                             for s in range(len(sentences)):
                                 try:
-                                    respuesta_alumno, r_name = self.__Line2LineAnalysis__(sentences, s, number)
+                                    r_alumno, r_name = self.__Line2LineAnalysis__(sentences, s, number)
                                     if settings.kwExtractor:
-                                        student_keywords = self.__KeywordExtractor__(settings, respuesta_alumno)
+                                        student_keywords = self.__KeywordExtractor__(settings, r_alumno)
                                         settings.student_dict["Semantica"]["Keywords alumno"] = self.file_marks[studentID]
                                     if settings.similarity_type == 0:
-                                        similar = self.__SpacySimilarity__(respuesta_alumno, minirespuesta)
+                                        similar = self.__SpacySimilarity__(r_alumno, minirespuesta)
                                         self.output.nota_spacy[studentID][minipregunta].append([r_name, student_keywords, similar])
                                         if similar > self.output.nota_spacy_experimento[studentID][minipregunta][number]["MaxSimilitud"]:
                                             self.output.nota_spacy_experimento[studentID][minipregunta][number]["MaxSimilitud"] = similar
-                                            self.output.nota_spacy_experimento[studentID][minipregunta][number]["Frase"] = respuesta_alumno
+                                            self.output.nota_spacy_experimento[studentID][minipregunta][number]["Frase"] = r_alumno
                                             self.output.nota_spacy_experimento[studentID][minipregunta][number]["Lineas"] = r_name
 
                                 except:
                                     break
                                                             
                     else:
-                        respuesta_alumno, r_name = self.__Set2LineAnalysis__(settings,sentences)
+                        r_alumno, r_name = self.__Set2LineAnalysis__(settings,sentences)
                         if settings.kwExtractor:
-                            student_keywords = self.__KeywordExtractor__(settings, respuesta_alumno)
+                            student_keywords = self.__KeywordExtractor__(settings, r_alumno)
                             settings.student_dict["Semantica"]["Keywords alumno"] = self.file_marks[studentID]
                         if settings.similarity_type == 0:
-                            similar = self.__SpacySimilarity__(respuesta_alumno, minirespuesta)
+                            similar = self.__SpacySimilarity__(r_alumno, minirespuesta)
                             self.output.nota_spacy[studentID][minipregunta].append([r_name, student_keywords, similar])
+                            
+                            self.output.nota_spacy_experimento[studentID][minipregunta]["MaxSimilitud"] = similar
+                            self.output.nota_spacy_experimento[studentID][minipregunta]["Frase"] = r_alumno
+                            self.output.nota_spacy_experimento[studentID][minipregunta]["Lineas"] = r_name
                 
                 #print(f'\n\n{self.output.nota_spacy}{self.output.nota_spacy_reducido}{self.output.nota_spacy_experimento}')   
             self.EvaluationMethod(settings,studentID)
@@ -293,11 +312,36 @@ class Semantica():
                 specific_sentence.append(number)
                 #print(f'{number}')
 
-        #print(f'{len(specific_sentence)}')
+        #print(f'{specific_sentence}\n')
         r_name = "Lines "
         new_respuesta = ""
-        sntncs_lmt = 0
+        sntncs_lmt_up = 0
+        sntncs_lmt_dwn = 0
         #specific_sentence.reverse()
+
+        for line in specific_sentence:
+            #print(f'{sentences}')
+            
+            if int(line)>= len(sentences):
+                if not sntncs_lmt_up:
+                    n_line = len(sentences)
+                    new_respuesta= new_respuesta + sentences[n_line-1] + '. '
+                    r_name = r_name + str(n_line) + " - "
+                    sntncs_lmt_up = 1
+            
+            elif int(line)<= 1:
+                if not sntncs_lmt_dwn:
+                    new_respuesta= new_respuesta + sentences[0] + '. '
+                    r_name = r_name + str(1) + " - "
+                    sntncs_lmt_dwn = 1
+            
+            else:
+                new_respuesta= new_respuesta + sentences[int(line)-1] + '. '
+                r_name = r_name + line + " - "
+
+        r_name = r_name[:-3]
+
+        """
         for line in specific_sentence:
             if int(line)>len(sentences) and not sntncs_lmt:
                 if str(len(sentences)) in specific_sentence:
@@ -311,14 +355,17 @@ class Semantica():
 
             else:
                 if r_name != "Lines ":
+                    print(f'Hola\n')
                     r_name = r_name + "- "
 
             new_respuesta= new_respuesta + sentences[int(line)-1] + '. '
             r_name = r_name + str(int(line)) + " "
+        """
 
         respuesta_alumno = new_respuesta.lower()
         #print(f'{sentences}\n\n')
-        #print(f'{respuesta_alumno}')
+        print(f'{r_name}\n')
+
         return respuesta_alumno, r_name                  
 
     def __KeywordExtractor__(self, settings, respuesta_alumno):
@@ -333,12 +380,36 @@ class Semantica():
         return stdnt_kw
  
     def __SpacySimilarity__(self, respuesta_alumno, respuesta_profesor):
+        
         doc1 = nlp(respuesta_alumno)
         doc2 = nlp(respuesta_profesor)
 
+        """
+        frase1 = "El gobierno del dato es una forma de obtener datos de forma ineficiente"
+        frase2 = "El gobierno del dato es una forma de obtener datos de forma eficiente"
+        doc1 = nlp(frase1)
+        doc2 = nlp(frase2)
+
+        #print(f'\nRespuesta del alumno: \n{doc1.text}\n{doc1.vector}')
+        #print(f'\n\n Respuesta del profesor: \n{doc2.text}\n{doc2.vector}')
         print(f'\nRespuesta del alumno: \n{doc1.text}\n{doc1.vector}')
         print(f'\n\n Respuesta del profesor: \n{doc2.text}\n{doc2.vector}')
         similar = round(doc1.similarity(doc2), 3)
+        print(f'\nSimilar: {similar}\n')
+
+        frase1 = "Me estoy extendiendo a proposito, no tengo ni idea de que poner ya que esto es una prueba. El gobierno del dato es una forma de obtener datos de forma eficiente pero a veces me expreso de esta manera para enmascarar falta de conocimiento y otras veces simplemente me extiendo porque es lo que quiero. "
+        frase2 = "El gobierno del dato es una forma de obtener datos de forma eficiente"
+        doc1 = nlp(frase1)
+        doc2 = nlp(frase2)
+
+        #print(f'\nRespuesta del alumno: \n{doc1.text}\n{doc1.vector}')
+        #print(f'\n\n Respuesta del profesor: \n{doc2.text}\n{doc2.vector}')
+        print(f'\nRespuesta del alumno: \n{doc1.text}\n{doc1.vector}')
+        print(f'\n\n Respuesta del profesor: \n{doc2.text}\n{doc2.vector}')
+
+        """
+        similar = round(doc1.similarity(doc2), 3)
+        #print(f'\nSimilar: {similar}\n')
         return similar
     
     def EvaluationMethod(self,settings, studentID):
@@ -633,6 +704,9 @@ class SemanticOutput():
         # Writing output to a json file
         with open("OutputFiles/ExperimentoSemantica.json", "w") as outfile:
             outfile.write(json_object)
+
+        df3 = pd.DataFrame.from_dict(self.nota_spacy_experimento, orient='index')
+        df3.to_excel('OutputFiles/ExperimentoSemantica2.xlsx', sheet_name='notas')
 
         df2.to_excel('OutputFiles/NotasExperiment.xlsx', sheet_name='notas')
 
