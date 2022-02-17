@@ -8,7 +8,9 @@ import json
 import re
 
 import spacy
-nlp = spacy.load('es_core_news_sm')
+#nlp = spacy.load('es_core_news_sm')
+nlp = spacy.load('es_core_news_md')
+#nlp = spacy.load('es_core_news_lg')
 
 from kwIdentificator import NLP_Answers, NLP_Questions, loadHMMInfo, saveKWInfo, loadKWInfo
 from sklearn.metrics import mean_squared_error, mean_squared_log_error
@@ -100,9 +102,11 @@ class GetSettings():
         #json_file = '/Users/javier.sanz/OneDrive - UNIR/Desktop/PLeNTas_V3/biConNotaAnon.json' 
         with open(json_file, "r", encoding="utf8") as f:
             data = json.loads("[" + f.read().replace("}\n{", "},\n{") + "]")
-
-        self.answersDF = data        
+    
         df = pd.DataFrame(data)
+        self.answersDF = copy.deepcopy(df)
+        self.answersDF_json = copy.deepcopy(data)
+        
         self.minipreguntas = []
         self.minirespuestas = []
         self.indice_minipreguntas = []
@@ -151,16 +155,18 @@ class Semantica():
             #Cargar/generar información de la búsqueda aumentada de palabras clave
             try:
                 os.mkdir('__appcache__')
+            
                 Pobs, Ptrans, LemmaDictionary = loadHMMInfo()
 
-                KWfile_info = NLP_Questions(settings.answersDF,{},{}, settings.LemmaDictionary)
-                IdentifiedKW = NLP_Answers(settings.answersDF,KWfile_info.Synonyms(), KWfile_info.Antonyms(), KWfile_info.LemmatizedKeywords(), LemmaDictionary, Ptrans, Pobs, KWfile_info.Windows())
+                KWfile_info = NLP_Questions(settings.answersDF_json,{},{}, LemmaDictionary)
+                IdentifiedKW = NLP_Answers(settings.answersDF_json,KWfile_info.Synonyms(), KWfile_info.Antonyms(), KWfile_info.LemmatizedKeywords(), LemmaDictionary, Ptrans, Pobs, KWfile_info.Windows())
 
                 self.file_feedback = IdentifiedKW.showFeedback()
                 self.file_marks = IdentifiedKW.showMarks()
                 self.file_feedbackDistrib = IdentifiedKW.showFeedbackDistribution()
                 self.file_marksDistrib = IdentifiedKW.showKeywordsDistribution()
 
+                
                 saveKWInfo(getNameFile(settings.json_file_in), self.file_feedback, self.file_marks,self.file_feedbackDistrib, self.file_marksDistrib)
                 
             except:
@@ -749,4 +755,3 @@ class OrtographicOutput():
  
 #METEEEER
 #nota_Semantica = self.PesoSmntca_Similitud * notaSpacy/4 + self.PesoSmntca_KW * float(re.sub("Nota: ","",self.file_marks[studentID][1]))              
-

@@ -13,7 +13,7 @@ class Plentas():
     
     def processData(self):
         output_json=[]
-        self.settings.answersDF = pd.DataFrame(self.settings.answersDF)
+        #self.settings.answersDF = pd.DataFrame(self.settings.answersDF)
         IDs = getIDrange(self.settings.rango_ID, self.settings.answersDF)
 
         sintactics = Sintaxis()

@@ -13,6 +13,7 @@ import pandas as pd
 import re
 
 
+
 def loadHMMInfo():
     #Loading HMM probability tables
     Pobs_aux= pd.read_excel(open('__appcache__/Total_Emission.xlsx', 'rb'))
@@ -69,6 +70,7 @@ def loadKWInfo(file_name):
         tf.close()
 
         return file_marks, file_feedback, file_marksDistrib, file_feedbackDistrib 
+
 
 
 
@@ -292,7 +294,7 @@ class NLP_Questions:
     Extracts the needed information to process the student's answers and creates the synonym and antonym dictionaries
     """
 
-    def __init__(self, file_name, synonym_dict: dict(), antonym_dict: dict(), LemmaDictionary:dict() ):
+    def __init__(self, file_name: list(), synonym_dict: dict(), antonym_dict: dict(), LemmaDictionary:dict() ):
         """
         Class constructor. 
         Parameters:
@@ -306,7 +308,10 @@ class NLP_Questions:
         self.stopwords = set(stopwords.words('spanish'))
         self.LemmaDictionary = LemmaDictionary
 
+        
+
         self.file = file_name
+
         self.keywords = self.__GetKeywords()
         self.tokenizedKeywords = None
         self.lemmatizedKeywords = []
@@ -388,9 +393,13 @@ class NLP_Questions:
         """
         Gets all the keywords 
         """
+        print(f'AAAA{self.file}')
+        print(f'\n tipo {type(self.file)}\n')
         keywords_list = []
         for answer in self.file:
+            print(f'BBB{answer}')
             for section in answer:
+                print(f'CCC{section}')
                 if section == "metadata":
                     for element in answer[section]:
                         if element == "keywords":
@@ -399,6 +408,8 @@ class NLP_Questions:
                                     continue
                                 else:
                                     keywords_list.append(keyword)
+
+        print(f'Lista de keywords: {keywords_list}\n')
 
         return keywords_list
 
@@ -490,6 +501,7 @@ class NLP_Questions:
         list_ant.sort()
 
         list_all = [list_keys, list_syn, list_ant]
+        print(f'Lista de todo {list_all}\n')
         return list_all
 
     def __TokenizeKeywords(self):
@@ -615,6 +627,7 @@ class NLP_Questions:
                         self.synonyms[word]["Compound"] = 1
                         self.antonyms[word]["Compound"] = 1
 
+                        print(f'wordddd : {word}')
                         doc = self.nlp(self.__Lemmatization(word))
                         self.synonyms[self.__Lemmatization(word)]["GCategory"] = doc.sentences[0].words[0].upos 
 
@@ -642,7 +655,7 @@ class NLP_Answers:
     Processes the sentences of each student to find keywords and calculates the mark of each one
     """
 
-    def __init__(self, file_name, synonym_dict: dict(), antonym_dict: dict(), keywords_dict: dict(), LemmaDictionary:dict(), PTrans: pd.DataFrame(), PObs: pd.DataFrame(), windowMaxSize = [[1], [1], [1]]):
+    def __init__(self, file_name: list(), synonym_dict: dict(), antonym_dict: dict(), keywords_dict: dict(), LemmaDictionary:dict(), PTrans: pd.DataFrame(), PObs: pd.DataFrame(), windowMaxSize = [[1], [1], [1]]):
         """
         Class constructor.
         Parameters:
