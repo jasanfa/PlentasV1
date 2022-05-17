@@ -1,18 +1,18 @@
 <div class="page-container">
-  <div class="flex-container">
-    <div class="data-container">
-      <fieldset>
-        <legend>Datos de Entrada</legend>
-        <textarea [(ngModel)]="inputData"> </textarea>
-        <button type="button" (click)="processInputData()">Procesar Datos</button>
-      </fieldset>
+  <div class="home-menu">
+    <img src="../../../assets/Plentas.png" width="400" height="200" align="middle" />
+    <br>
+    <div class="home-button" routerLink="/configuration">
+      <img src="../../../assets/experiment.png" />
+      <span>Experimento</span>
     </div>
-    <div class="data-container">
-      <fieldset>
-        <legend>Datos de Salida</legend>
-        <textarea [(ngModel)]="outputData"> </textarea>
-        <button type="button" (click)="copyToClipboard(this.outputData)">Copiar al Portapapeles</button>
-      </fieldset>
+    <div class="home-button" routerLink="/output">
+      <img src="../../../assets/stats2.png" />
+      <span>Análisis</span>
+    </div>
+    <div class="home-button" routerLink="/results">
+      <img src="../../../assets/results.png" />
+      <span>Resultados y feedback</span>
     </div>
   </div>
 </div>

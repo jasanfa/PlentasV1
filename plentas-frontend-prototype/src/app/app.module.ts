@@ -8,11 +8,17 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ConfigurationComponent } from './pages/configuration/configuration.component';
+import { OutputComponent } from './pages/output/output.component';
+import { ResultsComponent } from './pages/results/results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ConfigurationComponent,
+    OutputComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

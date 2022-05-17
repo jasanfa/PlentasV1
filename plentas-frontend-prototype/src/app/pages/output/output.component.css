@@ -1,0 +1,15 @@
+.data-container {
+    display: inline-block;
+    width: 49%;
+  }
+  
+  .data-container textarea {
+    width: 100%;
+    height: calc(100vh - 200px);
+  }
+  
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  

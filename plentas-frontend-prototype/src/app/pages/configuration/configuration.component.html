@@ -1,0 +1,51 @@
+<div class="page-container">
+  <div class="flex-container">
+    <div class="data-container">
+      <fieldset>
+        <legend>Configuración del Experimento</legend>
+
+        <div class="form-row">
+          <label for="inputFileField"
+            >Seleccione el archivo con respuestas de los alumnos</label
+          >
+          <input id="inputFileField" type="file" [(ngModel)]="inputJsonFile" />
+          <div *ngIf="inputJsonFile != null">Archivo seleccionado: {{ inputJsonFile }}</div>
+        </div>
+
+        <div class="form-row">
+          <input
+            id="chkOrthography"
+            type="checkbox"
+            [(ngModel)]="checkOrthography"
+          />
+          <label for="chkOrthography">Ortografía</label>
+          <input type="text" [(ngModel)]="orthographyValue" [disabled]="!checkOrthography" />
+        </div>
+
+        <div class="form-row">
+          <input id="chkSyntax" type="checkbox" [(ngModel)]="checkSyntax" />
+          <label for="chkSyntax">Sintaxis</label>
+          <input type="text" [(ngModel)]="syntaxValue" [disabled]="!checkSyntax" />
+        </div>
+
+        <div class="form-row">
+          <input id="chkSemantic" type="checkbox" [(ngModel)]="checkSemantic" />
+          <label for="chkSemantic">Semántica</label>
+          <input type="text" [(ngModel)]="semanticValue" [disabled]="!checkSemantic" />
+        </div>
+
+        <div class="form-row">
+          <button type="button" (click)="processInputData()">
+            Procesar Datos
+          </button>
+        </div>        
+      </fieldset>
+    </div>
+    <div class="data-container">
+      <fieldset>
+        <legend>Datos de Entrada</legend>
+        <textarea [(ngModel)]="inputData"> </textarea>        
+      </fieldset>
+    </div>
+  </div>
+</div>

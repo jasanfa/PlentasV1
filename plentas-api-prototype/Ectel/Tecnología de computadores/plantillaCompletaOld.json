@@ -1,0 +1,1411 @@
+
+           {
+                      "respuesta": "Una CPU es uno de los componentes mas importantes de un computador, se encarga de procesar las instrucciones recibidas.\n\nPates de una CPU.\n- Memoria cache.\n- Memoria principal.\n- Controlador de Acceso.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "9J4q2VolejRejNmGQBW7",
+                      "nota": "0,25"
+           },
+           {
+                      "respuesta": "La CPU, como sus siglas en inglés lo indican, es la Unidad Central de Procesamiento. Es uno de los componentes básicos del computador, el cual se encarga de la ejecución de los programas.\n\nLa CPU está compuesta por las siguientes partes:\n\n•\tUnidad Aritmético-Lógica: Es la encargada de realizar todas las operaciones aritméticas y lógicas, las cuales pueden comprobarse mediante el Álgebra de Boole.\n\n•\tUnidad de control: Es la unidad encargada de coordinar y las instrucciones a ejecutar, así como también de la comunicación con la memoria y los periféricos a través del bus de datos.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "1gO3GWpmbk5ezJn4KRjL",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "El cpu es la unidad de procesamiento la cual permite recibir instruciones por parte del hardware y convertirlas y que sea entendible al computador. \nLas partes del cpu se encargan de procesar almacenar instrucciones para que el proceso de ejecucion sea mas rapido efficiente ya sea la ejecucion de uno varias aplicativos permitiendo convertir las intrucciones 0 y 1 ya que el cpu entiden por codigo binario,",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "gLPQZOpnel5aKBzyVXvA",
+                      "nota": "0,25"
+           },
+           {
+                      "respuesta": "Una CPU es la unidad central de un computador, las siglas indican Central Unit Procesor , es la unidad encargada de procesar la información , ya sea realizando alguna operación sobre ella o simplemente grabándola o consultándola. Interactúa con las memorias y con los periféricos de entrada y salida.\nSus partes son:\nUnidad de control (Contra la propia CPU y los procesos que debe realizar.)\nALU (La unidad de Lógica y Armetica , es la unidad encargada de realizar los cálculos y procesos propios de las operaciones encargadas a la CPU)\nRegistros ( Segmentos de memoria donde se guardan instrucciones con las que posteriormente tiene que trabajar la CPU.\nConexiones (El juego de conexiones o conectores necesarios para el funcionamiento de la CPU)",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "BErm0wMvbmOeYAlO1nqV",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "El CPU (Central Processing Unit en ingles) es la parte central de un computador donde se encuentran los elementos que se usan para procesar los datos ingresados a dicho computador. Un computador puede tener mas de un CPU para tener multiprocesamiento, aunque hoy en dia, hay chip que contienen multinucleos, lo cual son multiples CPU en un solo circuito. El trabajo de un CPU es poder interpretar las instrucciones de un programa en el dispositivo mediante el uso de operaciones basicas aritmeticas, logicas y externas. Desde su creacion, los CPU han tenido un incremento de eficiencia y potencia, mientras reducen el consumo de energia y el costo.\n\nLos CPU vienen compuestos de varias componentes: \no\tLa Unidad Aritmetico Logica (ALU)\no\tLa Unidad de Control (CU)\no\tLos Registros Internos\no\tLa Memoria\n\nLa Unidad Aritmetico Logica es un circuito digital que realiza operaciones aritmeticas, como la suma y la resta, y operaciones logicas, como el SI o NO, entre los argumentos ingresados. \n\nLa funcion de la Unidad de Control es buscar las instrucciones en la memoria principal, interpretarlas y ejecutarlas, usando la unidad de proceso. Hoy en dia, existen dos tipos de Unidades de Control: las cableadas, las que son usadas generalmente en maquinas sencillas, y las microprogramadas, hechas para maquinas mas complejas. \n\nLos Registros son memorias de alta velocidad y poca capacidad, la cual estan integradas en el microprocesados de el ordenador, lo cual permite guardar y acceder a valores muy usados, usualmente operaciones matematicas. Los registros son la manera mas rapida que el sistema del computador tiene para almacenar datos, los cuales se miden en forma de bits. Existen diferentes tipos de registros: \n•\tRegistros de datos\n•\tRegistros de memoria\n•\tRegistros de proposito general\n•\tRegistros constantes\n•\tRegistros de proposito especifico\n\nLos registros de datos se utilizan para guardar numeros enteros.\nLos registros de memoria se usan especificamente para guardar direcciones de memoria. Los registros de de proposito general pueden guardar datos y/o direcciones. Los registros constantes tiene varlores creados por el hardware. Los registros de proposito especifico guardan informacion especifica del estado del sistema, como el puntero.\n\nLa Memoria, simplemente es el lugar donde se almacena las datos y programas. ",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "m8VvJ4openRe7Az1XPYR",
+                      "nota": "0,6"
+           },
+           {
+                      "respuesta": "El CPU es la unidad central de procesamiento que mediante perifericos de eintrada y de salida almacena información, consta de tarjeta madre, memorias ROM y RAM, memoria cache, buses, transistores unidades de conección de puertos de entrada y salida, la tarjeta madre cumple las funciones de procesar y direccionar la información que atraves de los buses la pasan desde los perifericos de E/S, hasta la memoria Rom esta es la memoria principal donde se almacenan datos, programas, información que es solicitada de acuerdo al trabajo a realizar, la memoria RAM es la que nos permite poder realizar varios trabajos a la vez esta memoria sirve como almacenamiento temporal de acciones que nos encontramos realizando o ejecutandose a segundo plano.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "ZzQABWJxbojagwOL0EMr",
+                      "nota": "0,25"
+           },
+           {
+                      "respuesta": "La CPU es acrónimo de “Control Proces Unit”, Unidad de Control de Procesos.\nEs la parte de central de toda computadora y se encarga de procesar y ejecutar las instrucciones y datos.\nConsta de 3 partes: Unidad Control, la Unidad Aritmético -Lógica (ALU) y módulo de Entras/Salida.\n1)\tUnidad de Control: controla el funcionamiento de la CPU, y es la encargada de controlar el proceso de los componentes.\n2)\tALU: se encarga de los cálculos artiméticos (suma, resta, etc.) y lógicos (verdadero/falso; si/no) tiene entrada de datos, que procesa y cuyo resultado manda a la salida controlada por E/S.\n3)\tE/S: se encarga de controlar el flujo de datos y/o instrucciones que le llegan a la ALU para su proceso para evitar solapamiento y eficiencia de calculo, evitando paradas y perdidas de eeficiencia.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "3KWYxk8mep2bMyJNjQ9v",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "CPU. (Unidad Central de proceso). Es la parte de una computadora que realiza los cálculos del sistema informático, coordinando a los demas elementos del sistema  (memoria, dispositivos externos de entrada-salida). \nLa cpu consta, tradicionalmente de un contador de programa, que indica la dirección de la siguiente instrucción que tratar, una unidad aritmético lógica que realiza los cálculos necesario de los datos, y una unidad de control que emite las señales de control necesaria para controlar el resto de los componentes del sistema. También recibe señales de control de dispositivos las cuales se conocen como interrupciones y que permiten bifurcar las ejecuciones de las instrucciones e informar de eventos que requieren prioridad o que han terminado, aumentando así la eficiencia del sistema y maximizando  el uso de la cpu.\nLa cpu puede constar de microinstrucciones o ser cableada, siendo esta última mas cara y difícil de implementar pero mas rápida. Con las microinstrucciones conseguimos que la cpu tenga en una memoria propia que suele ser EEPROM, un juego de instrucciones que podríamos incluso cambiar adaptándola a otro conjunto distinto de microinstrucciones. Así conseguimos mas flexibilidad, sencillez y mayor número de instrucciones, sacrificando algo de rendimiento con respecto a la lógica microcableada.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "R8M7Vl4zbq2dprOZqEgL",
+                      "nota": "0,8"
+           },
+           {
+                      "respuesta": "-La CPU es la unidad central de procesamiento de un computador (de sus siglas en inglés Central Processing Unit). Se trata de uno de los elementos más importantes dentro del propio computador. Entre sus principales partes destacan:\n\n   1. ALU: Unidad aritmético-lógica (de sus siglas en inglés Arithmetical Logic Unit). Es el elemento encargado de las operaciones aritméticas (matemáticas) y lógicas (por ejemplo, operaciones booleanas) dentro del computador.\n\n  2. Memoria: Es el elemento encargado de almacenar y gestionar los distintos procesos que la CPU lleva a cabo.\n\n  3. Controlador E/S: Gestiona los procesos relacionados con los distintos dispositivos de entrada y salida que interactúan con el computador",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "7x3VXyMYerEdOBQn6LlR",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "- CPU: Es una parte de la computadora donde se ejecutan instrucciones de un programa, manda instrucciones y peticiones a los demas componentes\n- Estructura que compone una CPU:\n\t- Unidad aritmetica logica.\n\t- Unidad de Control.\n\t- Registros\n\t- Interconexiones.\n\nPartes que tiene una CPU:\n\n-\tUnidad de procesamiento: busqueda de instrucciones y ejecucion de las mismas.\n-\tUnidad de control: se utiliza para almacenar los estados de señal y almacenarlos. La unidad de control tiene los siguientes estados:\no\tTiene estado actual\no\tCalculo de estado proximo\no\tCalculo de salidas.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "w58DKgl9avmeG1vzAp3E",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "La CPU, o Unidad Central de Procesamiento, es uno de los elementos principales de un computador. Es la encagada de coordinear y ejecutar todas las operaciones que son necesarias ejecutar por parte del computador. Para ello, debe estar en comunicacion con el entorno (dispositivos de E/S), con la memoria principal para transferir la informacion que se necesite para ejecutar las instrucciones, y con un almacenamiento masivo para almacenar datos con los que no se trabaje a menudo\n\nLa CPU esta formada por los siguientes elementos:\n\n1)\tALU (Unidad Aritmetico Logica): es la encargada de llevar a cabo las operaciones aritmetico (sumas, restas, etc.) y logicas (comparaciones, etc.) que son interpretadas y trasnferidas desde la UC.\n2)\tUC (Unidad Control): es la encagara de identificar e interpretar las operaciones y trasferirlas a la Alu para su ejecucion.\n3)\tMemoria: la CPU necesita almacenar, al menos, las instrucciones con las que está trabajando en ese momento.\n4)\tBus: todos los anteriores elementos, tienen que estar interconectados para poder realizar las transferencias de informacion.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "9kpPy7LDdwRb1YKXAxlj",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "La CPU es considerada el corazón del ordenador,se encarga de dirigir todo el procesamiento del computador.\ntiene de diferentes componentes:\nUnidad de control: encargada de realizar todas las gestiones que se le piden al computador, recibe informacion,la procesa y da la salida necesaria.\nUnidad aritmetico lógica (ALU): encargada de las operaciones aritmeticas necesarias.\nRegistros: La partición de la CPU que se encarga de almacenar la informacion temporalmente para el correcto funcionamiento de las E/S.\nInterconexiones: El encargado de transmitir informacion entre la CPU y las E/S o la memoria principal.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "l8rVoJX7ax9byv4Ek36W",
+                      "nota": "0,9"
+           },
+           {
+                      "respuesta": "La CPU es la unidad central de procesamiento. Se encarga de realizar las operaciones aritmeticologícas. Se compone de unidad de control, registros, unidad aritmeticologica y interconexiones. Es el cerebro del ordenador y el encargado de realizar todas las tareas (salvo la tarjeta grafica que llevara su propio chip según el caso)\n\nRegistros: En los registros guarda información inter para la gestión de los procesos y su seguimiento.\nALU: La unidad aritmeticologica se encarga de todas las operaciones de calculo. \nUnidad de control: Se encarga de controlar los procesos y en general toda la CPU.\nInterconexiones: Son los caminos que conectan todos los componentes y a traves de los cuales viaja la información.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "lwGqLkzPdy7aQrov3KBg",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "Se refiere a la CPU como la unidad central de proceso, que cuenta con una memoria principal RAM, memoria secundaria ROM, memoria cache, un area de proceso en donde se realizan los calculos aritmeticos y de control de dispositivos E/S. Su tarea principal es de proceso y control.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "OMWVYmxkazYeJ0PoX1G6",
+                      "nota": "0,5"
+           },
+           {
+                      "respuesta": "Una CPU o unidad central de procesamiento es el principal componente de un computador, se encarga de procesar, almacenar y transmitir los datos, comunicándose con el resto de componentes del computador. \n\nLas partes de una CPU son:\n\n•\tLa unidad de control: se encarga del control del funcionamiento de la CPU y por tanto del funcionamiento del computador. Se basa en un proceso cíclico de búsqueda de la siguiente instrucción y su ejecución en orden secuencial, mientras no se produzca un ciclo de interrupción. Esto se utiliza para aprovechar mejor los recursos de la CPU, por ejemplo si está trabajando con un periférico más lento y puede cambiar de proceso hasta que reanude el proceso anterior.\n•\tLa unidad aritmético-lógica (ALU): se encarga de procesar los datos, realizando operacion aritméticas básicas como la suma, la resta, división o multiplicación y también de las operaciones lógicas como verdadero o falso.\n•\tLos registros: es la memoria interna de la propia CPU, su acceso es mucho más rápido que a la memoria principal por ejemplo.\n•\tLas interconexiones CPU: son los mecanismos encargados de controlar la conexión interna entre los diferentes componentes de la CPU, como la unidad de control, la ALU y los registros.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "DyZYK4w9aAOdvMRnBp7G",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "CPU. También conocida como procesador, es parte de la estructura funcional del computador, además de la memoria, las E/S y los sistemas de interconexión. Es la que se encarga de controlar las operaciones que realiza la computadora, las instrucciones de los programas. \nLa CPU está formada por:\n-\tALU (Unidad Aritmetico Lógica), que se encarga de realizar operaciones aritméticas (sumas y restas) y operaciones lógicas\n-\tMemoria. Es donde se almacena los datos que necesita para realizar sus operaciones\n-\tRegistros. Dónde almacena la siguiente instrucción a ejecutar.\n-\tY las interconexiones. Conecta todos los componentes de la CPU.\n\nCuando realiza operaciones, realiza una serie de instrucciones que se dividen :\nFase de búsqueda, que buscar la operaciones que tiene que realizar en esa instrucción\nFase de ejecución, cuando se ejecuta la instrucción, la CPU tiene un contador que se encarga de de almacenar la próxima instrucción. En el registro de instrucciones contiene la operación a realizar,  se ejecuta la operación y pasa la siguiente instrucción.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "mRy83X46dBXa79jAkGxv",
+                      "nota": "0,8"
+           },
+           {
+                      "respuesta": "La CPU es La Unidad de Procedsamiento y su función es controlar el funcionamiento del computador y el procesamiento de datos\n.\nLa CPU se compone de:\n-\tUnidad de control: controla el funcionamiento de la CPU\n-\tUnidad aritmético-lógica (ALU): se encarga del procesamiento de datos realizando operaciones aritméticas y lógicas con los datos.\n-\tInterconexiones CPU: permiten la comunicación entre el resto de componentes del computador\n-\tRegistros: se encargan del almacenamiento de la CPU",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "RK4mVoBDbDxbl2EONvnG",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "Una CPU es la unidad central de proceso de un ordenador, como su nombre lo indica es el elemento (chip) que se encuentra en la tarjeta principal y es done se procesan todas las instrucciones que son enviadas al procesador.\n\nEl CPU consta principalmente de las siguientes partes:  La unidad de control (UC) y la unidad aritemetico logic (ALU).\n\nLa unidad de control es la que se encarga de interpretar todas las instrucciones enviadas al procesador.\n\nLa unidad aritmetico-logica es la encargada de realizar todas laas operaciones de aritmetica y de logica que son enviadas\n\nAdemás de estos dos elementos tambien estan el registro y la memoria cache, encargadas de almacenar instrucciones y datos.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "NYq1gK4oeEva0ByxjX2m",
+                      "nota": "0,4"
+           },
+           {
+                      "respuesta": "La CPU o microprocesador es el “cerebro” que procesa los datos, también almacena tarjetas, memorias, etc. Se distingue en:\n-Unidad de control: Se encarga de llevar a cabo las intrucciones de ejecucion del progrma, y se clasifica:Unidad central (lleva a cabo microórdenes) y  Secuenciador ( se define las instrucciones de ejecución).\n- La otra clasificacion registra  las instrucciones a ejecutar del programa que se use en ese momento.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "7LV65xYRdG7dDzOWg4Ay",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "La CPU es la unidad central de procesamiento, se encarga de controlar el ordenador y de llevar a cabo las funciones de procesamiento de datos\n\nUnidade de control:Se encarga de controlar el funcionamiento de la CPU\nUnidad aritmético-lógica (ALU): Se encarga de llevar a cabo el procesamiento de los datos de la CPU \nRegistro: Son los elementos que se encargan del almacenamiento interno de la CPU\nInterconexiones CPU: Son lo instrumentos que garantizan las conexiones de los componentes de la CPU\n\nSe encarga de ejecutar las instrucciones que va recibiendo, con ellas gobierna y desarrolla las funciones solicitadas: Gobierna dispositicos E/S, realiza las operaciones solicitadas por el distinto conjunto de programas",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "w3Bk61YQdJ2dOGpJZn4W",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "Una CPU es el microprocesador de un ordenador. Es el componente que se encarga de procesar toda la información leyendo y modificando los registros.\n\nLa CPU se divide en dos partes: la UC y la ALU.\n\n•\tLa UC o unidad de control se encarga principalmente de llevar la información a la memoria RAM.\n•\tLa ALU se encarga de realizar todas las operaciones aritméticas en los registros.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "rgP8V4y1aKReQGw5WvzA",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "La CPU es la encargada del funcionamiento del ordenador y de llevar a cabo la función del procesamiento de datos. Las partes de la CPU son:\n•\tUnidad Aritmético-Lógica (ALU): Se encarga del procesamiento de los datos.\n•\tInterconexiones: Son los intrumentos que comunican la ALU, la unidad de control y los registros.\n•\tUnidad de control: Controla el funcionamiento de la CPU.\n•\tRegistros: Es el almacenamiento interno de la CPU.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "7k1oYq9wdLwbjPXgEBG3",
+                      "nota": "0,9"
+           },
+           {
+                      "respuesta": "La CPU es la Unidad de Control de Procesamiento, es la parte mas importante del ordenador, obviamente teniendo en cuenta sus componentes.\nLa funcion de la CPU es la de procesar las acciones del ordenador…",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "B9RO37N1aMAaWmpnyxV8",
+                      "nota": "0,15"
+           },
+           {
+                      "respuesta": "Se trata del “cerebro” de un ordenador, practicamente de cualquier dispositivo electrónico. Se encarga de procesar todas las ordenes de los componentes y de manejar los requisitos del SO.\nEstá compuesto por las siguientes partes:\n-Núcleo: es la unidad base que constituye a un cpu, que interpreta y ejecuta las acciones.\n-Unidad de control: Es un circuito digital que lleva a cabo las operaciones lógicas, matemáticas y aritméticas entre los datos.\n-Unidad de coma flotante: Es un componente epecializado en el cálculo de operaciones con coma flotante.\n-Memoria caché: Es la memoria  en la que se almacena los datos que el usuario consulta con frecuencia. \n-Registros: Es una memoria de alta velocidad que permite controlar y almacenar instrucciones de ejecución. \n-Controlador de memoria: Es un circuito que regula el flujo de datos entre el procesador y las memorias.\n-Bus: Es un sistema digital que envia y recibe datos entre los componentes.\n-Tarjeta gráfica: Es el componente que procesa datos de video e imagen.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "1oRkpQJ0dN6dLOvE2Mwz",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "Es la Unidad Central de Procesamiento (Central Processing Unit, CPU). También se le conoce como procesador y se encarga de controlar el funcionamiento del computador y de llevar a cabo la función de procesamientos de datos. \n\nLa estructura de la CPU se divide principalmente en los siguientes componentes:\n\n-\tUnidad de control: se encarga de controlar el funcionamiento de la CPU y del computador.\n\n-\tUnidad aritmético – lógica (ALU): es el componente que lleva a cabo el procesamiento de datos dentro del coputador.\n\n-\tRegistros: son los elementos encargados del almacenamiento interno en la CPU.\n\n-\tInterconexiones CPU: son los instrumentos que garantizan la comunicación entre todos los componentes, es decir, entre la unidad de control, la ALU y los registros. ",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "wX90Gz3YaOpbxqlW142B",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "Un CPU es la unidad fundamental de un computador, pues se encarga de administrar y controlar todas las funciones que este tiene. Está constituido por 4 elementos fundamentales:\n\n•\tUnidad Artitmético Lógica (ALU): Se encarga de ejecutar los proces matemáticos que requiere el computador. El CPU también tiene una memoria a la que accede mucho más rápidamente que a la memoria principal (RAM), aunque esta es de menor tamaño pues sólo sirve para guardar datos que surgen de las operaciones aritméticas conforme se van resolviendo.\n•\tUnidad de Control: Ordena y jerarquiza las operaciones que habrá de ejecutar la ALU.\n•\tTransferencia de Datos: Se encarga, en esencia de la comunicación con la memoria Principal y la preparación de datos para ser transferidos a los dispositivos del computador.\n•\tEntrada y Salidad (I/O): Se encarga de la comunicación entre el procesador y otros dispositivos de Entrada y Salida.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "A4o5pmWZdPwbKgRlQ6v0",
+                      "nota": "0,9"
+           },
+           {
+                      "respuesta": "La CPU es el cerebro del ordenador, la encarga de gestionar todas las instrucciones, accesos a otros dispostivos (perifericos, …) .\n\nLa CPU es la unidad central de procesamiento de un computador, esta formado por:\n\n     . La Unidad de control, que se encarga del funcionamiento de la CPU\n     - ALU, unidad aritmetico lógica , que llevrá acabo las operaciones lógiscas del compuntador.\n     - Registros, seria el almacenamiento de datos de las distintas operaciones que se van realizando en la CPU.\nInterconexiones, Todos las unidades estan interconectas entre si, para el correcto funcionamiento de la CPU",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "P4XgELYqaQlenjk2m9Oz",
+                      "nota": "0,9"
+           },
+           {
+                      "respuesta": "LA CPU es una de los componentes de la computadora, que se encarga de realizar las operaciones de almacenamiento de datos y su gestion.\nDentro de la CPU tenemos la Unidad de control de la CPU que controla el funcionamiento correcto de la cpu, la Unidad Aritmetico logica ALU encargada de realiazar las operaciones de transacciones de datos, los registros de la CPU y el componente que se encarga del correcto funcionameiento de todos ellos.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "M15wNJAPdRqbGyOXpZKn",
+                      "nota": "0,75"
+           },
+           {
+                      "respuesta": "\nLa CPU, o unidad central de procesamiento, es aquel sistema encargado de realizar el procesamiento y control de la computadora. Cabe recordar que la computada lleva a cabo las siguientes operaciones: almacenamiento de datos, procesamiento de datos, transferencia de datos (interno y externo), y control. Por lo tanto, en este caso, se habla de la unidad encargada del procesamiento de datos y control (la CPU).\n\nLa CPU constituye una de los cuatro elementos principales de la computadora, junto con la E/S (unidad de entradas y salidas), la Memoria y las Interconexiones. \n\nA su vez, la propia CPU está constituida de cuatro elementos, que son los siguientes:\n\nEn primer lugar, la unidad de control, que es aquella que gobierna el computador, es decir, la que controla todo aquello que ocurre dentro de él.\n\nPor otra parte, la CPU cuenta con la unidad aritmético-lógica, que es aquella encargada de llevar a cabo las operaciones dentro del computador.\n\nAsimismo, la CPU también cuenta con los registros, que es la unidad dedicada al almacenamiento de información temporal.\n\nPor último, la CPU cuenta con la unidad de interconexión, que es aquella que permite la comunicación entre los diferentes elementos. ",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "RomQjOy5eVMdEP4V27qr",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "Una CPU, o unidad central de proceso, es la parte de un computador encargada de gestionar y coordinar (controlar y procesar) todo que lo que sucede en él. La CPU se puede comunicar con la memoria principal de manera bidireccional, así como con las E/S pero en este caso, solo en una dirección, gracias a los sitemas de interconexión propios de un computador.\n\nLa CPU, por su parte, está formada por:\n\n•\tALU: Unidad aritmetico lógica, que se encarga de hacer todas las operaciones aritméticas, como suma, resta, multiplicación… y lógicas.\n•\tUnidad de control UC, que monitoriza los ciclos de instrucciones, y prepara la siguiente\n•\tRegistro, donde se almacena información relativa a la instrucción\n•\tInterconexiones, que son los caminos por los que recorre la información",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "mJqAMrlNbWJayg5Kx2n6",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "La CPU, es la unidad central de procesamiento de un computador, digamos que es el cerebro del sistema ya que se encarga de procesar la información, ejecutar las instrucciones de los programas, y enviar los datos a los distintos dispositivos conectados.\n\nLos componentes de la CPU son: la ALU (unidad aritmética lógica), la unidad de control, y la unidad E/S.\n\nLa ALU se encarga de realizar las operaciones aritméticas básicas: sumar, restar, multiplicar, dividir, y validar (verdadero o falso / si o no)\n\nLa unidad de control se encarga de mantener y controlar los procesos en el resto de componentes de la CPU, facilitando la interconexión y tiempos entre ellos.\n\nLa unidad de E/S, es la responsable de enviar información o recibirla hacia o desde: la memoria, memoria cache, perifericos, y otros componentes del propio computador.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "PLG6vkQBeXWdyK82gAjW",
+                      "nota": "0,75"
+           },
+           {
+                      "respuesta": "\nEs la unidad central de procesamiento.\n\nConsta:\n-ALU: Unidad aritmetico logica.\n-Unidad de procesamiento\n- Unidad de calculo\nTambien costa de una cache que esta dividida en varios niveles:\nL1\nL2\nL3\nLa CPU se encargar recibir las ordenes del resto del resto de los componentes del computador, y en funcion del tipo de orden que le llegue, mediante las partes internas de la CPU, este completa la orden. Tambien la informacion que necesita comprobar muy constantemente la guarda en la memoria cache, que estara dividido de mas urgente a menos urgente (L1-L3).",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "ovm9gW4QbYKezqM5YxjX",
+                      "nota": "0,25"
+           },
+           {
+                      "respuesta": "Una CPU conocida como la unidad central de procesamiento es una unidad que se encarga de hacer las tareas de procesamiento que sean demandandadas por el resto de componentes de un computador tales como en una computadora gaming poder hacer el procesamiento de la RAM y de memoria interna lo mas rapido posible para poder poder procesar los graficos de un juego demandante tales como Counter Strike o Forza horizon 5.\n\nLos componentes que tendriamos normalmente en una CPU serian:\n\nUC(Unidad de control): Es la unidad que se encarga de controlar toda las decisiones que hacen los otros componentes de la CPU.\n\nALU(Unidad Logico Aritmetica): Es la unidad que se encarga de todos los procesamientos logicos que solicite la CPU.\n\nRegistros: Los registros llegaria a hacer como la caja negra de un avion pero en la CPU la unidad de registros es la que se encarga de procesar todos los registros que haga la CPU.\n\nInterconeccion de la CPU: Seria el puerto que se encargue de conectar las partes de  la CPU.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "q3R9OjoQeZJepZVg8lND",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "La CPU es la unidad central de procesamiento de datos de un computador. Es un componente fundamental de éste. La CPU está formada por:\n•\tUnidad de Control (UC)  Se encarga del control de que los datos sean procesados, almacenados y transferidos.\n•\tUnidad Aritmetológica (ALU) Se encarga de realizar las operaciones artméticas (suma, resta, división y multiplicación) y las operaciones lógicas (verdadero o falso). \n•\tResgistros  Se encargan de almacenar los datos. \n•\tInterconexiones de la CPU  Se encarga de la transferencia de datos entre los diferentes componentes de la CPU.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "OBqnkEKQe1RaJYvV0AZP",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "La CPU hace parte del software, podriamos decir que se trata del cerebro de la computadora. El usuario no puede controlarlo.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "nQpz4yJrb2KdWLDX7wKm",
+                      "nota": "0"
+           },
+           {
+                      "respuesta": "La CPU es la unidad central de procesamiento (Central Processing Unit), también se le denomina procesador, y se encarga de controlar el funcionamiento del computador y de llevar a cabo la función del procesamiento de datos. Es probablemente el componente más complejo de un computador y sus componentes estructurales principales son:\n\n-\tUnidad de control (UC): se encarga de controlar el funcionamiento de la CPU y, por tanto, del computador.\n-\tUnidad aritmético-lógica (ALU): se encarga del procesamiento de datos del computador.\n-\tRegistros: se encargan del almacenamiento interno de la CPU.\n-\tInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "WygqPGELe3Mb698jZX1n",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "Dentro de un computadores se pueden diferenciar una serie de elementos principales, entre ellos están los controladores E/S, la memoria principal, el sistema de interconexión y el procesador(CPU).\nLa CPU es la parte del computador que cumple la función más compleja, la del procesamiento de la informción. Dentro de la CPU a su vez se pueden diferenciar una serie de componentes; por un lado podemos encontrarnos con la ALU, unidad artimetico lógica, que como su nombre indica, es la parte encargada de la realización de operacones aritméticas como sumas restas etc u operaciones lógicas la cuál recibirá la información gracias a los registros de entrada y devolverá la información procesada con registros de salida.\nPor otro lado tenemos los registros de la CPU, éstos serán los encargados de almacenar la información del procesador, ya que una de las memorias existentes en un computador, es la memoria interna o memoria del procesador caracterizada por su alta velocidad pero poca capacidad.\nLa unidad de control será la parte principal del procesador que será el encargado de controlar el resto de partes, así como de ejecutar instrucciones.\nTambién tendremos dentro del procesador un sistema de interconexión que sirva para transmitir la información entre sus diferentes partes ya nombradas.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "j50r4KGRb41dBLZQxgy9",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "CPU, unidad central de procesamiento es lo que viene siendo un procesador. Es la central de nuestro computador, basicamente, el cerebro de nuestra computadora.\n\n\nPartes:\n\nNúcleo: donde se ejcutan las acciones.\nUnidad de Control: recibe las intrucciones de la memoria, la descrifra y la ejecuta.\nMemoria caché: almacena los datos y accede a ellos de manera veloz.\nUnidad aritmética logica: circuito donde se realizan las operaciones logicas, matematicas y aritméticas. Es tambien conocida como ALU.\nRegistros\nControlador de memoria\nTrajeta grafica…\n\nLa tarea: Como hemos hablado anteriormente, realizar los calculos para que todo funciona adecuadamente. Ademas de realizar operaciones y calculos",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "ygW9QqM7e5Ba2vp5lo4B",
+                      "nota": "0,8"
+           },
+           {
+                      "respuesta": "La CPU o también llamado el procesador es un componente del ordenador que se encarga del procesamiento de datos. Esta formado por varios componentes:\n-\tUnidad de control: Es quien se encarga de controlar la CPU por lo que se diría que es quien controla al ordenador.\n-\tUnidad aritmeticológica: se encarga de procesar los datos, y de las operaciones aritméticas y lógicas. \n-\tRegistros: Es donde se almacenan los datos en la CPU.\n-\tInterconexiones de la CPU: Para que todas las unidades anteriores estén conectadas se necesita que unas interconexiones por donde pasan los datos que llega a cada una de las unidades (dependiendo de la instrucción). ",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "MAoVqQK9b6nbEvYnGpx8",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "•\tProcesador: En el que se encuentra la unidad aritmética lógica (ALU) encargada de realizar los cálculos matemáticos y lógicos de la CPU.\n\n•\tPlaca Base: En ella se integran todos los componentes internos de la CPU y sirve como unidad de comunicación entre las distintas partes. En ella se carga el FRIMWARE de la CPU que controlorá funciones principales de las máquina conocida como BiOS.\n\n•\tUnidades de Memoria: Tienen la función de almacenar la información de la CPU, tanto de forma volatil como de forma almacenada. Existen dos tipos de memoria: Las memorias volátiles como puede ser RAM, EROM, etc. Memorias muy rápidas que almacen de forma temporal unidades de memoria y Memorias de almacenamiento, como pueden ser Discos Duros, Memorias Flash, etc. \n\n•\tPeriféricos E/S, se trata de periféricos de entrada y salida que se conectarían a la CPU. Los periféricos pueden ser: Teclados (entrada) , Ratones (entrada), Monitos (Salida). Etc.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "NzqmQO5xe7jd7rJX0A4o",
+                      "nota": "0,4"
+           },
+           {
+                      "respuesta": "-\tLa CPU es el procesador y se encarga del funcionamiento del computador y de llevar a cabo las funciones de procesamiento de datos.\n-\tLos componentes principales de la CPU son:\no\tUnidad de Control (UC)\n\tEs el cerebro de la CPU, su misión es controlar su funcionamiento y por tanto, también el del ordenador\no\tALU o Unidad Aritmético Lógica\n\tEl el componente que lleva a cabo el procesamiento de los datos a través de operaciones aritmético lógicas\no\tRegistros\n\tSon pequeños elementos que hacen la función de memoria interna de la CPU para el almacenamiento de datos\no\tInterconexiones con la CPU \n\tSon los componentes que permiten la comunicación entre la CPU y el resto de los componentes de la CPU, es decir con la UC, ALU y Registros",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "7YBDXMVyb8mdvAZEJ24g",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "La CPU o unidad central de procesos es un componente fundamental del ordenador, está integrada por una construcción de silicio entre otros materiales y por millones de puertas lógicas de un tamaño muy diminuto. Consta de varias partes:\n\n.- La unidad de control.\n.- La unidad aritmético lógica o ALU.\n.- Y los registros.\n\nEn ella se realizan las operaciones lógicas del computador/ordenador accediendo a los registros de memoria o bien directamente a los dispositivos de entrada/salida que estén conectados.\n\nLa velocidad de la CPU es elevada y es por ello que para poder realizar las operaciones de la forma más optimizada existen varios metodos para la lectura de datos de los diferentes tipos de memorias, así como interrupcciones que consiguen parar la ejecución de un programa para dar prioridad a otro.\n\nLa ejecución de las programas consta de 2 fases, la primera es la buscqueda de los registros y la segunda la ejecución de los mismos.\n\nAnteiormente he mencionado las interrupciones como medio para detener un programa y poder ejecutar otro de mayor prioridad. La CPU cuenta con un contador de registros donde almacenará la siguiente instrucción a realizar y es por ello por lo que puede volver a ejecutar el programa que previamente se había interrumpido.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "20qjMVWPe9xdLywr4pRn",
+                      "nota": "0,85"
+           },
+           {
+                      "respuesta": "La CPU es la parte de un computador que realiza una serie de calculos para que el equipo tenga una utilidad, se podría decir que, el CPU es el cerebro del computador. Tambien indicar que la CPU tiene una memoria dedicada para ella misma la cual, es la memoria más rápida de todas las diferentes memorias que existen.\nLa CPU esta construido de las siguientes partes, una de ellas es el registro, el cual, se encarga de registrar todo lo que esta haciendo, en caso de que este correcto, o como cuando tiene un problema ,en este caso, registrará el error.\n\nPor otra parte, esta el apartado de la la ALU, esta parte lo que se encarga es de procesar el flujo de datos en forma de operaciones artimeticas. Se puede decir que esta parte de la CPU, es de las más importantes ya que realiza todas las operaciones del computador.\n\nPor otra parte, se encarga de realizar las interconexiones de los diferentes perifericos y componentes de computador, siendo asi, que podemos decir que organiza y da prioridad de interconexión entre los diferentes componentes del computador.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "og5m6QnXe0vbxrLjlyqZ",
+                      "nota": "0,85"
+           },
+           {
+                      "respuesta": "Una CPU es la unidad central de procesamiento, un componente basico de todo dispositivo edstinado a procesar datos y realizar calculos matematicos e informaticos. Esta es la parte central de todo dispositivo y es considerada como su cerebro. Es encargada de interpretar todos los datos y ejecutar todas las secuencias de instrucciones, además de controlar el buen funcionamiento de cada una de las demás partes del sistema. Partes y funciones:\n•\tNucleo. Unidad base que interpreta y ejecuta las acciones. Originalmente solo habia q procesador, pera actualmente el minimo suele ser de 2.\n•\tUnidad aritmetica logaritmica. Circuito digital que lleva a cabo las operaciones.\n•\tUnidad de control. Circuito que extrae las instrucciones de la memoria, las descifra y ejecuta.\n•\tMemoria cache. Lugar donde se almacenan los datos que el usuario visita con frecuencia.\n•\tBus:Sistema digital que envia y recibe datos entre componentes.\n•\tTarjeta grafica:Componente que procesa los datos de video e imagen. Puede estar o no incluido en la cpu.\n•\tRegistros. Memoria de alta velocidad que permite almacenar las instrucciones.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "OyLkQWjnegJYdwZ1p0GD",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "La CPU o Unidad Central de Procesamiento es un componente indispensable del ordenador, se encarga de procesar las instrucciones de un programa secuencialmente. Esto quiere decir que lee y procesa posiciones de memoria de forma consecutiva, aunque es posible establecer saltos o bifurcaciones utilizando los comandos o instrucciones apropiadas para modificar el orden de procesamiento. \n\nLa CPU tiene 2 partes principales: la Unidad de Procesamiento o Ruta de Datos y la Unidad de Control. La Unidad de Procesamiento (UP) es la parte encargada de realizar todas las operaciones necesarias para llevar a cabo una instrucción y en ella se aloja la ALU (Unidad Aritmético Lógica). La UP se puede definir a través de una lista de todas las microoperaciones que ésta puede llevar a cabo, aunque esta lista no suele superar las 150 instrucciones o microoperaciones, y está formada por todos los operandos, operadores y caminos de interconexión interna de la UP. Las microoperaciones pueden clasificarse en: microoperaciones de proceso (los datos de origen cambian cuando pasan por un operador antes de la salida) y microoperaciones de transferencia (cuando los datos simplemente viajan desde donde se almacenan a otro lugar de destino, sin modificación.\n\nPor otro lado está a Unidad de Control, que se ocupa de dirigir la ejecución de un programa, considerando el estado actual y controlando su evolución para poder tomar decisiones sobre las nuevas operaciones que deberá comenzar. A su vez, la Unidad de Control se divide en 3 partes o 3 bloques diferenciables: Un registro de memorización del estado presente, un bloque de cálculo del próximo estado, y un bloque de cálculo de las salidas. La Unidad de Control puede construirse de 2 formas: cableada (más compleja, rápida y cara) o microprogramada (usando memorias ROM). ",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "9J4q2VolejRRejNmGQBW",
+                      "nota": "1"
+           },
+           {
+                      "respuesta": "El CPU es uno de los componentes más importante y por consiguiente es una de las bases del computador el cual realiza instrucciones de programa las cuales tienden a procesarse de manera secuencial a menos que se modifique la instrucción; lo normal es que trabaje en conjunto a la memoria para tomar instrucciones y llevarlas a cabo.\nSus partes son la Unidad de procesamiento o ruta de datos la cual realiza operaciones que luego proceden a iniciar una instrucción; la otra sería la Unidad de Control que busca en la memoria instrucciones para interpretarlas y como su nombre lo dice enviar señales de control para llevar a cabo instrucciones específicas.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "1gO3GWpmbkR5azJn4KRj",
+                      "nota": "0,85"
+           },
+           {
+                      "respuesta": "La CPU, es la unidad central de procesamiento del ordenador, contiene pines de conexión, ejecuta procesos como abrir el navegador de acuerdo al orden de ejecución por parte del usuario.",
+                      "metadata": {
+                                 "enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                 "minipreguntas": [
+                                            {
+                                                       "minipregunta": "¿qué es una CPU?",
+                                                       "minirespuesta": "La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto."
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué partes tienes una CPU?",
+                                                       "minirespuesta": "La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU"
+                                            },
+                                            {
+                                                       "minipregunta": "¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+                                                       "minirespuesta": "\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. "
+                                            }
+                                 ],
+                                 "keywords": [
+                                            "CPU",
+                                            " Unidad de procesamiento",
+                                            " Unidad de control",
+                                            " Secuencial",
+                                            " Registros",
+                                            " Instrucción"
+                                 ]
+                      },
+                      "hashed_id": "gLPQZOpnelY5aKBzyVXv",
+                      "nota": "0"
+           }

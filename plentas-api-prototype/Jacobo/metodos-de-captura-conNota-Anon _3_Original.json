@@ -1,0 +1,1221 @@
+{
+	"respuesta": "Una Replica-Set en MongoDB es una arquitectura en la que se garantiza la alta disponibilidad de los datos y protección frente a fallos. \nPara configurar un Replica-Set en MongoDB hacen falta mínimo 3 nodos. Uno primario, otro secundario que realiza las mismas operaciones que el primerio y un nodo árbitro que decide quién es el primario.\nSi un nodo primario se cae cuando el nodo árbitro se dé cuenta, le comunicará a un nodo secundario que debe pasar a ser primario. El tiempo en el que esto ocurra depende de la frecuencia con la que se haya configurado la comunicación entre los nodos, que por defecto es 2 segundos.\nSu principal diferencia con mongodump es que mongodump realiza una copia de la base de datos cuando lo ejecutamos, mientras que Replica-Set va copiando en los nodos todos los cambios que vayamos realizando en la base de datos",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "b03dbc813da7be54a82dfe329a859b44",
+	"nota": 0.875
+}
+{
+	"respuesta": "La arquitectura replica- set consiste en crear replicas en nodos diferentes y así garantizar alta disponibilidad al usuario final, esto se puede lograr con la configuración mínima la cual requiere de 3 nodos, estos nodos son primario, secundario y árbitro. Par que esto trabaje eficientemente, se creará la relación Maestro-Esclavo entre los nodos, y se elegirá al nodo primario considerando también al nodo árbitro. Cunado el nodo primario deja de funcionar, de manera instantánea el nodo secundario se hará cargo.\nMongodump se encarga de hacer una copia de seguridad que después será restablecida por mongostore a través de los logs, si el nodo donde se hizo la copia de seguridad falla, no habrá la misma disponibilidad, en esto reside la diferencia con la tecnología de replica set",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "c7d1d9c68e49fc55e779a44b4d176400",
+	"nota": 0.9
+}
+{
+	"respuesta": "La arquitectura de ReplicaSet es una de las maneras que ofrece Mongo de asegurar el acceso a la información en caso de un fallo con la BD. Otra alternativa, es el uso de mongodump y mongorestore, pero esta opción únicamente ofrece “fotos” de los datos, es decir si se produce una pérdida de información se perdería lo cambiado entre este momento del fallo y el de MongoDump. \nEn un ReplicaSet hay 3 tipos de nodos: Nodo Primario, Nodo Secundario y Nodo Arbitro. En el momento de la creación, o cuando el nodo primario deja de estar disponible, entre los nodos secundarios y con ayuda de los arbitro se decide cual es nodo primario. Para establecer la disponibilidad de los nodos, cada pocos segundos estos intercambian un ping que indica su disponibilidad.\nEn una configuración ReplicaSet, el nodo primario es el que escribe la información, mientras que la lectura puede ser solo desde el nodo primario, o lo que es más habitual también desde los secundarios mejorando la disponibilidad de la información \nUn ReplicaSet permite configurar como se van a comportar los nodos, con parámetros como: \n•\tArbiterOnly: el nodo nunca será primario, \n•\tPriority Establecer la prioridad, \n•\tSlavedelay: que permite que los datos tengan delay por si hubiera un borrado no deseado de los datos",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "aca2b1ba75453033e32a15383895ef5a",
+	"nota": 0.75
+}
+{
+	"respuesta": "La arquitectura ‘Replica-Set’ de MongoDB hace alusión a una de las configuraciones estructurales de respaldo que ofrece esta base de datos NoSQL, la cuál hace permite asegurar en un mayor grado la disponibilidad de los datos. \nDicha configuración está basada en la definición de tres tipos de nodos en su sistema de almacenamiento distribuido, cada uno con una función propia dentro de la tarea de respaldo y que son los siguientes:\n-\tNodo principal: constituye el ‘datanode’ de almacenamiento principal, es decir, es en éste donde se leen y escriben directamente los datos.\n-\tNodo secundario: hace la función ‘datanode’ de respaldo del nodo principal, es decir, recibe la información generada por el nodo principal con el retraso/’delay’ establecido por el intervalo de ‘Pings’ enviados entre los mismos.\n-\tNodo árbitro: se limita únicamente de administrar y votar/asignar el papel (principal, secundario) de los nodos de tal manera que se garantice la mayor disponibilidad posible.\nEsta configuración de respaldo requiere por tanto de un mínimo de 3 nodos para su funcionamiento en producción, siendo posible la configuración de muchos más por supuesto, gracias a escalabilidad horizontal que ofrece la base de datos MongoDB. Podríamos sumar más máquinas/nodos que nos permitan cumplir con el factor de replicación (nº de nodos de respaldo) que se requiera.\nEn el caso que uno de los nodos elegidos como principal, se caía/pierda disponibilidad el nodo árbitro actúa nombrando un nuevo nodo principal (normalmente según el índice de probabilidad del resto de nodos para ser elegidos como principal ‘votes’) y considerando que el nodo secundario del principal ‘caído’, dispone del respaldo y metadatos generados por el mismo.\nLa principal diferencia que separa esta configuración de réplicas a la funcionalidad ofrecida por ‘mongodump’, es el dinamismo que ofrece, al disponer de un coordinador/’árbitro’ dentro del propio sistema de almacenamiento distribuido, que además está configurado para que tome un comportamiento de preventivo y reactivo, en caso de fallo de los nodos, para el aseguramiento de la disponibilidad de la base de datos, pudiendo ‘reestablecerse de manera ágil’ (cuestión de segundos). Mientras que ‘mongodump’ es una alternativa de respaldo mucho más cercana a las copias de directorio convencionales, ya que se base en la copia de todos o parte de los datos en directorio externos, algo que ofrece seguridad frente a la recuperación, pero no agilidad  en caso de necesidad de restauración, ya que en este caso, necesitaría hacer uso de ‘mongorestore’ para recuperar el respaldo generado por ‘mongodump’ en la ubicación concreta.",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "761c1c9b8459ec1b129a8d9b5d587f57",
+	"nota": 0.375
+}
+{
+	"respuesta": "La arquitectura de Réplica-Set en MongoDB permite la redundancia de datos e incrementa la disponibilidad de los datos. Es una mejora sobre el modelo de Maestro-Esclavo, y es lo que ha definido como conjunto réplica -set. Con este método se permite recuperar de forma automática una recuperación a fallos.\nUna característica de los replica set es que no definen un nodo maestro estático, es asignado al azar y esta asignación se actualiza en función de la disponibilidad de los nodos. Los nodos mantienen el control unos sobre otros. Para crear un conjunto réplica set es necesario tener tres nodos (configuración mínima recomendable) de los cuáles dos nodos serán instancias de mongod con acceso a los datos; uno de estos será el nodo primario y el otro replicará las operaciones. El tercer nodo es el llamado nodo arbitrario y se utiliza para decidir qué nodo deber asignado como principal.\nCuando el nodo primario deja de tener disponibilidad el nodo secundario pasa a ser el principal ya que tenemos la figura del nodo arbitrario.\nLa principal diferencia con mongodump es que es un proceso automático, sin tener que realizar las operaciones de movimiento de las copias de seguridad.",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "d1bff6709d7728e5a45af677ae0b75c1",
+	"nota": 0.75
+}
+{
+	"respuesta": "Una arquitectura Replica-Set consiste en un modelo de replicación de datos, su función principal es de tener una alta disponibilidad de los datos y un mínimo tiempo de recuperación frente a fallos que puedan ocurrir. Para su configuración se necesita mínimo 3 nodos, 2 que corren mongos y tienen acceso a los datos, uno que actúa como primario y el otro como secundario que es donde se replican los datos. El tercer nodo actuará como un árbitro para indicar quien debe ser el nodo primario cuando este deja de estar disponible. La diferencia principal con mongodump es que con la Replica-set se mantiene todos los datos replicados y respaldados en todo momento mientras que con mongodump se tiene respaldo hasta un instante de tiempo dado",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "d0a3fba491eba5731343558ae81076d4",
+	"nota": 0.55
+}
+{
+	"respuesta": "Divide el conjunto de datos escalabilidad vertical y horizontal, para una configuración mínima deben existir 3 nodos, cuando un nodo primario deja de tener funcionalidad el secundario replica las operaciones que se realizan sobre el primario y el arbitro decide el nodo que será el nuevo primario. A continuación se detalla la funcionalidad:\n \nLa principal diferencia es que  mongodum permite realizar respaldos de colecciones, bases de datos y documentos.",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "cb8cf42d095c349f8a1b3797b91c8294",
+	"nota": 1
+}
+{
+	"respuesta": "La función de una replica-set es recuperar el sistema ante fallos de forma automática para ampliar la funcionalidad y la disponibilidad de una base de datos, podría tener, como configuración mínima un nodo primario y dos nodos secundarios. La réplica de datos se hace desde el nodo primario hacia los nodos secundarios. Cuando el nodo primario deja de tener disponibilidad se elige al azar a otro nodo para que sea el nodo maestro y para esto se debe hacer ping a los demás nodos, el nodo árbitro debe elegir cual nodo será el nodo primario. La principal diferencia con mongodump es que mongodump hace una copia de seguridad de una base de datos al ejecutarse un comando específico y mongodump realiza respaldo de datos entre nodos al caerse un nodo y de esta manera se asegura la perfecta disponibilidad, en cambio con mongodump, se interrumpe la disponibilidad en el momento de hacer el import del backup",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "3536d62c26ca741b459c426edcf8c53f",
+	"nota": 0.85
+}
+{
+	"respuesta": "El método de replica-set permite una recuperación a fallos de forma automática, y es la forma recomendada de implementar una replicación de los datos en MongoDB. \nPara una configuración mínima es necesario 3 nodos, los cuales dos nodos son instancias de mongod con acceso a los datos, uno de estos nodos es el nodo primario y el otro nodo replica las operaciones que se realizan sobre el primario. El tercer nodo es llamado, árbitro, y su única función es decidir qué nodo deber ser asignado como primario. Cuando un nodo primario deja de tener disponibilidad, es cuando actúa el tercer nodo árbitro, que decide quien pasa a ser el nodo primario. \nLa principal diferencia con mongodump, es que esté realiza una copia de seguridad de los datos conectándose a una instancia de mongod o mongos en ejecución, esto permite realizar una copia de seguridad para un servidor o base de datos, o permite utilizar una consulta para copiar solo una parte de la colección",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "40f310f15c326b49d534adb6e15cf073",
+	"nota": 0.625
+}
+{
+	"respuesta": "Un Replica-Set en MongoDB consiste en varios nodos (ordenadores ejecutando el proceso) con una configuración específica para replicar los documentos en los diferentes nodos.\nVarios nodos serán almacenes de datos y otro estará funcionando en el rol de árbitro. La función de esta configuración es aumentar la disponibilidad de los datos y generar redundancia, de forma que si un nodo cae o se corrompe, no se pierda la información.\nLa configuración mínima serían 3 nodos, 1 árbitro y 2 almacenes de datos. Cuando el nodo primario deja de estar disponible el árbitro asignará ese rol a otro nodo.\nLa diferencia con mongodump es que mongodump hace una copia de seguridad en un momento concreto y si la base de datos se pierde, se puede restaurar al estado en el que estaba en el momento de hacer la copia, mientras que el Réplica-Set añade redundancia al vuelo. Mongodump es similar a un software de copia de seguridad mientras que un Replica-Set sería lo análogo a un sistema RAID.",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "5e3d220728b3995577e63f5641e81516",
+	"nota": 0.7
+}
+{
+	"respuesta": "Un réplica-set se refiere a la configuración de varios nodos en un sistema de almacenamiento distribuido que almacenan la misma información, otorgando respaldo, alta disponibilidad y balanceo de la carga. Es una réplica “viva” lo que permite la recuperación de fallos de forma automática.\nSon necesarios mínimamente tres nodos: uno principal y dos secundarios, o uno principal, un secundario más un árbitro. La escritura se hace sobre el nodo principal, y el/los secundarios van replicando la información de este, lo que permite que el cliente pueda a su vez realizar la lectura de cualquiera de estos, aprovechando la distribución. \nLos nodos deben ser impares ya que en el caso de que falle el principal, alguno de los secundarios deberá tomar su lugar, en este suceso se llama a una “votación” para evaluar qué nodo pasará a ser el primario, y si hubiera solamente un nodo secundario no se lograría la mayoría en la votación (1/2) quedando en modo sólo lectura.\nCon dos nodos secundarios se puede realizar el desempate (por este mismo motivo los nodos tienen que ser siempre impares), y lo mismo con un secundario más un nodo árbitro; aunque cabe destacar que éste solamente cumple esta función, no se almacenan datos sobre este y por ende no podría tomar el rol de primario. \nPasada la votación el secundario que se encuentre más actualizado con respecto a la información del primario, pasa a tomar el lugar de éste. Y si se diera el caso de que el que fue primario se recupere del fallo, queda en el rol de secundario.\nLa principal diferencia con Mongodump es que esta técnica de respaldo es una “foto” de los datos a un determinado momento, es decir, una vez tomada no se agregan nuevos datos ni se modifican. Mongodump genera unos archivos BSON y JSON, que luego para restaurar la base de datos se cargan desde mongorestore.",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "527dbc614d8db1a8fa3a2905050e4b38",
+	"nota": 0.8
+}
+{
+	"respuesta": "Arquitectura Replica- Set en Mongo este método permite una recuperación a fallos de forma automática y es la forma recomendada de replicación de datos en MongoDB. Para una configuración mínima son necesarios tres nodos. Dos nodos serán instancias de mongo con acceso a los datos, uno de ellos será el nodo primario y el otro replica las operaciones que se realicen sobre el nodo primario en caso de dejar de tener disponibilidad. Mongodump hace una copia de seguridad de los datos conectándose a una instancia de mongo. Esto permite crear una copia de seguridad para una base datos o un servidor.",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "b29f6499069390727264f92b4fab2539",
+	"nota": 0.45
+}
+{
+	"respuesta": "",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "5c5a89dcd8685f5e85e1b0e328cfdc41",
+	"nota": 0
+}
+{
+	"respuesta": "Una arquitectura en Replica set, hace referencia al modelo Maestro – esclavo, donde su función es la de recuperación de fallos de manera automática mediante la replicación, lo cual es su principal objetivo. Para esta función se requiere de 3 nodos, denominados: Principal, Secundario y Arbitro.\nEn caso que el nodo primario deje de función, el nodo arbitro será el encargado de decidir que nodo será utilizado como primario",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "21d11c2f294578dc099d9d701d6efe02",
+	"nota": 0.75
+}
+{
+	"respuesta": "Mongodb usa varias formas de gestión. La función básica de un Replica-Set es el respaldo. Un Replica-Set es una configuración de varios nodos que almacenan la misma información con el objetivo de ofrecer disponibilidad alta.\n¿cuántos nodos son necesarios para una configuración mínima? Mínimamente tendremos un nodo primario, uno secundario y un árbitro que no almacene información y que sólo sirva para votar y desempatar en caso de tener que realizar elecciones para elegir nodo primario por motivo de indisponibilidad.\nUn Replica-Set tiene básicamente 3 ventajas:\n1)\tRespaldo: tiene posibilidad de hacer réplicas vivas.\n2)\tDisponibilidad: Tenemos un nodo primario que es nuestro servidor mongodb y cuando modificamos en este servidor, estos cambios se propagan a nodos secundarios con un desfase de unos segundos. ¿qué ocurre cuando el nodo primario deja de tener disponibilidad? En caso de que el nodo primario quede indisponible, los nodos secundarios dejarían de recibir señal (heartbeat) y automáticamente uno de ellos debe tomar el control. ¿Cómo se decide quien toma el control? En principio aquel que haya tenga la información más actualizada, es decir, el último que haya recibido la copia de la información del nodo primario. Si hubiese empate de votos por paridad en el número de nodos, intervendría el árbitro para decidir quien toma el control. Una vez el antiguo nodo primario vuelve a estar disponible, éste pasaría a ser secundario sin quitarle el “cargo” del nodo primario a quien lo tenga en esos momentos.\n3)\tBalanceo de carga: en caso de que haya varios nodos secundarios, se puede decidir mediante hashed keys cómo se distribuirá la carga en cada uno de ellos.\n¿cuál es la principal diferencia con mongodump? La principal diferencia con mongodump es que mongo dump cubre la seguridad haciendo una foto fija de la base de datos en un cierto momento y almacenándola. Digamos que congela la información que tiene la base de datos en ese momento, pero no es un almacenamiento “vivo”. Mongodump es útil cuando queremos migrar datos de una base a otra, por ejemplo. La foto fija se guarda con mongodump y luego se extraería con mongorestore para volcarla donde quisiésemos.",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "054b955cfb5d435f27ff18b109b136e1",
+	"nota": 0.95
+}
+{
+	"respuesta": "Es un grupo de instancias de mongo que contienen el mismo conjunto de datos.\nReplicate set cuya función principal es replicar las definiciones que contiene el nodo principal a los nodos secundarios.\n Se requieren 3 nodos que son definidas como nodo principal, nodos secundarios en donde uno de estos últimos nodos se comporta como árbitro para la selección del nodo principal.\nEntra en función el nodo que esta configurado como arbitro para seleccionar un nodo principal.\nMongodump es usado para realizar copias de seguridad de base de datos, colecciones de mongo.\nMientras que replicaset se encarga de la alta disponibilidad.",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "812eace7c692fa287fa5ff524697107b",
+	"nota": 0.95
+}
+{
+	"respuesta": "Replica-set es un método de replicación utilizado por MongoDB para dar respaldo a los datos de la BBDD. Se trata de un método de redundancia de datos para dar respaldo y aumentar la disponibilidad de los mismos y poder seguir trabajando pese a que uno de los nodos se caiga. Además, mejora el rendimiento puesto que solo es necesario escribir en el nodo principal, pero podemos leer de cualquiera de los nodos. Para una configuración mínima es necesario tener mínimo 3 nodos, 1 primario y el resto secundarios.\nSi el nodo primario cae y deja de tener disponibilidad el resto de nodos se dan cuenta gracias al heartbeat que se envían cada 3 segundos y en ese momento serán los secundarios los que decidirán mediante votación cuál de ellos pasa a ser el nuevo nodo principal.\nEl método de copia de seguridad mongodump solo sirve para hacer una copia de una foto fija a la BBDD si se hacen modificaciones posteriores al restaurar la BBDD se habrán perdido mientras que con un replica-set los demás nodos están constantemente actualizados. Por el contrario, si borramos un elemento y futuramente queremos recuperarlo con replica-set no podremos mientras que con mongodump lo recuperariamos",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "2fb405439e8aaae1d342716e1b595d83",
+	"nota": 1
+}
+{
+	"respuesta": "La arquitectura en réplica set se realiza como una prevención a fallos, se necesitan al menos 3 nodos, de los cuales uno será árbitro, los otros dos van a ser instancias de mongo, pero uno de ellos será el principal y el otro la réplica, sin embargo, el nodo principal no es estacionario, se va actualizando según la disponibilidad que se tenga (esto lo decide el árbitro, ya que los nodos se comunican enviando señales cada dos segundo para indicar que siguen activos), por lo que si se cae el nodo principal no hay pérdida de información.\nSe diferencia en mongodump en que este permite realizar copias de un colección o documento mediante una instrucción, la cual se guarda en una carpeta.",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "f7285176074d58e58fbbc2c485926167",
+	"nota": 0.75
+}
+{
+	"respuesta": "Un replica-set consiste en la replicación de servidores. Se puede implementar en MongoDB y se trata de una refinación del modelo maestro-esclavo. El replica-set permite la redundancia de datos y la alta disponibilidad. Además, sirve como medida anti-caída de un servidor y también para implementar la replicación. \nLa configuración mínima de un replica-set consta de tres nodos: un nodo primario, un nodo secundario y un nodo árbitro. El nodo primario se escoge a la hora de crear el replica-set. \nEn caso de que el nodo primario falle se realiza una votación donde el nodo árbitro se encarga de elegir al nuevo nodo primario. La elección la toma en función del número de votos de cada uno de los nodos secundarios y de sus características, ya que hay nodos que no pueden ser nunca nodo primario, por ejemplo, el nodo árbitro o un nodo que esté oculto. \nMongodump es un comando que se emplea para realizar una copia de seguridad (volcado de datos) de la base de datos tal y como si se tomara una fotografía. Sin embargo, un replica-set permite tener una imagen actualizada en todos los nodos pertenecientes al conjunto sin necesidad de realizar una copia.",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "53ebdb2239cc53c714efaaa26e576c4c",
+	"nota": 0.75
+}
+{
+	"respuesta": "La arquitectura de replica-set añade redundancia a los datos almacenados en Mongo frente a fallos. Para ello se definen distintas máquinas (nodos) que participarán en esta arquitectura. \nUn nodo primario será el que procese las solicitudes (lectura, escritura…), y un nodo secundario recibirá órdenes del primario para replicar los cambios. La asignación de los roles de cada nodo se hace a través de un nodo árbitro, lo que conforma la configuración mínima de 3 nodos. \nCuando el nodo primario deja de estar disponible se asigna el rol de nodo primario a uno de los secundarios que estén activos, evitando así interrumpir el servicio.\nLa principal diferencia con mongodump es la forma en que hace la copia de los datos. Mongodump hace una foto instantánea en el momento de ejecución, sin embargo, replica-set mantiene las copias actualizadas al momento, pudiendo seguir dando servicio incluso si se cae un nodo",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "e8de7e25ccce23438087cf820c323b8d",
+	"nota": 0.9
+}
+{
+	"respuesta": "Los Replica-Set son varios servidores mongo que funcionan conjuntamente dando redundancia a los datos que almacenan. Puede configurarse en modo primario-secundario, donde el secundario simplemente replica los datos del principal, o con varios secundarios. En este último caso cada nodo almacena una parte de los datos, que también estará replicada en al menos otro nodo, y cuando el nodo primario cae existe la figura de un árbitro que decide cual de los secundarios pasa a ser el nodo primario.\nDiferencias con mongodump, muchas, y similitudes más bien pocas: mongodump simplemente hace un volcado de los documentos de la BD a un fichero, para poder recuperarlo a modo de “inserts” con mongorestore en el caso que ocurriera un desastre. El Replica-Set está pensado para tener alta disponibilidad, y que cuando se cae un nodo, los demás se hacen cargo de su parte de los datos sin que suponga una degradación del servicio (bueno degradación habrá al tener un nodo menos, pero el servicio seguirá funcionando de manera transparente a sus clientes).",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "34523c68fa60ddf61f36e33d10e525eb",
+	"nota": 1
+}
+{
+	"respuesta": "Un Replica-set es el nombre dado a un grupo/cluster de Shard’s/nodos con la función de distribuir la carga de las operaciones en los distintos Shard’s que componen la arquitectura horizontal de MongoDB, con una configuración mínima de 3 equipos siendo uno de ellos el Shard primario quien se encarga de los metadatos y como se encuentra distribuida la información en el entorno. Normalmente la configuración viene predeterminada para hacer uso de un Shard primario, pero se puede configurar opciones de backup para garantizar alta disponibilidad y contingencias a prueba de fallos.",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "b0616bb8de9475d9491a9581e6ed9811",
+	"nota": 0.75
+}
+{
+	"respuesta": "Un replica-set es un mecanismo de respaldo de MongoDB que consiste en interconectar un conjunto de nodos o servidores siguiendo el modelo maestro-esclavo. De este conjunto de nodos o servidores interconectados (al menos dos), uno de ellos es elegido nodo primario y, a parte de ese, debe haber, al menos, un nodo secundario. El nodo primario será el que responda ante operaciones CRUD realizadas por las aplicaciones cliente y deberá propagar las modificaciones de los datos a los nodos secundarios, de modo que cada uno de ellos tenga siempre una imagen actualizada de los datos. Este mecanismo aporta alta disponibilidad, consistencia y robustez frente a fallos en los servidores. En caso de que el nodo primario caiga, uno de los secundarios disponibles será elegido primario en una votación, siendo elegido este cuando consiga mayoría absoluta. Para las votaciones existe un tipo de nodo especial: el nodo árbitro. Este tiene el único papel de decidir en las votaciones. Además de este existen otros nodos especiales, como son el nodo retrasado (tiene una imagen retrasada del conjunto de datos), nodo de prioridad 0 (este nunca puede ser presidente), nodo oculto (no aparece visible para los usuarios), etc. \n\nExiste otro mecanismo de respaldo llamado mongodump, el cual realiza una fotografía de un momento concreto de todas las bases de datos, de algunas bases de datos o algunas colecciones dentro de una base de datos, según como indique el usuario. En caso de pérdida o daño en los datos, se podría hacer una restauración con el comando mongorestore según la fotografía de los datos en el momento que se hizo. \n\nLa diferencia fundamental entre los replicasets y mongodump es que mientras los replicaset realizan copias continuas y automáticas de los datos del nodo principal en otros nodos (copias actualizadas), mongodump es una copia de un momento concreto (no actualizada).",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "653e6dc27f1031bcd8e1c1fa62070649",
+	"nota": 1
+}
+{
+	"respuesta": "",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "02a50793837b6c2e3c8105f4c1314b9a",
+	"nota": 0
+}
+{
+	"respuesta": "",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "205c0231adf836bb764104ca86f55ce0",
+	"nota": 0
+}
+{
+	"respuesta": "Replica set es una mejora de la arquitectura de replicación maestro-esclavo, dentro de sus principales funciones se encuentra replicar los datos del nodo principal en los secundarios, brindar alta disponibilidad de los datos y redundancia. Para una configuración mínima se utilizan 3 nodos, un nodo principal que es el encargado de recibir las peticiones de escritura, un nodo secundario que es el encargado de replicar estas peticiones y un nodo arbitro que se encarga de elegir mediante votación al nodo principal cuando el nodo primario falla. Su principal diferencia con mongodump es que los datos están replicados en todo momento, cuando se realiza un respaldo con mongodump los datos obtenidos tendrán una fecha y hora de corte al momento en el que se obtuvo el respaldo",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "43a3bb1a3195a809ef8574ce38518a5a",
+	"nota": 0.5
+}
+{
+	"respuesta": "La arquitectura replica set consiste en tener separado las responsabilidades de cada nodo en el clúster, la configuración mínima consiste en tener un servidor principal, un árbitro y un secundario en estado inactivo, si por algún motivo el servidor activo sufre una caída el servidor arbitro activa al servidor secundario, pasando así el servidor primario a ser secundario, cada cierto tiempo el servidor primario envía notificaciones al árbitro indicando que se encuentra activo. Este tipo de arquitectura mantiene una réplica de todo el servidor y no así con mongodump que solo sirve para ambientes no clusterizados ya que solo permite respaldar los archivos BSON de las bdd de mongo",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "b5c4e8f6aa7e71df24b02d4bf2fe5b1d",
+	"nota": 0.75
+}
+{
+	"respuesta": "La función replica -set es un shard que almacena información y permite el movimiento de los datos entre los diferentes nodos incrementando de esta manera la capacidad de gestión de respaldo en disponibilidad y consistencia en MONGODB, si se llega a presentar el caso de que se caiga un nodo, el sistema agregación Map Reduce  genera un nanemode secundario que se encarga de  realizar las réplicas en los otros nodos evitando así que se detenga la operación en MONGODB, mientras que mongodump se encarga de generar una copia de respaldo al sistema a la gestión permitiendo que no se pierda la información pero no actúa en el momento de que se caiga un nodo.",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "b59a168a62d6ce6b68998c47fe2dabfa",
+	"nota": 0.9
+}
+{
+	"respuesta": "Una arquitectura en replica-set se utiliza para obtener respaldo a un posible fallo en un nodo y garantizar así la una alta disponibilidad. Para definir esta arquitectura hacen falta tres nodos, un nodo primario, un nodo secundario y un árbitro. Cada poco tiempo (este tiempo se puede definir) se envía un ping entre cada nodo para ver si están disponibles o no.\nCuando el nodo primario deja de tener disponibilidad, se produce una votación entre los nodos que haya sobre qué nodo debe pasar a ser el nodo primario. En caso de empate, el que decide es el nodo árbitro. Apenas hay indisponibilidad de la aplicación ya que el cambio de nodos es muy rápido.\nEn cuanto a la principal diferencia con mongodump es que mongodump se utiliza para realizar un respaldo de los datos de forma manual mientras que el replica-set se crea de forma automática una vez que es definido",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "88ab1d4208b2a7f96662ead8c313efa8",
+	"nota": 0.15
+}
+{
+	"respuesta": "La arquitectura de Réplica-Set en MongoDB, es una réplica Maestro-esclavo, el cual requiere de al menos tres nodos que son: principal, secundario y árbitro.  Entre los tres nodos existe un ping para validar que se encuentran activos, cuyos pings se realizan cada dos segundos.  En la arquitectura, el nodo primordial es el nodo principal que se encuentra replicado en el nodo secundario y si el nodo principal deja de tener disponibilidad, el nodo árbitro es el encargado de definir inmediatamente el nodo principal.  Réplica-set garantiza la replicación de los datos en MongoDB, siendo bastante robusto y que tiene diferencia con mongodump ya que mongodump permite crear respaldos de la base de datos como alternativa de respaldos que posteriormente debe ser restaurada mediante mongorestore pero requiere de una planificación del administrador de la base de datos",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "d0b36b1b57e447cb11157d9c3f3a6ff2",
+	"nota": 0.95
+}
+{
+	"respuesta": "Replica-Set permite recuperarse frente a fallos de forma automática, con replica set no se define como tal un nodo maestro fijo, (como es el caso cuando se usa restauraciones de copias de seguridad con maestro-esclavo) si no el maestro se va haciendo la asignación al azar y se actualiza dependiendo de la disponibilidad del nodo. Se puede hacer envíos de ping cada dos segundos para mirar la accesibilidad de los nodos y poder así hacer una asinación al respecto. Son necesarios mínimo 3 nodos para hacer la configuración mínima, un nodo es el que va a tener la accesibilidad a los datos, el que hará las operaciones, otro nodo primario y el otro será el árbitro. Así mismo, cuando el nodo primario deja de tener disponibilidad el deber del árbitro mirar quien está disponible para decidir que nodo será asignado como primario. La diferencia frente a mongoDump es que es para hacer copias de seguridad y el replica set se emplea para restaurar copias de seguridad",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "da4af2113dc6448568b6b35d1ca8c9d4",
+	"nota": 0.4
+}
+{
+	"respuesta": "En MongoDB la utilización de un replica-set aporta varias características: redundancia (ante la caída de un nodo siempre hay una copia), disponibilidad (si cae el nodo primario, un secundario pasa a ser primario) y balanceo de carga (las lecturas pueden repartirse entre el primario y secundarios). \nLa configuración mínima para un replica-set está compuesta por un nodo primario, y dos secundarios (uno de ellos puede ser de tipo árbitro).\nCuando el nodo primario deja de tener disponibilidad (se detecta con los “heartbeats”), se inicia de forma transparente al cliente una “votación” de todos los nodos secundarios para elegir un nuevo nodo primario.\nLa principal diferencia respecto a mongodump es que, mientras mongodump hace una copia completa justo en el momento de ejecutarlo (foto fija), con un replica-set siempre se tiene la copia actualizada en todos los nodos.",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "6a617ebdfa1f4c1ce62c268c9038b0c8",
+	"nota": 0.75
+}
+{
+	"respuesta": "",
+	"metadata": {
+		"enunciado": "Describe, en menos de 200 palabras, en qué consiste una arquitectura en Replica-Set en MongoDB. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿cuáles son es la función de un replica-set?, ¿cuántos nodos son necesarios para una configuración mínima?, ¿qué ocurre cuando el nodo primario deja de tener disponibilidad?, ¿cuál es la principal diferencia con mongodump?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿cuáles son es la función de un replica-set?",
+				"minirespuesta": "La principal función de un replica-set es la de ofrecer respaldo de los datos. Además, aporta alta disponibilidad y posibilita el balanceo de carga."
+			},
+			{
+				"minipregunta": "¿cuántos nodos son necesarios para una configuración mínima?",
+				"minirespuesta": "La configuración mínima es de tres servidores: un primario, un secundario normal y un secundario de tipo árbitro."
+			},
+			{
+				"minipregunta": "¿qué ocurre cuando el nodo primario deja de tener disponibilidad?",
+				"minirespuesta": "Cuando el nodo primario deja de tener disponibilidad, los nodos secundarios dejan de recibir el heartbeat o latido. Entonces, inician una votación para elegir un nuevo nodo primario. Tas la elección, el nodo elegido asume inmediatamente las funciones del primario. En caso de reconexión, el nodo que antes era primario toma el rol de secundario."
+			},
+			{
+				"minipregunta": "¿cuál es la principal diferencia con mongodump?",
+				"minirespuesta": "La principal diferencia de replica-set con mongodump es que replica-set hace una copia instantánea y actualizada de los datos, mientras que mongodump exporta la base de datos en un momento concreto y no captura las nuevas actualizaciones."
+			}
+		],
+		"keywords": [
+			"respaldo",
+			"balanceo de carga",
+			"disponibilidad",
+			"replicación",
+			"arbitro",
+			"votación",
+			"sustitución",
+			"exporta",
+			"actualizada"
+		]
+	},
+	"hashed_id": "39e7c6fcf3761c9b8d35b98c8c382305",
+	"nota": 0
+}

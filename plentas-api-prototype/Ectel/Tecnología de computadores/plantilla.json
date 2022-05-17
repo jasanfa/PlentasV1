@@ -1,0 +1,22 @@
+{	 
+	"metadata.enunciado": "En menos de 200 palabras, y de forma debidamente redactada, explica qué es una CPU. Deberás responder a las siguientes preguntas: ¿qué es una CPU? ¿Qué partes tienes una CPU? ¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+	"metadata.minipreguntas.1":"¿qué es una CPU?",
+	"metadata.minipreguntas.2":"¿Qué partes tienes una CPU?",
+	"metadata.minipreguntas.3":"¿Qué tareas lleva a cabo cada una de las partes de la CPU?",
+	"metadata.minirespuestas.1":"La CPU es un componente básico del computador que se encarga de llevar a cabo las instrucciones de un programa de forma secuencial. Este esquema, también llamado secuenciamiento implícito, sólo es posible modificarlo empleando instrucciones de bifurcación o salto.",
+
+	"metadata.minirespuestas.2":"La CPU se puede descomponer en: \nUnidad  de  procesamiento  o  ruta  de  datos  o unidad aritmético-lógica (ALU). \nUnidad de control. \nRegistros. \nInterconexiones CPU",
+	"metadata.minirespuestas.3":"\nUnidad de control: Se  ocupa  de  dirigir  la  ejecución  de  un programa.  Busca las instrucciones en memoria y se encarga de su interpretación y la generación de las señales de control necesarias para llevar a cabo la operación especificada en la instrucción. Se encarga de definir el orden en el que se deben ejecutar a través de una instrucción los diferentes elementos de la unidad de procesamiento. \nUnidad  de  procesamiento  o  ruta  de  datos:  Realiza  todas  las  operaciones  necesarias para llevar a cabo una instrucción. Es el componente que lleva a cabo el procesamiento de datos del computador.\n Registros: son los elementos encargados del almacenamiento interno en la CPU. \nInterconexiones CPU: son los instrumentos que garantizan la comunicación entre el resto de los componentes, es decir, entre la unidad de control, la ALU y los registros. ",
+
+	"metadata.peso.1":0.5,
+	"metadata.peso.2":0.25,
+	"metadata.peso.3":0.25,
+	"metadata.keywords":"CPU, Unidad de procesamiento, Unidad de control, Secuencial, Registros, Instrucción",
+	"hashed_id": "",
+	"respuesta": "",
+	"nota": "",
+	"nota_desglosada.1": "",
+	"nota_desglosada.2": "",
+	"nota_desglosada.3": ""
+
+}

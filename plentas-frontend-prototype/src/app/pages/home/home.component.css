@@ -12,3 +12,30 @@
   display: flex;
   justify-content: space-between;
 }
+
+.home-menu {
+  text-align: center;
+}
+
+.home-button {
+  height: 200px;
+  width: 200px;
+  border: 1px solid green;
+  display: inline-block;
+  text-align: center;
+  margin: 30px;
+  margin-top: 0px;
+  cursor: pointer;
+}
+
+.home-button:hover {
+  background-color: rgb(198, 219, 201);
+}
+
+.home-button img {
+  margin: 15px;
+}
+
+.home-button span {
+  font-weight: bold;
+}

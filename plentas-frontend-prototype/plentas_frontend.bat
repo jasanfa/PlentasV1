@@ -1,1 +1,2 @@
-ng serve
+ng serve -o
+cmd /k

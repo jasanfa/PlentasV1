@@ -1,0 +1,12 @@
+<div class="page-container">
+    <div class="flex-container">      
+      <div class="data-container">
+        <fieldset>
+          <legend>Datos de Salida</legend>
+          <textarea [(ngModel)]="experimentDataService.outputData"> </textarea>
+          <button type="button" (click)="copyToClipboard(experimentDataService.outputData)">Copiar al Portapapeles</button>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+  
