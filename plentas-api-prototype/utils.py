@@ -1,4 +1,4 @@
-
+import json
 import numpy as np
 import hunspell
 import nltk
@@ -277,8 +277,19 @@ def getIDrange(rango_ID, df):
 
     return IDs
 
+def save_json(path, data):
+    json_object = json.dumps(data, indent = 11, ensure_ascii= False) 
+    # Writing output to a json file
+    with open(path, "w") as outfile:
+        outfile.write(json_object)
 
 
-        
+def load_json(path):
+    with open(path, "r", encoding="utf8") as f:
+        data = json.loads("[" + f.read().replace("}\n{", "},\n{") + "]")
+    
+    return data
+    
+
         
         
