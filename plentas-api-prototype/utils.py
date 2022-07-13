@@ -289,6 +289,12 @@ def load_json(path):
         data = json.loads("[" + f.read().replace("}\n{", "},\n{") + "]")
     
     return data
+
+def load_json_dtset(path):
+    with open(path, "r", encoding="latin-1") as f:
+        data = json.loads("[" + f.read().replace("}\n{", "},\n{") + "]")
+    
+    return data
     
 
         

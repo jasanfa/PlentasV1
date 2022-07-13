@@ -157,7 +157,11 @@ class SentTransf_train():
                     , evaluation_steps=evaluation_steps
                     ,output_path=local_model_path
                     ,save_best_model=True)
-    
+
+        try:
+            os.mkdir(self.saving_path + "models")
+        except:
+            pass
     
         model.save(self.saving_path + "models/" +checkpoint+ str("-Epochs-") + str(epochs))
 

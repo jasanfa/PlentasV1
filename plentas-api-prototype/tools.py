@@ -9,12 +9,30 @@ import re
 
 import spacy
 #nlp = spacy.load('es_core_news_sm')
-nlp = spacy.load('es_core_news_md')
-#nlp = spacy.load('es_core_news_lg')
+#nlp = spacy.load('es_core_news_md')
+nlp = spacy.load('es_core_news_lg')
+
+import sys
+sys.path.append("utils/Semantics/")
+
+from SentenceTransformer2 import *
+
 
 from kwIdentificator import NLP_Answers, NLP_Questions, loadHMMInfo, saveKWInfo, loadKWInfo
 from sklearn.metrics import mean_squared_error, mean_squared_log_error
 from utils import spelling_corrector, clean_words, sent_tokenize, mu_index, FHuertas_index, check_senteces_words, keyword_extractor,getNameFile
+
+
+"""
+modelsToTest = ['distiluse-base-multilingual-cased-v1'
+        ,'paraphrase-multilingual-MiniLM-L12-v2'
+        ,'paraphrase-multilingual-mpnet-base-v2'
+        ,'all-distilroberta-v1'
+        ,'bert-base-multilingual-uncased'
+        ,'dccuchile_bert-base-spanish-wwm-uncased'
+        ]
+"""
+
 
 class GetSettings():
     def __init__(self, settings_file):
@@ -94,6 +112,14 @@ class GetSettings():
                     'mu index': None, 'Legibilidad Mu': None,'Nota en Sintaxis': None},
                 'Semantica':{
                     'Keywords alumno (auto)': None,'Keywords alumno': None, 'Keyword profesor': None, 'Justificación de esos keywords': None, 'Nota en Semantica': None, 'Nota profesor': None}}
+        
+        self.LofRespThreshold = 0.615
+        #self.LofRespThreshold = 0.875
+
+        self.model_path = None
+        self.BertModels_glbl = None
+        self.modelr = None
+        self.epochr = None
                
         
 
@@ -103,25 +129,28 @@ class GetSettings():
         with open(json_file, "r", encoding="utf8") as f:
             data = json.loads("[" + f.read().replace("}\n{", "},\n{") + "]")
     
-        df = pd.DataFrame(data)
-        self.answersDF = copy.deepcopy(df)
+        self.answersDF = pd.DataFrame(data)
         self.answersDF_json = copy.deepcopy(data)
+        self.answersDF_json2 = dict()
+
+
+        self.id_number = 0
         
         self.minipreguntas = []
         self.minirespuestas = []
         self.indice_minipreguntas = []
         self.respuesta_prof = ""
 
-        self.enunciado = df['metadata'][0]['enunciado']
-        self.prof_keywords = df['metadata'][0]['keywords']
+        self.enunciado = self.answersDF['metadata'][0]['enunciado']
+        self.prof_keywords = self.answersDF['metadata'][0]['keywords']
 
         
         try:
             i=0
             while True:
             #for i in range(4):
-                self.minirespuestas.append(df['metadata'][0]['minipreguntas'][i]['minirespuesta'])
-                self.minipreguntas.append(df['metadata'][0]['minipreguntas'][i]['minipregunta'])
+                self.minirespuestas.append(self.answersDF['metadata'][0]['minipreguntas'][i]['minirespuesta'])
+                self.minipreguntas.append(self.answersDF['metadata'][0]['minipreguntas'][i]['minipregunta'])
 
                 self.indice_minipreguntas.append("minipregunta" + str(i))              
 
@@ -142,13 +171,14 @@ class GetSettings():
 
         json_object = json.dumps(info_profesor, indent = 11, ensure_ascii= False) 
         # Writing output to a json file
-        with open("OutputFiles/MinirespuestasProfesor.json", "w") as outfile:
+        with open("OutputFiles/MinirespuestasProfesor.json", "w", encoding="utf-8") as outfile:
             outfile.write(json_object)         
 
 class Semantica():
     def __init__(self, KwSearch, settings):
         #print(f'Aqui las funciones de semantica')
         self.KwSearch = KwSearch
+
 
         if self.KwSearch:
             #print(f'\n\n Buscando KW ..... \n\n')
@@ -176,23 +206,32 @@ class Semantica():
 
         self.output = SemanticOutput(settings)
 
+
     def Keywords(self):
         return self.file_feedback, self.file_marks,self.file_feedbackDistrib, self.file_marksDistrib
 
     def Analysis(self,settings, studentID, respuesta_alumno_raw):
+        settings.student_dict["Semantica"]["Keyword profesor"] = settings.prof_keywords        
 
-        settings.student_dict["Semantica"]["Keyword profesor"] = settings.prof_keywords
-
+        settings.answersDF_json2[studentID] = dict()
         if respuesta_alumno_raw == '':                
             for minipregunta in settings.indice_minipreguntas:
                 self.output.nota_spacy = self.__createDict__(self.output.nota_spacy, studentID,minipregunta)
                 self.output.nota_spacy_reducido = self.__createDict__(self.output.nota_spacy_reducido, studentID,minipregunta)
                 self.output.nota_spacy_experimento = self.__createDict__(self.output.nota_spacy_experimento, studentID, minipregunta, 1)
+                
+                
+                if minipregunta != "respuesta_completa":
+                    self.output.identifyLineofResponse_toexcel.append([minipregunta, ""])
+
 
                 self.output.nota_spacy[studentID][minipregunta]= [0]
                 self.output.nota_spacy_reducido[studentID][minipregunta]= [0]
                 #self.output.nota_spacy_experimento[studentID][minipregunta] = dict()
                 self.output.nota_spacy_experimento[studentID][minipregunta]["Nota"] = dict()
+
+                #settings.answersDF_json[settings.id_number]["respuesta"] = "Respuesta en blanco"
+                settings.answersDF_json2[studentID]["respuesta"] = "Respuesta en blanco"                               
 
                 for umbralL, umbralH in zip(self.output.min_umbral, self.output.max_umbral):
                     self.output.nota_spacy_experimento[studentID][minipregunta]["Nota"]['Umbral ' + str(umbralL) + ' - ' + str(umbralH)] = 0
@@ -221,14 +260,24 @@ class Semantica():
                     self.output.nota_spacy_reducido = self.__createDict__(self.output.nota_spacy_reducido, studentID,minipregunta)
                     self.output.nota_spacy_experimento = self.__createDict__(self.output.nota_spacy_experimento, studentID, minipregunta, 1)
 
+                    self.output.identifyLineofResponse = self.__createDict__(self.output.identifyLineofResponse, studentID, minipregunta, 1)
+
+                    
+
                 if settings.grpSntncsMde == 0:
                     if settings.similarity_type == 0:                        
-                        similar = self.__SpacySimilarity__(respuesta_alumno_raw, minirespuesta)
+                        #similar = self.__SpacySimilarity__(respuesta_alumno_raw, minirespuesta)
+                        similar = settings.BertModels_glbl.similarity(respuesta_alumno_raw, minirespuesta)[0][0].item()
+                        
+
                         self.output.nota_spacy[studentID][minipregunta].append(["All lines", student_keywords, similar])
 
                         self.output.nota_spacy_experimento[studentID][minipregunta]["MaxSimilitud"] = similar
                         self.output.nota_spacy_experimento[studentID][minipregunta]["Frase"] = respuesta_alumno
                         self.output.nota_spacy_experimento[studentID][minipregunta]["Lineas"] = "All lines"
+
+                        #settings.answersDF_json[settings.id_number]["respuesta"] = "Para obtener la respuesta fragmentada, seleccione un modo de agrupación de frases distinto al 0"
+                        settings.answersDF_json2[studentID]["respuesta"] = "Para obtener la respuesta fragmentada, seleccione un modo de agrupación de frases distinto al 0"
                 else:           
                 
                     sentences=[]                        
@@ -237,6 +286,17 @@ class Semantica():
                         regex = '\\.'
                         token = re.sub(regex , '', token)
                         sentences.append(token)
+
+                    #print(sentences)
+                    #print("\n")
+                   
+                    #settings.answersDF_json[settings.id_number]["respuesta"] = dict()
+                    settings.answersDF_json2[studentID]["respuesta"] = dict()
+                    for sentence, line in zip(sentences, range(len(sentences))):
+                        #print(sentence, line)
+                        #settings.answersDF_json[settings.id_number]["respuesta"][line + 1] = sentence
+                        settings.answersDF_json2[studentID]["respuesta"][line + 1] = sentence
+
 
                     if settings.grpSntncsMde == 1:
                         #self.output.nota_spacy_experimento = self.__createDict__(self.output.nota_spacy_experimento, studentID, minipregunta, 1)
@@ -247,19 +307,35 @@ class Semantica():
                             self.output.nota_spacy_experimento[studentID][minipregunta][number]["Frase"] = ""
                             self.output.nota_spacy_experimento[studentID][minipregunta][number]["Lineas"] = ""
 
-                            for s in range(len(sentences)):
+
+                            idx = 1
+                            #print(f'{number}')
+                            for s in range(len(sentences)):                                
                                 try:
                                     r_alumno, r_name = self.__Line2LineAnalysis__(sentences, s, number)
+                                    
                                     if settings.kwExtractor:
                                         student_keywords = self.__KeywordExtractor__(settings, r_alumno)
                                         settings.student_dict["Semantica"]["Keywords alumno"] = self.file_marks[studentID]
                                     if settings.similarity_type == 0:
-                                        similar = self.__SpacySimilarity__(r_alumno, minirespuesta)
+                                        #similar = self.__SpacySimilarity__(r_alumno, minirespuesta)
+                                        similar = settings.BertModels_glbl.similarity(r_alumno, minirespuesta)[0][0].item()
+
                                         self.output.nota_spacy[studentID][minipregunta].append([r_name, student_keywords, similar])
                                         if similar > self.output.nota_spacy_experimento[studentID][minipregunta][number]["MaxSimilitud"]:
+
                                             self.output.nota_spacy_experimento[studentID][minipregunta][number]["MaxSimilitud"] = similar
                                             self.output.nota_spacy_experimento[studentID][minipregunta][number]["Frase"] = r_alumno
                                             self.output.nota_spacy_experimento[studentID][minipregunta][number]["Lineas"] = r_name
+                                        #Ejecutar solo para una línea para determinar si el algoritmo identifica la respuesta correctamente
+                                        if number == 1:
+                                            self.output.identifyLineofResponse[studentID][minipregunta][str(idx)] = dict()
+                                            self.output.identifyLineofResponse[studentID][minipregunta][str(idx)]["Similitud"] = similar
+                                            self.output.identifyLineofResponse[studentID][minipregunta][str(idx)]["Frase"] = r_alumno
+                                            self.output.identifyLineofResponse[studentID][minipregunta][str(idx)]["Lineas"] = r_name
+                            
+                                            idx+=1                                           
+                                        
 
                                 except:
                                     break
@@ -270,9 +346,9 @@ class Semantica():
                             student_keywords = self.__KeywordExtractor__(settings, r_alumno)
                             settings.student_dict["Semantica"]["Keywords alumno"] = self.file_marks[studentID]
                         if settings.similarity_type == 0:
-                            similar = self.__SpacySimilarity__(r_alumno, minirespuesta)
+                            #similar = self.__SpacySimilarity__(r_alumno, minirespuesta)
+                            similar = settings.BertModels_glbl.similarity(r_alumno, minirespuesta)[0][0].item()
                             self.output.nota_spacy[studentID][minipregunta].append([r_name, student_keywords, similar])
-                            
                             self.output.nota_spacy_experimento[studentID][minipregunta]["MaxSimilitud"] = similar
                             self.output.nota_spacy_experimento[studentID][minipregunta]["Frase"] = r_alumno
                             self.output.nota_spacy_experimento[studentID][minipregunta]["Lineas"] = r_name
@@ -476,7 +552,41 @@ class Semantica():
 
                 notaSpacy = 0
 
+            aux = copy.deepcopy(self.output.identifyLineofResponse)
+            for minipregunta in settings.indice_minipreguntas:
+                for indx in aux[studentID][minipregunta].keys():
+                    print(f'{self.output.identifyLineofResponse[studentID][minipregunta][indx]["Similitud"]}{self.output.nota_spacy_experimento[studentID][minipregunta][1]["MaxSimilitud"]}{abs(self.output.identifyLineofResponse[studentID][minipregunta][indx]["Similitud"] - self.output.nota_spacy_experimento[studentID][minipregunta][1]["MaxSimilitud"])}\n\n')
+                    if abs(self.output.identifyLineofResponse[studentID][minipregunta][indx]["Similitud"] - self.output.nota_spacy_experimento[studentID][minipregunta][1]["MaxSimilitud"]) > 0.075:
+                        del self.output.identifyLineofResponse[studentID][minipregunta][indx]
+                
+            #Getting the number of the guess
+            for minipregunta in settings.indice_minipreguntas:
+                if minipregunta != "respuesta_completa":
+                    max_n = -999999
+                    indx_queue = 0
+                    queue = []
+                    highlightedrows = ""
+                    highlightedmarks = ""
 
+                    for iter in self.output.identifyLineofResponse[studentID][minipregunta].keys():
+                        for indx in self.output.identifyLineofResponse[studentID][minipregunta].keys():
+                            if self.output.identifyLineofResponse[studentID][minipregunta][indx]["Similitud"] > max_n and not indx in queue and self.output.identifyLineofResponse[studentID][minipregunta][indx]["Similitud"]>settings.LofRespThreshold:
+                                max_n = self.output.identifyLineofResponse[studentID][minipregunta][indx]["Similitud"]
+                                indx_queue = indx
+                        queue.append(indx_queue)
+                        highlightedrows = highlightedrows + str(indx_queue) + " "
+                        highlightedmarks = highlightedmarks + str(max_n) + " "
+                        max_n = -999999
+                        indx_queue = 0
+
+                    self.output.identifyLineofResponse_toexcel.append([minipregunta, highlightedrows, highlightedmarks])
+                    print(f'{minipregunta}\n{highlightedrows}')
+                    highlightedrows = ""
+                    highlightedmarks = ""
+                    queue = []
+                    
+
+ 
 
 
 class Ortografia ():
@@ -544,6 +654,10 @@ class SemanticOutput():
         self.nota_spacy = dict()
         self.nota_spacy_reducido = dict()
         self.nota_spacy_experimento = dict()
+
+        self.identifyLineofResponse = dict()
+        self.identifyLineofResponse_toexcel = []
+
 
         self.mse = []
         self.loge = []
@@ -670,21 +784,27 @@ class SemanticOutput():
                 continue
             else:
                 #print(f'BBBBBBBBBBBB{self.notas_calculadas[intervalo_umbral]}')
+                #Descomentar
+                """
                 self.plotExperimento(self.notas_calculadas[intervalo_umbral],settings.notas, str(intervalo_umbral)+'.png')
+                """
                 df2[str(intervalo_umbral)] = self.notas_calculadas[intervalo_umbral]
                 self.loge.append(round(mean_squared_log_error(settings.notas, self.notas_calculadas[intervalo_umbral]), 4))
                 self.mse.append(round(mean_squared_error(settings.notas, self.notas_calculadas[intervalo_umbral]), 4))
 
-                self.plotExperimento3(str(intervalo_umbral) + 'MSE.png', self.plot_mse[intervalo_umbral])
-                self.plotExperimento3(str(intervalo_umbral) + 'LOGE.png', self.plot_loge[intervalo_umbral])
+                #Descomentar
+                
+                self.plotExperimento3(str(settings.modelr) + str(settings.epochr)+str(intervalo_umbral) + 'MSE.png', self.plot_mse[intervalo_umbral])
+                self.plotExperimento3(str(settings.modelr) + str(settings.epochr)+str(intervalo_umbral) + 'LOGE.png', self.plot_loge[intervalo_umbral])
 
-                self.plotExperimento3(str(intervalo_umbral) + 'Diferencia.png', self.plot_resta[intervalo_umbral])
+                self.plotExperimento3(str(settings.modelr) + str(settings.epochr)+str(intervalo_umbral) + 'Diferencia.png', self.plot_resta[intervalo_umbral])
 
-                self.plotExperimento(self.plot_mse[intervalo_umbral], [], str(intervalo_umbral) + 'plotMSE.png')
-                self.plotExperimento(self.plot_loge[intervalo_umbral], [], str(intervalo_umbral) + 'plotLOGE.png')
+                self.plotExperimento(self.plot_mse[intervalo_umbral], [], str(settings.modelr) + str(settings.epochr)+str(intervalo_umbral) + 'plotMSE.png')
+                self.plotExperimento(self.plot_loge[intervalo_umbral], [], str(settings.modelr) + str(settings.epochr)+str(intervalo_umbral) + 'plotLOGE.png')
+                
         
         
-        self.plotExperimento2("Ejemplo.png", df2)
+        self.plotExperimento2(str(settings.modelr) + str(settings.epochr)+"Ejemplo.png", df2)
 
         df2.loc[len(settings.notas) + 1]= self.mse
         df2.loc[len(settings.notas) + 2]= self.loge
@@ -698,23 +818,42 @@ class SemanticOutput():
         # Serializing json 
         json_object = json.dumps(self.nota_spacy, indent = 11, ensure_ascii= False) 
         # Writing output to a json file
-        with open("OutputFiles/AnalisisSemantico.json", "w") as outfile:
+        with open("OutputFiles/"+str(settings.modelr) + str(settings.epochr)+"AnalisisSemantico.json", "w", encoding="utf-8") as outfile:
             outfile.write(json_object)
 
         json_object = json.dumps(self.nota_spacy_reducido, indent = 11, ensure_ascii= False) 
         # Writing output to a json file
-        with open("OutputFiles/AnalisisSemanticoReducido.json", "w") as outfile:
+        with open("OutputFiles/"+str(settings.modelr) + str(settings.epochr)+"AnalisisSemanticoReducido.json", "w", encoding="utf-8") as outfile:
             outfile.write(json_object)
 
         json_object = json.dumps(self.nota_spacy_experimento, indent = 11, ensure_ascii= False) 
         # Writing output to a json file
-        with open("OutputFiles/ExperimentoSemantica.json", "w") as outfile:
+        with open("OutputFiles/"+str(settings.modelr) + str(settings.epochr)+"ExperimentoSemantica.json", "w", encoding="utf-8") as outfile:
             outfile.write(json_object)
 
-        df3 = pd.DataFrame.from_dict(self.nota_spacy_experimento, orient='index')
-        df3.to_excel('OutputFiles/ExperimentoSemantica2.xlsx', sheet_name='notas')
+        json_object = json.dumps(self.identifyLineofResponse, indent = 11, ensure_ascii= False) 
+        # Writing output to a json file
+        with open("OutputFiles/"+str(settings.modelr) + str(settings.epochr)+"ExperimentoIdentificarLineaRespuesta.json", "w", encoding="utf-8") as outfile:
+            outfile.write(json_object)
 
-        df2.to_excel('OutputFiles/NotasExperiment.xlsx', sheet_name='notas')
+        #Descomentar
+        
+        json_object = json.dumps(settings.answersDF_json2, indent = 11, ensure_ascii= False) 
+        # Writing output to a json file
+        with open("OutputFiles/"+str(settings.modelr) + str(settings.epochr)+"OriginalRespuestaSeparada.json", "w", encoding="utf-8") as outfile:
+            outfile.write(json_object)
+        
+
+        df_lineasIdentificadas = pd.DataFrame(self.identifyLineofResponse_toexcel)
+        df_lineasIdentificadas.to_excel('OutputFiles/'+str(settings.modelr) + str(settings.epochr)+'LineaRespuesta2.xlsx', sheet_name='lineas')
+
+        #Descomentar
+        
+        df3 = pd.DataFrame.from_dict(self.nota_spacy_experimento, orient='index')
+        df3.to_excel('OutputFiles/'+str(settings.modelr) + str(settings.epochr)+'ExperimentoSemantica2.xlsx', sheet_name='notas')
+
+        df2.to_excel('OutputFiles/'+str(settings.modelr) + str(settings.epochr)+'NotasExperiment.xlsx', sheet_name='notas')
+        
 
 class SintacticOutput():
     def __init__(self):
