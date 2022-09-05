@@ -1,0 +1,69 @@
+<div class="page-container">
+  <div class="flex-container">
+    <div class="data-container">
+      <fieldset>
+        <legend>1. Select the excel file with the responses</legend>
+
+        <div class="form-row">
+          <input id="inputFileField" type="file" [(ngModel)]="inputJsonFile" />
+          <div *ngIf="inputJsonFile != null">Selected file: {{ inputJsonFile }}</div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <legend *ngIf="inputJsonFile != null">2. Select the students to grade</legend>
+        <div class="form-row" *ngIf="inputJsonFile != null" >
+          <input id="chkAll" type="checkbox" [(ngModel)]="checkAll" [disabled]="checkStudentID" />
+          <label for="chkAll">All</label>
+        </div>  
+        <div class="form-row" *ngIf="inputJsonFile != null">
+          <input id="chkStudentID" type="checkbox" [(ngModel)]="checkStudentID" [disabled]="checkAll" />
+          <label for="chkStudentID">Range (from the excel)</label>
+          <input type="text" [(ngModel)]="checkStudentIDValue" [disabled]="!checkStudentID" />
+
+        </div>        
+      </fieldset>
+    </div>
+   
+    <div class="data-container" *ngIf="checkAll != false || checkStudentID != false">
+      <fieldset>
+        <legend>3. Configure the rubric weights for the grading</legend>
+        <div class="form-rowr" >
+          <input
+            id="chkOrthography"
+            type="checkbox"
+            [(ngModel)]="checkOrthography"
+          />
+          <label for="chkOrthography">Ortografía</label>
+          <input type="text" [(ngModel)]="orthographyValue" [disabled]="!checkOrthography" />
+        </div>
+  
+        <div class="form-rowr" >
+          <input id="chkSyntax" type="checkbox" [(ngModel)]="checkSyntax" />
+          <label for="chkSyntax">Sintaxis</label>
+          <input type="text" [(ngModel)]="syntaxValue" [disabled]="!checkSyntax" />
+        </div>
+  
+        <div class="form-rowr" >
+          <input id="chkSemantic" type="checkbox" [(ngModel)]="checkSemantic" />
+          <label for="chkSemantic">Semántica</label>
+          <input type="text" [(ngModel)]="semanticValue" [disabled]="!checkSemantic" />
+        </div>
+        <div class="form-rowr-but" >
+          <br>
+          <br>
+          <br>
+          <button type="button" (click)="processInputData()">
+            Procesar Datos
+          </button>
+        </div>        
+         <!--
+        <legend>Datos de Entrada</legend>
+        <textarea [(ngModel)]="inputData"> </textarea>  
+        -->      
+      </fieldset>
+    </div>
+  
+  </div>
+
+</div>

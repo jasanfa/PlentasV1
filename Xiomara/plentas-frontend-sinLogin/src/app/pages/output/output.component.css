@@ -1,0 +1,36 @@
+.data-container {
+    position: relative;
+    display: inline-block;
+    width: 49%;
+    margin-top: 50px;
+  }
+
+
+  .data-container textarea {
+    width: 100%;
+    /*height: calc(100vh - 200px);*/
+    height: 250px;
+  }
+  
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .student-container{
+    position: relative;
+    margin-top: 40px;
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  input + input {
+    margin-left: 10px;
+}
+
+label + input {
+  margin-left: 10px;
+}
