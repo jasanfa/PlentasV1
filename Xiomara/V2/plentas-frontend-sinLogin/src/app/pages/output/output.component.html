@@ -1,0 +1,31 @@
+<div class="page-container">
+    <div class="student-container">
+      <label for="chkSemantic">Results for student: </label>
+        <input type="text" maxlength="4" size="4" [(ngModel)]="ID"/>
+
+        <input type="image" (click)="showPreviousStudent()" src="assets/flecha_l.png" style="border: double;" height="20" width="35"/>
+        <input type="image" (click)="showNextStudent()" src="assets/flecha_r.png" style="border: double;" height="20" width="35"/>
+      </div>
+    <div class="flex-container">  
+          
+      <div class="data-container">
+
+        
+        <fieldset>
+          <legend>Calification</legend>
+          <textarea [(ngModel)]="experimentDataService.outputData"> </textarea>
+          <button type="button" (click)="copyToClipboard(experimentDataService.outputData)">Copiar al Portapapeles</button>
+        </fieldset>
+        
+      </div>
+      <div class="data-container">
+        <fieldset>
+          <legend>Feedback</legend>
+          <textarea [(ngModel)]="experimentDataService2.outputData"> </textarea>
+          <button type="button" (click)="copyToClipboard(experimentDataService2.outputData)">Copiar al Portapapeles</button>
+        </fieldset>
+        
+      </div>
+    </div>
+  </div>
+  
