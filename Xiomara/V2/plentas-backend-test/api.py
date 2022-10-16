@@ -2,6 +2,11 @@ from urllib import response
 from flask import Flask, request
 from flask import jsonify
 from flask_cors import CORS
+from hashids import Hashids
+import zipfile
+import os
+
+from utils import save_json
 #from plentas import Plentas
 
 a = "aaa"
@@ -10,157 +15,133 @@ e = 0
 responses = [
            { '0' : {
                       "ID": "9J4q2VolejRejNmGQBW7",
-                      "Ortografia": {
-                                 "Errores ortograficos": [
-                                            3,
-                                            "cpu pates cpu "
-                                 ],
-                                 "Nota en Ortograf�a": 0.12000000000000001
-                      },
-                      "Sintaxis": {
-                                 "Frases utilizadas para responder a la pregunta": 5,
-                                 "Palabras utilizadas para responder a la pregunta": 33,
-                                 "Index Fernandez Huerta": 65.931,
-                                 "Legibilidad F-H": "adecuado",
-                                 "mu index": 40.614,
-                                 "Legibilidad Mu": "dif�cil",
-                                 "Nota en Sintaxis": 0.21309
-                      },
-                      "Semantica": {
-                                 "Keywords alumno (auto)": [
-                                            "componentes mas importantes",
-                                            "instrucciones recibidas",
-                                            "componentes mas",
-                                            "mas importantes",
-                                            "encarga de procesar"
-                                 ],
-                                 "Keywords alumno": [
-                                            [
-                                                       "Instrucci�n"
-                                            ],
-                                            "Nota: 0.17"
-                                 ],
-                                 "Keyword profesor": [
-                                            "CPU",
-                                            " Unidad de procesamiento",
-                                            " Unidad de control",
-                                            " Secuencial",
-                                            " Registros",
-                                            " Instrucci�n"
-                                 ],
-                                 "Justificaci�n de esos keywords": [
-                                            "La palabra instrucci�n aparece en el texto y es una forma de expresar la palabra clave Instrucci�n, pero su significado puede no ser el adecuado"
-                                 ],
-                                 "Nota en Semantica": 0.18400000000000002,
-                                 "Nota profesor": 0.25
-                      }
+                      "NotaSpacy": 0.1,
+                      "NotaBert":0.8,
+                      "Feedback": "Hola1"
            }
            },
            { '1': {
-                      "ID": "1gO3GWpmbk5ezJn4KRjL",
-                      "Ortografia": {
-                                 "Errores ortograficos": [
-                                            3,
-                                            "cpu cpu boole "
-                                 ],
-                                 "Nota en Ortograf�a": 0.12000000000000001
-                      },
-                      "Sintaxis": {
-                                 "Frases utilizadas para responder a la pregunta": 4,
-                                 "Palabras utilizadas para responder a la pregunta": 94,
-                                 "Index Fernandez Huerta": 72.287,
-                                 "Legibilidad F-H": "ligeramente f�cil",
-                                 "mu index": 37.291,
-                                 "Legibilidad Mu": "dif�cil",
-                                 "Nota en Sintaxis": 0.21915600000000002
-                      },
-                      "Semantica": {
-                                 "Keywords alumno (auto)": [
-                                            "ingl�s lo indican",
-                                            "central de procesamiento",
-                                            "siglas en ingl�s",
-                                            "unidad central",
-                                            "unidad"
-                                 ],
-                                 "Keywords alumno": [
-                                            [
-                                                       "Instrucci�n",
-                                                       "Unidad de control"
-                                            ],
-                                            "Nota: 0.33"
-                                 ],
-                                 "Keyword profesor": [
-                                            "CPU",
-                                            " Unidad de procesamiento",
-                                            " Unidad de control",
-                                            " Secuencial",
-                                            " Registros",
-                                            " Instrucci�n"
-                                 ],
-                                 "Justificaci�n de esos keywords": [
-                                            "La palabra instrucci�n aparece en el texto y es una forma de expresar la palabra clave Instrucci�n, pero su significado puede no ser el adecuado",
-                                            "La expresi�n clave Unidad de control aparece correctamente empleada en el texto"
-                                 ],
-                                 "Nota en Semantica": 0.21600000000000003,
-                                 "Nota profesor": 1.0
-                      }
+                      "ID": "7J4q2VolejRejNmGQBW7",
+                      "NotaSpacy": 0.2,
+                      "NotaBert":0.4,
+                      "Feedback": "Hola2"
            }
            },
            { '2':{
-                      "ID": "gLPQZOpnel5aKBzyVXvA",
-                      "Ortografia": {
-                                 "Errores ortograficos": [
-                                            13,
-                                            "cpu instruciones hardware entendible cpu ejecucion rapido efficiente ejecucion intrucciones cpu entiden codigo "
-                                 ],
-                                 "Nota en Ortograf�a": 0
-                      },
-                      "Sintaxis": {
-                                 "Frases utilizadas para responder a la pregunta": 2,
-                                 "Palabras utilizadas para responder a la pregunta": 67,
-                                 "Index Fernandez Huerta": 78.422,
-                                 "Legibilidad F-H": "ligeramente f�cil",
-                                 "mu index": 41.574,
-                                 "Legibilidad Mu": "dif�cil",
-                                 "Nota en Sintaxis": 0.239992
-                      },
-                      "Semantica": {
-                                 "Keywords alumno (auto)": [
-                                            "permite recibir instruciones",
-                                            "entendible al computador",
-                                            "unidad de procesamiento",
-                                            "permite recibir",
-                                            "recibir instruciones"
-                                 ],
-                                 "Keywords alumno": [
-                                            [
-                                                       "Instrucci�n",
-                                                       "Unidad de procesamiento"
-                                            ],
-                                            "Nota: 0.33"
-                                 ],
-                                 "Keyword profesor": [
-                                            "CPU",
-                                            " Unidad de procesamiento",
-                                            " Unidad de control",
-                                            " Secuencial",
-                                            " Registros",
-                                            " Instrucci�n"
-                                 ],
-                                 "Justificaci�n de esos keywords": [
-                                            "La palabra instrucci�n aparece en el texto y es una forma de expresar la palabra clave Instrucci�n, pero su significado puede no ser el adecuado",
-                                            "La expresi�n clave Unidad de procesamiento aparece correctamente empleada en el texto"
-                                 ],
-                                 "Nota en Semantica": 0.21600000000000003,
-                                 "Nota profesor": 0.25
-                      }
+                      "ID": "8J4q2VolejRejNmGQBW7",
+                      "NotaSpacy": 0.3,
+                      "NotaBert":0.2,
+                      "Feedback": "Hola3"
+                }
+           },
+           { '3' : {
+                      "ID": "9J4q2VolejRejNmGQBW7",
+                      "NotaSpacy": 0.4,
+                      "NotaBert":0.8,
+                      "Feedback": "Hola4"
            }
+           },
+           { '4': {
+                      "ID": "7J4q2VolejRejNmGQBW7",
+                      "NotaSpacy": 0.5,
+                      "NotaBert":0.4,
+                      "Feedback": "Hola5"
+           }
+           },
+           { '5':{
+                      "ID": "8J4q2VolejRejNmGQBW7",
+                      "NotaSpacy": 0.6,
+                      "NotaBert":0.2,
+                      "Feedback": "Hola6"
+                }
+           },
+           { '6' : {
+                      "ID": "9J4q2VolejRejNmGQBW7",
+                      "NotaSpacy": 0.7,
+                      "NotaBert":0.8,
+                      "Feedback": "Hola7"
+           }
+           },
+           { '7': {
+                      "ID": "7J4q2VolejRejNmGQBW7",
+                      "NotaSpacy": 0.8,
+                      "NotaBert":0.4,
+                      "Feedback": "Hola8"
+           }
+           },
+           { '8':{
+                      "ID": "8J4q2VolejRejNmGQBW7",
+                      "NotaSpacy": 0.9,
+                      "NotaBert":0.2,
+                      "Feedback": "Hola9"
+                }
+           },
+           { '9' : {
+                      "ID": "9J4q2VolejRejNmGQBW7",
+                      "NotaSpacy": 1.0,
+                      "NotaBert":0.8,
+                      "Feedback": "Hola10"
+           }
+           },
+           { '10' : {
+                      "ID": "rrr9J4q2VolejRejNmGQBW7",
+                      "NotaSpacy": 1.1,
+                      "NotaBert":0.8,
+                      "Feedback": "Hola11"
+           }
+           },
+           { '11': {
+                      "ID": "fdffffffffffejRejNmGQBW7",
+                      "NotaSpacy": 1.2,
+                      "NotaBert":0.4,
+                      "Feedback": "Hola12"
+           }
+           },
+           { '12':{
+                      "ID": "gg",
+                      "NotaSpacy": 1.3,
+                      "NotaBert":0.2,
+                      "Feedback": "Hola13"
+                }
            },
 ]
 
 def create_custom_file_path(file):
-    path = file
+    path = "StudentAnswersZip/" + file
     return path
+
+def extractZipData(ruta_zip):
+    ruta_extraccion = "StudentAnswers/"
+    password = None
+    archivo_zip = zipfile.ZipFile(ruta_zip, "r")
+    try:
+        #print(archivo_zip.namelist())
+        archivo_zip.extractall(pwd=password, path=ruta_extraccion)
+    except:
+        pass
+    archivo_zip.close()
+
+    #hashids = Hashids(min_length=20)
+    #hashids.encode(alumno_nmbr)
+
+def answersTodict(zip_path):
+    extractZipData(zip_path)
+    studentAnswersDict = dict()
+    hashids = Hashids(min_length=20)
+
+    for work_folder in os.listdir("StudentAnswers"):
+        for student, indx in zip(os.listdir("StudentAnswers/" + work_folder), range(len(os.listdir("StudentAnswers/" + work_folder)))):
+            try:
+                studentAnswersDict[hashids.encode(indx)] = dict()
+                studentAnswersDict[hashids.encode(indx)]["indx"] = indx
+                fichero = open("StudentAnswers/" + work_folder + "/" + student + "/" + 'comments.txt')
+                lineas = fichero.readlines()
+                studentAnswersDict[hashids.encode(indx)]["answer"] = lineas
+            except:
+                continue
+    
+    save_json("StudentsDict.json", studentAnswersDict)
+
 
 def create_app():
     app = Flask(__name__)
@@ -179,8 +160,11 @@ def getData():
 def processData():
     uploadedFile = request.files['zipFile']
     #uploadedFile = request.form['zipFile']	
-    configuration = request.form["configuration"]        
-    uploadedFile.save(create_custom_file_path(uploadedFile.filename)) 
+    configuration = request.form["configuration"] 
+    print(uploadedFile) 
+    print(configuration)      
+    uploadedFile.save(create_custom_file_path(uploadedFile.filename))
+    answersTodict(create_custom_file_path(uploadedFile.filename)) 
 
     return jsonify(responses)
         

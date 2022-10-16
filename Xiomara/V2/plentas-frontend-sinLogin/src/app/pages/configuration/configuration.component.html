@@ -2,24 +2,24 @@
   <div class="flex-container">
     <div class="data-container">
       <fieldset>
-        <legend>1. Select the excel file with the responses</legend>
+        <legend>1. Selecciona el excel con las respuestas</legend>
 
         <div class="form-row">
-          <input id="inputFileField" type="file" (change)="onFileSelected($event)" />
+          <input id="inputFileField" type="file" (change)="onFileSelected($event)" [(ngModel)]="inputJsonFile"  />
           
-          <div *ngIf="inputJsonFile != null">Selected file: {{ inputJsonFile }}</div>
+          <div *ngIf="inputJsonFile != null">Archivo seleccionado: {{ inputJsonFile }}</div>
         </div>
         <br>
         <br>
         <br>
-        <legend *ngIf="inputJsonFile != null">2. Select the students to grade</legend>
+        <legend *ngIf="inputJsonFile != null">2. Seleccione los estudiantes a evaluar</legend>
         <div class="form-row" *ngIf="inputJsonFile != null" >
           <input id="chkAll" type="checkbox" [(ngModel)]="checkAll" [disabled]="checkStudentID" />
-          <label for="chkAll">All</label>
+          <label for="chkAll">Todos</label>
         </div>  
         <div class="form-row" *ngIf="inputJsonFile != null">
           <input id="chkStudentID" type="checkbox" [(ngModel)]="checkStudentID" [disabled]="checkAll" />
-          <label for="chkStudentID">Range (from the excel)</label>
+          <label for="chkStudentID">Rango (del excel)</label>
           <input type="text" [(ngModel)]="checkStudentIDValue" [disabled]="!checkStudentID" />
 
         </div>        
@@ -28,7 +28,7 @@
    
     <div class="data-container" *ngIf="checkAll != false || checkStudentID != false">
       <fieldset>
-        <legend>3. Configure the rubric weights for the grading</legend>
+        <legend>3. Configura los pesos de la rubrica para la evaluación</legend>
         <div class="form-rowr" >
           <input
             id="chkOrthography"
@@ -54,7 +54,7 @@
           <br>
           <br>
           <br>
-          <button type="button" (click)="processInputData()">
+          <button type="button" (click)="processInputData()" onclick="document.getElementById('ResultsNavBar').className = 'nav-link active'">
             Procesar Datos
           </button>
         </div>        
@@ -68,3 +68,5 @@
   </div>
 
 </div>
+
+

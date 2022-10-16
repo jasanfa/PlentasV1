@@ -9,8 +9,6 @@ export class ApiService {
   constructor(public http: HttpClient) {}
 
   post(jsonData: any) {
-    return this.http.post<any>(environment.apiUrl, jsonData, {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-    }).toPromise();
+    return this.http.post<any>(environment.apiUrl, jsonData).toPromise();
   }
 }

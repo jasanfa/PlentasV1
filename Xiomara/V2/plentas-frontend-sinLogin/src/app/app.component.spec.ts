@@ -33,3 +33,6 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span')?.textContent).toContain('plentas-frontend-prototype app is running!');
   });
 });
+
+
+

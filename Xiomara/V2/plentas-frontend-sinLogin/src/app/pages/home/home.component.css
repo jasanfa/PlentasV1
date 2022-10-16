@@ -211,6 +211,7 @@ margin: 30px;
 margin-top: 0px;
 cursor: pointer;
 background-color: rgb(255, 255, 255);
+visibility: visible;
 
 }
 
@@ -227,6 +228,16 @@ background-color: rgb(255, 255, 255);
 visibility: hidden;
 
 }
+
+.img-notselect {
+
+  filter: opacity(0.4)
+  drop-shadow(0 0 0 red) blur(1px);
+
+
+  
+}
+
 
 .home-button .text-prueba {
 visibility: hidden;

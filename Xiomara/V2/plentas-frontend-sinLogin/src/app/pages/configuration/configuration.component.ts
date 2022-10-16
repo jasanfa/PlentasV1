@@ -5,15 +5,17 @@ import { ApiService } from 'src/app/services/api.service';
 import { ExperimentDataService } from 'src/app/services/experiment-data.service';
 import { ExperimentDataServiceFeedback } from 'src/app/services/experiment-data.service2';
 import { BufferEvaluation } from 'src/app/services/experiment-data.bufferEvaluacion';
+import { ConfigVariables } from 'src/app/services/configurationVariables';
 
 @Component({
   selector: 'app-configuration',
   templateUrl: './configuration.component.html',
   styleUrls: ['./configuration.component.css'],
 })
+
 export class ConfigurationComponent implements OnInit {
   
-  inputJsonFile: any = 1;
+  inputJsonFile:any = null;
   public selectedFile:any = null;
 
   checkOrthography = false;
@@ -35,10 +37,27 @@ export class ConfigurationComponent implements OnInit {
     public experimentDataService: ExperimentDataService,
     public experimentDataService2: ExperimentDataServiceFeedback,
     public bufferEvaluation: BufferEvaluation,
-    private router: Router
+    private router: Router,
+    private variables: ConfigVariables
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.inputJsonFile = this.variables.inputJsonFile;
+    this.selectedFile = this.variables.selectedFile;
+  
+    this.checkOrthography = this.variables.checkOrthography;
+    this.checkSyntax = this.variables.checkSyntax;
+    this.checkSemantic = this.variables.checkSemantic;
+    this.orthographyValue = this.variables.orthographyValue;
+    this.syntaxValue = this.variables.syntaxValue;
+    this.semanticValue = this.variables.semanticValue;
+   
+    this.checkAll = this.variables.checkAll;
+    this.checkStudentID = this.variables.checkStudentID; 
+    this.checkStudentIDValue = this.checkStudentIDValue; 
+  
+
+  }
 
 	onFileSelected(event:any) {
 		if (event.target.files.length == 0) {
@@ -50,12 +69,12 @@ export class ConfigurationComponent implements OnInit {
 
     if (file) {
         this.selectedFile = file;
-        return console.log("HOOOLA");
-
     }
   }
 
+
   async processInputData() {
+    
     //Configure the json that will go to the api.py
     this.inputData = '{';
     this.inputData = this.inputData + '"filepath": ' + JSON.stringify(this.inputJsonFile)  + ',';
@@ -114,20 +133,20 @@ export class ConfigurationComponent implements OnInit {
         formData.append("configuration", this.inputData); // donde this.inputData es un JSON (string) con los datos de configuracion
   
         const outputDataObject = await this.apiService.post(formData);
-        /*
+        
         if (outputDataObject) {
           //this.experimentDataService.outputData = JSON.stringify(outputDataObject, null, 3);
           //this.evaluation = JSON.stringify(outputDataObject, null, 3);
           
           this.bufferEvaluation.outputData = JSON.stringify(outputDataObject, null, 3);
-          this.experimentDataService.outputData = "{Prueba1}";
-          this.experimentDataService2.outputData = "{Prueba2}";
+          //this.experimentDataService.outputData = "{Prueba1}";
+          //this.experimentDataService2.outputData = "{Prueba2}";
 
           this.router.navigateByUrl('output');
         } else {
           this.toastr.error('No se han recibido datos de salida.');
         }
-        */
+        
   
       }
   
@@ -137,8 +156,24 @@ export class ConfigurationComponent implements OnInit {
           disableTimeOut: true,
         });
       }
+
+    this.variables.inputJsonFile = this.inputJsonFile;
+    this.variables.selectedFile = this.selectedFile;
+  
+    this.variables.checkOrthography = this.checkOrthography;
+    this.variables.checkSyntax = this.checkSyntax;
+    this.variables.checkSemantic = this.checkSemantic;
+    this.variables.orthographyValue = this.orthographyValue;
+    this.variables.syntaxValue = this.syntaxValue;
+    this.variables.semanticValue = this.semanticValue;
+    
+    this.variables.checkAll = this.checkAll;
+    this.variables.checkStudentID = this.checkStudentID;
+    this.variables.checkStudentIDValue = this.checkStudentIDValue;
     
     
   }
+  
 
 }
+
