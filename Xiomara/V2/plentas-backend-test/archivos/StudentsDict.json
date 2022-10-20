@@ -1,0 +1,233 @@
+{
+           "OyLkQWjnegYbwZ1p0GDX": {
+                      "indx": 0,
+                      "answer": []
+           },
+           "9J4q2VolejRejNmGQBW7": {
+                      "indx": 1,
+                      "answer": [
+                                 "<p>Hola Surley,</p>  <p>La implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. De igual manera, es correcta la implementaci&#243;n de las probabilidades de emisi&#243;n.<br /> No obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de Viterbi. En el c&#225;lculo, debes multiplicar las probabilidades de transici&#243;n por los valores de Viterbi del estado previo.</p>  <p>Las reflexiones finales son acertadas, especialmente porque mencionas tanto limitaciones/mejoras del modelo de datos como del algoritmo en s&#237; mismo.</p>  <p>Muy buen trabajo.</p>  <p>Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 2/2</p>  <p>Calificaci&#243;n: 9</p>"
+                      ]
+           },
+           "1gO3GWpmbk5ezJn4KRjL": {
+                      "indx": 2,
+                      "answer": [
+                                 "<p>Hola Alexander,</p>  <p>La imnplementaci&#243;n del c&#243;digo de las probabilidades de transici&#243;n es correcta, salvo un detalle. Las probabilidades se calculan como P(T|T-1) = C(T-1, T) / C(T-1), de manera que el cociente tiene que ser el n&#250;mero de veces que aparece el elemento T-1, no el de T (y, por tanto, hay que dividir por estados_totales[qt_1], no por estados_totales[qt]). La implementaci&#243;n de la probabilidad de emisi&#243;n es correcta.</p>  <p>En el c&#225;lculo de la matriz de Viterbi tienes que multiplicar la probabilidad del estado previo por la probabilidad de transici&#243;n correspondiente. En el c&#243;digo no has incluido el producto por la probabilidad de transici&#243;n. Puedes ver adem&#225;s que los resultados del etiquetado no ser&#237;an correctos en palabras como &quot;enfermo&quot;, donde te lo est&#225; etiquetando como &quot;adjetivo&quot; en lugar de &quot;sustantivo&quot; (de hecho, la salida no es correcta en el caso que presentas):</p>  <p>ENFERMO = Nombre/Com&#250;n/Masculino/Singular no es AQ0MS0</p>  <p>Tampoco es correcta en el segundo an&#225;lisis, donde &quot;enfermo&quot; sigue siendo sustantivo, no adjetivo.</p>  <p>En los apartados finales de limitaciones/posibles mejoras del etiquetador propones cosas algo gen&#233;ricas. Usar otras &quot;librer&#237;as&quot; no detalla en concreto las limitaciones que tiene esta aproximaci&#243;n, que es lo que deber&#237;as haber comentado (ej., la HMM s&#243;lo considera el elemento inmediatamente previo, pero no tiene memoria de los estados anteriores, limitaciones del tama&#241;o del corpus...)</p>  <p>Buen trabajo</p>  <p>Probabilidades de transici&#243;n 1.5/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 0.5/2</p>  <p>Calificaci&#243;n: 7</p>"
+                      ]
+           },
+           "gLPQZOpnel5aKBzyVXvA": {
+                      "indx": 3,
+                      "answer": []
+           },
+           "BErm0wMvbmOeYAlO1nqV": {
+                      "indx": 4,
+                      "answer": [
+                                 "<p>Hola Miguel,</p>  <p>Como comentario general, aunque entregues un PDF autogenerado, no dejes secciones con errores de salida del c&#243;digo (cuida la limpieza del trabajo).</p>  <p>La implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. De igual manera, es correcta la implementaci&#243;n de las probabilidades de emisi&#243;n.<br /> No obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de Viterbi. En el c&#225;lculo, debes multiplicar las probabilidades de transici&#243;n por los valores de Viterbi del estado previo. Puedes ver adem&#225;s que los resultados del etiquetado no ser&#237;an correctos en palabras como &quot;enfermo&quot;, donde te lo est&#225; etiquetando como &quot;adjetivo&quot; en lugar de &quot;sustantivo&quot; (de hecho, la salida no es correcta en el caso que presentas, y no lo comentas como tal).</p>  <p>En el apartado de limitaciones/puntos de mejora haces reflexiones v&#225;lidas, pero s&#243;lo centradas en la limitac&#243;n por el corpus, no por el algoritmo en s&#237; mismo (que tambi&#233;n tiene limitaciones, como no tener memoria de los estados anteriores, por ejemplo).</p>  <p>Muy buen trabajo por lo dem&#225;s</p>  <p><br /> Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 1/2</p>  <p>Calificaci&#243;n: 8<br /> &#160;</p>"
+                      ]
+           },
+           "m8VvJ4openRe7Az1XPYR": {
+                      "indx": 5,
+                      "answer": [
+                                 "<p>Hola Jose Miguel,</p>  <p><br /> La implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. De igual manera, es correcta la implementaci&#243;n de las probabilidades de emisi&#243;n.<br /> No obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de Viterbi. En el c&#225;lculo, debes multiplicar las probabilidades de transici&#243;n por los valores de Viterbi del estado previo.</p>  <p>Las reflexiones finales son acertadas, especialmente porque mencionas tanto limitaciones/mejoras del modelo de datos como del algoritmo en s&#237; mismo.</p>  <p>Muy buen trabajo</p>  <p><br /> Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 2/2</p>  <p>Calificaci&#243;n: 9</p>"
+                      ]
+           },
+           "ZzQABWJxbojagwOL0EMr": {
+                      "indx": 6,
+                      "answer": []
+           },
+           "3KWYxk8mep2bMyJNjQ9v": {
+                      "indx": 7,
+                      "answer": []
+           },
+           "R8M7Vl4zbq2dprOZqEgL": {
+                      "indx": 8,
+                      "answer": [
+                                 "<p>Hola Cristopher,</p>  <p>La implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. De igual manera, es correcta la implementaci&#243;n de las probabilidades de emisi&#243;n.<br /> No obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de Viterbi. Realizas un c&#225;lculo de un m&#225;ximo que no es necesario (ya que el m&#225;ximo es algo que calcula el bucle con prob_qOrigen &gt; prob_max), y no se ve que utilices los valores de Viterbi del estado previo (se ve en que las probabilidades de la ruta de Viterbi no &quot;decrecen&quot;, que ser&#237;a lo normal si vas multiplicando en cada paso por valores &lt;1).</p>  <p>Por otro lado, aunque el etiquetado sea correcto, podr&#237;as haber comentado en algo m&#225;s de detalle qu&#233; representan las etiquetas y por qu&#233; son correctas. Las reflexiones/limitaciones son escasas y no comentas detalles concretos de cosas a mejorar.</p>  <p>Buen trabajo por lo dem&#225;s,</p>  <p><br /> Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 0.5/2</p>  <p>Calificaci&#243;n: 7.5</p>"
+                      ]
+           },
+           "7x3VXyMYerEdOBQn6LlR": {
+                      "indx": 9,
+                      "answer": [
+                                 "<p>Hola Manuel,</p>  <p>Como comentario general, aunque entregues un HTML autogenerado, no dejes secciones con errores de salida del c&#243;digo (cuida la limpieza del trabajo).</p>  <p>La implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. De igual manera, es correcta la implementaci&#243;n de las probabilidades de emisi&#243;n. No obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de Viterbi. No se ve que utilices los valores de Viterbi del estado previo (se ve en que las probabilidades de la ruta de Viterbi no &quot;decrecen&quot;, que ser&#237;a lo normal si vas multiplicando en cada paso por valores &lt;1).</p>  <p>Las cuestiones finales del ejercicio las has dejado en blanco.</p>  <p><br /> Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 0/2</p>  <p>Calificaci&#243;n: 7</p>"
+                      ]
+           },
+           "w58DKgl9avmeG1vzAp3E": {
+                      "indx": 10,
+                      "answer": [
+                                 "<p>Hola Adri&#225;n,</p>  <p>La implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. No obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de Viterbi. No se ve que utilices los valores de Viterbi del estado previo (se ve en que las probabilidades de la ruta de Viterbi no &quot;decrecen&quot;, que ser&#237;a lo normal si vas multiplicando en cada paso por valores &lt;1).</p>  <p>Muy bien por comentar en las limitaciones y posibles puntos de mejora el aspecto de la cardinalidad (demasiadas palabras distintas) y otros aspectos de los datos de entrada. Eso s&#237;, las reflexiones s&#243;lo est&#225;n centradas en la limitac&#243;n por el corpus, no por el algoritmo en s&#237; mismo (que tambi&#233;n tiene limitaciones, como no tener memoria de los estados anteriores, por ejemplo).</p>  <p>Muy buen trabajo por lo dem&#225;s.</p>  <p>Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 1.5/2</p>  <p>Calificaci&#243;n: 8</p>"
+                      ]
+           },
+           "9kpPy7LDdwRb1YKXAxlj": {
+                      "indx": 11,
+                      "answer": [
+                                 "<p>Hola Misael,</p>  <p>La implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. En el caso de la matriz de Viterbi tienes un peque&#241;o error. Aunque la f&#243;rmula que usas es la correcta, en el bucle no seleccionas correctamente el elemento correspondiente de la matriz de transici&#243;n. Tal y como est&#225; indexada, se selecciona primero el elemento de destino y luego el de origen (tal y como puedes ver en el ejemplo de prob_trans[qDestino][q0]), con lo que ser&#237;a prob_trans[qDestino][qOrigen], no prob_trans[qOrigen][qDestino].</p>  <p>Por otro lado, aunque el etiquetado sea incorrecto, podr&#237;as haber comentado en algo m&#225;s de detalle qu&#233; representan las etiquetas y por qu&#233; son incorrectas. Las reflexiones/limitaciones que comentas son algo gen&#233;ricas y no das detalle de porque es as&#237; (e.j., por qu&#233; un modelo de ML puede funcionar mejor?)</p>  <p>Buen trabajo por lo dem&#225;s.</p>  <p><br /> Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2.5/3<br /> Etiquetado morfosint&#225;ctico 0.5/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 1/2</p>  <p>Calificaci&#243;n: 8</p>"
+                      ]
+           },
+           "l8rVoJX7ax9byv4Ek36W": {
+                      "indx": 12,
+                      "answer": [
+                                 "<p>Hola Pablo,</p>  <p>La implementaci&#243;n de las probabilidades de emisi&#243;n es correcta, pero no has incluido el c&#243;digo para la parte de las probabilidades de la matriz de transici&#243;n (como se ve, adem&#225;s, en los resultados que visualizas despu&#233;s de la matriz). La cosa es que, aunque hayas escrito la ecuaci&#243;n correcta para el c&#225;lculo de probabilidades, el contador de transiciones no lo actualizs dentro del bucle de for it in range(0, len(oracion) - 1), con lo que s&#243;lo tiene la informaci&#243;n para q0.</p>  <p>Adem&#225;s, No es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de Viterbi. No se ve que utilices los valores de Viterbi del estado previo. El proceso de etiquetado morfosint&#225;ctico (al margen de los resultados) es correcto.</p>  <p>Por otro lado, aunque el etiquetado sea incorrecto, podr&#237;as haber comentado en algo m&#225;s de detalle qu&#233; representan las etiquetas y por qu&#233; son incorrectas (decirlo con m&#225;s detalle, qu&#233; etiquetas deber&#237;an ser...). Las reflexiones/limitaciones que comentas son algo gen&#233;ricas y s&#243;lo las centras en aspectos del corpus, no de la l&#243;gica del algortimo.</p>  <p><br /> Probabilidades de transici&#243;n 0.5/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 0.5/2</p>  <p>Calificaci&#243;n: 6</p>"
+                      ]
+           },
+           "lwGqLkzPdy7aQrov3KBg": {
+                      "indx": 13,
+                      "answer": [
+                                 "<p>Hola Cristian,</p>  <p>Tanto la parte de las probabilidades de transicion y emision, como la implementaci&#243;n del algoritmo de Viterbi y el etiquetado de la oraci&#243;n est&#225;n perfectos. Muy buen trabajo.<br /> No obstante, las reflexiones que planteas son algo escuetas y s&#243;lo las centras en limitaciones de los datos, y no mencionas limitaciones propias del algoritmo en s&#237; mismo.</p>  <p>Muy buen trabajo por lo dem&#225;s.</p>  <p><br /> Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 3/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 0.5/2</p>  <p>Calificaci&#243;n: 8.5</p>"
+                      ]
+           },
+           "OMWVYmxkazYeJ0PoX1G6": {
+                      "indx": 14,
+                      "answer": [
+                                 "<p>Hola Carlos,</p>  <p>Tanto la parte de las probabilidades de transicion y emision, como la implementaci&#243;n del algoritmo de Viterbi y el etiquetado de la oraci&#243;n est&#225;n perfectos. Muy buen trabajo.<br /> En el apartado de reflexiones/Limitacions comentas aspectos relevantes de las limitaciones del algoritmo que se usa. No obtante, no comentas posibles puntos de mejora en base a los datos del corpus (como, por ejemplo, reducir la cardinalidad considerando etiquetas de mayor nivel).</p>  <p>Muy buen trabajo.</p>  <p><br /> Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 3/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 1.5/2</p>  <p>Calificaci&#243;n: 9.5</p>"
+                      ]
+           },
+           "DyZYK4w9aAOdvMRnBp7G": {
+                      "indx": 15,
+                      "answer": [
+                                 "<p>Hola V&#237;ctor,</p>  <p>La implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n/emisi&#243;n es correcto. No obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de Viterbi. No se ve que utilices los valores de Viterbi del estado previo (se ve en que las probabilidades de la ruta de Viterbi no &quot;decrecen&quot;, que ser&#237;a lo normal si vas multiplicando en cada paso por valores &lt;1).</p>  <p>Muy bien por comentar en las limitaciones y posibles puntos de mejora el aspecto de la cardinalidad (demasiadas palabras distintas) y otros aspectos de los datos de entrada. Eso s&#237;, las reflexiones s&#243;lo est&#225;n centradas en la limitac&#243;n por el corpus, no por el algoritmo en s&#237; mismo (que tambi&#233;n tiene limitaciones, como no tener memoria de los estados anteriores, por ejemplo).</p>  <p>Buen trabajo por lo dem&#225;s.</p>  <p><br /> Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 1/2</p>  <p>Calificaci&#243;n: 8</p>"
+                      ]
+           },
+           "mRy83X46dBXa79jAkGxv": {
+                      "indx": 16
+           },
+           "RK4mVoBDbDxbl2EONvnG": {
+                      "indx": 17,
+                      "answer": []
+           },
+           "NYq1gK4oeEva0ByxjX2m": {
+                      "indx": 18,
+                      "answer": []
+           },
+           "7LV65xYRdG7dDzOWg4Ay": {
+                      "indx": 19,
+                      "answer": [
+                                 "<p>Hola Roger,</p>  <p>La implementaci&#243;n de las ecuaciones para el c&#225;lculo de las probabilidades de emisi&#243;n es correcta. Sin embargo, no es correcta la ecuaci&#243;n del c&#225;lculo de probabilidades de la matriz de transici&#243;n. La f&#243;rmula es P(T|T-1) = C(T-1, T) / C(T-1), con lo que la divisi&#243;n del numerador es por el elemento previo, no por C(T). En el c&#225;lculo de la matriz de Viterbi no est&#225;s usando la probabilidad de transici&#243;n cuando deber&#237;as incluirla junto con el valor previo de la matriz. Por otro lado, el etiquetado no es correcto, a diferencia de lo que comentas (etiquetar 'enfermo' cuando es sustantivo como AQ0MS0 no es correcto). Deber&#237;as haber analizado en m&#225;s profundidad las etiquetas que el etiquetador ha dado a las palabras.</p>  <p>Las reflexiones que planteas son algo escuetas y no profundizas en aspectos que comentas (e.j, c&#243;mo solucionas, con ejemplos concretos, el problema de las palabras desconocidas?), adem&#225;s s&#243;lo est&#225;n centradas en la limitac&#243;n por el corpus, no por el algoritmo en s&#237; mismo (que tambi&#233;n tiene limitaciones, como no tener memoria de los estados anteriores, por ejemplo).</p>  <p>Probabilidades de transici&#243;n 1/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 0.5/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 0.5/2</p>  <p>Calificaci&#243;n: 6</p>"
+                      ]
+           },
+           "w3Bk61YQdJ2dOGpJZn4W": {
+                      "indx": 20,
+                      "answer": []
+           },
+           "rgP8V4y1aKReQGw5WvzA": {
+                      "indx": 21,
+                      "answer": [
+                                 "<p>Hola Edgar,</p>  <p>Tanto la parte de las probabilidades de transicion y emision, como la implementaci&#243;n del algoritmo de Viterbi y el etiquetado de la oraci&#243;n est&#225;n correctos. Muy buen trabajo. No obstante, la salida del etiquetador para el signo de puntuaci&#243;n no es correcta.<br /> Entre las mejoras que comentas, adem&#225;s de mejoras con respecto al corpus y con respecto al rendimiento de la ejecuci&#243;n, podr&#237;as haber comentado mejoras con respecto al algoritmo en s&#237; mismo (que tambi&#233;n tiene limitaciones, como no tener memoria de los estados anteriores, por ejemplo).</p>  <p>Muy buen trabajo en cualquier caso.</p>  <p>Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 3/3<br /> Etiquetado morfosint&#225;ctico 0.5/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 1/2</p>  <p>Calificaci&#243;n: 8.5</p>"
+                      ]
+           },
+           "7k1oYq9wdLwbjPXgEBG3": {
+                      "indx": 22,
+                      "answer": [
+                                 "<p>Hola Richard,</p>  <p>La implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. De igual manera, es correcta la implementaci&#243;n de las probabilidades de emisi&#243;n.<br /> No obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de Viterbi. Realizas un c&#225;lculo de un m&#225;ximo que no es necesario (ya que el m&#225;ximo es algo que calcula el bucle con prob_qOrigen &gt; prob_max), y no se ve que utilices los valores de Viterbi del estado previo (se ve en que las probabilidades de la ruta de Viterbi no &quot;decrecen&quot;, que ser&#237;a lo normal si vas multiplicando en cad apaso por valores &lt;1).</p>  <p>Por otro lado, aunque el etiquetado sea correcto, podr&#237;as haber comentado en algo m&#225;s de detalle qu&#233; representan las etiquetas y por qu&#233; son correctas. Las reflexiones/limitaciones son escasas y no comentas detalles concretos de cosas a mejorar.</p>  <p><br /> Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 0.5/2</p>  <p>Calificaci&#243;n: 7.5</p>"
+                      ]
+           },
+           "B9RO37N1aMAaWmpnyxV8": {
+                      "indx": 23,
+                      "answer": []
+           },
+           "1oRkpQJ0dN6dLOvE2Mwz": {
+                      "indx": 24,
+                      "answer": []
+           },
+           "wX90Gz3YaOpbxqlW142B": {
+                      "indx": 25,
+                      "answer": [
+                                 "<p>Hola Jose Alejandro,</p>  <p>Tanto la parte de las probabilidades de transicion y emision, como la implementaci&#243;n del algoritmo de Viterbi y el etiquetado de la oraci&#243;n est&#225;n perfectos. Muy buen trabajo.<br /> Entre las mejoras que comentas, adem&#225;s de mejoras con respecto al corpus y con respecto al rendimiento de la ejecuci&#243;n, podr&#237;as haber comentado mejoras con respecto al algoritmo en s&#237; mismo (que tambi&#233;n tiene limitaciones, como no tener memoria de los estados anteriores, por ejemplo).</p>  <p>Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 3/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 1/2</p>  <p>Calificaci&#243;n: 9</p>"
+                      ]
+           },
+           "A4o5pmWZdPwbKgRlQ6v0": {
+                      "indx": 26,
+                      "answer": []
+           },
+           "P4XgELYqaQlenjk2m9Oz": {
+                      "indx": 27,
+                      "answer": [
+                                 "<p>Hola Jorge,</p>  <p>Aunque la f&#243;rmula que has implementado para el c&#225;lculo de la matriz de transici&#243;n es correcta, no es correcto el paso previo del conteo de las transiciones. Con &quot;for it in range(0, len(oracion) - 1):&quot; est&#225;s recorriendo los distintos elementos de la oraci&#243;n, pero la informaci&#243;n de cada elemento no la est&#225;s inlcuyendo dentro de la matriz de conteo contador_transiciones. De hecho, se puede ver en tu matriz de transici&#243;n final c&#243;mo todos los elementos son cero salvo la primera fila. El c&#225;lculo de las probabilidades de emisi&#243;n es correcto. COmo comentario al margen, no dejes salidas de errores de c&#243;digo en la entrega.</p>  <p>Con respecto a la matriz de Viterbi, no has implementando el c&#243;digo que se solicitaba. Tampoco has respondido a las cuestiones finales.</p>  <p>Probabilidades de transici&#243;n 1/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 0/3<br /> Etiquetado morfosint&#225;ctico 0/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 0/2</p>  <p>Calificaci&#243;n: 3</p>"
+                      ]
+           },
+           "M15wNJAPdRqbGyOXpZKn": {
+                      "indx": 28,
+                      "answer": []
+           },
+           "RomQjOy5eVMdEP4V27qr": {
+                      "indx": 29,
+                      "answer": [
+                                 "<p><br /> Hola Carlos,</p>  <p>El c&#243;digo y resultados de las matrices de transici&#243;n y emisi&#243;n est&#225;n perfectos. No obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de Viterbi. S&#243;lo consideras la probabilidad de transici&#243;n, pero no la multiplicas por la probabilidad del estado previo de la matriz de Viterbi. Por lo dem&#225;s, bien en el anla&#237;sis de los resultados.</p>  <p>Entre las mejoras que comentas, adem&#225;s de mejoras con respecto al corpus y con respecto al rendimiento de la ejecuci&#243;n, podr&#237;as haber comentado mejoras con respecto al algoritmo en s&#237; mismo (que tambi&#233;n tiene limitaciones, como no tener memoria de los estados anteriores, por ejemplo).</p>  <p>Buen trabajo en cualquier caso.</p>  <p>Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 1/2</p>  <p>Calificaci&#243;n: 8<br /> &#160;</p>"
+                      ]
+           },
+           "mJqAMrlNbWJayg5Kx2n6": {
+                      "indx": 30,
+                      "answer": [
+                                 "<p>Hola Josue,</p>  <p>El contador de las transiciones no es correcto. En la iteraci&#243;n por cada una de las palabras est&#225;s viendo la transici&#243;n a cada una de ellas desde q0 siempre, no desde la palabra previa. Por este motivo, los resultados que obtienes para la matriz de transici&#243;n no son correctos en &#250;ltima instancia. La f&#243;rmula de la matriz de transici&#243;n y el c&#243;digo para la matriz de emisi&#243;n s&#237; son correctos. El c&#225;lculo de la matriz de Viterbi no es del todo correcto, ya que s&#243;lo consideras las probabilidades del estado previo, pero no las multiplicas por las probabilidades de transici&#243;n.</p>  <p>Entre las mejoras que comentas, adem&#225;s de mejoras con respecto al corpus, podr&#237;as haber comentado mejoras con respecto al algoritmo en s&#237; mismo (que tambi&#233;n tiene limitaciones, como no tener memoria de los estados anteriores, por ejemplo). Bien por mencionar que el corpus deber&#237;a estar orientado al &#225;mbito donde se va a utilizar posteriormente.</p>  <p>Buen trabajo por lo dem&#225;s</p>  <p>Probabilidades de transici&#243;n 1/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 1/2</p>  <p>Calificaci&#243;n: 7</p>"
+                      ]
+           },
+           "PLG6vkQBeXWdyK82gAjW": {
+                      "indx": 31,
+                      "answer": [
+                                 "<p>Hola Germ&#225;n,</p>  <p>Los c&#225;lculos y la implementaci&#243;n del c&#243;digo para obtener las matrices de transici&#243;n/emisi&#243;n son correctos. No obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de Viterbi. S&#243;lo consideras la probabilidad de transici&#243;n, pero no la multiplicas por la probabilidad del estado previo de la matriz de Viterbi. Por lo dem&#225;s, bien en el an&#225;lisis de los resultados.</p>  <p>Por lo dem&#225;s, bien en cuanrto a la reflexi&#243;n sobre los resultados del etiquetador, y bien tambi&#233;n en las reflexiones finales por comentar posibles puntos de mejora con el uso de de modelos de ML que aprendan sobre las etiquetas de EAGLES. Podr&#237;as haber comentado para estos casos qu&#233; features podr&#237;an usar estos modelos. Se echa en falta &#250;nicamente alguna reflexi&#243;n m&#225;s detallada sobre los problemas asociados al corpus como tal (tama&#241;o limitado, muchas etiquetas...)</p>  <p>Buen trabajo por lo dem&#225;s</p>  <p>Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 1.5/2</p>  <p>Calificaci&#243;n: 8.5</p>"
+                      ]
+           },
+           "ovm9gW4QbYKezqM5YxjX": {
+                      "indx": 32,
+                      "answer": [
+                                 "<p>Hola &#193;lvaro,</p>  <p>El c&#225;lculo de la matriz de transici&#243;n es parcialmente correcto. La obtenci&#243;n de la matriz de contadores est&#225; bien, pero recuerda que la f&#243;rmula es P(T|T-1) = C(T-1, T) / C(T-1), con lo que deber&#237;as haber dividido por estados_totales[qt_1], no por estados_totales[qt]. la implementaci&#243;n y c&#225;lculos de la matriz de emisi&#243;n es correcta. Un comentario adicional: no deber&#237;as haber dejado salidas de c&#243;digo con errores dentro de la entrega.</p>  <p>No es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de Viterbi. S&#243;lo consideras la probabilidad de transici&#243;n, pero no la multiplicas por la probabilidad del estado previo de la matriz de Viterbi.</p>  <p>Por otro lado, aunque el etiquetado sea correcto, podr&#237;as haber comentado en algo m&#225;s de detalle qu&#233; representan las etiquetas y por qu&#233; son correctas. Las reflexiones/limitaciones son escasas y no comentas detalles concretos de cosas a mejorar.</p>  <p><br /> Probabilidades de transici&#243;n 1/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 0.5/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 0.5/2</p>  <p>Calificaci&#243;n: 6</p>"
+                      ]
+           },
+           "q3R9OjoQeZJepZVg8lND": {
+                      "indx": 33,
+                      "answer": [
+                                 "<p>Hola C&#233;sar,</p>  <p>Tanto la parte de las probabilidades de transicion y emision, como la implementaci&#243;n del algoritmo de Viterbi y el etiquetado de la oraci&#243;n est&#225;n perfectos. Muy buen trabajo. Bien por detectar en el segundo caso que hay un error en el caso de la etiquetaci&#243;n de la palabra &quot;habla&quot;.</p>  <p>En cuanto a las limitaciones, bien por comentar tanto cosas propias de los datos de entrada como cosas propias del algoritmo. Hay algunos aspectos importantes, no obstante, que no has comentado, como el que el corpus de entrada sea tan peque&#241;o, o que el algoritmo siga la hip&#243;tesis de Markov y s&#243;lo considere el estado anterior. Por otro lado, las reflexiones sobre posibles mejoras son algo escuetas y no has desarrollado una explicaci&#243;n sobre el por qu&#233; el punto que comentas ser&#237;a una mejora.</p>  <p>Muy buen trabajo por lo dem&#225;s</p>  <p>Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 3/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 1.5/2</p>  <p>Calificaci&#243;n: 9.5</p>"
+                      ]
+           },
+           "OBqnkEKQe1RaJYvV0AZP": {
+                      "indx": 34,
+                      "answer": []
+           },
+           "nQpz4yJrb2KdWLDX7wKm": {
+                      "indx": 35,
+                      "answer": [
+                                 "<p><br /> Hola Jorge,</p>  <p>El contador de las transiciones no es correcto. En la iteraci&#243;n por cada una de las palabras no est&#225;s actualizando el contador de transiciones en funci&#243;n de la tupla de POS tags que se van encontrando. Puedes ver adem&#225;s como no es correcto en el resultado de la matriz de transici&#243;n, donde todo es 0 salvo la primera fila (la del elemento inicial). Las f&#243;rmulas como tal para clacular las probabilidades de emisi&#243;n/transici&#243;n s&#237; son correctas.</p>  <p>El c&#225;lculo de la matriz de Viterbi no es del todo correcto, ya que s&#243;lo consideras la probabilidad de transici&#243;n, pero no la probabilidad del estado previo. No incluyes el c&#243;digo para obtener la decodificaci&#243;n con la matriz de Viterbi (de manera que devuelves un valor de 'oracion_etiquetada' que no es el correcto). No pones tampoco nada en los apartados finales.</p>  <p>Probabilidades de transici&#243;n 1/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 0/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 0/2</p>  <p>Calificaci&#243;n: 5</p>"
+                      ]
+           },
+           "WygqPGELe3Mb698jZX1n": {
+                      "indx": 36,
+                      "answer": []
+           },
+           "j50r4KGRb41dBLZQxgy9": {
+                      "indx": 37,
+                      "answer": []
+           },
+           "ygW9QqM7e5Ba2vp5lo4B": {
+                      "indx": 38,
+                      "answer": [
+                                 "<p>Hola Sonia,</p>  <p>En el c&#225;lculo de la matriz con el contador de transiciones tienes contador_transiciones[qF_1][qF] fuera del bucle que recorre las palabras, con lo que no lo est&#225;s actualizando correctamente. Por otro lado, con qF_1 = oracion[-1].Tag() est&#225;s cogiendo siempre el &#250;ltimo elemento de la oraci&#243;n, por lo que tampoco est&#225;s recorriendo propiamente las palabras de la oraci&#243;n. Puedes ver adem&#225;s como no es correcto en el resultado de la matriz de transici&#243;n, donde todo es 0 salvo la primera fila (la del elemento inicial). La f&#243;rmula de la matriz de transici&#243;n no es correcta, ya que deber&#237;as dividir por el elemento inicial, tal y como especifica la ecuaci&#243;n P(T|T-1) = C(T-1, T) / C(T-1). El c&#225;lculo de la matriz de emisi&#243;n s&#237; es correcto.</p>  <p>No has implementado el c&#243;digo que ped&#237;a para la matriz de Viterbi, ni tampoco para la parte de la decodificaci&#243;n de la oraci&#243;n. El an&#225;lisis de si los resultados de la decodificaci&#243;n no son correctos; &quot;Tristana&quot; no es parte de la oraci&#243;n que se decofica (&quot;'Habla con el enfermo grave de trasplantes&quot;).</p>  <p><br /> Probabilidades de transici&#243;n 0.5/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 0/3<br /> Etiquetado morfosint&#225;ctico 0/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 0.5/2</p>  <p>Calificaci&#243;n: 3</p>"
+                      ]
+           },
+           "MAoVqQK9b6nbEvYnGpx8": {
+                      "indx": 39,
+                      "answer": [
+                                 "<p>Hola Edwin,</p>  <p>La f&#243;rmula de la matriz de transici&#243;n no es correcta. Indicas que es prob = contador_transiciones[qt_1][qt] / estados[qt], pero recuerda que la f&#243;rmula es P(T|T-1) = C(T-1, T) / C(T-1). La implementaci&#243;n de los c&#225;lculos para la matriz de emisi&#243;n son correctos. Bien por considerar tanto la probabilidad previa de Viterbi como la de transici&#241;on para el c&#225;lculo de la matriz de Viterbi.</p>  <p>El c&#243;digo para la decodificaci&#243;n de la frase es correcto. Las reflexiones que planteas sobre las limitaciones y puntos de mejora comentando la limitaci&#243;n de usar bigramas es correcta. Podr&#237;as haber comentado, no obstante, las limitaciones ascociadas al corpus en s&#237; (tama&#241;o, tipo de textos que aparecen...)</p>  <p><br /> Probabilidades de transici&#243;n 1/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 3/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 1/2</p>  <p>Calificaci&#243;n: 8</p>"
+                      ]
+           },
+           "NzqmQO5xe7jd7rJX0A4o": {
+                      "indx": 40,
+                      "answer": [
+                                 "<p>Hola Roger,</p>  <p>Los c&#225;lculos y la implementaci&#243;n del c&#243;digo para obtener las matrices de transici&#243;n/emisi&#243;n son correctos. No obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de Viterbi. S&#243;lo consideras la probabilidad de transici&#243;n, pero no la multiplicas por la probabilidad del estado previo de la matriz de Viterbi. Por lo dem&#225;s, bien en el an&#225;lisis de los resultados, as&#237; como las reflexiones finales.</p>  <p>Buen trabajo</p>  <p><br /> Probabilidades de transici&#243;n 2/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 2/2</p>  <p>Calificaci&#243;n: 8</p>"
+                      ]
+           },
+           "7YBDXMVyb8mdvAZEJ24g": {
+                      "indx": 41,
+                      "answer": []
+           },
+           "20qjMVWPe9xdLywr4pRn": {
+                      "indx": 42,
+                      "answer": [
+                                 "<p>Hola Luis,</p>  <p>La f&#243;rmula de la matriz de transici&#243;n no es correcta. Indicas que es prob = contador_transiciones[qt_1][qt] / estados[qt], pero recuerda que la f&#243;rmula es P(T|T-1) = C(T-1, T) / C(T-1). La implementaci&#243;n de los c&#225;lculos para la matriz de emisi&#243;n son correctos.&#160;<br /> El c&#225;lculo de la matriz de Viterbi no es del todo correcto, ya que s&#243;lo consideras las probabilidades de los estados previos, pero no las multiplicas por la probabilidad de transici&#243;n correspondiente. La parte de c&#243;digo para el etiquetado es correcta.</p>  <p>En cuanto a las reflexiones finales, comentas que las palabras est&#225;n etiquetadas correctamente pero no profundizas un poco m&#225;s en ello (e.g., dici&#233;ndo qu&#233; representan esas etiquetas EAGLES). Bien por comentar limitaciones propias del corpus, aunque tambi&#233;n podr&#237;as haber comentado algo respecto al tama&#241;o (tan peque&#241;o) del corpus usado. Tampoco mencionas aspectos de limitaciones como que el algoritmo siga la hip&#243;tesis de Markov y s&#243;lo considere el estado anterior.</p>  <p>Buen trabajo por lo dem&#225;s</p>  <p>Probabilidades de transici&#243;n 1/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 1/2</p>  <p>Calificaci&#243;n: 7</p>"
+                      ]
+           },
+           "og5m6QnXe0vbxrLjlyqZ": {
+                      "indx": 43,
+                      "answer": [
+                                 "<p>Hola Erick,</p>  <p>La f&#243;rmula de la matriz de transici&#243;n no es correcta. Indicas que es prob = contador_transiciones[qt_1][qt] / estados[qt], pero recuerda que la f&#243;rmula es P(T|T-1) = C(T-1, T) / C(T-1). Tampoco est&#225;s recorriendo propiamente las palabras de la oraci&#243;n para generar la matriz con los contadores de tuplas de POS Tags. Puedes ver adem&#225;s como no es correcto en el resultado de la matriz de transici&#243;n, donde todo es 0 salvo la primera fila (la del elemento inicial). La implementaci&#243;n de los c&#225;lculos para la matriz de emisi&#243;n son correctos.&#160;</p>  <p>El c&#225;lculo de la matriz de Viterbi no es del todo correcto, ya que s&#243;lo consideras la probabilidad de transici&#243;n, pero no la probabilidad del estado previo. Bien en cuanto al c&#243;digo para la decodificaci&#243;n y anotaci&#243;n con los resultados de la matriz de Viterbi.</p>  <p>Las reflexiones sobre si es correcto el etiquetado son demasiado breves; no profundizas un poco m&#225;s en ello (e.g., dici&#233;ndo qu&#233; representan esas etiquetas EAGLES). Esto lo comentas para la segunda oraci&#243;n, pero para la primera s&#243;lo dices que sn correctos &quot;en t&#233;rminos generales&quot;. No comentas pr&#225;cticamente nada en el apartado de limitaciones/mejoras.</p>  <p><br /> Probabilidades de transici&#243;n 0.5/2<br /> Probabilidades de emisi&#243;n 2/2<br /> Valores de Viterbi 2/3<br /> Etiquetado morfosint&#225;ctico 1/1<br /> An&#225;lisis del etiquetador morfosint&#225;ctico 0.5/2</p>  <p>Calificaci&#243;n: 6</p>"
+                      ]
+           }
+}

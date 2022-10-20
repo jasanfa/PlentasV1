@@ -5,113 +5,50 @@ from flask_cors import CORS
 from hashids import Hashids
 import zipfile
 import os
+from codeScripts.utils import save_json, load_json
+from plentas import Plentas
 
-from utils import save_json
+
 #from plentas import Plentas
 
 a = "aaa"
 e = 0
 
-responses = [
-           { '0' : {
-                      "ID": "9J4q2VolejRejNmGQBW7",
-                      "NotaSpacy": 0.1,
-                      "NotaBert":0.8,
-                      "Feedback": "Hola1"
-           }
-           },
-           { '1': {
-                      "ID": "7J4q2VolejRejNmGQBW7",
-                      "NotaSpacy": 0.2,
-                      "NotaBert":0.4,
-                      "Feedback": "Hola2"
-           }
-           },
-           { '2':{
-                      "ID": "8J4q2VolejRejNmGQBW7",
-                      "NotaSpacy": 0.3,
-                      "NotaBert":0.2,
-                      "Feedback": "Hola3"
-                }
-           },
-           { '3' : {
-                      "ID": "9J4q2VolejRejNmGQBW7",
-                      "NotaSpacy": 0.4,
-                      "NotaBert":0.8,
-                      "Feedback": "Hola4"
-           }
-           },
-           { '4': {
-                      "ID": "7J4q2VolejRejNmGQBW7",
-                      "NotaSpacy": 0.5,
-                      "NotaBert":0.4,
-                      "Feedback": "Hola5"
-           }
-           },
-           { '5':{
-                      "ID": "8J4q2VolejRejNmGQBW7",
-                      "NotaSpacy": 0.6,
-                      "NotaBert":0.2,
-                      "Feedback": "Hola6"
-                }
-           },
-           { '6' : {
-                      "ID": "9J4q2VolejRejNmGQBW7",
-                      "NotaSpacy": 0.7,
-                      "NotaBert":0.8,
-                      "Feedback": "Hola7"
-           }
-           },
-           { '7': {
-                      "ID": "7J4q2VolejRejNmGQBW7",
-                      "NotaSpacy": 0.8,
-                      "NotaBert":0.4,
-                      "Feedback": "Hola8"
-           }
-           },
-           { '8':{
-                      "ID": "8J4q2VolejRejNmGQBW7",
-                      "NotaSpacy": 0.9,
-                      "NotaBert":0.2,
-                      "Feedback": "Hola9"
-                }
-           },
-           { '9' : {
-                      "ID": "9J4q2VolejRejNmGQBW7",
-                      "NotaSpacy": 1.0,
-                      "NotaBert":0.8,
-                      "Feedback": "Hola10"
-           }
-           },
-           { '10' : {
-                      "ID": "rrr9J4q2VolejRejNmGQBW7",
-                      "NotaSpacy": 1.1,
-                      "NotaBert":0.8,
-                      "Feedback": "Hola11"
-           }
-           },
-           { '11': {
-                      "ID": "fdffffffffffejRejNmGQBW7",
-                      "NotaSpacy": 1.2,
-                      "NotaBert":0.4,
-                      "Feedback": "Hola12"
-           }
-           },
-           { '12':{
-                      "ID": "gg",
-                      "NotaSpacy": 1.3,
-                      "NotaBert":0.2,
-                      "Feedback": "Hola13"
-                }
-           },
-]
+fake_file = {
+		"enunciado": "Describe, en menos de 200 palabras, la importancia del gobierno del dato en la empresa. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿qué debe abarcar el gobierno del dato?, ¿cuál es el nuevo ciclo de vida del dato?,¿quién debe liderar este tipo de estrategias?,¿cómo se puede beneficiar la empresa?,¿cómo se beneficia el cliente?",
+		"minipreguntas": [
+			{
+				"minipregunta": "¿qué debe abarcar el gobierno del dato? ",
+				"minirespuesta": "El gobierno del dato permite a las empresas gestionar sus datos (disponibilidad, integridad, usabilidad y seguridad), convertirlos en información y posteriormente en conocimiento para una mejor toma de decisiones, repercutiendo así en beneficios competitivos."
+			},
+			{
+				"minipregunta": "¿cuál es el nuevo ciclo de vida del dato?",
+				"minirespuesta": "Para transformar la información en conocimiento, los datos deben ser confiables, oportunos, completos y accesibles. El dato tiene un ciclo de vida que incluye las siguientes etapas: captura, almacenamiento, modificación, uso, gestión, protección y borrado."
+			},
+			{
+				"minipregunta": "¿quién debe liderar este tipo de estrategias?",
+				"minirespuesta": "La estrategia de gobierno del dato debe ser liderada por la empresa, debería existir una oficina de gobierno, tener un conjunto de procedimientos y un plan para ejecutar dichos procedimientos."
+			},
+			{
+				"minipregunta": "¿cómo se puede beneficiar la empresa? ¿cómo se beneficia el cliente?",
+				"minirespuesta": "El cambio de mentalidad y de organización contribuye a la digitalización de la empresa, protección de los datos, procesos más eficientes, se agiliza la toma de decisiones que repercute en una mejor atención al cliente."
+			}
+		],
+		"keywords": [
+			"gobierno del dato",
+			"lidera la empresa",
+			"protección del dato",
+			"borrado del dato",
+			"toma de decisiones"
+		]
+	}
 
 def create_custom_file_path(file):
-    path = "StudentAnswersZip/" + file
+    path = "api/StudentAnswersZip/" + file
     return path
 
 def extractZipData(ruta_zip):
-    ruta_extraccion = "StudentAnswers/"
+    ruta_extraccion = "api/StudentAnswers/"
     password = None
     archivo_zip = zipfile.ZipFile(ruta_zip, "r")
     try:
@@ -129,18 +66,29 @@ def answersTodict(zip_path):
     studentAnswersDict = dict()
     hashids = Hashids(min_length=20)
 
-    for work_folder in os.listdir("StudentAnswers"):
-        for student, indx in zip(os.listdir("StudentAnswers/" + work_folder), range(len(os.listdir("StudentAnswers/" + work_folder)))):
+    """
+    for work_folder in os.listdir("api/StudentAnswers"):
+        for student, indx in zip(os.listdir("api/StudentAnswers/" + work_folder), range(len(os.listdir("api/StudentAnswers/" + work_folder)))):
             try:
                 studentAnswersDict[hashids.encode(indx)] = dict()
                 studentAnswersDict[hashids.encode(indx)]["indx"] = indx
-                fichero = open("StudentAnswers/" + work_folder + "/" + student + "/" + 'comments.txt')
+                fichero = open("api/StudentAnswers/" + work_folder + "/" + student + "/" + 'comments.txt')
                 lineas = fichero.readlines()
-                studentAnswersDict[hashids.encode(indx)]["answer"] = lineas
+                studentAnswersDict[hashids.encode(indx)]["respuesta"] = lineas
             except:
                 continue
-    
-    save_json("StudentsDict.json", studentAnswersDict)
+    """
+    studentAnswersDict = []
+    for work_folder in os.listdir("api/StudentAnswers"):
+        for student, indx in zip(os.listdir("api/StudentAnswers/" + work_folder), range(len(os.listdir("api/StudentAnswers/" + work_folder)))):
+            try:
+                fichero = open("api/StudentAnswers/" + work_folder + "/" + student + "/" + 'comments.txt')
+                lineas = fichero.readlines()                                
+                studentAnswersDict.append({"respuesta":lineas[0], "hashed_id":hashids.encode(indx), "TableIndex":indx}) 
+            except:
+                continue
+    save_json("api/ApiStudentsDict.json", studentAnswersDict)
+    return studentAnswersDict
 
 
 def create_app():
@@ -160,13 +108,15 @@ def getData():
 def processData():
     uploadedFile = request.files['zipFile']
     #uploadedFile = request.form['zipFile']	
-    configuration = request.form["configuration"] 
-    print(uploadedFile) 
-    print(configuration)      
+    configuration = request.form["configuration"]   
     uploadedFile.save(create_custom_file_path(uploadedFile.filename))
-    answersTodict(create_custom_file_path(uploadedFile.filename)) 
+    
+    config_json = load_json("config.json")
+    response = Plentas(config_json[0], [answersTodict(create_custom_file_path(uploadedFile.filename)), fake_file])    
+    response.setApiSettings(configuration)
+   
 
-    return jsonify(responses)
+    return jsonify(response.processApiData())
         
     #inputData = request.json
     #print(inputData)

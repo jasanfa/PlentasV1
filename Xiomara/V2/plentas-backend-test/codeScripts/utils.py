@@ -296,6 +296,20 @@ def load_json_dtset(path):
     
     return data
     
+def splitResponse(respuesta_alumno_raw):
+    #pre-processing the student's response
+    regex = '\\\n'
+    respuesta_alumno = re.sub(regex , ' ', respuesta_alumno_raw)
+    respuesta_alumno = respuesta_alumno.lower()
 
+    #stacking each sentence of the student's response
+    sentences=[]                        
+    TokenizeAnswer = sent_tokenize(respuesta_alumno)
+    for token in TokenizeAnswer:
+        regex = '\\.'
+        token = re.sub(regex , '', token)
+        sentences.append(token)
+
+    return sentences
         
         

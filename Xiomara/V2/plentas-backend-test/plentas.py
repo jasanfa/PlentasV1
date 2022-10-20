@@ -1,18 +1,24 @@
 import pandas as pd
 import json
-from utils import getIDrange
-from tools import Ortografia, Sintaxis, Semantica, GetSettings
+from codeScripts.utils import getIDrange, splitResponse
+#from codeScripts.tools import Ortografia, Sintaxis, Semantica, GetSettings
+from codeScripts.tools import GetSettings
 import copy
 import re
+import spacy
 
 #from SentenceTransformer2 import *
-from SentenceTransformer_nminipregunta import *
+#from SentenceTransformer_nminipregunta import *
+
+from codeScripts.methodologyPlentas import *
 
 
 class Plentas():
 
-    def __init__(self, config):
-        self.settings = GetSettings(config) 
+    def __init__(self, config, studentsData):
+        self.spacy_sm = spacy.load('es_core_news_sm')
+        self.settings = GetSettings(config, studentsData)
+        self.methodology = PlentasMethodology(self.settings) 
 
     
     def __evaluateStudents__(self):
@@ -58,7 +64,7 @@ class Plentas():
 
 
     
-    def processData(self):
+    def evaluateData(self):
         output_json=[]
         #manual_flag to configure
         analysis_bert = 1
@@ -76,7 +82,8 @@ class Plentas():
         """
         epochsToTest = [50,100]
         #epochsToTest = [1]
-        self.settings.BertModels_glbl = SentTransf_test(modelsToTest, epochsToTest)
+        
+        #self.settings.BertModels_glbl = SentTransf_test(modelsToTest, epochsToTest)
         
         if analysis_bert:
             for model_name in modelsToTest:
@@ -113,5 +120,46 @@ class Plentas():
             outfile.write(json_object)
         
         return json_object
+
+    def setApiSettings(self, api_settings):
+        #lectura de parametros de la api
+        self.settings.setApiSettings(api_settings)
+
+    def processApiData(self):
+        AnalysisOfResponses = []
+        IDs = getIDrange(self.settings.rango_ID, self.settings.answersDF)
+        print(IDs)
+        for id in IDs:
+            studentID = self.settings.answersDF['hashed_id'][id]
+            self.settings.student_dict["ID"] = studentID
+
+            respuesta_alumno_raw = self.settings.answersDF['respuesta'][id].lower()
+  
+
+            #if self.settings.Sintaxis:
+                #necesito nutrirle la respuesta
+                #self.ortography.Analysis(self.settings, respuesta_alumno_raw)
+            
+
+            #if self.settings.Ortografia:
+                #self.ortography.Analysis(self.settings, respuesta_alumno_raw)              
+
+            if self.settings.Semantica:
+                sentencesArr = splitResponse(respuesta_alumno_raw)
+                spacy_eval = self.methodology.getSimilarity(sentencesArr, "spacy")
+                #bert_eval = self.methodology.getSimilarity(sentencesArr, "bert")
+                bert_eval = [0,0,0,0]
+
+            AnalysisOfResponses.append({ id : {
+                                                "ID": studentID,
+                                                "NotaSpacy": spacy_eval[0],
+                                                "NotaBert": bert_eval[0],
+                                                "Feedback": "Hola1" }
+                                    } )      
         
+
+        print(len(AnalysisOfResponses))
+        return AnalysisOfResponses
+    
+
         

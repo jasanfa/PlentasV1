@@ -12,15 +12,12 @@ import spacy
 #nlp = spacy.load('es_core_news_md')
 nlp = spacy.load('es_core_news_lg')
 
-import sys
-sys.path.append("utils/Semantics/")
-
-from SentenceTransformer2 import *
+from OldApi.utils.Semantics.SentenceTransformer2 import *
 
 
-from kwIdentificator import NLP_Answers, NLP_Questions, loadHMMInfo, saveKWInfo, loadKWInfo
+from codeScripts.kwIdentificator import NLP_Answers, NLP_Questions, loadHMMInfo, saveKWInfo, loadKWInfo
 from sklearn.metrics import mean_squared_error, mean_squared_log_error
-from utils import spelling_corrector, clean_words, sent_tokenize, mu_index, FHuertas_index, check_senteces_words, keyword_extractor,getNameFile
+from codeScripts.utils import spelling_corrector, clean_words, sent_tokenize, mu_index, FHuertas_index, check_senteces_words, keyword_extractor,getNameFile
 
 
 """
@@ -171,7 +168,7 @@ class GetSettings():
 
         json_object = json.dumps(info_profesor, indent = 11, ensure_ascii= False) 
         # Writing output to a json file
-        with open("OutputFiles/MinirespuestasProfesor.json", "w", encoding="utf-8") as outfile:
+        with open("OldApi/OutputFiles/MinirespuestasProfesor.json", "w", encoding="utf-8") as outfile:
             outfile.write(json_object)         
 
 class Semantica():
