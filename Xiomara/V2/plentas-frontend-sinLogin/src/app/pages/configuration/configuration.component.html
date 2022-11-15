@@ -25,8 +25,8 @@
         </div>        
       </fieldset>
     </div>
-   
-    <div class="data-container" *ngIf="checkAll != false || checkStudentID != false">
+    
+    <div class="data-container" *ngIf="(checkAll != false || checkStudentID != false) && inputJsonFile != null ">
       <fieldset>
         <legend>3. Configura los pesos de la rubrica para la evaluación</legend>
         <div class="form-rowr" >
@@ -34,19 +34,20 @@
             id="chkOrthography"
             type="checkbox"
             [(ngModel)]="checkOrthography"
+            (click) = "changeRubricWeights(1)"
           />
           <label for="chkOrthography">Ortografía</label>
           <input type="text" [(ngModel)]="orthographyValue" [disabled]="!checkOrthography" />
         </div>
   
         <div class="form-rowr" >
-          <input id="chkSyntax" type="checkbox" [(ngModel)]="checkSyntax" />
+          <input id="chkSyntax" type="checkbox" [(ngModel)]="checkSyntax" (click) = "changeRubricWeights(2)" />
           <label for="chkSyntax">Sintaxis</label>
           <input type="text" [(ngModel)]="syntaxValue" [disabled]="!checkSyntax" />
         </div>
   
         <div class="form-rowr" >
-          <input id="chkSemantic" type="checkbox" [(ngModel)]="checkSemantic" />
+          <input id="chkSemantic" type="checkbox" [(ngModel)]="checkSemantic" (click) = "changeRubricWeights(3)"/>
           <label for="chkSemantic">Semántica</label>
           <input type="text" [(ngModel)]="semanticValue" [disabled]="!checkSemantic" />
         </div>
@@ -54,9 +55,11 @@
           <br>
           <br>
           <br>
-          <button type="button" (click)="processInputData()" onclick="document.getElementById('ResultsNavBar').className = 'nav-link active'">
+          <button type="button" (click)="processInputData()" onclick="document.getElementById('ResultsNavBar').className = 'nav-link active'" *ngIf="isDataBeingProcessed == false">
             Procesar Datos
           </button>
+          <p *ngIf="isDataBeingProcessed == true"> <b>Procesando...</b>   <img *ngIf="isDataBeingProcessed == true" src="../../../assets/loading.gif" width="70" height="70"> <br> Esto podría tardar varios minutos</p>          
+                   
         </div>        
          <!--
         <legend>Datos de Entrada</legend>
@@ -67,6 +70,5 @@
   
   </div>
 
-</div>
 
 

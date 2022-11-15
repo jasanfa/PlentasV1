@@ -20,16 +20,19 @@ export class ConfigurationComponent implements OnInit {
 
   checkOrthography = false;
   checkSyntax = false;
-  checkSemantic = false;
-  public orthographyValue = 0.3;
-  syntaxValue = 0.3;
-  semanticValue = 0.4;
+  checkSemantic = true;
+  public orthographyValue = 0.0;
+  syntaxValue = 0.0;
+  semanticValue = 1.0;
 
   inputData = '{';
 
-  checkAll = false;
+  checkAll = true;
   checkStudentID = false; 
-  checkStudentIDValue = "0-15"; 
+  checkStudentIDValue = "0-15";
+  
+  isDataBeingProcessed = false;
+  value = 0
 
   constructor(
     private toastr: ToastrService,
@@ -55,7 +58,10 @@ export class ConfigurationComponent implements OnInit {
     this.checkAll = this.variables.checkAll;
     this.checkStudentID = this.variables.checkStudentID; 
     this.checkStudentIDValue = this.checkStudentIDValue; 
-  
+
+    this.isDataBeingProcessed = this.variables.isDataBeingProcessed; 
+    
+    
 
   }
 
@@ -71,9 +77,31 @@ export class ConfigurationComponent implements OnInit {
         this.selectedFile = file;
     }
   }
+  
+  changeRubricWeights(type:any){
+    if(type == 1){
+      this.orthographyValue = 0.0;
+      
+    }
+    if(type == 2){
+      this.syntaxValue = 0.0;
+    }
+    if(type == 3){
 
+      this.semanticValue = 0.0;
+    }
+
+  }
 
   async processInputData() {
+    this.value = parseFloat(this.orthographyValue.toString()) + parseFloat(this.syntaxValue.toString()) + parseFloat(this.semanticValue.toString());
+
+    if (this.value != 1.0){
+      this.toastr.error('El valor de los pesos de la rubrica debe sumar 1');
+      return
+    }
+
+    this.isDataBeingProcessed = true
     
     //Configure the json that will go to the api.py
     this.inputData = '{';
@@ -135,6 +163,7 @@ export class ConfigurationComponent implements OnInit {
         const outputDataObject = await this.apiService.post(formData);
         
         if (outputDataObject) {
+          this.isDataBeingProcessed = false;
           //this.experimentDataService.outputData = JSON.stringify(outputDataObject, null, 3);
           //this.evaluation = JSON.stringify(outputDataObject, null, 3);
           
@@ -170,6 +199,8 @@ export class ConfigurationComponent implements OnInit {
     this.variables.checkAll = this.checkAll;
     this.variables.checkStudentID = this.checkStudentID;
     this.variables.checkStudentIDValue = this.checkStudentIDValue;
+    
+    this.variables.isDataBeingProcessed = this.isDataBeingProcessed;   
     
     
   }

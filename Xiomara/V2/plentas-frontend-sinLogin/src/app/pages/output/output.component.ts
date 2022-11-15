@@ -14,6 +14,10 @@ export class OutputComponent implements OnInit {
 
   evaluation:any;
   ID = 0;
+  ID_show = 1
+  ID_show_old = 0
+  NumberPagesTable = 0
+
   numberStudents = 0
 
   stdnt_ID_1 = "Pepe";
@@ -50,27 +54,42 @@ export class OutputComponent implements OnInit {
   bert_10 = "";
 
 
-
   constructor(public experimentDataService: ExperimentDataService, public experimentDataService2: ExperimentDataServiceFeedback, public bufferEvaluation: BufferEvaluation, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.evaluation = this.bufferEvaluation.outputData;
-    this.numberStudents = JSON.parse(this.evaluation).length 
-    this.updateTable()
+    this.numberStudents = JSON.parse(this.evaluation).length;
+    this.updateTable();
+    this.ID_show = this.ID + 1;   
+
 
   }
 
   showFeedback(tableIndx:any){
     //document.write("blabla");
-    var fdbckIndx = tableIndx + this.ID*10
+    var fdbckIndx = tableIndx + this.ID*10;
     var Plentas = JSON.parse(JSON.stringify(JSON.parse(this.evaluation)[fdbckIndx]));     
     this.experimentDataService2.outputData = JSON.parse(JSON.stringify(Plentas[fdbckIndx .toString()]["Feedback"])); 
 
     
   }
 
+  
 
   updateTable(){
+    this.ID = this.ID_show - 1;
+    if (this.ID >= this.NumberPagesTable){
+      this.ID = 0;
+      this.ID_show = 1;
+    }
+    var division = this.numberStudents / 10;
+    var rest = this.numberStudents % 10;
+    if (rest == 0){
+      this.NumberPagesTable = Math.trunc(division);
+    }else{
+      this.NumberPagesTable = Math.trunc(division) + 1;
+    }
+     
     
     var indx = 0 + this.ID*10;
     //document.write(JSON.stringify(this.ID))
@@ -228,12 +247,15 @@ export class OutputComponent implements OnInit {
 
 
   }
+
   showPreviousStudent() {
     //this.experimentDataService2.outputData = JSON.stringify(this.evaluation["message3"], null, 3);
     this.ID-=1;
     if (this.ID < 0) {
       this.ID = 0;
-    } 
+    }
+    
+    this.ID_show = this.ID +1
     
     //this.experimentDataService2.outputData = JSON.stringify(this.evaluation)[this.ID];
     
@@ -246,9 +268,11 @@ export class OutputComponent implements OnInit {
     this.ID -=1
     this.ID +=2
     
-    if (this.ID *10 > this.numberStudents) {
+    if (this.ID *10 >= this.numberStudents) {
       this.ID -=1
-    } 
+    }
+    
+    this.ID_show = this.ID +1
 
     
 
@@ -276,5 +300,6 @@ export class OutputComponent implements OnInit {
     this.toastr.success('Datos copiados al portapapeles.');
   }
 }
+
 
 

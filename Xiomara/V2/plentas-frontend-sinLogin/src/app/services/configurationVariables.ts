@@ -11,15 +11,17 @@ export class ConfigVariables {
 
   checkOrthography = false;
   checkSyntax = false;
-  checkSemantic = false;
+  checkSemantic = true;
 
-  orthographyValue = 0.3;
-  syntaxValue = 0.3;
-  semanticValue = 0.4;
+  orthographyValue = 0.0;
+  syntaxValue = 0.0;
+  semanticValue = 1.0;
 
-  checkAll = false;
+  checkAll = true;
   checkStudentID = false; 
-  checkStudentIDValue = "0-15"; 
+  checkStudentIDValue = "0-15";
+  
+  isDataBeingProcessed = false;
 
   constructor() {}
   
