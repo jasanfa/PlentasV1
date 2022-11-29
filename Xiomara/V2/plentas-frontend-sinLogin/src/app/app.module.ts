@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ConfigurationComponent } from './pages/configuration/configuration.component';
+import { Configuration2Component } from './pages/configuration2/configuration2.component';
 import { OutputComponent } from './pages/output/output.component';
 import { ResultsComponent } from './pages/results/results.component';
 
@@ -19,6 +20,7 @@ import { LandingPageClass } from './components/landingpage/landingpage.component
     AppComponent,
     HomeComponent,
     ConfigurationComponent,
+    Configuration2Component,
     OutputComponent,
     ResultsComponent,
     LandingPageClass

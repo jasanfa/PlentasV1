@@ -27,12 +27,14 @@ export class ConfigurationComponent implements OnInit {
 
   inputData = '{';
 
-  checkAll = true;
-  checkStudentID = false; 
-  checkStudentIDValue = "0-15";
+  checkStudentRadio = "All"
+  checkStudentIDValue = "Ej: 0-15, 18-20";
   
   isDataBeingProcessed = false;
-  value = 0
+  value = 0;
+
+  studentsSelection = ""
+
 
   constructor(
     private toastr: ToastrService,
@@ -55,11 +57,12 @@ export class ConfigurationComponent implements OnInit {
     this.syntaxValue = this.variables.syntaxValue;
     this.semanticValue = this.variables.semanticValue;
    
-    this.checkAll = this.variables.checkAll;
-    this.checkStudentID = this.variables.checkStudentID; 
+    this.checkStudentRadio = this.variables.checkStudentRadio;
+
     this.checkStudentIDValue = this.checkStudentIDValue; 
 
-    this.isDataBeingProcessed = this.variables.isDataBeingProcessed; 
+    this.isDataBeingProcessed = this.variables.isDataBeingProcessed;
+
     
     
 
@@ -79,6 +82,8 @@ export class ConfigurationComponent implements OnInit {
   }
   
   changeRubricWeights(type:any){
+
+    
     if(type == 1){
       this.orthographyValue = 0.0;
       
@@ -92,6 +97,20 @@ export class ConfigurationComponent implements OnInit {
     }
 
   }
+
+
+  
+  openPopup(){
+    let popup = document.getElementById("popup");
+    popup?.classList.add("open-popup")
+
+  }
+
+  closePopup(){
+    let popup = document.getElementById("popup");
+    popup?.classList.remove("open-popup")
+  }
+
 
   async processInputData() {
     this.value = parseFloat(this.orthographyValue.toString()) + parseFloat(this.syntaxValue.toString()) + parseFloat(this.semanticValue.toString());
@@ -122,7 +141,8 @@ export class ConfigurationComponent implements OnInit {
          this.inputData = this.inputData + '"ortographyPercentage": 0.0,';
     }
 
-    if(this.checkAll){
+    
+    if(this.checkStudentRadio == "All"){
       this.inputData = this.inputData + '"students": "All"';
     }else{
          this.inputData = this.inputData + '"students": "' + this.checkStudentIDValue + '"';
@@ -184,6 +204,7 @@ export class ConfigurationComponent implements OnInit {
         this.toastr.error(JSON.stringify(error), 'Error procesando datos', {
           disableTimeOut: true,
         });
+        this.isDataBeingProcessed = false;
       }
 
     this.variables.inputJsonFile = this.inputJsonFile;
@@ -196,8 +217,7 @@ export class ConfigurationComponent implements OnInit {
     this.variables.syntaxValue = this.syntaxValue;
     this.variables.semanticValue = this.semanticValue;
     
-    this.variables.checkAll = this.checkAll;
-    this.variables.checkStudentID = this.checkStudentID;
+    this.variables.checkStudentRadio = this.checkStudentRadio;
     this.variables.checkStudentIDValue = this.checkStudentIDValue;
     
     this.variables.isDataBeingProcessed = this.isDataBeingProcessed;   

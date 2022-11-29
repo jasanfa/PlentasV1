@@ -1,0 +1,59 @@
+<div class="page-container">
+    <div class="flex-container">
+    <legend class="data-container-text ">Introduzca las minipreguntas y minirespuestas de la prueba</legend>
+    <img class="arrow-right" src="../../../assets/rightArrow.png" routerLink="/configuration">
+      
+      <div class="data-container">          
+          
+          <fieldset>
+            <textarea id="Minipregunta1" cols="40" rows="5" class="text-input" [(ngModel)]="textminipregunta1" [disabled]="!checkm1"></textarea>
+            <br>
+            <textarea id="Minipregunta2" cols="40" rows="5" class="text-input" [(ngModel)]="textminipregunta2" [disabled]="!checkm2" *ngIf="checkm1"></textarea>
+            <br>
+            <textarea id="Minipregunta3" cols="40" rows="5" class="text-input" [(ngModel)]="textminipregunta3" [disabled]="!checkm3" *ngIf="checkm2 && checkm1"></textarea>
+            <br>
+            <textarea id="Minipregunta4" cols="40" rows="5" class="text-input"[(ngModel)]="textminipregunta4" [disabled]="!checkm4" *ngIf="checkm3 && checkm2 && checkm1"></textarea>
+            <br>
+            <textarea id="Minipregunta5" cols="40" rows="5" class="text-input"[(ngModel)]="textminipregunta5" [disabled]="!checkm5" *ngIf="checkm4 && checkm3 && checkm2 && checkm1"></textarea>
+
+          </fieldset>
+          <fieldset>
+            <textarea id="Minirespuesta1" cols="40" rows="5" class="text-input" [(ngModel)]="textminirespuesta1" [disabled]="!checkm1" ></textarea>
+            <br>
+            <textarea id="Minirespuesta2" cols="40" rows="5" class="text-input"[(ngModel)]="textminirespuesta2" [disabled]="!checkm2" *ngIf="checkm1"></textarea>
+            <br>
+            <textarea id="Minirespuesta3" cols="40" rows="5" class="text-input"[(ngModel)]="textminirespuesta3" [disabled]="!checkm3" *ngIf="checkm2 && checkm1"></textarea>
+            <br>
+            <textarea id="Minirespuesta4" cols="40" rows="5" class="text-input"[(ngModel)]="textminirespuesta4" [disabled]="!checkm4" *ngIf="checkm3 && checkm2 && checkm1"></textarea>
+            <br>
+            <textarea id="Minirespuesta5" cols="40" rows="5" class="text-input"[(ngModel)]="textminirespuesta5" [disabled]="!checkm5" *ngIf="checkm4 && checkm3 && checkm2 && checkm1"></textarea>
+            
+          </fieldset>
+          <fieldset>
+            <input id="chkminipregunta1" type="checkbox" name="checkboxMinipregunta" class="checkbox-minipregunta" onclick="(checkm1) ? DesbloquearTexto : BloquearTexto" (click)="activarMinipregunta(1)" [checked]="(checkm1) ? true : false"/>
+            <br>
+            <input id="chkminipregunta2" type="checkbox" name="checkboxMinipregunta" class="checkbox-minipregunta" onclick="(checkm2) ? DesbloquearTexto : BloquearTexto" (click)="activarMinipregunta(2)" *ngIf="checkm1" [checked]="(checkm2) ? true : false"/>
+            <br>
+            <input id="chkminipregunta3" type="checkbox" name="checkboxMinipregunta" class="checkbox-minipregunta" onclick="(checkm3) ? DesbloquearTexto : BloquearTexto" (click)="activarMinipregunta(3)" *ngIf="checkm2 && checkm1" [checked]="(checkm3) ? true : false"/>
+            <br>
+            <input id="chkminipregunta4" type="checkbox" name="checkboxMinipregunta" class="checkbox-minipregunta" onclick="(checkm4) ? DesbloquearTexto : BloquearTexto" (click)="activarMinipregunta(4)" *ngIf="checkm3 && checkm2 && checkm1" [checked]="(checkm4) ? true : false"/>
+            <br>
+            <input id="chkminipregunta5" type="checkbox" name="checkboxMinipregunta" class="checkbox-minipregunta" onclick="(checkm5) ? DesbloquearTexto : BloquearTexto" (click)="activarMinipregunta(5)" *ngIf="checkm4 && checkm3 && checkm2 && checkm1" [checked]="(checkm5) ? true : false"/>
+            
+          </fieldset>
+
+          <script>
+            function DesbloquearTexto(){
+              document.getElementById('Minirespuesta5').classList.remove('text-input-selected'); document.getElementById('Minipregunta5').classList.remove('text-input-selected');
+            }
+            function BloquearTexto(){
+              document.getElementById('Minirespuesta5').classList.add('text-input-selected'); document.getElementById('Minipregunta5').classList.add('text-input-selected');              
+            }
+          </script>
+      
+      </div>
+    
+    </div>
+
+  </div>
+  
