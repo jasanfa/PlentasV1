@@ -6,6 +6,16 @@
   }
 
 
+
+  .data-container-right {
+    position: relative;
+    display: inline-block;
+    width: 49%;
+    margin-top: -50px;
+  }
+
+
+
   .data-container textarea {
     width: 100%;
     /*height: calc(100vh - 200px);*/
@@ -51,3 +61,10 @@ table.table-bordered > thead > tr > th{
 table.table-bordered > tbody > tr > td{
   border-bottom:1px solid rgb(0, 0, 0);
 }
+
+
+.desglose-textBox{
+  width: 600px;
+  height: 200px;
+}
+

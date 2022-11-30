@@ -16,8 +16,8 @@ import re
 
 def loadHMMInfo():
     #Loading HMM probability tables
-    Pobs_aux= pd.read_excel(open('__appcache__/Total_Emission.xlsx', 'rb'))
-    Ptrans_aux= pd.read_excel(open('__appcache__/Total_Transmision.xlsx', 'rb'))
+    Pobs_aux= pd.read_excel(open('OldApi/__appcache__/Total_Emission.xlsx', 'rb'))
+    Ptrans_aux= pd.read_excel(open('OldApi/__appcache__/Total_Transmision.xlsx', 'rb'))
     Pobs=Pobs_aux
     Pobs = Pobs.set_index('Unnamed: 0')
     Pobs.index.names = [None]
@@ -26,7 +26,7 @@ def loadHMMInfo():
     Ptrans.index.names = [None]
 
     #Loading the dictionary of lemmas
-    LemmaDictionary = np.load('__appcache__/DiccionarioLemas.npy', allow_pickle='TRUE')
+    LemmaDictionary = np.load('OldApi/__appcache__/DiccionarioLemas.npy', allow_pickle='TRUE')
     LemmaDictionary = LemmaDictionary.item()
 
     return Pobs, Ptrans, LemmaDictionary
@@ -34,38 +34,38 @@ def loadHMMInfo():
 def saveKWInfo(file_name, showFdbck, showMarks,showFdbckDis, showMarksDis):
 
     print(f'{file_name}')
-    tf = open("__appcache__/" + file_name + "_Feedback.json", "w")
+    tf = open("OldApi/__appcache__/" + file_name + "_Feedback.json", "w")
     json.dump(showFdbck,tf)
     tf.close()
 
-    tf = open("__appcache__/" + file_name + "_Marks.json", "w")
+    tf = open("OldApi/__appcache__/" + file_name + "_Marks.json", "w")
     json.dump(showMarks,tf)
     tf.close()
 
-    tf = open("__appcache__/" + file_name + "_FeedbackDistribution.json", "w")
+    tf = open("OldApi/__appcache__/" + file_name + "_FeedbackDistribution.json", "w")
     json.dump(showFdbckDis,tf)
     tf.close()
 
-    tf = open("__appcache__/" + file_name + "_MarksDistribution.json", "w")
+    tf = open("OldApi/__appcache__/" + file_name + "_MarksDistribution.json", "w")
     json.dump(showMarksDis,tf)
     tf.close()
 
 def loadKWInfo(file_name):
         print(f'{"Archivo ya existe"}')
 
-        tf = open("__appcache__/" + file_name + "_Marks.json", "r")
+        tf = open("OldApi/__appcache__/" + file_name + "_Marks.json", "r")
         file_marks = json.load(tf)
         tf.close()
 
-        tf = open("__appcache__/" + file_name + "_Feedback.json", "r")
+        tf = open("OldApi/__appcache__/" + file_name + "_Feedback.json", "r")
         file_feedback = json.load(tf)
         tf.close()
 
-        tf = open("__appcache__/" + file_name + "_MarksDistribution.json", "r")
+        tf = open("OldApi/__appcache__/" + file_name + "_MarksDistribution.json", "r")
         file_marksDistrib = json.load(tf)
         tf.close()
 
-        tf = open("__appcache__/" + file_name + "_FeedbackDistribution.json", "r")
+        tf = open("OldApi/__appcache__/" + file_name + "_FeedbackDistribution.json", "r")
         file_feedbackDistrib = json.load(tf)
         tf.close()
 

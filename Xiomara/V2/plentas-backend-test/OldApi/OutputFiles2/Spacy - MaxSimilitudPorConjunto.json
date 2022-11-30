@@ -1,0 +1,38 @@
+{
+           "9J4q2VolejRejNmGQBW7": {
+                      "1": {
+                                 "MaxSimilitud": 0.481,
+                                 "Frase": "<p>hola surley,</p>  <p>la implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. ",
+                                 "Lineas": "Line 1"
+                      },
+                      "2": {
+                                 "MaxSimilitud": 0.525,
+                                 "Frase": "<p>hola surley,</p>  <p>la implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. de igual manera, es correcta la implementaci&#243;n de las probabilidades de emisi&#243;n<br /> no obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de viterbi. ",
+                                 "Lineas": "Lines 1 - 2"
+                      }
+           },
+           "1gO3GWpmbk5ezJn4KRjL": {
+                      "1": {
+                                 "MaxSimilitud": 0.679,
+                                 "Frase": "la implementaci&#243;n de la probabilidad de emisi&#243;n es correcta</p>  <p>en el c&#225;lculo de la matriz de viterbi tienes que multiplicar la probabilidad del estado previo por la probabilidad de transici&#243;n correspondiente. ",
+                                 "Lineas": "Line 3"
+                      }
+           },
+           "BErm0wMvbmOeYAlO1nqV": {
+                      "1": {
+                                 "MaxSimilitud": 0.563,
+                                 "Frase": "<p>hola miguel,</p>  <p>como comentario general, aunque entregues un pdf autogenerado, no dejes secciones con errores de salida del c&#243;digo (cuida la limpieza del trabajo)</p>  <p>la implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. ",
+                                 "Lineas": "Line 1"
+                      },
+                      "2": {
+                                 "MaxSimilitud": 0.568,
+                                 "Frase": "<p>hola miguel,</p>  <p>como comentario general, aunque entregues un pdf autogenerado, no dejes secciones con errores de salida del c&#243;digo (cuida la limpieza del trabajo)</p>  <p>la implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. de igual manera, es correcta la implementaci&#243;n de las probabilidades de emisi&#243;n<br /> no obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de viterbi. ",
+                                 "Lineas": "Lines 1 - 2"
+                      },
+                      "3": {
+                                 "MaxSimilitud": 0.597,
+                                 "Frase": "<p>hola miguel,</p>  <p>como comentario general, aunque entregues un pdf autogenerado, no dejes secciones con errores de salida del c&#243;digo (cuida la limpieza del trabajo)</p>  <p>la implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. de igual manera, es correcta la implementaci&#243;n de las probabilidades de emisi&#243;n<br /> no obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de viterbi. en el c&#225;lculo, debes multiplicar las probabilidades de transici&#243;n por los valores de viterbi del estado previo. ",
+                                 "Lineas": "Lines 1 - 3"
+                      }
+           }
+}

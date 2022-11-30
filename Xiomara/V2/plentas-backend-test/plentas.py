@@ -125,15 +125,25 @@ class Plentas():
         #lectura de parametros de la api
         self.settings.setApiSettings(api_settings)
 
-    def processApiData(self):
+    def processApiData(self, isRawExperiment = 0):
+        self.settings.isRawExperiment = isRawExperiment
         AnalysisOfResponses = []
         IDs = getIDrange(self.settings.rango_ID, self.settings.answersDF)
         print(IDs)
         for id in IDs:
             studentID = self.settings.answersDF['hashed_id'][id]
             self.settings.student_dict["ID"] = studentID
+            self.settings.studentID = studentID
 
             respuesta_alumno_raw = self.settings.answersDF['respuesta'][id].lower()
+            
+            if isRawExperiment:
+                try:
+                    mark_to_float = re.sub(',', '.', self.settings.answersDF['nota'][id])
+                except:
+                    mark_to_float = self.settings.answersDF['nota'][id]
+                self.settings.nota_prof = float(mark_to_float)            
+                self.settings.notas.append(self.settings.nota_prof)
   
 
             #if self.settings.Sintaxis:
@@ -143,12 +153,15 @@ class Plentas():
 
             #if self.settings.Ortografia:
                 #self.ortography.Analysis(self.settings, respuesta_alumno_raw)              
-
+        
             if self.settings.Semantica:
                 sentencesArr = splitResponse(respuesta_alumno_raw)
                 spacy_eval = self.methodology.getSimilarity(sentencesArr, "spacy")
                 #bert_eval = self.methodology.getSimilarity(sentencesArr, "bert")
                 bert_eval = [0,0,0,0]
+
+                
+                prueba = self.methodology.EvaluationMethod(studentID, "" if len(sentencesArr) > 1 and sentencesArr[0] != '' else sentencesArr, spacy_eval)
 
             AnalysisOfResponses.append({ id : {
                                                 "ID": studentID,
@@ -159,6 +172,7 @@ class Plentas():
         
 
         print(len(AnalysisOfResponses))
+        self.methodology.SemanticLevel.output.saveSimilarityResults(self.settings, "spacy")
         return AnalysisOfResponses
     
 

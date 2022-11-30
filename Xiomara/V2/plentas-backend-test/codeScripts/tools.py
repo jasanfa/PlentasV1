@@ -1,5 +1,6 @@
 from asyncio.windows_events import NULL
 import os
+from matplotlib.font_manager import json_load
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -14,6 +15,7 @@ import spacy
 nlp = spacy.load('es_core_news_lg')
 
 from OldApi.utils.Semantics.SentenceTransformer2 import *
+from codeScripts.utils import create_file_path
 
 
 from codeScripts.kwIdentificator import NLP_Answers, NLP_Questions, loadHMMInfo, saveKWInfo, loadKWInfo
@@ -214,30 +216,20 @@ class GetSettings():
                 i+=1
         except:
             pass
-            #self.indice_minipreguntas.append("respuesta_completa")
 
-        #self.minirespuestas.append(self.respuesta_prof) 
-
-        #print(self.minirespuestas)
         info_profesor = []
         for minipregunta, minirespuesta in zip(self.minipreguntas, self.minirespuestas):
             info_profesor.append([minipregunta,minirespuesta])
 
-        json_object = json.dumps(info_profesor, indent = 11, ensure_ascii= False) 
-        # Writing output to a json file
-        with open("MinirespuestasProfesor.json", "w", encoding="utf-8") as outfile:
-            outfile.write(json_object)  
+        save_json(create_file_path("MinirespuestasProfesor.json", 2), info_profesor)
+
     
     def __getData(self, json_file):
 
-        #json_file = '/Users/javier.sanz/OneDrive - UNIR/Desktop/PLeNTas_V3/biConNotaAnon.json' 
-        with open(json_file, "r", encoding="utf8") as f:
-            data = json.loads("[" + f.read().replace("}\n{", "},\n{") + "]")
     
-        self.answersDF = pd.DataFrame(data)
-        self.answersDF_json = copy.deepcopy(data)
-        self.answersDF_json2 = dict()
-
+        self.answersDF = pd.DataFrame(json_load(json_file))
+        #self.answersDF_json = copy.deepcopy(data)
+        #self.answersDF_json2 = dict()
 
         self.id_number = 0
         
@@ -266,18 +258,18 @@ class GetSettings():
                 
                 i+=1
         except:
-            self.indice_minipreguntas.append("respuesta_completa")
+            pass
+            #self.indice_minipreguntas.append("respuesta_completa")
 
-        self.minirespuestas.append(self.respuesta_prof) 
+        #self.minirespuestas.append(self.respuesta_prof)
 
         info_profesor = []
         for minipregunta, minirespuesta in zip(self.minipreguntas, self.minirespuestas):
             info_profesor.append([minipregunta,minirespuesta])
 
-        json_object = json.dumps(info_profesor, indent = 11, ensure_ascii= False) 
-        # Writing output to a json file
-        with open("OldApi/OutputFiles/MinirespuestasProfesor.json", "w", encoding="utf-8") as outfile:
-            outfile.write(json_object)         
+        save_json(create_file_path("MinirespuestasProfesor.json", 2), info_profesor)     
+
+
 
 class Semantica():
     def __init__(self, KwSearch, settings):

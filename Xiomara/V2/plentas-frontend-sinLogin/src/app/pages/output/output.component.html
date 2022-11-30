@@ -5,7 +5,29 @@
 
         <input type="image" (click)="showPreviousStudent()" src="assets/flecha_l.png" style="border: double;" height="20" width="35"/>
         <input type="image" (click)="showNextStudent()" src="assets/flecha_r.png" style="border: double;" height="20" width="35"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <input type="image" onclick= ExportData(evaluation) src="assets/logo-excel.png" style="border: double;" height="35" width="35" id="downloadAnchorElem"/>
+        <script>
+        function ExportData(eval)  {
+          var data = {
+              key: 'value'
+          };
+          var fileName = 'myData.json';
+
+          // Create a blob of the data
+          var fileToSave = new Blob([JSON.stringify(data)], {
+              type: 'application/json'
+          });
+
+          // Save the file
+          saveAs(fileToSave, fileName);
+          }
+
+        </script>
       </div>
+      
     <div class="flex-container">  
           
       <div class="data-container">
@@ -84,11 +106,38 @@
         </fieldset>
         
       </div>
-      <div class="data-container">
+      <div class="data-container-right">
         <fieldset>
+          <legend>Desglose de la nota</legend>
+          <table class="table table-striped table-bordered table-hover table-sm">
+            <thead>
+              <tr>
+                <th>Modelo</th>
+                <th>Ortografía</th>
+                <th>Sintaxis</th>
+                <th>Semántica</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Spacy</td>
+                <td>{{spacy_1}}</td>
+                <td>{{bert_1}}</td>
+                <td>{{bert_1}}</td>
+              </tr>
+              <tr>
+                <td>Bert</td>
+                <td>{{stdnt_ID_2}}</td>
+                <td>{{spacy_2}}</td>
+                <td>{{bert_2}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+
           <legend>Feedback</legend>
-          <textarea [(ngModel)]="experimentDataService2.outputData"> </textarea>
-          
+          <textarea class="desglose-textBox" [(ngModel)]="experimentDataService2.outputData"> </textarea> 
+          <br>  
           <button type="button" (click)="copyToClipboard(experimentDataService2.outputData)">Copiar al Portapapeles</button>
         </fieldset>
         

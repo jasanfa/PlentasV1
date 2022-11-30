@@ -1,0 +1,48 @@
+[
+           {
+                      "ID": "7569f35f9b8e4001a47ebcf842b5dd2e",
+                      "Ortografia": {
+                                 "Errores ortograficos": [
+                                            11,
+                                            "optimización gobernabilidad monitorización trazabilidad cdo mdm metadata management metadatos ete trazabilidad "
+                                 ],
+                                 "Nota en Ortografía": 0
+                      },
+                      "Sintaxis": {
+                                 "Frases utilizadas para responder a la pregunta": 10,
+                                 "Palabras utilizadas para responder a la pregunta": 249,
+                                 "Index Fernandez Huerta": 76.96,
+                                 "Legibilidad F-H": "ligeramente fácil",
+                                 "mu index": 44.701,
+                                 "Legibilidad Mu": "difícil",
+                                 "Nota en Sintaxis": 0.243322
+                      },
+                      "Semantica": {
+                                 "Keywords alumno (auto)": [
+                                            "datos",
+                                            "forma más eficiente",
+                                            "pretende conseguir",
+                                            "realicen de forma",
+                                            "dato"
+                                 ],
+                                 "Keywords alumno": [
+                                            [
+                                                       "gobierno del dato"
+                                            ],
+                                            "Nota: 0.2"
+                                 ],
+                                 "Keyword profesor": [
+                                            "gobierno del dato",
+                                            "lidera la empresa",
+                                            "protección del dato",
+                                            "borrado del dato",
+                                            "toma de decisiones"
+                                 ],
+                                 "Justificación de esos keywords": [
+                                            "La expresión clave gobierno del dato aparece correctamente empleada en el texto"
+                                 ],
+                                 "Nota en Semantica": 0.24000000000000002,
+                                 "Nota profesor": 0.6
+                      }
+           }
+]

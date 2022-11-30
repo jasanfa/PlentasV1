@@ -1,19 +1,13 @@
 from urllib import response
-from flask import Flask, request
-from flask import jsonify
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 from hashids import Hashids
 import zipfile
 import os
-from codeScripts.utils import save_json, load_json
+from codeScripts.utils import save_json, load_json, create_file_path
 from plentas import Plentas
 
-
-#from plentas import Plentas
-
-a = "aaa"
-e = 0
-
+#fake fale is the file that represents the folder that teachers should upload with question-answer baseline
 fake_file = {
 		"enunciado": "Describe, en menos de 200 palabras, la importancia del gobierno del dato en la empresa. Tu respuesta, que debe ser una redacción y no un listado, debe contener la respuesta a las siguientes preguntas: ¿qué debe abarcar el gobierno del dato?, ¿cuál es el nuevo ciclo de vida del dato?,¿quién debe liderar este tipo de estrategias?,¿cómo se puede beneficiar la empresa?,¿cómo se beneficia el cliente?",
 		"minipreguntas": [
@@ -43,54 +37,58 @@ fake_file = {
 		]
 	}
 
-def create_custom_file_path(file):
-    path = "api/StudentAnswersZip/" + file
-    return path
 
 def extractZipData(ruta_zip):
-    ruta_extraccion = "api/StudentAnswers/"
-    password = None
+    """
+    This function extracts the students's answers from the zip file (the one the teacher has in the task section).
+    Inputs:
+        ruta_zip: The path inherited from answersTodict
+    """
+    #defining the path where the extracted info is to be stored
+    ruta_extraccion = create_file_path("StudentAnswers/", doctype= 1)
+    #extracting the info
     archivo_zip = zipfile.ZipFile(ruta_zip, "r")
     try:
-        #print(archivo_zip.namelist())
-        archivo_zip.extractall(pwd=password, path=ruta_extraccion)
+        archivo_zip.extractall(pwd=None, path=ruta_extraccion)
     except:
         pass
     archivo_zip.close()
 
-    #hashids = Hashids(min_length=20)
-    #hashids.encode(alumno_nmbr)
-
 def answersTodict(zip_path):
+    """
+    This function extracts the students's answers and stacks them in one specific format so that it can be processed next.
+    Inputs:
+        ruta_zip: The path where the zip file is stored
+    Outputs:
+        studentAnswersDict: The dictionary with all the responses
+    """
+    #extracting the data
     extractZipData(zip_path)
-    studentAnswersDict = dict()
-    hashids = Hashids(min_length=20)
 
-    """
-    for work_folder in os.listdir("api/StudentAnswers"):
-        for student, indx in zip(os.listdir("api/StudentAnswers/" + work_folder), range(len(os.listdir("api/StudentAnswers/" + work_folder)))):
-            try:
-                studentAnswersDict[hashids.encode(indx)] = dict()
-                studentAnswersDict[hashids.encode(indx)]["indx"] = indx
-                fichero = open("api/StudentAnswers/" + work_folder + "/" + student + "/" + 'comments.txt')
-                lineas = fichero.readlines()
-                studentAnswersDict[hashids.encode(indx)]["respuesta"] = lineas
-            except:
-                continue
-    """
+    hashids = Hashids(min_length=20)
     studentAnswersDict = []
-    for work_folder in os.listdir("api/StudentAnswers"):
-        for student, indx in zip(os.listdir("api/StudentAnswers/" + work_folder), range(len(os.listdir("api/StudentAnswers/" + work_folder)))):
+
+    #stacking the information of each extracted folder
+    for work_folder in os.listdir(create_file_path("StudentAnswers/", doctype= 1)):
+        for student, indx in zip(os.listdir(create_file_path("StudentAnswers/" + work_folder, doctype= 1)), range(len(os.listdir(create_file_path("StudentAnswers/" + work_folder, doctype= 1))))):
             try:
-                fichero = open("api/StudentAnswers/" + work_folder + "/" + student + "/" + 'comments.txt')
-                lineas = fichero.readlines()                                
+                #opening the file
+                fichero = open(create_file_path("StudentAnswers/" + work_folder + "/" + student + "/" + 'comments.txt', doctype= 1))
+                #reading it
+                lineas = fichero.readlines()
+                #saving it                                
                 studentAnswersDict.append({"respuesta":lineas[0], "hashed_id":hashids.encode(indx), "TableIndex":indx}) 
             except:
                 continue
-    save_json("api/ApiStudentsDict.json", studentAnswersDict)
+
+    #saving the final dictionary
+    save_json(create_file_path('ApiStudentsDict.json', doctype= 1),studentAnswersDict)
     return studentAnswersDict
 
 
+
+#*************** APP ***************
+#app creation
 def create_app():
     app = Flask(__name__)
     CORS(app)
@@ -98,38 +96,38 @@ def create_app():
 
 app = create_app()
 
+#get methods
 @app.route('/plentasapi/', methods=['GET'])
 def getData():
     response = {'message': 'Plentas API is running'}
     return jsonify(response)
 
+#post methods
 @app.route('/plentasapi/', methods=['POST'])
 
 def processData():
+    """
+    This function triggers the evaluation of data, connecting the api with the Plentas tools
+    Outputs:
+        response.processApiData(): A list with indexed information about the students's evaluation 
+    """
+    #inputData = request.json  --- old version
+
+    #saving the selected zip file
     uploadedFile = request.files['zipFile']
-    #uploadedFile = request.form['zipFile']	
-    configuration = request.form["configuration"]   
-    uploadedFile.save(create_custom_file_path(uploadedFile.filename))
+    uploadedFile.save(create_file_path("StudentAnswersZip/" + uploadedFile.filename, doctype= 1))
     
+    #getting the settings from the api
+    configuration = request.form["configuration"]
+    #getting our tuned settings
     config_json = load_json("config.json")
-    response = Plentas(config_json[0], [answersTodict(create_custom_file_path(uploadedFile.filename)), fake_file])    
+
+    #configuring plentas methodology
+    response = Plentas(config_json[0], [answersTodict(create_file_path("StudentAnswersZip/" + uploadedFile.filename, doctype= 1)), fake_file])
+    #overwriting the custom settings for the settings from the api      
     response.setApiSettings(configuration)
    
-
     return jsonify(response.processApiData())
-        
-    #inputData = request.json
-    #print(inputData)
-    #response = {'message': 'Plentas API is running', 'message2': 'Plentas API2 is running', 'message3': 'Plentas API3 is running'}    
-    #return jsonify(responses)
-    #return responses_dict
-    
-    # aquí va toda la magia, en inputData están los datos de entrada
-    #response = Plentas(inputData) 
-    
-     #{'message': 'success'}
-    #response2 = response.processData() 
-    #return response2
 
 
 if __name__ == '__main__':

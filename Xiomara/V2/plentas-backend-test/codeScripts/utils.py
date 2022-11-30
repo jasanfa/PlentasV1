@@ -312,4 +312,21 @@ def splitResponse(respuesta_alumno_raw):
 
     return sentences
         
-        
+def create_file_path(file, doctype):
+    """
+    This function is to create relative paths to store data.
+    Inputs:
+        file: the file or subpath + file where the info is to be stored
+        doctype: 1- Info from the api, 2- Output documents, 3- Images, 4- Bert models/documents
+    Outputs:
+        path: the generated path
+    """
+    if doctype == 1:
+        path = "api/" + file
+    elif doctype == 2:
+        path = "OldApi/OutputFiles2/" + file
+    elif doctype == 3:
+        path = "OldApi/Images/" + file
+    else:
+        path = "OldApi/Jacobo/" + file
+    return path

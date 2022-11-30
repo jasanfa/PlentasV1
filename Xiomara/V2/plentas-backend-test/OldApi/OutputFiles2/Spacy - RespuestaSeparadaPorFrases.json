@@ -1,0 +1,26 @@
+{
+           "9J4q2VolejRejNmGQBW7": {
+                      "respuesta": {
+                                 "1": "<p>hola surley,</p>  <p>la implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. ",
+                                 "2": "de igual manera, es correcta la implementaci&#243;n de las probabilidades de emisi&#243;n<br /> no obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de viterbi. ",
+                                 "3": "en el c&#225;lculo, debes multiplicar las probabilidades de transici&#243;n por los valores de viterbi del estado previo</p>  <p>las reflexiones finales son acertadas, especialmente porque mencionas tanto limitaciones/mejoras del modelo de datos como del algoritmo en s&#237; mismo</p>  <p>muy buen trabajo</p>  <p>probabilidades de transici&#243;n 2/2<br /> probabilidades de emisi&#243;n 2/2<br /> valores de viterbi 2/3<br /> etiquetado morfosint&#225;ctico 1/1<br /> an&#225;lisis del etiquetador morfosint&#225;ctico 2/2</p>  <p>calificaci&#243;n: 9</p>. "
+                      }
+           },
+           "1gO3GWpmbk5ezJn4KRjL": {
+                      "respuesta": {
+                                 "1": "<p>hola alexander,</p>  <p>la imnplementaci&#243;n del c&#243;digo de las probabilidades de transici&#243;n es correcta, salvo un detalle. ",
+                                 "2": "las probabilidades se calculan como p(t|t-1) = c(t-1, t) / c(t-1), de manera que el cociente tiene que ser el n&#250;mero de veces que aparece el elemento t-1, no el de t (y, por tanto, hay que dividir por estados_totales[qt_1], no por estados_totales[qt]). ",
+                                 "3": "la implementaci&#243;n de la probabilidad de emisi&#243;n es correcta</p>  <p>en el c&#225;lculo de la matriz de viterbi tienes que multiplicar la probabilidad del estado previo por la probabilidad de transici&#243;n correspondiente. ",
+                                 "4": "en el c&#243;digo no has incluido el producto por la probabilidad de transici&#243;n puedes ver adem&#225;s que los resultados del etiquetado no ser&#237;an correctos en palabras como &quot;enfermo&quot;, donde te lo est&#225; etiquetando como &quot;adjetivo&quot; en lugar de &quot;sustantivo&quot; (de hecho, la salida no es correcta en el caso que presentas):</p>  <p>enfermo = nombre/com&#250;n/masculino/singular no es aq0ms0</p>  <p>tampoco es correcta en el segundo an&#225;lisis, donde &quot;enfermo&quot; sigue siendo sustantivo, no adjetivo</p>  <p>en los apartados finales de limitaciones/posibles mejoras del etiquetador propones cosas algo gen&#233;ricas. ",
+                                 "5": "usar otras &quot;librer&#237;as&quot; no detalla en concreto las limitaciones que tiene esta aproximaci&#243;n, que es lo que deber&#237;as haber comentado (ej, la hmm s&#243;lo considera el elemento inmediatamente previo, pero no tiene memoria de los estados anteriores, limitaciones del tama&#241;o del corpus)</p>  <p>buen trabajo</p>  <p>probabilidades de transici&#243;n 15/2<br /> probabilidades de emisi&#243;n 2/2<br /> valores de viterbi 2/3<br /> etiquetado morfosint&#225;ctico 1/1<br /> an&#225;lisis del etiquetador morfosint&#225;ctico 05/2</p>  <p>calificaci&#243;n: 7</p>. "
+                      }
+           },
+           "BErm0wMvbmOeYAlO1nqV": {
+                      "respuesta": {
+                                 "1": "<p>hola miguel,</p>  <p>como comentario general, aunque entregues un pdf autogenerado, no dejes secciones con errores de salida del c&#243;digo (cuida la limpieza del trabajo)</p>  <p>la implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. ",
+                                 "2": "de igual manera, es correcta la implementaci&#243;n de las probabilidades de emisi&#243;n<br /> no obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de viterbi. ",
+                                 "3": "en el c&#225;lculo, debes multiplicar las probabilidades de transici&#243;n por los valores de viterbi del estado previo. ",
+                                 "4": "puedes ver adem&#225;s que los resultados del etiquetado no ser&#237;an correctos en palabras como &quot;enfermo&quot;, donde te lo est&#225; etiquetando como &quot;adjetivo&quot; en lugar de &quot;sustantivo&quot; (de hecho, la salida no es correcta en el caso que presentas, y no lo comentas como tal)</p>  <p>en el apartado de limitaciones/puntos de mejora haces reflexiones v&#225;lidas, pero s&#243;lo centradas en la limitac&#243;n por el corpus, no por el algoritmo en s&#237; mismo (que tambi&#233;n tiene limitaciones, como no tener memoria de los estados anteriores, por ejemplo)</p>  <p>muy buen trabajo por lo dem&#225;s</p>  <p><br /> probabilidades de transici&#243;n 2/2<br /> probabilidades de emisi&#243;n 2/2<br /> valores de viterbi 2/3<br /> etiquetado morfosint&#225;ctico 1/1<br /> an&#225;lisis del etiquetador morfosint&#225;ctico 1/2</p>  <p>calificaci&#243;n: 8<br /> &#160;</p>. "
+                      }
+           }
+}
