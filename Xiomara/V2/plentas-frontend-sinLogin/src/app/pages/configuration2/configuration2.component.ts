@@ -60,7 +60,7 @@ export class Configuration2Component implements OnInit {
     
   }
   activarMinipregunta(type:any){
-    
+    //0 para actualizar el contenido unicamente
     if(type == 1){
       if(this.checkm1){
         this.textminipregunta1 = "Minipregunta 1";

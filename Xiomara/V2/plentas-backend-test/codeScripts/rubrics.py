@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 import os
 from matplotlib.font_manager import json_load
 import numpy as np
@@ -16,14 +15,66 @@ nlp = spacy.load('es_core_news_lg')
 
 from OldApi.utils.Semantics.SentenceTransformer2 import *
 from codeScripts.utils import create_file_path
-from codeScripts.rubricsOut import SemanticOutput
+from codeScripts.rubricsOut import SemanticOutput, OrtographicOutput, SintacticOutput
 
 
 from codeScripts.kwIdentificator import NLP_Answers, NLP_Questions, loadHMMInfo, saveKWInfo, loadKWInfo
 from sklearn.metrics import mean_squared_error, mean_squared_log_error
 from codeScripts.utils import spelling_corrector, clean_words, sent_tokenize, mu_index, FHuertas_index, check_senteces_words, keyword_extractor,getNameFile
 
+def GenerateFeedback(settings, respuesta, OrtoMark, SintMark, SemanMarkSpacy, SemanMarkBert):
+    feedback = ""
+    if respuesta == "":
+        feedback = feedback + "Respuesta en blanco"
+    else:
+        if settings.Ortografia:
+            feedback = feedback + "\nNivel ortográfico: \n"
+            if OrtoMark == 0:
+                feedback = feedback + "El estudiante cometió demasiadas faltas de ortografía, por ese motivo, la nota asignada en este apartado de la rúbrica fue 0. \n"
+            elif OrtoMark < settings.PesoOrtografia/2:
+                feedback = feedback + "El estudiante cometió muchas faltas de ortografía, lo cual le penalizó en la nota. \n"
+            elif OrtoMark < settings.PesoOrtografia:
+                feedback = feedback + "El estudiante cometió  bastantes faltas de ortografía, lo cual no le permitió obtener la máxima puntuación en este apartado de la rúbrica. \n"
+            else:
+                feedback = feedback + "El estudiante redactó con buena ortografía su respuesta. \n"
 
+        if settings.Sintaxis:
+            feedback = feedback + "\nNivel sintáctico: \n"
+            if SintMark == 0:
+                feedback = feedback + "La cohesión de ideas del alumno era muy pobre. \n"
+            elif SintMark < settings.PesoSintaxis/2:
+                feedback = feedback + "El estudiante debería mejorar la forma en la que expresa sus conocimientos \n"
+            elif SintMark < settings.PesoSintaxis:
+                feedback = feedback + "La forma de expresar las ideas fue buena, pero podría ser mejorable \n"
+            else:
+                feedback = feedback + "La cohesión de ideas del estudiante fue buena \n"
+
+        if settings.Ortografia:
+            feedback = feedback + "\nNivel semántico, primer modelo: \n"
+            if SemanMarkSpacy == 0:
+                feedback = feedback + "El estudiante no responde a ninguna de las minipreguntas \n"
+            elif SemanMarkSpacy < settings.PesoSemantics/2:
+                feedback = feedback + "El estudiante cita algunos conceptos requeridos, pero el nivel demostrado en general no es suficiente para aprobar \n"
+            elif SemanMarkSpacy < settings.PesoSemantics:
+                feedback = feedback + "El estudiante debería matizar algunos conceptos de mejor manera para mejorar su calificación, pero el nivel de conocimiento demostrado es suficiente \n"
+            else:
+                feedback = feedback + "El estudiante contestó de forma sobresaliente \n"
+
+            feedback = feedback + "\nNivel semántico, segundo modelo: \n"
+            if SemanMarkBert == 0:
+                feedback = feedback + "El estudiante no responde a ninguna de las minipreguntas \n"
+            elif SemanMarkBert < settings.PesoSemantics/2:
+                feedback = feedback + "El estudiante cita algunos conceptos requeridos, pero el nivel demostrado en general no es suficiente para aprobar \n"
+            elif SemanMarkBert < settings.PesoSemantics:
+                feedback = feedback + "El estudiante debería matizar algunos conceptos de mejor manera para mejorar su calificación, pero el nivel de conocimiento demostrado es suficiente \n"
+            else:
+                feedback = feedback + "El estudiante contestó de forma sobresaliente \n"
+
+            feedback = feedback + "\n\nPor favor, si observa alguna diferencia significativa entre la calificación de ambos modelos, entre a valorar la nota del estudiante. "
+
+
+
+    return feedback
 
 class Semantica2():
     def __init__(self, settings):
@@ -90,53 +141,52 @@ class Semantica2():
         
 
 
-"""
-class Ortografia ():
-    def __init__(self):
+
+class Ortografia2 ():
+    def __init__(self, settings):
         #print(f'Aqui lo de ortografia')
         self.output = OrtographicOutput()
+        self.settings = settings
     
-    def Analysis(self,settings, respuesta_alumno):
+    def Evaluation(self, respuesta_alumno):
         nota_Orto = 0
         if respuesta_alumno == '':
-            self.output.notaOrtografia.append(0)
+            return nota_Orto
         else:
-            errores, mistakes = spelling_corrector(respuesta_alumno, settings.hunspell_aff, settings.hunspell_dic)
-            if errores <= settings.FaltasSalvaguarda:
-                self.output.notaOrtografia.append(settings.PesoOrtografia)
+            errores, mistakes = spelling_corrector(respuesta_alumno, self.settings.hunspell_aff, self.settings.hunspell_dic)
+            if errores <= self.settings.FaltasSalvaguarda:
+                return self.settings.PesoOrtografia
             else:
 
                 try:
-                    rel = settings.PesoOrtografia/settings.NMaxErrores 
-                    nota_Orto = settings.PesoOrtografia - (errores - settings.FaltasSalvaguarda) * rel
+                    rel = self.settings.PesoOrtografia/self.settings.NMaxErrores 
+                    nota_Orto = self.settings.PesoOrtografia - (errores - self.settings.FaltasSalvaguarda) * rel
                 except:
                     nota_Orto = 0
 
                 if nota_Orto < 0:
                     nota_Orto = 0
 
-                self.output.notaOrtografia.append(nota_Orto)
+                return nota_Orto
 
 
-class Sintaxis ():
-    def __init__(self):
+class Sintaxis2():
+    def __init__(self, settings):
         #print(f'Aqui lo de sintaxis')
         self.output = SintacticOutput()
+        self.settings = settings
 
-    def Analysis(self, settings, respuesta_alumno):
+    def Evaluation(self, respuesta_alumno):
         if respuesta_alumno == '':
-            self.output.leg_FH.append(0)
-            self.output.leg_mu.append(0)
+            return 0
         else:
             sentencesLenght, wordsLenght, syll, letter_per_word = check_senteces_words(respuesta_alumno)
             #print(wordsLenght)
             FH, legibilidad_fh = FHuertas_index(sentencesLenght, wordsLenght, syll)
             mu, legibilidad_mu = mu_index(sentencesLenght, wordsLenght, letter_per_word)
 
-            self.output.leg_FH.append(FH)
-            self.output.leg_mu.append(mu)
-
-            nota_Sintaxis = settings.PesoSntxis_FH * FH/100 + settings.PesoSntxis_Mu * mu/100        
+            nota_Sintaxis = self.settings.PesoSntxis_FH * FH/100 + self.settings.PesoSntxis_Mu * mu/100
+            return nota_Sintaxis       
         
 
 
@@ -144,7 +194,7 @@ class Sintaxis ():
     def saveResults(self, settings):
         self.output.saveLegibilityResults(settings)
 
-"""
+
 
 """
                                             settings.student_dict["Semantica"]["Keyword profesor"] = settings.prof_keywords 

@@ -13,7 +13,8 @@ class PlentasMethodology():
     def __init__(self, settings):
         self.settings = settings
         self.maxSimilarity = -99999
-        self.SemanticLevel = Semantica2(self.settings)  
+        self.SemanticLevel = Semantica2(self.settings)
+          
           
     def getSimilarity(self, sentences, similarityMethod):
         """

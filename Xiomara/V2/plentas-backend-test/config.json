@@ -2,8 +2,8 @@
     "ruta_fichero_entrada": "OldApi/__appcache__/biConNotaAnon.json",
     "ruta_fichero_salida": "OldApi/OutputFiles/biConNotaAnon_out.json",
     "ruta_hunspell": {
-        "aff": "C:/Users/javier.sanz/OneDrive - UNIR/Desktop/PLENTAS_UNIR/TECNICO/APLICACION/App WEB/PLENTAS/plentas-api-prototype/__appcache__/es_ES/es_ES",
-        "dic": "C:/Users/javier.sanz/OneDrive - UNIR/Desktop/PLENTAS_UNIR/TECNICO/APLICACION/App WEB/PLENTAS/plentas-api-prototype/__appcache__/es_ES/es_ES.dic"
+        "aff": "C:/Users/javier.sanz/Espacio de trabajo - PLENTAS/plentas-backend-UPDATED/__appcache__/es_ES/es_ES",
+        "dic": "C:/Users/javier.sanz/Espacio de trabajo - PLENTAS/plentas-backend-UPDATED/__appcache__/es_ES/es_ES.dic"
     },
     "Parametros_Analisis": {
         "estudiantes":{

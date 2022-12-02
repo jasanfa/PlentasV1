@@ -6,6 +6,8 @@ import zipfile
 import os
 from codeScripts.utils import save_json, load_json, create_file_path
 from plentas import Plentas
+import json
+import pathlib
 
 #fake fale is the file that represents the folder that teachers should upload with question-answer baseline
 fake_file = {
@@ -36,6 +38,32 @@ fake_file = {
 			"toma de decisiones"
 		]
 	}
+
+
+def createTeacherJson(configuration):
+    """
+    This function extracts the information about the subquestions and subanswers and puts them in the correct format.
+    Inputs:
+        config: The configured info from the api.
+    Outputs:
+        teachersJson: The generated dictionary with the subquestions.
+    """
+    teachersJson = {"enunciado": "", "minipreguntas":[], "keywords":""}
+
+    #5 is the maximum number of permitted subquestions in the configuration2 page
+    
+    for i in range(5):
+       
+        try:
+            teachersJson["minipreguntas"].append({
+				"minipregunta": configuration["minip" + str(i+1)],
+				"minirespuesta": configuration["minir" + str(i+1)]
+			})
+
+        except:
+            break
+
+    return teachersJson
 
 
 def extractZipData(ruta_zip):
@@ -113,17 +141,33 @@ def processData():
     """
     #inputData = request.json  --- old version
 
-    #saving the selected zip file
-    uploadedFile = request.files['zipFile']
-    uploadedFile.save(create_file_path("StudentAnswersZip/" + uploadedFile.filename, doctype= 1))
-    
     #getting the settings from the api
     configuration = request.form["configuration"]
+    configuration_dict = json.loads(configuration)
+    
+    #saving the selected zip file
+    try:
+        uploadedFile = request.files['zipFile']
+        uploadedFile.save(create_file_path("StudentAnswersZip/" + uploadedFile.filename, doctype= 1))
+        fileName = uploadedFile.filename
+    except:        
+        p = pathlib.PureWindowsPath(configuration_dict["filepath"])
+        filePath = str(p.as_posix())
+        fileName = filePath.split("/") 
+        fileName = fileName[-1]
+        
+    
+    print("EEEEEEEEEEEEEEEEEEEE")
+    print(fileName)
+    
+
     #getting our tuned settings
     config_json = load_json("config.json")
 
+    print(createTeacherJson(configuration))
+    print("\n\n\n")
     #configuring plentas methodology
-    response = Plentas(config_json[0], [answersTodict(create_file_path("StudentAnswersZip/" + uploadedFile.filename, doctype= 1)), fake_file])
+    response = Plentas(config_json[0], [answersTodict(create_file_path("StudentAnswersZip/" + fileName, doctype= 1)), createTeacherJson(configuration_dict)])
     #overwriting the custom settings for the settings from the api      
     response.setApiSettings(configuration)
    

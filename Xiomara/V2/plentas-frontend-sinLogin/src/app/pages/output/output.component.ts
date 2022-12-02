@@ -53,6 +53,14 @@ export class OutputComponent implements OnInit {
   bert_9 = "";
   bert_10 = "";
 
+  bert_sintaxis = 0;
+  bert_ortografia = 0;
+  bert_semantica = 0;
+
+  spacy_sintaxis = 0;
+  spacy_ortografia = 0;
+  spacy_semantica = 0;
+  
 
   constructor(public experimentDataService: ExperimentDataService, public experimentDataService2: ExperimentDataServiceFeedback, public bufferEvaluation: BufferEvaluation, private toastr: ToastrService) { }
 
@@ -69,12 +77,21 @@ export class OutputComponent implements OnInit {
     //document.write("blabla");
     var fdbckIndx = tableIndx + this.ID*10;
     var Plentas = JSON.parse(JSON.stringify(JSON.parse(this.evaluation)[fdbckIndx]));     
-    this.experimentDataService2.outputData = JSON.parse(JSON.stringify(Plentas[fdbckIndx .toString()]["Feedback"])); 
+    this.experimentDataService2.outputData = JSON.parse(JSON.stringify(Plentas[fdbckIndx.toString()]["Feedback"]));
+
+    //Esto es el desglose de la rubrica
+    this.bert_ortografia = Number(JSON.parse(JSON.stringify(Plentas[fdbckIndx.toString()]["NotaOrtografiaBert"])).toFixed(2));
+    this.bert_sintaxis = Number(JSON.parse(JSON.stringify(Plentas[fdbckIndx.toString()]["NotaSintaxisBert"])).toFixed(2));
+    this.bert_semantica = Number(JSON.parse(JSON.stringify(Plentas[fdbckIndx.toString()]["NotaSemanticaBert"])).toFixed(2));
+
+    this.spacy_ortografia = Number(JSON.parse(JSON.stringify(Plentas[fdbckIndx.toString()]["NotaOrtografiaSpacy"])).toFixed(2));
+    this.spacy_sintaxis = Number(JSON.parse(JSON.stringify(Plentas[fdbckIndx.toString()]["NotaSintaxisSpacy"])).toFixed(2));
+    this.spacy_semantica = Number(JSON.parse(JSON.stringify(Plentas[fdbckIndx.toString()]["NotaSemanticaSpacy"])).toFixed(2));
+
 
     
   }
 
-  
 
   updateTable(){
     this.ID = this.ID_show - 1;

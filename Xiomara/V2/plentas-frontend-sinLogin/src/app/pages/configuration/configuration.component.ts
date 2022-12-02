@@ -48,7 +48,7 @@ export class ConfigurationComponent implements OnInit {
 
   ngOnInit(): void {
     this.inputJsonFile = this.variables.inputJsonFile;
-    this.selectedFile = this.variables.selectedFile;
+    //this.selectedFile = this.variables.selectedFile;
   
     this.checkOrthography = this.variables.checkOrthography;
     this.checkSyntax = this.variables.checkSyntax;
@@ -59,7 +59,7 @@ export class ConfigurationComponent implements OnInit {
    
     this.checkStudentRadio = this.variables.checkStudentRadio;
 
-    this.checkStudentIDValue = this.checkStudentIDValue; 
+    this.checkStudentIDValue = this.variables.checkStudentIDValue; 
 
     this.isDataBeingProcessed = this.variables.isDataBeingProcessed;
 
@@ -115,16 +115,54 @@ export class ConfigurationComponent implements OnInit {
   async processInputData() {
     this.value = parseFloat(this.orthographyValue.toString()) + parseFloat(this.syntaxValue.toString()) + parseFloat(this.semanticValue.toString());
 
+    if (!this.variables.checkm1 || (this.variables.checkm1 && this.variables.textminipregunta1== "") || (this.variables.checkm1 && this.variables.textminirespuesta1 == "")){
+      this.toastr.error('Introduzca al menos una minipregunta y una minirespuesta');
+      return
+    }
+
     if (this.value != 1.0){
       this.toastr.error('El valor de los pesos de la rubrica debe sumar 1');
       return
     }
+
+    if (this.checkStudentRadio != "All" && this.checkStudentIDValue == ""){
+      this.toastr.error('No se ha especificado ningún rango de estudiantes');
+      return
+    }
+
+ 
 
     this.isDataBeingProcessed = true
     
     //Configure the json that will go to the api.py
     this.inputData = '{';
     this.inputData = this.inputData + '"filepath": ' + JSON.stringify(this.inputJsonFile)  + ',';
+
+    if(this.variables.checkm1){
+      this.inputData = this.inputData + '"minip1": ' + JSON.stringify(this.variables.textminipregunta1)  + ',';
+      this.inputData = this.inputData + '"minir1": ' + JSON.stringify(this.variables.textminirespuesta1)  + ',';
+    }
+
+    if(this.variables.checkm2){
+      this.inputData = this.inputData + '"minip2": ' + JSON.stringify(this.variables.textminipregunta2)  + ',';
+      this.inputData = this.inputData + '"minir2": ' + JSON.stringify(this.variables.textminirespuesta2)  + ',';
+    }
+
+    if(this.variables.checkm3){
+      this.inputData = this.inputData + '"minip3": ' + JSON.stringify(this.variables.textminipregunta3)  + ',';
+      this.inputData = this.inputData + '"minir3": ' + JSON.stringify(this.variables.textminirespuesta3)  + ',';
+    }
+
+    if(this.variables.checkm4){
+      this.inputData = this.inputData + '"minip4": ' + JSON.stringify(this.variables.textminipregunta4)  + ',';
+      this.inputData = this.inputData + '"minir4": ' + JSON.stringify(this.variables.textminirespuesta4)  + ',';
+    }
+
+    if(this.variables.checkm5){
+      this.inputData = this.inputData + '"minip5": ' + JSON.stringify(this.variables.textminipregunta5)  + ',';
+      this.inputData = this.inputData + '"minir5": ' + JSON.stringify(this.variables.textminirespuesta5)  + ',';
+    }  
+    
     if(this.checkSemantic){
       this.inputData = this.inputData + '"semanticPercentage": ' + this.semanticValue.toString()  + ',';
     }else{
@@ -172,11 +210,14 @@ export class ConfigurationComponent implements OnInit {
     
     try {
       //const outputDataObject = await this.apiService.post(this.inputData);
-      if (this.selectedFile) {
+      if (this.inputJsonFile != "") {
             
         const formData = new FormData();
-  
-        formData.append("zipFile", this.selectedFile);
+        try{
+          formData.append("zipFile", this.selectedFile);
+        }catch{
+          formData.append("zipFile", "");
+        }        
   
         formData.append("configuration", this.inputData); // donde this.inputData es un JSON (string) con los datos de configuracion
   
@@ -208,7 +249,7 @@ export class ConfigurationComponent implements OnInit {
       }
 
     this.variables.inputJsonFile = this.inputJsonFile;
-    this.variables.selectedFile = this.selectedFile;
+    //this.variables.selectedFile = this.selectedFile;
   
     this.variables.checkOrthography = this.checkOrthography;
     this.variables.checkSyntax = this.checkSyntax;

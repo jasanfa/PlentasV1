@@ -11,6 +11,7 @@ import spacy
 #from SentenceTransformer_nminipregunta import *
 
 from codeScripts.methodologyPlentas import *
+from codeScripts.rubrics import Ortografia2, Sintaxis2, GenerateFeedback
 
 
 class Plentas():
@@ -18,7 +19,13 @@ class Plentas():
     def __init__(self, config, studentsData):
         self.spacy_sm = spacy.load('es_core_news_sm')
         self.settings = GetSettings(config, studentsData)
-        self.methodology = PlentasMethodology(self.settings) 
+        #semantica
+        self.semantic_methodology = PlentasMethodology(self.settings)
+        #ortografia
+        self.ortografia = Ortografia2(self.settings)
+        #sintaxis
+        self.sintaxis = Sintaxis2(self.settings)
+         
 
     
     def __evaluateStudents__(self):
@@ -58,12 +65,8 @@ class Plentas():
 
 
         return copy.deepcopy(self.settings.student_dict)
-
-                
+           
         
-
-
-    
     def evaluateData(self):
         output_json=[]
         #manual_flag to configure
@@ -135,6 +138,9 @@ class Plentas():
             self.settings.student_dict["ID"] = studentID
             self.settings.studentID = studentID
 
+            nota_rubrica_spacy = 0
+            nota_rubrica_bert = 0
+
             respuesta_alumno_raw = self.settings.answersDF['respuesta'][id].lower()
             
             if isRawExperiment:
@@ -146,33 +152,57 @@ class Plentas():
                 self.settings.notas.append(self.settings.nota_prof)
   
 
-            #if self.settings.Sintaxis:
-                #necesito nutrirle la respuesta
-                #self.ortography.Analysis(self.settings, respuesta_alumno_raw)
+            if self.settings.Sintaxis:
+                nota_rubrica_sintaxis = self.sintaxis.Evaluation(respuesta_alumno_raw) * self.settings.PesoSintaxis
+                nota_rubrica_spacy = nota_rubrica_spacy + nota_rubrica_sintaxis
+                nota_rubrica_bert = nota_rubrica_bert + nota_rubrica_sintaxis
             
 
-            #if self.settings.Ortografia:
-                #self.ortography.Analysis(self.settings, respuesta_alumno_raw)              
+            if self.settings.Ortografia:
+                #ponderacion dentro de la función
+                nota_rubrica_ortografia = self.ortografia.Evaluation(respuesta_alumno_raw)
+
+                nota_rubrica_spacy = nota_rubrica_spacy + nota_rubrica_ortografia
+                nota_rubrica_bert = nota_rubrica_bert + nota_rubrica_ortografia
+                
+            
         
             if self.settings.Semantica:
                 sentencesArr = splitResponse(respuesta_alumno_raw)
-                spacy_eval = self.methodology.getSimilarity(sentencesArr, "spacy")
-                #bert_eval = self.methodology.getSimilarity(sentencesArr, "bert")
-                bert_eval = [0,0,0,0]
+                spacy_eval = self.semantic_methodology.getSimilarity(sentencesArr, "spacy")
+                bert_eval = self.semantic_methodology.getSimilarity(sentencesArr, "bert")
+                #bert_eval = [0,0,0,0]
 
                 
-                prueba = self.methodology.EvaluationMethod(studentID, "" if len(sentencesArr) > 1 and sentencesArr[0] != '' else sentencesArr, spacy_eval)
+                spacy_eval_umbral = self.semantic_methodology.EvaluationMethod(studentID, "" if len(sentencesArr) > 1 and sentencesArr[0] != '' else sentencesArr, spacy_eval)
+
+                bert_eval_umbral = self.semantic_methodology.EvaluationMethod(studentID, "" if len(sentencesArr) > 1 and sentencesArr[0] != '' else sentencesArr, bert_eval)
+
+                nota_rubrica_spacy = nota_rubrica_spacy + self.settings.PesoSemantics * spacy_eval_umbral
+                nota_rubrica_bert = nota_rubrica_bert + self.settings.PesoSemantics * bert_eval_umbral
+
+            
+            feedback = GenerateFeedback(self.settings, respuesta_alumno_raw,nota_rubrica_ortografia, nota_rubrica_sintaxis, spacy_eval_umbral * self.settings.PesoSemantics, bert_eval_umbral * self.settings.PesoSemantics)
+                
+
+                
 
             AnalysisOfResponses.append({ id : {
                                                 "ID": studentID,
-                                                "NotaSpacy": spacy_eval[0],
-                                                "NotaBert": bert_eval[0],
-                                                "Feedback": "Hola1" }
+                                                "NotaSpacy": round(nota_rubrica_spacy,2),
+                                                "NotaBert": round(nota_rubrica_bert,2),
+                                                "NotaSemanticaSpacy": round(spacy_eval_umbral * self.settings.PesoSemantics,2),
+                                                "NotaSemanticaBert": round(bert_eval_umbral * self.settings.PesoSemantics,2),
+                                                "NotaSintaxisSpacy": round(nota_rubrica_sintaxis,2),
+                                                "NotaSintaxisBert": round(nota_rubrica_sintaxis,2),
+                                                "NotaOrtografiaSpacy": round(nota_rubrica_ortografia,2),
+                                                "NotaOrtografiaBert": round(nota_rubrica_ortografia,2),
+                                                "Feedback": feedback }
                                     } )      
         
 
         print(len(AnalysisOfResponses))
-        self.methodology.SemanticLevel.output.saveSimilarityResults(self.settings, "spacy")
+        self.semantic_methodology.SemanticLevel.output.saveSimilarityResults(self.settings, "spacy")
         return AnalysisOfResponses
     
 
