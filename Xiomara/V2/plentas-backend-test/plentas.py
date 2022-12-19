@@ -52,8 +52,6 @@ class Plentas():
 
             self.settings.notas.append(self.settings.nota_prof)
 
-            #print(f'{studentID}, {respuesta_alumno_raw}')       
-
             if self.settings.Sintaxis:
                 self.sintactics.Analysis(self.settings, respuesta_alumno_raw)                
 
@@ -130,9 +128,16 @@ class Plentas():
 
     def processApiData(self, isRawExperiment = 0):
         self.settings.isRawExperiment = isRawExperiment
+
+        if self.settings.PesoOrtografia == 0.0:
+            self.settings.Ortografia = 0
+        if self.settings.PesoSintaxis == 0.0:
+            self.settings.Sintaxis = 0
+        if self.settings.PesoSemantics == 0.0:
+            self.settings.Semantica = 0
+
         AnalysisOfResponses = []
         IDs = getIDrange(self.settings.rango_ID, self.settings.answersDF)
-        print(IDs)
         for id in IDs:
             studentID = self.settings.answersDF['hashed_id'][id]
             self.settings.student_dict["ID"] = studentID
@@ -153,40 +158,47 @@ class Plentas():
   
 
             if self.settings.Sintaxis:
-                nota_rubrica_sintaxis = self.sintaxis.Evaluation(respuesta_alumno_raw) * self.settings.PesoSintaxis
+                #ponderacion dentro de la función
+                nota_rubrica_sintaxis = self.sintaxis.Evaluation(respuesta_alumno_raw)
                 nota_rubrica_spacy = nota_rubrica_spacy + nota_rubrica_sintaxis
                 nota_rubrica_bert = nota_rubrica_bert + nota_rubrica_sintaxis
+            else:
+                nota_rubrica_sintaxis = 0
+                
             
-
             if self.settings.Ortografia:
                 #ponderacion dentro de la función
                 nota_rubrica_ortografia = self.ortografia.Evaluation(respuesta_alumno_raw)
 
                 nota_rubrica_spacy = nota_rubrica_spacy + nota_rubrica_ortografia
                 nota_rubrica_bert = nota_rubrica_bert + nota_rubrica_ortografia
-                
+            else:
+                nota_rubrica_ortografia = 0                
             
         
             if self.settings.Semantica:
                 sentencesArr = splitResponse(respuesta_alumno_raw)
+
                 spacy_eval = self.semantic_methodology.getSimilarity(sentencesArr, "spacy")
                 bert_eval = self.semantic_methodology.getSimilarity(sentencesArr, "bert")
                 #bert_eval = [0,0,0,0]
 
                 
-                spacy_eval_umbral = self.semantic_methodology.EvaluationMethod(studentID, "" if len(sentencesArr) > 1 and sentencesArr[0] != '' else sentencesArr, spacy_eval)
+                spacy_eval_umbral = self.semantic_methodology.EvaluationMethod(studentID, "" if len(sentencesArr) == 1 and sentencesArr[0] == '' else sentencesArr, spacy_eval, "spacy")
 
-                bert_eval_umbral = self.semantic_methodology.EvaluationMethod(studentID, "" if len(sentencesArr) > 1 and sentencesArr[0] != '' else sentencesArr, bert_eval)
+                bert_eval_umbral = self.semantic_methodology.EvaluationMethod(studentID, "" if len(sentencesArr) == 1 and sentencesArr[0] == '' else sentencesArr, bert_eval, "bert")
 
                 nota_rubrica_spacy = nota_rubrica_spacy + self.settings.PesoSemantics * spacy_eval_umbral
                 nota_rubrica_bert = nota_rubrica_bert + self.settings.PesoSemantics * bert_eval_umbral
+            else:
+                spacy_eval_umbral = 0
+                bert_eval_umbral = 0
 
-            
+            print("Niveles:", self.settings.Semantica,self.settings.Sintaxis, self.settings.Ortografia )
             feedback = GenerateFeedback(self.settings, respuesta_alumno_raw,nota_rubrica_ortografia, nota_rubrica_sintaxis, spacy_eval_umbral * self.settings.PesoSemantics, bert_eval_umbral * self.settings.PesoSemantics)
                 
 
                 
-
             AnalysisOfResponses.append({ id : {
                                                 "ID": studentID,
                                                 "NotaSpacy": round(nota_rubrica_spacy,2),
@@ -201,8 +213,11 @@ class Plentas():
                                     } )      
         
 
-        print(len(AnalysisOfResponses))
         self.semantic_methodology.SemanticLevel.output.saveSimilarityResults(self.settings, "spacy")
+        if self.settings.Sintaxis:
+            self.sintaxis.saveResults()
+        if self.settings.Ortografia:
+            self.ortografia.SaveMistakes()
         return AnalysisOfResponses
     
 

@@ -4,6 +4,7 @@ from flask_cors import CORS
 from hashids import Hashids
 import zipfile
 import os
+from bs4 import BeautifulSoup
 from codeScripts.utils import save_json, load_json, create_file_path
 from plentas import Plentas
 import json
@@ -39,7 +40,6 @@ fake_file = {
 		]
 	}
 
-
 def createTeacherJson(configuration):
     """
     This function extracts the information about the subquestions and subanswers and puts them in the correct format.
@@ -65,7 +65,6 @@ def createTeacherJson(configuration):
 
     return teachersJson
 
-
 def extractZipData(ruta_zip):
     """
     This function extracts the students's answers from the zip file (the one the teacher has in the task section).
@@ -81,6 +80,31 @@ def extractZipData(ruta_zip):
     except:
         pass
     archivo_zip.close()
+
+def removeHtmlFromString(string):
+    """
+    This function removes the html tags from the student's response.
+    Inputs:
+        -string: The student's response
+    Outputs:
+        -new_string: The filtered response
+    """
+    string = string.encode('utf-8', 'replace')
+    string = string.decode('utf-8', 'replace')
+    new_string = ""
+    skipChar = 0
+    for char in string:
+        if char == "<":
+            skipChar = 1
+        elif char == ">":
+            skipChar = 0
+        else:
+            if not skipChar:        
+                new_string = new_string+char
+
+    new_string = new_string.encode('utf-8', 'replace')
+    new_string = new_string.decode('utf-8', 'replace')
+    return new_string
 
 def answersTodict(zip_path):
     """
@@ -99,15 +123,25 @@ def answersTodict(zip_path):
     #stacking the information of each extracted folder
     for work_folder in os.listdir(create_file_path("StudentAnswers/", doctype= 1)):
         for student, indx in zip(os.listdir(create_file_path("StudentAnswers/" + work_folder, doctype= 1)), range(len(os.listdir(create_file_path("StudentAnswers/" + work_folder, doctype= 1))))):
+            student_name = student.split("(")
+            student_name = student_name[0]
             try:
                 #opening the file
-                fichero = open(create_file_path("StudentAnswers/" + work_folder + "/" + student + "/" + 'comments.txt', doctype= 1))
+
+                #fichero = open(create_file_path("StudentAnswers/" + work_folder + "/" + student + "/" + 'comments.txt', doctype= 1))
+                #where the actual response is
+                fichero = open(create_file_path("StudentAnswers/" + work_folder + "/" + student + "/" + 'Adjuntos del envio/Respuesta enviada', doctype= 1), encoding='utf-8')                
                 #reading it
                 lineas = fichero.readlines()
+
+                #removing html                
+                lineas[0] = removeHtmlFromString(lineas[0])           
+                                
                 #saving it                                
-                studentAnswersDict.append({"respuesta":lineas[0], "hashed_id":hashids.encode(indx), "TableIndex":indx}) 
+                studentAnswersDict.append({"respuesta":lineas[0], "hashed_id":student_name, "TableIndex":indx})
+
             except:
-                continue
+                studentAnswersDict.append({"respuesta":"", "hashed_id":student_name, "TableIndex":indx})
 
     #saving the final dictionary
     save_json(create_file_path('ApiStudentsDict.json', doctype= 1),studentAnswersDict)
@@ -156,16 +190,10 @@ def processData():
         fileName = filePath.split("/") 
         fileName = fileName[-1]
         
-    
-    print("EEEEEEEEEEEEEEEEEEEE")
-    print(fileName)
-    
 
     #getting our tuned settings
     config_json = load_json("config.json")
 
-    print(createTeacherJson(configuration))
-    print("\n\n\n")
     #configuring plentas methodology
     response = Plentas(config_json[0], [answersTodict(create_file_path("StudentAnswersZip/" + fileName, doctype= 1)), createTeacherJson(configuration_dict)])
     #overwriting the custom settings for the settings from the api      

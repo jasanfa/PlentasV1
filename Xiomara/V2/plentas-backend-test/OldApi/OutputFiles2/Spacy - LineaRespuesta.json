@@ -1,108 +1,102 @@
 {
-           "9J4q2VolejRejNmGQBW7": {
+           "BECERRA JARAMILLO, DANIEL ISAI": {
+                      "minipregunta0": {},
+                      "minipregunta1": {}
+           },
+           "BERRIO ZAPATA, SURLEY YANSURY": {
                       "minipregunta0": {
-                                 "1": {
-                                            "Similitud": 0.55,
-                                            "Frase": "<p>hola surley,</p>  <p>la implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. ",
-                                            "Lineas": "Line 1"
-                                 },
                                  "2": {
-                                            "Similitud": 0.457,
-                                            "Frase": "de igual manera, es correcta la implementaci&#243;n de las probabilidades de emisi&#243;n<br /> no obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de viterbi. ",
+                                            "Similitud": 0.5243164300918579,
+                                            "Frase": "el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. ",
                                             "Lineas": "Line 2"
                                  }
                       },
                       "minipregunta1": {
-                                 "3": {
-                                            "Similitud": 0.429,
-                                            "Frase": "en el c&#225;lculo, debes multiplicar las probabilidades de transici&#243;n por los valores de viterbi del estado previo</p>  <p>las reflexiones finales son acertadas, especialmente porque mencionas tanto limitaciones/mejoras del modelo de datos como del algoritmo en s&#237; mismo</p>  <p>muy buen trabajo</p>  <p>probabilidades de transici&#243;n 2/2<br /> probabilidades de emisi&#243;n 2/2<br /> valores de viterbi 2/3<br /> etiquetado morfosint&#225;ctico 1/1<br /> an&#225;lisis del etiquetador morfosint&#225;ctico 2/2</p>  <p>calificaci&#243;n: 9</p>. ",
-                                            "Lineas": "Line 3"
+                                 "2": {
+                                            "Similitud": 0.5841003656387329,
+                                            "Frase": "el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. ",
+                                            "Lineas": "Line 2"
                                  }
-                      },
-                      "minipregunta2": {
+                      }
+           },
+           "CAMACHO PONCE, ALEXANDER": {
+                      "minipregunta0": {
                                  "1": {
-                                            "Similitud": 0.463,
-                                            "Frase": "<p>hola surley,</p>  <p>la implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. ",
-                                            "Lineas": "Line 1"
-                                 },
-                                 "3": {
-                                            "Similitud": 0.41,
-                                            "Frase": "en el c&#225;lculo, debes multiplicar las probabilidades de transici&#243;n por los valores de viterbi del estado previo</p>  <p>las reflexiones finales son acertadas, especialmente porque mencionas tanto limitaciones/mejoras del modelo de datos como del algoritmo en s&#237; mismo</p>  <p>muy buen trabajo</p>  <p>probabilidades de transici&#243;n 2/2<br /> probabilidades de emisi&#243;n 2/2<br /> valores de viterbi 2/3<br /> etiquetado morfosint&#225;ctico 1/1<br /> an&#225;lisis del etiquetador morfosint&#225;ctico 2/2</p>  <p>calificaci&#243;n: 9</p>. ",
-                                            "Lineas": "Line 3"
-                                 }
-                      },
-                      "minipregunta3": {
-                                 "1": {
-                                            "Similitud": 0.481,
-                                            "Frase": "<p>hola surley,</p>  <p>la implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. ",
+                                            "Similitud": 0.5365749597549438,
+                                            "Frase": "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. ",
                                             "Lineas": "Line 1"
                                  },
                                  "2": {
-                                            "Similitud": 0.476,
-                                            "Frase": "de igual manera, es correcta la implementaci&#243;n de las probabilidades de emisi&#243;n<br /> no obstante, no es correcta del todo la implementaci&#243;n que haces de los c&#225;lculos para la matriz de viterbi. ",
+                                            "Similitud": 0.47768157720565796,
+                                            "Frase": "además, como es de su conocimiento no se nos permite subir comprimidos. ",
                                             "Lineas": "Line 2"
-                                 },
-                                 "3": {
-                                            "Similitud": 0.446,
-                                            "Frase": "en el c&#225;lculo, debes multiplicar las probabilidades de transici&#243;n por los valores de viterbi del estado previo</p>  <p>las reflexiones finales son acertadas, especialmente porque mencionas tanto limitaciones/mejoras del modelo de datos como del algoritmo en s&#237; mismo</p>  <p>muy buen trabajo</p>  <p>probabilidades de transici&#243;n 2/2<br /> probabilidades de emisi&#243;n 2/2<br /> valores de viterbi 2/3<br /> etiquetado morfosint&#225;ctico 1/1<br /> an&#225;lisis del etiquetador morfosint&#225;ctico 2/2</p>  <p>calificaci&#243;n: 9</p>. ",
-                                            "Lineas": "Line 3"
-                                 }
-                      }
-           },
-           "1gO3GWpmbk5ezJn4KRjL": {
-                      "minipregunta0": {
-                                 "4": {
-                                            "Similitud": 0.648,
-                                            "Frase": "en el c&#243;digo no has incluido el producto por la probabilidad de transici&#243;n puedes ver adem&#225;s que los resultados del etiquetado no ser&#237;an correctos en palabras como &quot;enfermo&quot;, donde te lo est&#225; etiquetando como &quot;adjetivo&quot; en lugar de &quot;sustantivo&quot; (de hecho, la salida no es correcta en el caso que presentas):</p>  <p>enfermo = nombre/com&#250;n/masculino/singular no es aq0ms0</p>  <p>tampoco es correcta en el segundo an&#225;lisis, donde &quot;enfermo&quot; sigue siendo sustantivo, no adjetivo</p>  <p>en los apartados finales de limitaciones/posibles mejoras del etiquetador propones cosas algo gen&#233;ricas. ",
-                                            "Lineas": "Line 4"
-                                 },
-                                 "5": {
-                                            "Similitud": 0.608,
-                                            "Frase": "usar otras &quot;librer&#237;as&quot; no detalla en concreto las limitaciones que tiene esta aproximaci&#243;n, que es lo que deber&#237;as haber comentado (ej, la hmm s&#243;lo considera el elemento inmediatamente previo, pero no tiene memoria de los estados anteriores, limitaciones del tama&#241;o del corpus)</p>  <p>buen trabajo</p>  <p>probabilidades de transici&#243;n 15/2<br /> probabilidades de emisi&#243;n 2/2<br /> valores de viterbi 2/3<br /> etiquetado morfosint&#225;ctico 1/1<br /> an&#225;lisis del etiquetador morfosint&#225;ctico 05/2</p>  <p>calificaci&#243;n: 7</p>. ",
-                                            "Lineas": "Line 5"
                                  }
                       },
-                      "minipregunta1": {},
-                      "minipregunta2": {
-                                 "3": {
-                                            "Similitud": 0.631,
-                                            "Frase": "la implementaci&#243;n de la probabilidad de emisi&#243;n es correcta</p>  <p>en el c&#225;lculo de la matriz de viterbi tienes que multiplicar la probabilidad del estado previo por la probabilidad de transici&#243;n correspondiente. ",
-                                            "Lineas": "Line 3"
-                                 }
-                      },
-                      "minipregunta3": {
-                                 "3": {
-                                            "Similitud": 0.679,
-                                            "Frase": "la implementaci&#243;n de la probabilidad de emisi&#243;n es correcta</p>  <p>en el c&#225;lculo de la matriz de viterbi tienes que multiplicar la probabilidad del estado previo por la probabilidad de transici&#243;n correspondiente. ",
-                                            "Lineas": "Line 3"
-                                 }
-                      }
-           },
-           "BErm0wMvbmOeYAlO1nqV": {
-                      "minipregunta0": {
-                                 "3": {
-                                            "Similitud": 0.539,
-                                            "Frase": "en el c&#225;lculo, debes multiplicar las probabilidades de transici&#243;n por los valores de viterbi del estado previo. ",
-                                            "Lineas": "Line 3"
-                                 }
-                      },
-                      "minipregunta1": {},
-                      "minipregunta2": {
-                                 "3": {
-                                            "Similitud": 0.605,
-                                            "Frase": "en el c&#225;lculo, debes multiplicar las probabilidades de transici&#243;n por los valores de viterbi del estado previo. ",
-                                            "Lineas": "Line 3"
-                                 }
-                      },
-                      "minipregunta3": {
+                      "minipregunta1": {
                                  "1": {
-                                            "Similitud": 0.563,
-                                            "Frase": "<p>hola miguel,</p>  <p>como comentario general, aunque entregues un pdf autogenerado, no dejes secciones con errores de salida del c&#243;digo (cuida la limpieza del trabajo)</p>  <p>la implementaci&#243;n del c&#225;lculo de las probabilidades de transici&#243;n es correcto. ",
+                                            "Similitud": 0.5055159330368042,
+                                            "Frase": "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. ",
+                                            "Lineas": "Line 1"
+                                 },
+                                 "2": {
+                                            "Similitud": 0.4580826759338379,
+                                            "Frase": "además, como es de su conocimiento no se nos permite subir comprimidos. ",
+                                            "Lineas": "Line 2"
+                                 }
+                      }
+           },
+           "CARDONA YARA, FRANKLIN ANDRES": {
+                      "minipregunta0": {},
+                      "minipregunta1": {}
+           },
+           "CHACON CALA, MIGUEL ANDRES": {
+                      "minipregunta0": {
+                                 "3": {
+                                            "Similitud": 0.506442129611969,
+                                            "Frase": "buenas tardes profe,  envio los archivos requeridos de forma individual dado que no pude subir el zip  quedo atento a comentarios,  miguel chacon. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      },
+                      "minipregunta1": {
+                                 "4": {
+                                            "Similitud": 0.5050503015518188,
+                                            "Frase": "buenas tardes profe,  envio los archivos requeridos de forma individual dado que no pude subir el zip  quedo atento a comentarios,  miguel chacon. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      }
+           },
+           "CHACON ORDONEZ, JOSE MIGUEL": {
+                      "minipregunta0": {
+                                 "1": {
+                                            "Similitud": 0.4170149564743042,
+                                            "Frase": "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. ",
                                             "Lineas": "Line 1"
                                  },
                                  "3": {
-                                            "Similitud": 0.562,
-                                            "Frase": "en el c&#225;lculo, debes multiplicar las probabilidades de transici&#243;n por los valores de viterbi del estado previo. ",
+                                            "Similitud": 0.5228880047798157,
+                                            "Frase": "adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. ",
+                                            "Lineas": "Line 3"
+                                 },
+                                 "4": {
+                                            "Similitud": 0.41872841119766235,
+                                            "Frase": "gracias por su atención y saludos!. ",
+                                            "Lineas": "Line 4"
+                                 }
+                      },
+                      "minipregunta1": {
+                                 "1": {
+                                            "Similitud": 0.47951337695121765,
+                                            "Frase": "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. ",
+                                            "Lineas": "Line 1"
+                                 },
+                                 "2": {
+                                            "Similitud": 0.433596134185791,
+                                            "Frase": "puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. ",
+                                            "Lineas": "Line 2"
+                                 },
+                                 "3": {
+                                            "Similitud": 0.4829946756362915,
+                                            "Frase": "adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. ",
                                             "Lineas": "Line 3"
                                  }
                       }

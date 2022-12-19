@@ -38,7 +38,8 @@ class GetSettings():
         self.PesoOrtografia = api_settings["ortographyPercentage"]
         self.PesoSintaxis = api_settings["syntaxPercentage"]
         self.PesoSemantics = api_settings["semanticPercentage"]
-        self.rango_ID = api_settings["students"]        
+        self.rango_ID = api_settings["students"]     
+
              
     def __getConfigSettings(self, df):        
 
@@ -165,7 +166,6 @@ class GetSettings():
         self.answersDF = pd.DataFrame(json_file[0])
         self.id_number = 0
         
-        #print(self.answersDF)
         self.minipreguntas = []
         self.minirespuestas = []
         self.indice_minipreguntas = []
@@ -173,7 +173,7 @@ class GetSettings():
 
         self.enunciado = json_file[1]['enunciado']
         self.prof_keywords = json_file[1]['keywords']
-        #print(self.enunciado)
+
         try:
             i=0
             while True:

@@ -117,12 +117,12 @@ def spelling_corrector(student_answer, hunspell_aff = '/Users/javier.sanz/OneDri
     dic = hunspell.Hunspell(hunspell_aff, hunspell_dic)
     errors=0
     words = student_answer.split(' ')
-    wrong_words = ""
+    wrong_words = []
     for word in words:
         for element in clean_words(word):            
             if not dic.spell(element):
                 #print(f'Spelling mistake: {element}')
-                wrong_words= wrong_words + element + " "
+                wrong_words.append(element)
                 errors+=1        
     #print(f'Spelling mistakes: {errors}')
     return errors,wrong_words
@@ -131,6 +131,7 @@ def spelling_corrector(student_answer, hunspell_aff = '/Users/javier.sanz/OneDri
 def FHuertas_index(sentencesLenght, wordsLenght, syll):
     FH = 206.84 - 0.60*(syll*100/wordsLenght) - 1.02*(sentencesLenght*100/wordsLenght) 
     FH = round(FH, 3)
+    legibilidad_fh = ""
     #print(f'\nFernández-Huerta Index: {FH}')
     if 0 < FH <= 30:
         #print('Legibilidad FH: muy difícil.')
@@ -162,6 +163,8 @@ def mu_index(sentencesLenght, wordsLenght, letter_per_word):
     var = np.var(letter_per_word)
     mu=(wordsLenght/(wordsLenght-1))*(med/var)*100
     mu=round(mu, 3)
+
+    legibilidad_mu = ""
     #print(f'\nMu index: {mu}')
     if 0 < mu <= 30:
         #print('Legibilidad Mu: muy difícil.')
@@ -277,8 +280,11 @@ def getIDrange(rango_ID, df):
 
     return IDs
 
-def save_json(path, data):
-    json_object = json.dumps(data, indent = 11, ensure_ascii= False) 
+def save_json(path, data, isIndent = True):
+    if isIndent:
+        json_object = json.dumps(data, indent = 11, ensure_ascii= False)
+    else:
+        json_object = json.dumps(data, ensure_ascii= False)
     # Writing output to a json file
     with open(path, "w") as outfile:
         outfile.write(json_object)

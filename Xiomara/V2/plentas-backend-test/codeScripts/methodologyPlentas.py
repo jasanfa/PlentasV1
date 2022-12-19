@@ -31,8 +31,6 @@ class PlentasMethodology():
         similarity = np.zeros(len(self.settings.indice_minipreguntas))
 
         #obtaining the similarity for each subquestion
-        #print(self.settings.minirespuestas)
-        #print(self.settings.indice_minipreguntas)
         for minirespuesta, minipregunta in zip(self.settings.minirespuestas, self.settings.indice_minipreguntas):
             self.SemanticLevel.output.initInforms(self.settings.studentID, minipregunta)
 
@@ -52,21 +50,18 @@ class PlentasMethodology():
                             #computing its similarity
                             #similar = self.__computeSimilarity__(r_alumno, minirespuesta, similarityMethod)
                             similar = self.SemanticLevel.computeSimilarity(r_alumno, minirespuesta, similarityMethod)
-                            #print(similar, minipregunta, agrupation, s)
 
                             self.SemanticLevel.output.updateInformsBucle(self.settings.studentID, minipregunta, r_alumno, r_label, agrupation, similar, 1 if similar > self.maxSimilarity else 0)   
 
                             #storing the highest
                             if similar > self.maxSimilarity:
                                 self.maxSimilarity = similar
-                                print(minipregunta, similar)
                              
                         except:
                             break
 
                 #stacking the similarity of each subquestion
-                similarity[int(minipregunta[12:])] = self.maxSimilarity
-                #print(similarity)           
+                similarity[int(minipregunta[12:])] = self.maxSimilarity       
                          
         return similarity
 
@@ -102,9 +97,9 @@ class PlentasMethodology():
         notaSpacy = 0
         esSuperior = 0
         esIntermedio = 0        
-
         for umbralL, umbralH in zip(self.SemanticLevel.output.min_umbral, self.SemanticLevel.output.max_umbral):
             for minipregunta, similarity in zip(self.settings.indice_minipreguntas, similarity_array):
+                print(minipregunta, similarity)
                 if similarity >= umbralL:
                     if similarity <= umbralH:
                         if not esSuperior:
@@ -122,6 +117,7 @@ class PlentasMethodology():
                 esSuperior = 0
                 esIntermedio = 0
 
+            notaSpacy = notaSpacy/len(self.settings.indice_minipreguntas)
             self.SemanticLevel.output.updateInforms(studentID, umbralL, umbralH, notaSpacy, response)
 
             if umbralL == 0.3 and umbralH == 0.7:
@@ -129,7 +125,8 @@ class PlentasMethodology():
 
 
             notaSpacy = 0
-
+        print(notaGuardar)
+        print("\n")
         return notaGuardar
 
 

@@ -68,3 +68,6 @@ table.table-bordered > tbody > tr > td{
   height: 200px;
 }
 
+.table-name{
+  font-size: small;
+}
