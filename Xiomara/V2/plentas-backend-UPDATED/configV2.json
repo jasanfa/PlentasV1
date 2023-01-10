@@ -1,0 +1,77 @@
+{
+    "ruta_fichero_entrada": "__appcache__/biConNotaAnon.json",
+    "ruta_fichero_salida": "archivos/OutputFiles/biConNotaAnon_out.json",
+    "ruta_hunspell": {
+        "aff": "C:/Users/javier.sanz/Espacio de trabajo - PLENTAS/plentas-backend-UPDATED/__appcache__/es_ES/es_ES",
+        "dic": "C:/Users/javier.sanz/Espacio de trabajo - PLENTAS/plentas-backend-UPDATED/__appcache__/es_ES/es_ES.dic"
+    },
+    "Parametros_Analisis": {
+        "estudiantes":{
+            "ID_rango": "{5-8, 15-20}",
+            "Todos": 0              
+        },
+
+        "Ortografia":{
+            "Activado": 1
+        },
+        "Sintaxis":{
+            "Activado": 1          
+            
+        },
+        
+        "Semantica":{
+            "Activado": 1,
+            "frases":{
+                "Agrupacion": {
+                    "Minimo": 1,
+                    "Maximo": 8
+                }
+            }
+
+        }   
+    },
+    "Parametros_Rubrica": {
+
+        "Ortografia":{
+            "NMaxErrores": 5,
+            "FaltasSalvaguarda": 1,
+            "Peso": 0.1
+        },
+        "Sintaxis":{
+            "NMaxFrases": 0,
+            "NMaxPalabras":0,
+            "Peso": 0.1              
+        },
+        
+        "Semantica":{
+            "Peso": 0.8,
+            "Similitud":{
+                "UmbralesSimilitud": {
+                    "SM": "{0.3-0.7}",
+                    "MD": "{0.3-0.9}",
+                    "LG": "{0.3-0.9}"
+                },
+                
+                "Spacy":{
+                    "SM": "es_core_news_sm",
+                    "MD": "es_core_news_md",
+                    "LG": "es_core_news_lg",
+                    "Package": "SM"
+                },
+                "Bert":{
+                    "model_path": "Prueba_anterior/Model_bert-base-multilingual-uncased/50_Epochs",
+                    "model": "bert-base-multilingual-uncased",
+                    "epoch": 50
+                }
+
+            },
+            "LineaRespuesta":{
+                "ThresholdToConsiderCeroValue": {
+                    "SM": 0.615,
+                    "MD": 0.875,
+                    "LG": 0.875
+                }
+            }
+        }   
+    }
+}

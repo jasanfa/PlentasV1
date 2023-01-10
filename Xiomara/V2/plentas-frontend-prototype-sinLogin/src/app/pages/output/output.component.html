@@ -1,0 +1,137 @@
+<div class="page-container">
+    <div class="student-container">
+      <label for="chkSemantic">Página: </label>
+        <input type="text" maxlength="3" size="1" [(ngModel)]="ID_show" (keyup)="updateTable()" /> &nbsp;&nbsp;/<input type="text" maxlength="3" size="1" disabled [(ngModel)]="NumberPagesTable"/>
+
+        <input type="image" (click)="showPreviousStudent()" src="assets/flecha_l.png" style="border: double;" height="20" width="35"/>
+        <input type="image" (click)="showNextStudent()" src="assets/flecha_r.png" style="border: double;" height="20" width="35"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <input type="image" onclick= ExportData(evaluation) src="assets/logo-excel.png" style="border: double;" height="35" width="35" id="downloadAnchorElem"/>
+        <a href="../../../assets/flecha_l.png" download="Acme Documentation (ver. 2.0.1).png">Download Text</a>
+  
+
+      </div>
+      
+    <div class="flex-container">  
+          
+      <div class="data-container">
+
+        
+        <fieldset>
+          <table class="table table-striped table-bordered table-hover table-sm">
+            <thead>
+              <tr>
+                <th>Estudiante</th>
+                <th>Calificación Spacy</th>
+                <th>Calificación BERT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr (click)="showFeedback(0)">
+                <td class="table-name">{{stdnt_ID_1}}</td>
+                <td>{{spacy_1}} </td>
+                <td>{{bert_1}} </td>
+              </tr>
+              <tr (click)="showFeedback(1)">
+                <td class="table-name">{{stdnt_ID_2}}</td>
+                <td>{{spacy_2}} </td>
+                <td>{{bert_2}} </td>
+              </tr>
+              <tr (click)="showFeedback(2)">
+                <td class="table-name">{{stdnt_ID_3}}</td>
+                <td>{{spacy_3}} </td>
+                <td>{{bert_3}} </td>
+              </tr>
+              <tr (click)="showFeedback(3)">
+                <td class="table-name">{{stdnt_ID_4}}</td>
+                <td>{{spacy_4}} </td>
+                <td>{{bert_4}} </td>
+              </tr>
+              <tr (click)="showFeedback(4)">
+                <td class="table-name">{{stdnt_ID_5}}</td>
+                <td>{{spacy_5}} </td>
+                <td>{{bert_5}} </td>
+              </tr>
+              <tr (click)="showFeedback(5)">
+                <td class="table-name">{{stdnt_ID_6}}</td>
+                <td>{{spacy_6}} </td>
+                <td>{{bert_6}} </td>
+              </tr>
+              <tr (click)="showFeedback(6)">
+                <td class="table-name">{{stdnt_ID_7}}</td>
+                <td>{{spacy_7}}</td>
+                <td>{{bert_7}} </td>
+              </tr>
+              <tr (click)="showFeedback(7)">
+                <td class="table-name">{{stdnt_ID_8}}</td>
+                <td>{{spacy_8}} </td>
+                <td>{{bert_8}} </td>
+              </tr>
+              <tr (click)="showFeedback(8)">
+                <td class="table-name">{{stdnt_ID_9}}</td>
+                <td>{{spacy_9}} </td>
+                <td>{{bert_9}} </td>
+              </tr>
+              <tr (click)="showFeedback(9)">
+                <td class="table-name">{{stdnt_ID_10}}</td>
+                <td>{{spacy_10}} </td>
+                <td>{{bert_10}} </td>
+              </tr>
+
+            </tbody>
+          </table>
+  
+          <!-- 
+          <legend>Calification</legend>
+          <textarea [(ngModel)]="experimentDataService.outputData"> </textarea>
+          
+          <button type="button" (click)="copyToClipboard(experimentDataService.outputData)">Copiar al Portapapeles</button>
+          -->
+        </fieldset>
+        
+      </div>
+      <div class="data-container-right">
+        <fieldset>
+          <legend>Desglose de la nota</legend>
+          <table class="table table-striped table-bordered table-hover table-sm">
+            <thead>
+              <tr>
+                <th>Modelo</th>
+                <th>Ortografía</th>
+                <th>Sintaxis</th>
+                <th>Semántica</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Spacy</td>
+                <td>{{((spacy_ortografia/peso_config_orto) *10).toFixed(2)}} ({{spacy_ortografia}} / {{peso_config_orto}} ) </td>
+                <td>{{((spacy_sintaxis/peso_config_sintaxis) *10).toFixed(2)}} ({{spacy_sintaxis}} / {{peso_config_sintaxis}})</td>
+                <td>{{((spacy_semantica/peso_config_semantica) *10).toFixed(2)}} ({{spacy_semantica}} / {{peso_config_semantica}})</td>
+              </tr>
+              <tr>
+                <td>Bert</td>
+                <td>{{((bert_ortografia/peso_config_orto) *10).toFixed(2)}} ({{bert_ortografia}} / {{peso_config_orto}})</td>
+                <td>{{((bert_sintaxis/peso_config_sintaxis) *10).toFixed(2)}} ({{bert_sintaxis}} / {{peso_config_sintaxis}})</td>
+                <td>{{((bert_semantica/peso_config_semantica) *10).toFixed(2)}} ({{bert_semantica}} / {{peso_config_semantica}})</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <legend>Feedback</legend>
+          <textarea class="desglose-textBox" [(ngModel)]="experimentDataService2.outputData"> </textarea> 
+          <br>  
+          <button type="button" (click)="copyToClipboard(experimentDataService2.outputData)">Copiar al Portapapeles</button>
+        </fieldset>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
