@@ -1,5 +1,75 @@
 {
            "BECERRA JARAMILLO, DANIEL ISAI": {
                       "respuesta": {}
+           },
+           "BERRIO ZAPATA, SURLEY YANSURY": {
+                      "respuesta": {
+                                 "1": "profesor buenas tardes,   adjunto solo los archivos en excel que me permitió subir la plataforma. ",
+                                 "2": "el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. ",
+                                 "3": "muchas gracias. "
+                      }
+           },
+           "CAMACHO PONCE, ALEXANDER": {
+                      "respuesta": {
+                                 "1": "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. ",
+                                 "2": "además, como es de su conocimiento no se nos permite subir comprimidos. ",
+                                 "3": "quedo atento a sus comentarios. ",
+                                 "4": "saludos cordiales,   alexander camacho. "
+                      }
+           },
+           "CARDONA YARA, FRANKLIN ANDRES": {
+                      "respuesta": {}
+           },
+           "CHACON CALA, MIGUEL ANDRES": {
+                      "respuesta": {
+                                 "6": "buenas tardes profe,  envio los archivos requeridos de forma individual dado que no pude subir el zip  quedo atento a comentarios,  miguel chacon. "
+                      }
+           },
+           "CHACON ORDONEZ, JOSE MIGUEL": {
+                      "respuesta": {
+                                 "1": "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. ",
+                                 "2": "puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. ",
+                                 "3": "adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. ",
+                                 "4": "gracias por su atención y saludos!. "
+                      }
+           },
+           "CHIRINOS VALERO, LUIS": {
+                      "respuesta": {}
+           },
+           "CIFUENTES DURANGO, VICTOR ALFONSO": {
+                      "respuesta": {}
+           },
+           "CORONADO MOREIRA, CRISTOPHER GEOVANNY": {
+                      "respuesta": {
+                                 "6": "adjunto solución. "
+                      }
+           },
+           "CUARTAS VALDERRAMA, MANUEL ALEJANDRO": {
+                      "respuesta": {}
+           },
+           "DUQUE AGUILERA, ADRIAN": {
+                      "respuesta": {
+                                 "12": "buen dia,  envio los excel de las matrices y el codigo en html, ya que el pdf me dio en primer lugar problemas por el tamaño y en segundo lugar al comprimirlo, no aceptó el formato. "
+                      }
+           },
+           "FERRER ACOSTA, MISAEL JOAQUIN": {
+                      "respuesta": {
+                                 "18": "hola profesor gusto en saludarlo  anexo los archivos correspondientes a la actividad  el cuaderno no me dejó subirlo a la plataforma  espero que sea de su agrado  saludos cordiales. "
+                      }
+           },
+           "GARCIA VELEZ, PABLO ALFONSO": {
+                      "respuesta": {
+                                 "24": "estimado profesor,  adjunto los documentos de la actividad 1  pablo garcia. "
+                      }
+           },
+           "GARZON TAMAYO, CRISTIAN CAMILO": {
+                      "respuesta": {
+                                 "1": "buen día profesor  se adjunta para su validación. ",
+                                 "2": "no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. ",
+                                 "3": "cordialmente,  cristian camilo garzon tamayo crittan01@gmailcom cc 1032414179 +57 312 583 5649 bogotá - colombia. "
+                      }
+           },
+           "GIRALDO OSORIO, CARLOS ANDRES": {
+                      "respuesta": {}
            }
 }

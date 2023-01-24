@@ -251,12 +251,13 @@ export class ConfigurationComponent implements OnInit {
       }
   
 
-      } catch (error) {
-        this.toastr.error(JSON.stringify(error), 'Error procesando datos', {
-          disableTimeOut: true,
-        });
-        this.isDataBeingProcessed = false;
-      }
+    } catch (error) {
+      this.toastr.error(JSON.stringify(error), 'Error procesando datos', {
+        disableTimeOut: true,
+      });
+      this.isDataBeingProcessed = false;
+      this.router.navigateByUrl('configuration2');
+    }
 
     this.variables.inputJsonFile = this.inputJsonFile;
     //this.variables.selectedFile = this.selectedFile;

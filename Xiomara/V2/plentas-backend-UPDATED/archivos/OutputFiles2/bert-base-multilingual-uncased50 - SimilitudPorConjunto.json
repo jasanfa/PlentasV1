@@ -1,5 +1,659 @@
 {
            "BECERRA JARAMILLO, DANIEL ISAI": {
-                      "minipregunta0": []
+                      "minipregunta0": [],
+                      "minipregunta1": [],
+                      "minipregunta2": []
+           },
+           "BERRIO ZAPATA, SURLEY YANSURY": {
+                      "minipregunta0": [
+                                 [
+                                            "profesor buenas tardes,   adjunto solo los archivos en excel que me permitió subir la plataforma. ",
+                                            0.48509156703948975,
+                                            "Line 1"
+                                 ],
+                                 [
+                                            "el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. ",
+                                            0.5243164300918579,
+                                            "Line 2"
+                                 ],
+                                 [
+                                            "muchas gracias. ",
+                                            0.21167966723442078,
+                                            "Line 3"
+                                 ],
+                                 [
+                                            "profesor buenas tardes,   adjunto solo los archivos en excel que me permitió subir la plataforma. el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. ",
+                                            0.5493759512901306,
+                                            "Lines 1 - 2"
+                                 ],
+                                 [
+                                            "el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. muchas gracias. ",
+                                            0.5563234686851501,
+                                            "Lines 2 - 3"
+                                 ],
+                                 [
+                                            "profesor buenas tardes,   adjunto solo los archivos en excel que me permitió subir la plataforma. el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. muchas gracias. ",
+                                            0.5725418925285339,
+                                            "Lines 1 - 3"
+                                 ]
+                      ],
+                      "minipregunta1": [
+                                 [
+                                            "profesor buenas tardes,   adjunto solo los archivos en excel que me permitió subir la plataforma. ",
+                                            0.43957000970840454,
+                                            "Line 1"
+                                 ],
+                                 [
+                                            "el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. ",
+                                            0.5841003656387329,
+                                            "Line 2"
+                                 ],
+                                 [
+                                            "muchas gracias. ",
+                                            0.14251168072223663,
+                                            "Line 3"
+                                 ],
+                                 [
+                                            "profesor buenas tardes,   adjunto solo los archivos en excel que me permitió subir la plataforma. el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. ",
+                                            0.5625344514846802,
+                                            "Lines 1 - 2"
+                                 ],
+                                 [
+                                            "el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. muchas gracias. ",
+                                            0.6009998321533203,
+                                            "Lines 2 - 3"
+                                 ],
+                                 [
+                                            "profesor buenas tardes,   adjunto solo los archivos en excel que me permitió subir la plataforma. el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. muchas gracias. ",
+                                            0.5783655047416687,
+                                            "Lines 1 - 3"
+                                 ]
+                      ],
+                      "minipregunta2": [
+                                 [
+                                            "profesor buenas tardes,   adjunto solo los archivos en excel que me permitió subir la plataforma. ",
+                                            0.42955702543258667,
+                                            "Line 1"
+                                 ],
+                                 [
+                                            "el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. ",
+                                            0.44925206899642944,
+                                            "Line 2"
+                                 ],
+                                 [
+                                            "muchas gracias. ",
+                                            0.16057448089122772,
+                                            "Line 3"
+                                 ],
+                                 [
+                                            "profesor buenas tardes,   adjunto solo los archivos en excel que me permitió subir la plataforma. el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. ",
+                                            0.4878924489021301,
+                                            "Lines 1 - 2"
+                                 ],
+                                 [
+                                            "el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. muchas gracias. ",
+                                            0.46105560660362244,
+                                            "Lines 2 - 3"
+                                 ],
+                                 [
+                                            "profesor buenas tardes,   adjunto solo los archivos en excel que me permitió subir la plataforma. el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. muchas gracias. ",
+                                            0.49632149934768677,
+                                            "Lines 1 - 3"
+                                 ]
+                      ]
+           },
+           "CAMACHO PONCE, ALEXANDER": {
+                      "minipregunta0": [
+                                 [
+                                            "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. ",
+                                            0.5365749597549438,
+                                            "Line 1"
+                                 ],
+                                 [
+                                            "además, como es de su conocimiento no se nos permite subir comprimidos. ",
+                                            0.47768157720565796,
+                                            "Line 2"
+                                 ],
+                                 [
+                                            "quedo atento a sus comentarios. ",
+                                            0.33008310198783875,
+                                            "Line 3"
+                                 ],
+                                 [
+                                            "saludos cordiales,   alexander camacho. ",
+                                            0.3540075421333313,
+                                            "Line 4"
+                                 ],
+                                 [
+                                            "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. además, como es de su conocimiento no se nos permite subir comprimidos. ",
+                                            0.5557858347892761,
+                                            "Lines 1 - 2"
+                                 ],
+                                 [
+                                            "además, como es de su conocimiento no se nos permite subir comprimidos. quedo atento a sus comentarios. ",
+                                            0.48920685052871704,
+                                            "Lines 2 - 3"
+                                 ],
+                                 [
+                                            "quedo atento a sus comentarios. saludos cordiales,   alexander camacho. ",
+                                            0.41809988021850586,
+                                            "Lines 3 - 4"
+                                 ],
+                                 [
+                                            "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. además, como es de su conocimiento no se nos permite subir comprimidos. quedo atento a sus comentarios. ",
+                                            0.5702337622642517,
+                                            "Lines 1 - 3"
+                                 ],
+                                 [
+                                            "además, como es de su conocimiento no se nos permite subir comprimidos. quedo atento a sus comentarios. saludos cordiales,   alexander camacho. ",
+                                            0.5016663074493408,
+                                            "Lines 2 - 4"
+                                 ],
+                                 [
+                                            "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. además, como es de su conocimiento no se nos permite subir comprimidos. quedo atento a sus comentarios. saludos cordiales,   alexander camacho. ",
+                                            0.566851019859314,
+                                            "Lines 1 - 4"
+                                 ]
+                      ],
+                      "minipregunta1": [
+                                 [
+                                            "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. ",
+                                            0.5055159330368042,
+                                            "Line 1"
+                                 ],
+                                 [
+                                            "además, como es de su conocimiento no se nos permite subir comprimidos. ",
+                                            0.4580826759338379,
+                                            "Line 2"
+                                 ],
+                                 [
+                                            "quedo atento a sus comentarios. ",
+                                            0.28101393580436707,
+                                            "Line 3"
+                                 ],
+                                 [
+                                            "saludos cordiales,   alexander camacho. ",
+                                            0.31095296144485474,
+                                            "Line 4"
+                                 ],
+                                 [
+                                            "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. además, como es de su conocimiento no se nos permite subir comprimidos. ",
+                                            0.5400476455688477,
+                                            "Lines 1 - 2"
+                                 ],
+                                 [
+                                            "además, como es de su conocimiento no se nos permite subir comprimidos. quedo atento a sus comentarios. ",
+                                            0.4613616466522217,
+                                            "Lines 2 - 3"
+                                 ],
+                                 [
+                                            "quedo atento a sus comentarios. saludos cordiales,   alexander camacho. ",
+                                            0.3763532042503357,
+                                            "Lines 3 - 4"
+                                 ],
+                                 [
+                                            "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. además, como es de su conocimiento no se nos permite subir comprimidos. quedo atento a sus comentarios. ",
+                                            0.5398690700531006,
+                                            "Lines 1 - 3"
+                                 ],
+                                 [
+                                            "además, como es de su conocimiento no se nos permite subir comprimidos. quedo atento a sus comentarios. saludos cordiales,   alexander camacho. ",
+                                            0.4736994802951813,
+                                            "Lines 2 - 4"
+                                 ],
+                                 [
+                                            "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. además, como es de su conocimiento no se nos permite subir comprimidos. quedo atento a sus comentarios. saludos cordiales,   alexander camacho. ",
+                                            0.546934187412262,
+                                            "Lines 1 - 4"
+                                 ]
+                      ],
+                      "minipregunta2": [
+                                 [
+                                            "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. ",
+                                            0.5199304819107056,
+                                            "Line 1"
+                                 ],
+                                 [
+                                            "además, como es de su conocimiento no se nos permite subir comprimidos. ",
+                                            0.4058612883090973,
+                                            "Line 2"
+                                 ],
+                                 [
+                                            "quedo atento a sus comentarios. ",
+                                            0.36977437138557434,
+                                            "Line 3"
+                                 ],
+                                 [
+                                            "saludos cordiales,   alexander camacho. ",
+                                            0.33658909797668457,
+                                            "Line 4"
+                                 ],
+                                 [
+                                            "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. además, como es de su conocimiento no se nos permite subir comprimidos. ",
+                                            0.5063468813896179,
+                                            "Lines 1 - 2"
+                                 ],
+                                 [
+                                            "además, como es de su conocimiento no se nos permite subir comprimidos. quedo atento a sus comentarios. ",
+                                            0.4461468756198883,
+                                            "Lines 2 - 3"
+                                 ],
+                                 [
+                                            "quedo atento a sus comentarios. saludos cordiales,   alexander camacho. ",
+                                            0.4213951826095581,
+                                            "Lines 3 - 4"
+                                 ],
+                                 [
+                                            "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. además, como es de su conocimiento no se nos permite subir comprimidos. quedo atento a sus comentarios. ",
+                                            0.5248937606811523,
+                                            "Lines 1 - 3"
+                                 ],
+                                 [
+                                            "además, como es de su conocimiento no se nos permite subir comprimidos. quedo atento a sus comentarios. saludos cordiales,   alexander camacho. ",
+                                            0.45194345712661743,
+                                            "Lines 2 - 4"
+                                 ],
+                                 [
+                                            "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. además, como es de su conocimiento no se nos permite subir comprimidos. quedo atento a sus comentarios. saludos cordiales,   alexander camacho. ",
+                                            0.5227850079536438,
+                                            "Lines 1 - 4"
+                                 ]
+                      ]
+           },
+           "CARDONA YARA, FRANKLIN ANDRES": {
+                      "minipregunta0": [],
+                      "minipregunta1": [],
+                      "minipregunta2": []
+           },
+           "CHACON CALA, MIGUEL ANDRES": {
+                      "minipregunta0": [
+                                 [
+                                            "buenas tardes profe,  envio los archivos requeridos de forma individual dado que no pude subir el zip  quedo atento a comentarios,  miguel chacon. ",
+                                            0.506442129611969,
+                                            "Line 1"
+                                 ]
+                      ],
+                      "minipregunta1": [
+                                 [
+                                            "buenas tardes profe,  envio los archivos requeridos de forma individual dado que no pude subir el zip  quedo atento a comentarios,  miguel chacon. ",
+                                            0.5050503015518188,
+                                            "Line 1"
+                                 ]
+                      ],
+                      "minipregunta2": [
+                                 [
+                                            "buenas tardes profe,  envio los archivos requeridos de forma individual dado que no pude subir el zip  quedo atento a comentarios,  miguel chacon. ",
+                                            0.5117193460464478,
+                                            "Line 1"
+                                 ]
+                      ]
+           },
+           "CHACON ORDONEZ, JOSE MIGUEL": {
+                      "minipregunta0": [
+                                 [
+                                            "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. ",
+                                            0.4170149564743042,
+                                            "Line 1"
+                                 ],
+                                 [
+                                            "puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. ",
+                                            0.3762429654598236,
+                                            "Line 2"
+                                 ],
+                                 [
+                                            "adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. ",
+                                            0.5228880047798157,
+                                            "Line 3"
+                                 ],
+                                 [
+                                            "gracias por su atención y saludos!. ",
+                                            0.41872841119766235,
+                                            "Line 4"
+                                 ],
+                                 [
+                                            "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. ",
+                                            0.4423833191394806,
+                                            "Lines 1 - 2"
+                                 ],
+                                 [
+                                            "puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. ",
+                                            0.46579620242118835,
+                                            "Lines 2 - 3"
+                                 ],
+                                 [
+                                            "adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. gracias por su atención y saludos!. ",
+                                            0.5684597492218018,
+                                            "Lines 3 - 4"
+                                 ],
+                                 [
+                                            "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. ",
+                                            0.5325490236282349,
+                                            "Lines 1 - 3"
+                                 ],
+                                 [
+                                            "puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. gracias por su atención y saludos!. ",
+                                            0.4962964951992035,
+                                            "Lines 2 - 4"
+                                 ],
+                                 [
+                                            "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. gracias por su atención y saludos!. ",
+                                            0.5499610304832458,
+                                            "Lines 1 - 4"
+                                 ]
+                      ],
+                      "minipregunta1": [
+                                 [
+                                            "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. ",
+                                            0.47951337695121765,
+                                            "Line 1"
+                                 ],
+                                 [
+                                            "puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. ",
+                                            0.433596134185791,
+                                            "Line 2"
+                                 ],
+                                 [
+                                            "adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. ",
+                                            0.4829946756362915,
+                                            "Line 3"
+                                 ],
+                                 [
+                                            "gracias por su atención y saludos!. ",
+                                            0.2834472060203552,
+                                            "Line 4"
+                                 ],
+                                 [
+                                            "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. ",
+                                            0.5128880739212036,
+                                            "Lines 1 - 2"
+                                 ],
+                                 [
+                                            "puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. ",
+                                            0.4966506361961365,
+                                            "Lines 2 - 3"
+                                 ],
+                                 [
+                                            "adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. gracias por su atención y saludos!. ",
+                                            0.49893832206726074,
+                                            "Lines 3 - 4"
+                                 ],
+                                 [
+                                            "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. ",
+                                            0.5655745267868042,
+                                            "Lines 1 - 3"
+                                 ],
+                                 [
+                                            "puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. gracias por su atención y saludos!. ",
+                                            0.5032963752746582,
+                                            "Lines 2 - 4"
+                                 ],
+                                 [
+                                            "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. gracias por su atención y saludos!. ",
+                                            0.569219708442688,
+                                            "Lines 1 - 4"
+                                 ]
+                      ],
+                      "minipregunta2": [
+                                 [
+                                            "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. ",
+                                            0.42314401268959045,
+                                            "Line 1"
+                                 ],
+                                 [
+                                            "puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. ",
+                                            0.3813058137893677,
+                                            "Line 2"
+                                 ],
+                                 [
+                                            "adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. ",
+                                            0.44485676288604736,
+                                            "Line 3"
+                                 ],
+                                 [
+                                            "gracias por su atención y saludos!. ",
+                                            0.3027624487876892,
+                                            "Line 4"
+                                 ],
+                                 [
+                                            "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. ",
+                                            0.43304044008255005,
+                                            "Lines 1 - 2"
+                                 ],
+                                 [
+                                            "puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. ",
+                                            0.4312882721424103,
+                                            "Lines 2 - 3"
+                                 ],
+                                 [
+                                            "adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. gracias por su atención y saludos!. ",
+                                            0.4433864951133728,
+                                            "Lines 3 - 4"
+                                 ],
+                                 [
+                                            "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. ",
+                                            0.46747320890426636,
+                                            "Lines 1 - 3"
+                                 ],
+                                 [
+                                            "puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. gracias por su atención y saludos!. ",
+                                            0.43524354696273804,
+                                            "Lines 2 - 4"
+                                 ],
+                                 [
+                                            "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. gracias por su atención y saludos!. ",
+                                            0.47437310218811035,
+                                            "Lines 1 - 4"
+                                 ]
+                      ]
+           },
+           "CHIRINOS VALERO, LUIS": {
+                      "minipregunta0": [],
+                      "minipregunta1": [],
+                      "minipregunta2": []
+           },
+           "CIFUENTES DURANGO, VICTOR ALFONSO": {
+                      "minipregunta0": [],
+                      "minipregunta1": [],
+                      "minipregunta2": []
+           },
+           "CORONADO MOREIRA, CRISTOPHER GEOVANNY": {
+                      "minipregunta0": [
+                                 [
+                                            "adjunto solución. ",
+                                            0.17617611587047577,
+                                            "Line 1"
+                                 ]
+                      ],
+                      "minipregunta1": [
+                                 [
+                                            "adjunto solución. ",
+                                            0.10049480199813843,
+                                            "Line 1"
+                                 ]
+                      ],
+                      "minipregunta2": [
+                                 [
+                                            "adjunto solución. ",
+                                            0.3038344383239746,
+                                            "Line 1"
+                                 ]
+                      ]
+           },
+           "CUARTAS VALDERRAMA, MANUEL ALEJANDRO": {
+                      "minipregunta0": [],
+                      "minipregunta1": [],
+                      "minipregunta2": []
+           },
+           "DUQUE AGUILERA, ADRIAN": {
+                      "minipregunta0": [
+                                 [
+                                            "buen dia,  envio los excel de las matrices y el codigo en html, ya que el pdf me dio en primer lugar problemas por el tamaño y en segundo lugar al comprimirlo, no aceptó el formato. ",
+                                            0.5463806390762329,
+                                            "Line 1"
+                                 ]
+                      ],
+                      "minipregunta1": [
+                                 [
+                                            "buen dia,  envio los excel de las matrices y el codigo en html, ya que el pdf me dio en primer lugar problemas por el tamaño y en segundo lugar al comprimirlo, no aceptó el formato. ",
+                                            0.5556323528289795,
+                                            "Line 1"
+                                 ]
+                      ],
+                      "minipregunta2": [
+                                 [
+                                            "buen dia,  envio los excel de las matrices y el codigo en html, ya que el pdf me dio en primer lugar problemas por el tamaño y en segundo lugar al comprimirlo, no aceptó el formato. ",
+                                            0.497341513633728,
+                                            "Line 1"
+                                 ]
+                      ]
+           },
+           "FERRER ACOSTA, MISAEL JOAQUIN": {
+                      "minipregunta0": [
+                                 [
+                                            "hola profesor gusto en saludarlo  anexo los archivos correspondientes a la actividad  el cuaderno no me dejó subirlo a la plataforma  espero que sea de su agrado  saludos cordiales. ",
+                                            0.40279048681259155,
+                                            "Line 1"
+                                 ]
+                      ],
+                      "minipregunta1": [
+                                 [
+                                            "hola profesor gusto en saludarlo  anexo los archivos correspondientes a la actividad  el cuaderno no me dejó subirlo a la plataforma  espero que sea de su agrado  saludos cordiales. ",
+                                            0.43732982873916626,
+                                            "Line 1"
+                                 ]
+                      ],
+                      "minipregunta2": [
+                                 [
+                                            "hola profesor gusto en saludarlo  anexo los archivos correspondientes a la actividad  el cuaderno no me dejó subirlo a la plataforma  espero que sea de su agrado  saludos cordiales. ",
+                                            0.42479485273361206,
+                                            "Line 1"
+                                 ]
+                      ]
+           },
+           "GARCIA VELEZ, PABLO ALFONSO": {
+                      "minipregunta0": [
+                                 [
+                                            "estimado profesor,  adjunto los documentos de la actividad 1  pablo garcia. ",
+                                            0.34633368253707886,
+                                            "Line 1"
+                                 ]
+                      ],
+                      "minipregunta1": [
+                                 [
+                                            "estimado profesor,  adjunto los documentos de la actividad 1  pablo garcia. ",
+                                            0.4103168249130249,
+                                            "Line 1"
+                                 ]
+                      ],
+                      "minipregunta2": [
+                                 [
+                                            "estimado profesor,  adjunto los documentos de la actividad 1  pablo garcia. ",
+                                            0.40996477007865906,
+                                            "Line 1"
+                                 ]
+                      ]
+           },
+           "GARZON TAMAYO, CRISTIAN CAMILO": {
+                      "minipregunta0": [
+                                 [
+                                            "buen día profesor  se adjunta para su validación. ",
+                                            0.37105271220207214,
+                                            "Line 1"
+                                 ],
+                                 [
+                                            "no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. ",
+                                            0.5139008164405823,
+                                            "Line 2"
+                                 ],
+                                 [
+                                            "cordialmente,  cristian camilo garzon tamayo crittan01@gmailcom cc 1032414179 +57 312 583 5649 bogotá - colombia. ",
+                                            0.4440631866455078,
+                                            "Line 3"
+                                 ],
+                                 [
+                                            "buen día profesor  se adjunta para su validación. no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. ",
+                                            0.5427380800247192,
+                                            "Lines 1 - 2"
+                                 ],
+                                 [
+                                            "no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. cordialmente,  cristian camilo garzon tamayo crittan01@gmailcom cc 1032414179 +57 312 583 5649 bogotá - colombia. ",
+                                            0.5392541885375977,
+                                            "Lines 2 - 3"
+                                 ],
+                                 [
+                                            "buen día profesor  se adjunta para su validación. no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. cordialmente,  cristian camilo garzon tamayo crittan01@gmailcom cc 1032414179 +57 312 583 5649 bogotá - colombia. ",
+                                            0.5569282174110413,
+                                            "Lines 1 - 3"
+                                 ]
+                      ],
+                      "minipregunta1": [
+                                 [
+                                            "buen día profesor  se adjunta para su validación. ",
+                                            0.39203307032585144,
+                                            "Line 1"
+                                 ],
+                                 [
+                                            "no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. ",
+                                            0.5498954057693481,
+                                            "Line 2"
+                                 ],
+                                 [
+                                            "cordialmente,  cristian camilo garzon tamayo crittan01@gmailcom cc 1032414179 +57 312 583 5649 bogotá - colombia. ",
+                                            0.4313301146030426,
+                                            "Line 3"
+                                 ],
+                                 [
+                                            "buen día profesor  se adjunta para su validación. no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. ",
+                                            0.5857737064361572,
+                                            "Lines 1 - 2"
+                                 ],
+                                 [
+                                            "no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. cordialmente,  cristian camilo garzon tamayo crittan01@gmailcom cc 1032414179 +57 312 583 5649 bogotá - colombia. ",
+                                            0.5752415657043457,
+                                            "Lines 2 - 3"
+                                 ],
+                                 [
+                                            "buen día profesor  se adjunta para su validación. no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. cordialmente,  cristian camilo garzon tamayo crittan01@gmailcom cc 1032414179 +57 312 583 5649 bogotá - colombia. ",
+                                            0.592602014541626,
+                                            "Lines 1 - 3"
+                                 ]
+                      ],
+                      "minipregunta2": [
+                                 [
+                                            "buen día profesor  se adjunta para su validación. ",
+                                            0.49351438879966736,
+                                            "Line 1"
+                                 ],
+                                 [
+                                            "no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. ",
+                                            0.48709121346473694,
+                                            "Line 2"
+                                 ],
+                                 [
+                                            "cordialmente,  cristian camilo garzon tamayo crittan01@gmailcom cc 1032414179 +57 312 583 5649 bogotá - colombia. ",
+                                            0.39129048585891724,
+                                            "Line 3"
+                                 ],
+                                 [
+                                            "buen día profesor  se adjunta para su validación. no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. ",
+                                            0.5287390351295471,
+                                            "Lines 1 - 2"
+                                 ],
+                                 [
+                                            "no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. cordialmente,  cristian camilo garzon tamayo crittan01@gmailcom cc 1032414179 +57 312 583 5649 bogotá - colombia. ",
+                                            0.49465665221214294,
+                                            "Lines 2 - 3"
+                                 ],
+                                 [
+                                            "buen día profesor  se adjunta para su validación. no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. cordialmente,  cristian camilo garzon tamayo crittan01@gmailcom cc 1032414179 +57 312 583 5649 bogotá - colombia. ",
+                                            0.5242436528205872,
+                                            "Lines 1 - 3"
+                                 ]
+                      ]
+           },
+           "GIRALDO OSORIO, CARLOS ANDRES": {
+                      "minipregunta0": [],
+                      "minipregunta1": [],
+                      "minipregunta2": []
            }
 }

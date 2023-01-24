@@ -26,6 +26,7 @@
               "src/favicon.ico",
               "src/Plentas.ico",
               "src/assets"
+             
             ],
             "styles": [
               "src/toastr.css",

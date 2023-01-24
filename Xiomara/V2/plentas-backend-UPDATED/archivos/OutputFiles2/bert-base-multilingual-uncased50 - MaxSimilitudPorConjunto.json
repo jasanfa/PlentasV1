@@ -1,3 +1,101 @@
 {
-           "BECERRA JARAMILLO, DANIEL ISAI": {}
+           "BECERRA JARAMILLO, DANIEL ISAI": {},
+           "BERRIO ZAPATA, SURLEY YANSURY": {
+                      "1": {
+                                 "MaxSimilitud": 0.44925206899642944,
+                                 "Frase": "el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. ",
+                                 "Lineas": "Line 2"
+                      },
+                      "2": {
+                                 "MaxSimilitud": 0.4878924489021301,
+                                 "Frase": "profesor buenas tardes,   adjunto solo los archivos en excel que me permitió subir la plataforma. el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. ",
+                                 "Lineas": "Lines 1 - 2"
+                      },
+                      "3": {
+                                 "MaxSimilitud": 0.49632149934768677,
+                                 "Frase": "profesor buenas tardes,   adjunto solo los archivos en excel que me permitió subir la plataforma. el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. muchas gracias. ",
+                                 "Lineas": "Lines 1 - 3"
+                      }
+           },
+           "CAMACHO PONCE, ALEXANDER": {
+                      "1": {
+                                 "MaxSimilitud": 0.5199304819107056,
+                                 "Frase": "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. ",
+                                 "Lineas": "Line 1"
+                      },
+                      "3": {
+                                 "MaxSimilitud": 0.5248937606811523,
+                                 "Frase": "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. además, como es de su conocimiento no se nos permite subir comprimidos. quedo atento a sus comentarios. ",
+                                 "Lineas": "Lines 1 - 3"
+                      }
+           },
+           "CARDONA YARA, FRANKLIN ANDRES": {},
+           "CHACON CALA, MIGUEL ANDRES": {
+                      "1": {
+                                 "MaxSimilitud": 0.5117193460464478,
+                                 "Frase": "buenas tardes profe,  envio los archivos requeridos de forma individual dado que no pude subir el zip  quedo atento a comentarios,  miguel chacon. ",
+                                 "Lineas": "Line 1"
+                      }
+           },
+           "CHACON ORDONEZ, JOSE MIGUEL": {
+                      "1": {
+                                 "MaxSimilitud": 0.44485676288604736,
+                                 "Frase": "adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. ",
+                                 "Lineas": "Line 3"
+                      },
+                      "3": {
+                                 "MaxSimilitud": 0.46747320890426636,
+                                 "Frase": "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. ",
+                                 "Lineas": "Lines 1 - 3"
+                      },
+                      "4": {
+                                 "MaxSimilitud": 0.47437310218811035,
+                                 "Frase": "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. gracias por su atención y saludos!. ",
+                                 "Lineas": "Lines 1 - 4"
+                      }
+           },
+           "CHIRINOS VALERO, LUIS": {},
+           "CIFUENTES DURANGO, VICTOR ALFONSO": {},
+           "CORONADO MOREIRA, CRISTOPHER GEOVANNY": {
+                      "1": {
+                                 "MaxSimilitud": 0.3038344383239746,
+                                 "Frase": "adjunto solución. ",
+                                 "Lineas": "Line 1"
+                      }
+           },
+           "CUARTAS VALDERRAMA, MANUEL ALEJANDRO": {},
+           "DUQUE AGUILERA, ADRIAN": {
+                      "1": {
+                                 "MaxSimilitud": 0.497341513633728,
+                                 "Frase": "buen dia,  envio los excel de las matrices y el codigo en html, ya que el pdf me dio en primer lugar problemas por el tamaño y en segundo lugar al comprimirlo, no aceptó el formato. ",
+                                 "Lineas": "Line 1"
+                      }
+           },
+           "FERRER ACOSTA, MISAEL JOAQUIN": {
+                      "1": {
+                                 "MaxSimilitud": 0.42479485273361206,
+                                 "Frase": "hola profesor gusto en saludarlo  anexo los archivos correspondientes a la actividad  el cuaderno no me dejó subirlo a la plataforma  espero que sea de su agrado  saludos cordiales. ",
+                                 "Lineas": "Line 1"
+                      }
+           },
+           "GARCIA VELEZ, PABLO ALFONSO": {
+                      "1": {
+                                 "MaxSimilitud": 0.40996477007865906,
+                                 "Frase": "estimado profesor,  adjunto los documentos de la actividad 1  pablo garcia. ",
+                                 "Lineas": "Line 1"
+                      }
+           },
+           "GARZON TAMAYO, CRISTIAN CAMILO": {
+                      "1": {
+                                 "MaxSimilitud": 0.49351438879966736,
+                                 "Frase": "buen día profesor  se adjunta para su validación. ",
+                                 "Lineas": "Line 1"
+                      },
+                      "2": {
+                                 "MaxSimilitud": 0.5287390351295471,
+                                 "Frase": "buen día profesor  se adjunta para su validación. no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. ",
+                                 "Lineas": "Lines 1 - 2"
+                      }
+           },
+           "GIRALDO OSORIO, CARLOS ANDRES": {}
 }

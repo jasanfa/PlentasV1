@@ -1,3 +1,4 @@
+
 <div class="page-container">
     <div class="student-container">
       <label for="chkSemantic">Página: </label>
@@ -8,11 +9,11 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        <input type="image" onclick= ExportData(evaluation) src="assets/logo-excel.png" style="border: double;" height="35" width="35" id="downloadAnchorElem"/>
-        <a href="../../../assets/flecha_l.png" download="Acme Documentation (ver. 2.0.1).png">Download Text</a>
+        <input type="image" (click)="ExportData()" src="assets/logo-excel.png" style="border: double;" height="35" width="35" id="downloadExcel"/>
   
 
       </div>
+      
       
     <div class="flex-container">  
           
@@ -107,15 +108,15 @@
             <tbody>
               <tr>
                 <td>Spacy</td>
-                <td>{{((spacy_ortografia/peso_config_orto) *10).toFixed(2)}} ({{spacy_ortografia}} / {{peso_config_orto}} ) </td>
-                <td>{{((spacy_sintaxis/peso_config_sintaxis) *10).toFixed(2)}} ({{spacy_sintaxis}} / {{peso_config_sintaxis}})</td>
-                <td>{{((spacy_semantica/peso_config_semantica) *10).toFixed(2)}} ({{spacy_semantica}} / {{peso_config_semantica}})</td>
+                <td>{{desglose_ortografia}} </td>
+                <td>{{desglose_sintaxis}}</td>
+                <td>{{desglose_semantica_spacy}}</td>
               </tr>
               <tr>
                 <td>Bert</td>
-                <td>{{((bert_ortografia/peso_config_orto) *10).toFixed(2)}} ({{bert_ortografia}} / {{peso_config_orto}})</td>
-                <td>{{((bert_sintaxis/peso_config_sintaxis) *10).toFixed(2)}} ({{bert_sintaxis}} / {{peso_config_sintaxis}})</td>
-                <td>{{((bert_semantica/peso_config_semantica) *10).toFixed(2)}} ({{bert_semantica}} / {{peso_config_semantica}})</td>
+                <td>{{desglose_ortografia}}</td>
+                <td>{{desglose_sintaxis}}</td>
+                <td>{{desglose_semantica_bert}}</td>
               </tr>
 
             </tbody>
@@ -131,6 +132,9 @@
     </div>
   </div>
 
+  <script>
+    //<a href="assets/backendExcel.xlsx" download="CalificacionEstudiantes.xlsx">Download Text</a>
+  </script>
 
 
 

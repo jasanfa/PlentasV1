@@ -1,5 +1,287 @@
 {
            "BECERRA JARAMILLO, DANIEL ISAI": {
-                      "minipregunta0": {}
+                      "minipregunta0": {},
+                      "minipregunta1": {},
+                      "minipregunta2": {}
+           },
+           "BERRIO ZAPATA, SURLEY YANSURY": {
+                      "minipregunta0": {
+                                 "1": {
+                                            "Similitud": 0.48509156703948975,
+                                            "Frase": "profesor buenas tardes,   adjunto solo los archivos en excel que me permitió subir la plataforma. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      },
+                      "minipregunta1": {
+                                 "1": {
+                                            "Similitud": 0.43957000970840454,
+                                            "Frase": "profesor buenas tardes,   adjunto solo los archivos en excel que me permitió subir la plataforma. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      },
+                      "minipregunta2": {
+                                 "1": {
+                                            "Similitud": 0.42955702543258667,
+                                            "Frase": "profesor buenas tardes,   adjunto solo los archivos en excel que me permitió subir la plataforma. ",
+                                            "Lineas": "Line 1"
+                                 },
+                                 "2": {
+                                            "Similitud": 0.44925206899642944,
+                                            "Frase": "el jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor. ",
+                                            "Lineas": "Line 2"
+                                 }
+                      }
+           },
+           "CAMACHO PONCE, ALEXANDER": {
+                      "minipregunta0": {
+                                 "1": {
+                                            "Similitud": 0.5365749597549438,
+                                            "Frase": "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. ",
+                                            "Lineas": "Line 1"
+                                 },
+                                 "2": {
+                                            "Similitud": 0.47768157720565796,
+                                            "Frase": "además, como es de su conocimiento no se nos permite subir comprimidos. ",
+                                            "Lineas": "Line 2"
+                                 }
+                      },
+                      "minipregunta1": {
+                                 "1": {
+                                            "Similitud": 0.5055159330368042,
+                                            "Frase": "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. ",
+                                            "Lineas": "Line 1"
+                                 },
+                                 "2": {
+                                            "Similitud": 0.4580826759338379,
+                                            "Frase": "además, como es de su conocimiento no se nos permite subir comprimidos. ",
+                                            "Lineas": "Line 2"
+                                 }
+                      },
+                      "minipregunta2": {
+                                 "1": {
+                                            "Similitud": 0.5199304819107056,
+                                            "Frase": "buenos días estimado profe,   a continuación adjunto la tarea correspondiente a la actividad 1   la subo en formato html el jupyter notebook esto debido a que al trasnformarlo en pdf se dañaba totalmente la salidas de las celdas. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      }
+           },
+           "CARDONA YARA, FRANKLIN ANDRES": {
+                      "minipregunta0": {},
+                      "minipregunta1": {},
+                      "minipregunta2": {}
+           },
+           "CHACON CALA, MIGUEL ANDRES": {
+                      "minipregunta0": {
+                                 "4": {
+                                            "Similitud": 0.506442129611969,
+                                            "Frase": "buenas tardes profe,  envio los archivos requeridos de forma individual dado que no pude subir el zip  quedo atento a comentarios,  miguel chacon. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      },
+                      "minipregunta1": {
+                                 "5": {
+                                            "Similitud": 0.5050503015518188,
+                                            "Frase": "buenas tardes profe,  envio los archivos requeridos de forma individual dado que no pude subir el zip  quedo atento a comentarios,  miguel chacon. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      },
+                      "minipregunta2": {
+                                 "6": {
+                                            "Similitud": 0.5117193460464478,
+                                            "Frase": "buenas tardes profe,  envio los archivos requeridos de forma individual dado que no pude subir el zip  quedo atento a comentarios,  miguel chacon. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      }
+           },
+           "CHACON ORDONEZ, JOSE MIGUEL": {
+                      "minipregunta0": {
+                                 "1": {
+                                            "Similitud": 0.4170149564743042,
+                                            "Frase": "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. ",
+                                            "Lineas": "Line 1"
+                                 },
+                                 "2": {
+                                            "Similitud": 0.3762429654598236,
+                                            "Frase": "puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. ",
+                                            "Lineas": "Line 2"
+                                 },
+                                 "4": {
+                                            "Similitud": 0.41872841119766235,
+                                            "Frase": "gracias por su atención y saludos!. ",
+                                            "Lineas": "Line 4"
+                                 }
+                      },
+                      "minipregunta1": {
+                                 "1": {
+                                            "Similitud": 0.47951337695121765,
+                                            "Frase": "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. ",
+                                            "Lineas": "Line 1"
+                                 },
+                                 "2": {
+                                            "Similitud": 0.433596134185791,
+                                            "Frase": "puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. ",
+                                            "Lineas": "Line 2"
+                                 },
+                                 "3": {
+                                            "Similitud": 0.4829946756362915,
+                                            "Frase": "adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. ",
+                                            "Lineas": "Line 3"
+                                 }
+                      },
+                      "minipregunta2": {
+                                 "1": {
+                                            "Similitud": 0.42314401268959045,
+                                            "Frase": "buenas noches profe,  adjunto el cuaderno de jupyter exportado cómo pdf. ",
+                                            "Lineas": "Line 1"
+                                 },
+                                 "2": {
+                                            "Similitud": 0.3813058137893677,
+                                            "Frase": "puede verlo también desde la siguiente url de google colab, dónde se visualiza mejor: https://colabresearchgooglecom/drive/1zdg9vwzy1ojdqdvezm8lh8egxvtbokbg. ",
+                                            "Lineas": "Line 2"
+                                 },
+                                 "3": {
+                                            "Similitud": 0.44485676288604736,
+                                            "Frase": "adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi. ",
+                                            "Lineas": "Line 3"
+                                 }
+                      }
+           },
+           "CHIRINOS VALERO, LUIS": {
+                      "minipregunta0": {},
+                      "minipregunta1": {},
+                      "minipregunta2": {}
+           },
+           "CIFUENTES DURANGO, VICTOR ALFONSO": {
+                      "minipregunta0": {},
+                      "minipregunta1": {},
+                      "minipregunta2": {}
+           },
+           "CORONADO MOREIRA, CRISTOPHER GEOVANNY": {
+                      "minipregunta0": {},
+                      "minipregunta1": {},
+                      "minipregunta2": {
+                                 "6": {
+                                            "Similitud": 0.3038344383239746,
+                                            "Frase": "adjunto solución. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      }
+           },
+           "CUARTAS VALDERRAMA, MANUEL ALEJANDRO": {
+                      "minipregunta0": {},
+                      "minipregunta1": {},
+                      "minipregunta2": {}
+           },
+           "DUQUE AGUILERA, ADRIAN": {
+                      "minipregunta0": {
+                                 "10": {
+                                            "Similitud": 0.5463806390762329,
+                                            "Frase": "buen dia,  envio los excel de las matrices y el codigo en html, ya que el pdf me dio en primer lugar problemas por el tamaño y en segundo lugar al comprimirlo, no aceptó el formato. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      },
+                      "minipregunta1": {
+                                 "11": {
+                                            "Similitud": 0.5556323528289795,
+                                            "Frase": "buen dia,  envio los excel de las matrices y el codigo en html, ya que el pdf me dio en primer lugar problemas por el tamaño y en segundo lugar al comprimirlo, no aceptó el formato. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      },
+                      "minipregunta2": {
+                                 "12": {
+                                            "Similitud": 0.497341513633728,
+                                            "Frase": "buen dia,  envio los excel de las matrices y el codigo en html, ya que el pdf me dio en primer lugar problemas por el tamaño y en segundo lugar al comprimirlo, no aceptó el formato. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      }
+           },
+           "FERRER ACOSTA, MISAEL JOAQUIN": {
+                      "minipregunta0": {
+                                 "16": {
+                                            "Similitud": 0.40279048681259155,
+                                            "Frase": "hola profesor gusto en saludarlo  anexo los archivos correspondientes a la actividad  el cuaderno no me dejó subirlo a la plataforma  espero que sea de su agrado  saludos cordiales. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      },
+                      "minipregunta1": {
+                                 "17": {
+                                            "Similitud": 0.43732982873916626,
+                                            "Frase": "hola profesor gusto en saludarlo  anexo los archivos correspondientes a la actividad  el cuaderno no me dejó subirlo a la plataforma  espero que sea de su agrado  saludos cordiales. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      },
+                      "minipregunta2": {
+                                 "18": {
+                                            "Similitud": 0.42479485273361206,
+                                            "Frase": "hola profesor gusto en saludarlo  anexo los archivos correspondientes a la actividad  el cuaderno no me dejó subirlo a la plataforma  espero que sea de su agrado  saludos cordiales. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      }
+           },
+           "GARCIA VELEZ, PABLO ALFONSO": {
+                      "minipregunta0": {
+                                 "22": {
+                                            "Similitud": 0.34633368253707886,
+                                            "Frase": "estimado profesor,  adjunto los documentos de la actividad 1  pablo garcia. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      },
+                      "minipregunta1": {
+                                 "23": {
+                                            "Similitud": 0.4103168249130249,
+                                            "Frase": "estimado profesor,  adjunto los documentos de la actividad 1  pablo garcia. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      },
+                      "minipregunta2": {
+                                 "24": {
+                                            "Similitud": 0.40996477007865906,
+                                            "Frase": "estimado profesor,  adjunto los documentos de la actividad 1  pablo garcia. ",
+                                            "Lineas": "Line 1"
+                                 }
+                      }
+           },
+           "GARZON TAMAYO, CRISTIAN CAMILO": {
+                      "minipregunta0": {
+                                 "2": {
+                                            "Similitud": 0.5139008164405823,
+                                            "Frase": "no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. ",
+                                            "Lineas": "Line 2"
+                                 },
+                                 "3": {
+                                            "Similitud": 0.4440631866455078,
+                                            "Frase": "cordialmente,  cristian camilo garzon tamayo crittan01@gmailcom cc 1032414179 +57 312 583 5649 bogotá - colombia. ",
+                                            "Lineas": "Line 3"
+                                 }
+                      },
+                      "minipregunta1": {
+                                 "2": {
+                                            "Similitud": 0.5498954057693481,
+                                            "Frase": "no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. ",
+                                            "Lineas": "Line 2"
+                                 },
+                                 "3": {
+                                            "Similitud": 0.4313301146030426,
+                                            "Frase": "cordialmente,  cristian camilo garzon tamayo crittan01@gmailcom cc 1032414179 +57 312 583 5649 bogotá - colombia. ",
+                                            "Lineas": "Line 3"
+                                 }
+                      },
+                      "minipregunta2": {
+                                 "1": {
+                                            "Similitud": 0.49351438879966736,
+                                            "Frase": "buen día profesor  se adjunta para su validación. ",
+                                            "Lineas": "Line 1"
+                                 },
+                                 "2": {
+                                            "Similitud": 0.48709121346473694,
+                                            "Frase": "no se sube el html export compilado, porque de ser asi, pesa mas de 50mb, se sube sin compilar. ",
+                                            "Lineas": "Line 2"
+                                 }
+                      }
+           },
+           "GIRALDO OSORIO, CARLOS ANDRES": {
+                      "minipregunta0": {},
+                      "minipregunta1": {},
+                      "minipregunta2": {}
            }
 }

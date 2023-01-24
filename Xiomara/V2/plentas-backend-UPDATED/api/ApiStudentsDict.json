@@ -218,5 +218,225 @@
                       "respuesta": "Saludos envío la tarea.",
                       "hashed_id": "ZHERDMANT CEVALLOS, ERICK JOEL",
                       "TableIndex": 43
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "BECERRA JARAMILLO, DANIEL ISAI",
+                      "TableIndex": 0
+           },
+           {
+                      "respuesta": "Profesor buenas tardes,   Adjunto solo los archivos en excel que me permitió subir la plataforma. El jupyter-notebook  no me lo permitió subir ni siquiera en formato html; envío todo estos dos últimos archivos a través de tutor.  Muchas gracias.",
+                      "hashed_id": "BERRIO ZAPATA, SURLEY YANSURY",
+                      "TableIndex": 1
+           },
+           {
+                      "respuesta": "Buenos días estimado profe,   A continuación adjunto la tarea correspondiente a la actividad 1.   La subo en formato HTML el Jupyter Notebook esto debido a que al trasnformarlo en PDF se dañaba totalmente la salidas de las celdas. Además, como es de su conocimiento no se nos permite subir comprimidos.   Quedo atento a sus comentarios.   Saludos cordiales,   Alexander Camacho. ",
+                      "hashed_id": "CAMACHO PONCE, ALEXANDER",
+                      "TableIndex": 2
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "CARDONA YARA, FRANKLIN ANDRES",
+                      "TableIndex": 3
+           },
+           {
+                      "respuesta": "Buenas tardes Profe,  Envio los archivos requeridos de forma individual dado que no pude subir el .zip  Quedo atento a comentarios,  Miguel Chacon",
+                      "hashed_id": "CHACON CALA, MIGUEL ANDRES",
+                      "TableIndex": 4
+           },
+           {
+                      "respuesta": "Buenas noches profe,  Adjunto el cuaderno de Jupyter exportado cómo PDF. Puede verlo también desde la siguiente URL de google colab, dónde se visualiza mejor: https://colab.research.google.com/drive/1zDG9VwzY1ojDQDVezm8LH8EgXVTBokBG.  Adicionalmente, adjunto los 3 archivos de excel generados para las probabilidades de transición, emisión y viterbi.  Gracias por su atención y saludos!",
+                      "hashed_id": "CHACON ORDONEZ, JOSE MIGUEL",
+                      "TableIndex": 5
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "CHIRINOS VALERO, LUIS",
+                      "TableIndex": 6
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "CIFUENTES DURANGO, VICTOR ALFONSO",
+                      "TableIndex": 7
+           },
+           {
+                      "respuesta": "Adjunto solución",
+                      "hashed_id": "CORONADO MOREIRA, CRISTOPHER GEOVANNY",
+                      "TableIndex": 8
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "CUARTAS VALDERRAMA, MANUEL ALEJANDRO",
+                      "TableIndex": 9
+           },
+           {
+                      "respuesta": "Buen dia,  Envio los excel de las matrices y el codigo en HTML, ya que el PDF me dio en primer lugar problemas por el tamaño y en segundo lugar al comprimirlo, no aceptó el formato",
+                      "hashed_id": "DUQUE AGUILERA, ADRIAN",
+                      "TableIndex": 10
+           },
+           {
+                      "respuesta": "Hola Profesor gusto en saludarlo  Anexo los archivos correspondientes a la actividad  El cuaderno no me dejó subirlo a la plataforma  Espero que sea de su agrado  Saludos cordiales",
+                      "hashed_id": "FERRER ACOSTA, MISAEL JOAQUIN",
+                      "TableIndex": 11
+           },
+           {
+                      "respuesta": "Estimado profesor,  Adjunto los documentos de la actividad 1.  Pablo Garcia",
+                      "hashed_id": "GARCIA VELEZ, PABLO ALFONSO",
+                      "TableIndex": 12
+           },
+           {
+                      "respuesta": "Buen Día profesor  Se adjunta para su validación.  No se sube el HTML export compilado, porque de ser asi, pesa mas de 50MB, se sube sin compilar.     Cordialmente,  CRISTIAN CAMILO GARZON TAMAYO crittan01@gmail.com CC 1032414179 +57 312 583 5649 Bogotá - Colombia",
+                      "hashed_id": "GARZON TAMAYO, CRISTIAN CAMILO",
+                      "TableIndex": 13
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "GIRALDO OSORIO, CARLOS ANDRES",
+                      "TableIndex": 14
+           },
+           {
+                      "respuesta": "Estimado:  adjunto los documentos solicitados de la actividad 1.     atte  Victor Gomez",
+                      "hashed_id": "GOMEZ FARFAN, VICTOR",
+                      "TableIndex": 15
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "grades.xls",
+                      "TableIndex": 16
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "GUAMAN LOPEZ, ANDREA SILVANA",
+                      "TableIndex": 17
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "GUTIERREZ QUEZADA, LUIS MANUEL",
+                      "TableIndex": 18
+           },
+           {
+                      "respuesta": "Buenas tardes  Adjunto archivo en formato html de la actividad 1.  Saludos                  ",
+                      "hashed_id": "JAIMES HUAMAN, ROGER",
+                      "TableIndex": 19
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "JIMENEZ QUEZADA, EDWIN",
+                      "TableIndex": 20
+           },
+           {
+                      "respuesta": "Buenas tardes Profesor Alberto.  Anexo archivos de la Actividad 01 de Etiquetado morfosintáctico.  El Notebook lo he convertido a HTML debido a que no permite extensión ipynb.  Que tengas excelente día Profesor,  EdgarL   ",
+                      "hashed_id": "LEAL GELVEZ, EDGAR",
+                      "TableIndex": 21
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "LUCIANI LUJAN, RICHARD MICHAEL",
+                      "TableIndex": 22
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "MARIN SARRIA, GEMBER",
+                      "TableIndex": 23
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "MONTANO PULZARA, NESTOR",
+                      "TableIndex": 24
+           },
+           {
+                      "respuesta": "se adjunta actividad",
+                      "hashed_id": "MOSQUERA ASIMBAYA, JOSE ALEJANDRO",
+                      "TableIndex": 25
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "MOSQUERA DIAZ, JAVIER",
+                      "TableIndex": 26
+           },
+           {
+                      "respuesta": "Buenas Tardes, le envio la actividad 1   ",
+                      "hashed_id": "ONA SERRANO, JORGE",
+                      "TableIndex": 27
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "OVIEDO HERRERA, PAUL",
+                      "TableIndex": 28
+           },
+           {
+                      "respuesta": "Buen día,  Ante la dificultad para subir el código fue necesario exportarlo en formato HTML, aunque el despligue de los datos generado hizo extenso el archivo se tiene todos los componentes solicitados, además fue necesario cargar los archivos generados por separado.",
+                      "hashed_id": "PATINO TERAN, CARLOS ARMANDO",
+                      "TableIndex": 29
+           },
+           {
+                      "respuesta": "Buenas tardes,  Dado que no me deja cargar el archivo en formato .ipynb, entonces adjunto el enlace en google colab de la actividad. Además, se adjunto en formato pdf la actividad.  https://colab.research.google.com/drive/1IwW-s5kpRqPSysGxcn5vl6dlwRtlr-k4?usp=sharing  Saludos Cordiales.",
+                      "hashed_id": "PINTO NIETO, JOSUE DAVID",
+                      "TableIndex": 30
+           },
+           {
+                      "respuesta": "Buenos dias, estimado profesor      Cordial saludo      A continuación presento la entrega correspondiente a la actividad 1, adjunto 3 formatos de excel ( probabilidades y Viterbi) ademas del codigo en formato HTML y uno en PDF( Con recortes)  puesto que en formato del Notebook no fue posible cargarlo.     Atentamente      German A. Portilla Gonzalez ",
+                      "hashed_id": "PORTILLA GONZALEZ, GERMAN ARLEY",
+                      "TableIndex": 31
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "ROJAS ONCOY, ALVARO ELIAS",
+                      "TableIndex": 32
+           },
+           {
+                      "respuesta": "El sistema no permitio enviar el archivo .zip. En caso de algun problema igual dejo el link al folder Google Drive donde estan todos los archivos.  https://drive.google.com/drive/folders/1_No8RFn3QJiNlqzY6NS2tEFimwgqegxQ?usp=sharing  Saludos,   Cesar",
+                      "hashed_id": "RON CUSME, CESAR ANDRES",
+                      "TableIndex": 33
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "ROSERO VACA, DARWIN",
+                      "TableIndex": 34
+           },
+           {
+                      "respuesta": "Estimado profesor,  Buenas tardes, entrego actividad.  Saludos Cordiales  Jorge Santiago Salas",
+                      "hashed_id": "SALAS ONA, JORGE",
+                      "TableIndex": 35
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "SANCHEZ CASTRO, AUGUSTO",
+                      "TableIndex": 36
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "SANCHEZ VARGAS, LUIS CARLOS",
+                      "TableIndex": 37
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "TARAZONA CUADROS, SONIA SMITH",
+                      "TableIndex": 38
+           },
+           {
+                      "respuesta": "No permite cargar archivos con extensión : (.ipynb) se sube como HTML",
+                      "hashed_id": "TENESACA GOMEZ, EDWIN",
+                      "TableIndex": 39
+           },
+           {
+                      "respuesta": "Buenas tardes,  Adjunto los documentos:  1) Actividad resuelta en Jupyter Notebook en formato (.html, por restricción de tipo de archivo para la carga), usando como base el archivo proporcionado y el corpus (.txt, mia07_t3_tra_Corpus-tagged). El Jupyter Notebook contiene:    El código en Python que permite resolver la actividad, debidamente comentado.  Todos los resultados que se solicita en el enunciado, que genera el código implementado.  Las respuestas a las preguntas planteadas en el enunciado.   2) Hoja de cálculo de Microsoft Excel (.xlsx) que muestra las tablas de las probabilidades de emisión.   3) Hoja de cálculo de Microsoft Excel (.xlsx) que muestra las tablas de las probabilidades de transición.  4) Hoja de cálculo de Microsoft Excel (.xlsx) que muestra las tablas de la matriz de probabilidades de la ruta Viterbi.     Quedo atento,",
+                      "hashed_id": "TORRES REINA, ROGER NEIL",
+                      "TableIndex": 40
+           },
+           {
+                      "respuesta": "",
+                      "hashed_id": "YANCHAPAXI GARCIA, ALEX STEEVEN",
+                      "TableIndex": 41
+           },
+           {
+                      "respuesta": "Buenas noches , un gusto saludarle , me permito adjuntar la tarea correspondiente a la actividad 1.  Se me presento un problema al subir el archivo , me permito adjuntar el link del drive para la descarga por favor  https://drive.google.com/file/d/1yQ27Sne2OwE0ATxYYBp1UvLUPWIWfDkZ/view?usp=sharing  Una estupenda noche.    ",
+                      "hashed_id": "ZAPATA PANELUISA, LUIS GABRIEL",
+                      "TableIndex": 42
+           },
+           {
+                      "respuesta": "Saludos envío la tarea.",
+                      "hashed_id": "ZHERDMANT CEVALLOS, ERICK JOEL",
+                      "TableIndex": 43
            }
 ]

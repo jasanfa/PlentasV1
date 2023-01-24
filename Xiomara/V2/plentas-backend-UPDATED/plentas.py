@@ -1,3 +1,5 @@
+import pandas as pd
+
 from codeScripts.methodologyPlentas import *
 from codeScripts.rubrics import Ortografia2, Sintaxis2, GenerateFeedback
 from codeScripts.settings import GetSettings
@@ -15,7 +17,31 @@ class Plentas():
         self.ortografia = Ortografia2(self.settings)
         #sintaxis
         self.sintaxis = Sintaxis2(self.settings)
-         
+
+    def __jsonToExcel__(self, jsonFile):
+        outputExcel = dict()
+        print(jsonFile)
+        for student in jsonFile:
+            for numb_id in student.keys():
+                for column in student[numb_id].keys():
+                    if column == "SimilitudBert" or column == "SimilitudSpacy":
+                        pass
+                    else:
+                        if column not in outputExcel.keys():
+                            outputExcel[column] = [] 
+                        outputExcel[column].append(student[numb_id][column])
+            
+                    
+        
+        df = pd.DataFrame(data=outputExcel)
+        #df = (df.T)
+        df.to_excel('archivos/OutputFiles2/backendExcel.xlsx')
+        return [jsonFile, outputExcel]               
+        
+  
+
+
+
 
     def setApiSettings(self, api_settings):
         #lectura de parametros de la api
@@ -69,8 +95,17 @@ class Plentas():
                 spacy_eval = self.semantic_methodology.getSimilarity(sentencesArr, "spacy")
                 bert_eval = self.semantic_methodology.getSimilarity(sentencesArr, "bert")
 
-                print("BERT EVAL")
-                print(bert_eval)
+                for sim1, sim2, nminip in zip(spacy_eval, bert_eval, range(len(spacy_eval))):
+                    if sim1 < 0.5:
+                        self.settings.minipreguntasMalSpacy = self.settings.minipreguntasMalSpacy + "Minipregunta " + str(nminip + 1)
+
+                    if sim2 < 0.5:
+                        if self.settings.minipreguntasMalBert != "" and nminip>0:
+                            self.settings.minipreguntasMalBert = self.settings.minipreguntasMalBert + ", "
+                            
+                        self.settings.minipreguntasMalBert = self.settings.minipreguntasMalBert + "Minipregunta " + str(nminip + 1)
+
+
 
                 spacy_eval_umbral = self.semantic_methodology.EvaluationMethod(studentID, "" if len(sentencesArr) == 1 and sentencesArr[0] == '' else sentencesArr, spacy_eval, "spacy")
 
@@ -83,29 +118,33 @@ class Plentas():
                 bert_eval_umbral = 0
 
             feedback = GenerateFeedback(self.settings, respuesta_alumno_raw,nota_rubrica_ortografia, nota_rubrica_sintaxis, spacy_eval_umbral * self.settings.PesoSemantics, bert_eval_umbral * self.settings.PesoSemantics)
-                
+
+            self.settings.minipreguntasMalSpacy = ""
+            self.settings.minipreguntasMalBert = ""
 
                 
             AnalysisOfResponses.append({ id : {
                                                 "ID": studentID,
-                                                "NotaSpacy": round(nota_rubrica_spacy,2),
-                                                "NotaBert": round(nota_rubrica_bert,2),
+                                                "SimilitudSpacy": round(nota_rubrica_spacy,2),
+                                                "SimilitudBert": round(nota_rubrica_bert,2),
                                                 "NotaSemanticaSpacy": round(spacy_eval_umbral * self.settings.PesoSemantics,2),
                                                 "NotaSemanticaBert": round(bert_eval_umbral * self.settings.PesoSemantics,2),
-                                                "NotaSintaxisSpacy": round(nota_rubrica_sintaxis,2),
-                                                "NotaSintaxisBert": round(nota_rubrica_sintaxis,2),
-                                                "NotaOrtografiaSpacy": round(nota_rubrica_ortografia,2),
-                                                "NotaOrtografiaBert": round(nota_rubrica_ortografia,2),
+                                                "NotaSintaxis": round(nota_rubrica_sintaxis,2),
+                                                "NotaOrtografia": round(nota_rubrica_ortografia,2),
+                                                "NotaTotalSpacy": (round(nota_rubrica_ortografia,2) + round(nota_rubrica_sintaxis,2) + round(spacy_eval_umbral * self.settings.PesoSemantics,2))*10,
+                                                "NotaTotalBert": (round(nota_rubrica_ortografia,2) + round(nota_rubrica_sintaxis,2) + round(bert_eval_umbral * self.settings.PesoSemantics,2))*10,
                                                 "Feedback": feedback }
                                     } )      
         
-
+        AnalysisOfResponses = self.__jsonToExcel__(AnalysisOfResponses)
         self.semantic_methodology.SemanticLevel.output.saveSimilarityResults(self.settings, "spacy")
         self.semantic_methodology.SemanticLevel.output.saveSimilarityResults(self.settings, "bert")
         if self.settings.Sintaxis:
             self.sintaxis.saveResults()
         if self.settings.Ortografia:
             self.ortografia.SaveMistakes()
+
+        print(AnalysisOfResponses)
         return AnalysisOfResponses
     
 
